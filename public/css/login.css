@@ -1,0 +1,50 @@
+@charset "utf-8";
+.loginbotan {
+  background-color: #191970;
+  text-align: center;
+  height: 250px;
+}
+.A {
+  text-align: center;
+}
+
+.mail {
+  background-color: #424242;
+  width: 50%;
+  border-radius: 22px;
+  margin: auto;
+}
+
+.mail input {
+  font-size: 30px;
+  background-color: #424242;
+}
+
+.password input {
+  font-size: 30px;
+  background-color: #424242;
+}
+
+.password {
+  background-color: #424242;
+  width: 50%;
+  border-radius: 22px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.sinki {
+  text-align: center;
+  background-color: #191970;
+  height: 200px;
+  visibility: hidden;
+  margin-top: 100px;
+}
+
+.sinkitouroku {
+  position: relative;
+}
+
+.loginbutton {
+  margin-top: 30px;
+}

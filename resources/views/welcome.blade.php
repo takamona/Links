@@ -14,7 +14,7 @@
                     <img class="top" src="../images/top.jpg">
                 </li>
                 <li>
-                    <a href="login.html">ログイン</a>
+                    <a href="auth/login.blade.php">ログイン</a>
                     <img class="logingazou" src="../images/login.jpg">
                 </li>
             </ul>
