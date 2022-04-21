@@ -17,7 +17,7 @@
         <nav>
             <ul class="nav">
                 <li>
-                    <a href="index.html">TOP</a>
+                     {!! link_to_route('index', 'top', []) !!}
                     <img class="top" src="../images/top.jpg">
                 </li>
                 <li>

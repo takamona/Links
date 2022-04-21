@@ -2,10 +2,24 @@
 .loginbotan {
   background-color: #191970;
   text-align: center;
-  height: 250px;
+  height: 280px;
 }
 .A {
   text-align: center;
+}
+
+
+
+.name {
+  background-color: #424242;
+  width: 50%;
+  border-radius: 22px;
+  margin: auto;
+}
+
+.name input {
+  font-size: 30px;
+  background-color: #424242;
 }
 
 .mail {
@@ -13,6 +27,7 @@
   width: 50%;
   border-radius: 22px;
   margin: auto;
+  margin-top: 30px;
 }
 
 .mail input {

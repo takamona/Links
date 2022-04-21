@@ -9,7 +9,9 @@
   <div class="loginbotan">
     <div class="login">
       <h1>ログイン</h1>
-      <form action="mypage.html">
+      <form action="/login" method="POST">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <div class="name"><input type="name"placeholder="名前"></div>
         <div class="mail"><input type="email" placeholder="メールアドレス"></div>
         <div class="password"><input type="password" placeholder="パスワード"></div>
         <input class="loginbutton" type="submit" value="ログイン">
