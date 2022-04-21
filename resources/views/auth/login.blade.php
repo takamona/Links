@@ -11,9 +11,8 @@
       <h1>ログイン</h1>
       <form action="/login" method="POST">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="name"><input type="name"placeholder="名前"></div>
-        <div class="mail"><input type="email" placeholder="メールアドレス"></div>
-        <div class="password"><input type="password" placeholder="パスワード"></div>
+        <div class="mail"><input type="email" name="email" placeholder="メールアドレス" id="email"></div>
+        <div class="password"><input type="password" name="password" placeholder="パスワード" id="password"></div>
         <input class="loginbutton" type="submit" value="ログイン">
         <!--<button type="submit">ログイン</button>-->
       </form>
@@ -22,7 +21,8 @@
   </div>
   <div class="sinki">
     <h1>新規登録</h1>
-    <form action="profile.html">
+    <form method="POST" action="/signup">
+      <div class="name"><input type="name"placeholder="名前"></div>
       <div class="mail"><input type="text" placeholder="メールアドレス"></div>
       <div class="password"><input type="password" placeholder="パスワード"></div>
       <div class="loginbutton"><input type="submit" value="新規登録"></div>
@@ -31,3 +31,6 @@
   <script src="./js/login.js"></script>
 </body>
 </html>
+
+
+
