@@ -23,9 +23,10 @@
     <h1>新規登録</h1>
     <form action="/signup" method="POST" >
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
-      <div class="name"><input type="name"placeholder="名前"></div>
-      <div class="mail"><input type="text" placeholder="メールアドレス"></div>
-      <div class="password"><input type="password" placeholder="パスワード"></div>
+      <div class="name"><input type="name" name= "name" placeholder="名前"></div>
+      <div class="mail"><input type="text" name= "email" placeholder="メールアドレス"></div>
+      <div class="password"><input type="password" name="password" placeholder="パスワード"></div>
+      <div class="password"><input type="password" name="password_confirmation" placeholder="パスワード再入力"></div>
       <div class="loginbutton"><input type="submit" value="新規登録"></div>
     </form>
   </div>

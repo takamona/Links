@@ -1,0 +1,179 @@
+.nav {
+    list-style: none;
+    position: absolute;
+    top: 10px;
+}
+
+nav li {
+    width: 140px;
+    text-align: center;
+    background-color: #333;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 310px;
+}
+
+.logout {
+    list-style: none;
+    position: absolute;
+    left: 400px;
+    top: 10px;
+}
+
+.logout li {
+    width: 180px;
+    line-height: 180px;
+    text-align: center;
+    background-color: #ff0000;
+}
+
+.top {
+    width: 100%;
+}
+
+.po {
+    position: relative;
+    display: block;
+    height: 250px;
+    width:1100px;
+    background-color: #a9a9a9;
+    border: solid;
+}
+
+ul{
+list-style:none;
+}
+
+.community{
+  background-color: #ff4500;
+  width:1100px;
+  height:100px;
+  margin-left: 10px;
+  margin-top: 20px;
+  text-align: center;
+  line-height:100px;
+}
+
+.content{
+    background-color:grey;
+    width:1100px;
+    height:20px;
+    border:solid 1px;
+    margin-top: 20px;
+    text-align:center;
+}
+
+
+.name{
+    background-color:white;
+    width:550px;
+    height:30px;
+    border-left:solid 1px;
+    border-right:solid 1px;
+    border-bottom:solid 1px;
+}
+
+
+.name_empty{
+     background-color:white;
+    width:550px;
+    height:30px;
+    border-bottom:solid 1px;
+    border-right:solid 1px;
+}
+
+.Genre{
+    background-color:white;
+    width:550px;
+    height:30px;
+    border-left:solid 1px;
+    border-right:solid 1px;
+    border-bottom:solid 1px;
+}
+
+.Genreselect{
+background-color:white;
+    width:550px;
+    height:30px;
+     border-bottom:solid 1px;
+    border-right:solid 1px;
+}
+
+.conditions{
+    background-color: white;
+    width:550px;
+    height:30px;
+      border-left:solid 1px;
+    border-right:solid 1px;
+    border-bottom:solid 1px;
+}
+
+
+.condition_radio{
+background-color:white;
+    width:550px;
+    height:30px;
+    border-bottom:solid 1px;
+    border-right:solid 1px;
+}
+
+.Authority{
+    background-color: white;
+    width:550px;
+    height:30px;
+       border-left:solid 1px;
+    border-right:solid 1px;
+    border-bottom:solid 1px;
+}
+
+
+.Authority_radio{
+background-color:white;
+    width:550px;
+    height:30px;
+      border-bottom:solid 1px;
+    border-right:solid 1px;
+}
+
+.explain{
+     background-color: white;
+    width:550px;
+    height:200px;
+       border-left:solid 1px;
+    border-right:solid 1px;
+    border-bottom:solid 1px;
+}
+
+.explain_empty{
+background-color:white;
+    width:550px;
+    height:200px;
+    border-bottom:solid 1px;
+    border-right:solid 1px;
+}
+
+.flex{
+    display: flex;
+}
+
+.Confirmation{
+    background-color: grey;
+    width:280px;
+    height:80px;
+    text-align: center;
+    line-height: 80px;
+    margin-top:50px;
+    margin-left:350px;
+    border:solid 1px;
+}
+
+
+.extext{
+	width: 550px;  
+	height: 190px; 
+}
+
+.nametext{
+    width:550px;
+    height:20px;
+}
