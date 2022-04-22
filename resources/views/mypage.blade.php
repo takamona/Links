@@ -64,7 +64,7 @@
     <div class="logout">
       <ul>
          <li>
-          <a href="index.html">ログアウト</a>
+          {!! link_to_route('logout.get', 'ログアウト', []) !!}
         </li>
       </ul>
     </div>

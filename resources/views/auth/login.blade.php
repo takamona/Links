@@ -10,7 +10,7 @@
     <div class="login">
       <h1>ログイン</h1>
       <form action="/login" method="POST">
-          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="mail"><input type="email" name="email" placeholder="メールアドレス" id="email"></div>
         <div class="password"><input type="password" name="password" placeholder="パスワード" id="password"></div>
         <input class="loginbutton" type="submit" value="ログイン">
@@ -21,7 +21,8 @@
   </div>
   <div class="sinki">
     <h1>新規登録</h1>
-    <form method="POST" action="/signup">
+    <form action="/signup" method="POST" >
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="name"><input type="name"placeholder="名前"></div>
       <div class="mail"><input type="text" placeholder="メールアドレス"></div>
       <div class="password"><input type="password" placeholder="パスワード"></div>
