@@ -17,11 +17,11 @@
         <nav>
             <ul class="nav">
                 <li>
-                     {!! link_to_route('index', 'top', []) !!}
+                     <a href= "/">top</a>
                     <img class="top" src="../images/top.jpg">
                 </li>
                 <li>
-                    {!! link_to_route('login', 'ログイン', []) !!}
+                    <a href= "login">ログイン</a>
                     <img class="logingazou" src="../images/login.jpg">
                 </li>
             </ul>

@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <title>マイページ</title>
-  <link rel="stylesheet" href="../css/mypage.css" type="text/css" />
+  <link rel="stylesheet" href="./css/mypage.css" type="text/css" />
 </head>
 <body>
   <div class="h">
@@ -16,37 +16,22 @@
       <ul class="menu">
         <li>
           <a href="#">
-            <img src="https://school3.oohara.jp/taka/%e3%82%b3%e3%83%9f%e3%83%a5%e3%83%8b%e3%83%86%e3%82%a3/TOP.png" alt="トップページ">
+            <img src="images/MYPAGE.png" alt="マイページ">
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="https://school2.oohara.jp/fukuro/miraculous/b_header_movie.png" alt="ムービー">
+            <img src="images/COMMUNITY.png" alt="コミュニティ">
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="https://school2.oohara.jp/fukuro/miraculous/b_header_news.png" alt="ニュース">
+            <img src="images/TIMELINE.png" alt="タイムライン">
           </a>
         </li>
         <li>
-          <a href="#">
-            <img src="https://school2.oohara.jp/fukuro/miraculous/b_header_character.png" alt="キャラクター">
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="https://school2.oohara.jp/fukuro/miraculous/b_header_story.png" alt="ストーリー">
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="https://school2.oohara.jp/fukuro/miraculous/b_header_schedule.png" alt="スケジュール">
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="https://school2.oohara.jp/fukuro/miraculous/b_header_goods.png" alt="グッズ">
+          <a href="/logout">
+            <img src="images/LOGOUT.png" alt="ログアウト">
           </a>
         </li>
       </ul>
@@ -56,7 +41,7 @@
     <div class="mypage">
       <ul>
        <li>
-          <a href="mypage.html">マイページ</a>
+          <a href="mypage">マイページ</a>
         </li>
       </ul>
       <img class="myp" src="images/komyu.jpeg" alt="マイページ">
@@ -64,7 +49,7 @@
     <div class="logout">
       <ul>
          <li>
-          {!! link_to_route('logout.get', 'ログアウト', []) !!}
+          <a href="/logout">ログアウト</a>
         </li>
       </ul>
     </div>
@@ -73,7 +58,7 @@
     <img id="img" src="images/profilesample.png" alt="プロフィール">
   </div>
   <div>
-    <a href="myprofile.html">プロフィールを見る</a>
+    <a href="/profiles/{{ \Auth::id() }}">プロフィールを見る</a>
   </div>
   <div class="gr">
    <div>
