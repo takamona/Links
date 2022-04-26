@@ -46,8 +46,6 @@ class CommunitiesController extends Controller
         // validation        
         // for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
         $this->validate($request, [
-            'id' => 'required',
-            'user_id' => 'required',
             'name' => 'required',
             'genre' => 'required',
             'participation' => 'required',
