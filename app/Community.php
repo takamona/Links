@@ -11,9 +11,13 @@ class Community extends Model
     
     
     
-     protected $fillable = [
-      'name', 'game', 'paticipation', 'authority', 'image', 'content',
-    ];
+    
+       protected $fillable = ['user_id', 'name', 'genre', 'participation', 'authority', 'content', 'image',];
+
+
+
+
+
 
 
     /**

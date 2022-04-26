@@ -13,15 +13,15 @@ class CreateCommunitiesTable extends Migration
      */
     public function up()
     {
-       Schema::create('communities', function (Blueprint $table) {
-        $table->bigIncrements('id');
+           Schema::create('communities', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->unique();
-            $table->string('name');
-            $table->string('game');
-            $table->string('paticipation');
-            $table->string('authority');
-            $table->text('content');
-            $table->string('image');
+            $table->string('name'); // コミュニティ名
+            $table->string('genre'); // ジャンル
+            $table->integer('participation'); // 参加条件。誰でもOKなら1とか
+            $table->integer('authority'); // トピック作成権限。誰でもOKなら 1とかが普通
+            $table->text('content'); // 内容
+            $table->string('image'); // 画像ファイル名
             $table->timestamps();
 
             // 外部キー制約
