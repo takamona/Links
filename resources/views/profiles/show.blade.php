@@ -11,7 +11,7 @@
         <ul class="nav">
           <li>
             <a href="/mypage">マイページ</a>
-            <img class="top" src="{{ asset('/uploads')}}/{{ $profile->image }}" alt="マイページ">
+            <img class="top" src="{{ asset('/images/komyu.jpeg')}}" alt="マイページ">
           </li>
         </ul>
       </nav>
@@ -20,6 +20,9 @@
           <a href="/logout">ログアウト</a>
         </li>
       </ul>
+    </div>
+    <div class="image">
+      <img class="sample" src="{{ asset('/uploads')}}/{{ $profile->image }}">
     </div>
     <div class="friend">
       <ul>
@@ -89,3 +92,7 @@
     <script src="{{ asset('/js/profile.js') }}"></script>
   </body>
 </html>
+
+
+
+
