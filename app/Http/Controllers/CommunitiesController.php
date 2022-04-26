@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Profile;
+use App\Community;
 use Illuminate\Http\Request;
 
-class ProfilesController extends Controller
+class CommunitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,11 +23,14 @@ class ProfilesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        // 空のプロフィールインスタンス作成
-        $profile = new Profile();
-        // view の呼び出し
-        return view('profiles.create', compact('profile'));
+    {   
+        
+        // dd('create');
+        
+        //空のコミュニティインスタンス作成
+        $community=new Community();
+        //view の呼び出し
+        return view("communities.create",compact('community'));
     }
 
     /**
@@ -38,15 +41,18 @@ class ProfilesController extends Controller
      */
     public function store(Request $request)
     {
-        // dd('profile store');
+        //   dd('community store');
         // dd($request);
         // validation        
-        //for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
+        // for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
         $this->validate($request, [
-            'gender' => 'required',
-            'address' => 'required',
-            'hobby' => 'required',
-            'introduction' => 'required',
+            'id' => 'required',
+            'user_id' => 'required',
+            'name' => 'required',
+            'genre' => 'required',
+            'participation' => 'required',
+            'authority' => 'required',
+            'content' => 'required',
             'image' => [
                 'required',
                 'file',
@@ -54,12 +60,14 @@ class ProfilesController extends Controller
             ]
         ]);
         
-        // dd('OK');
+        
+           // dd('OK');
         // 入力情報の取得
-        $gender = $request->input('gender');
-        $address = $request->input('address');
-        $hobby = $request->input('hobby');
-        $introduction = $request->input('introduction');
+        $name = $request->input('name');
+        $genre = $request->input('genre');
+        $participation = $request->input('participation');
+        $authority = $request->input('authority');
+        $content = $request->input('content');
         $file =  $request->image;
         
         // https://qiita.com/ryo-program/items/35bbe8fc3c5da1993366
@@ -78,31 +86,30 @@ class ProfilesController extends Controller
         
         
         // 入力情報をもとに新しいインスタンス作成
-        \Auth::user()->profile()->create(['gender' => $gender, 'address' => $address, 'hobby' => $hobby, 'introduction' => $introduction, 'image' => $image]);
+        \Auth::user()->profile()->create(['name' => $name, 'genre' => $genre, 'participation' => $participation, 'content' => $content, 'image' => $image]);
         
         // トップページへリダイレクト
-        return redirect('/mypage')->with('flash_message', 'プロフィールを作成しました');
+        return redirect('/mypage')->with('flash_message', 'コミュニティを作成しました');
     }
-
     /**
      * Display the specified resource.
      *
-     * @param  \App\Profile  $profile
+     * @param  \App\Community  $community
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show(Community $community)
     {
-        // dd('profile show');
-        return view('profiles.show', compact('profile'));
+        // dd('community show');
+        return view('communities.show', compact('community'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Profile  $profile
+     * @param  \App\Community  $community
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profile $profile)
+    public function edit(Community $community)
     {
         //
     }
@@ -111,10 +118,10 @@ class ProfilesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Profile  $profile
+     * @param  \App\Community  $community
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profile $profile)
+    public function update(Request $request, Community $community)
     {
         //
     }
@@ -122,10 +129,10 @@ class ProfilesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Profile  $profile
+     * @param  \App\Community  $community
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profile $profile)
+    public function destroy(Community $community)
     {
         //
     }

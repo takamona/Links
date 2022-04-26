@@ -41,4 +41,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     // プロフィール関係
     Route::resource('profiles', 'ProfilesController', ['only' => ['index', 'create', 'store', 'show']]);
+    
+    //　コミュニティ関係
+    Route::resource('communities', 'CommunitiesController', ['only' => ['index', 'create', 'store', 'show']]);
 });
