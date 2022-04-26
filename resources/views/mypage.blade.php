@@ -15,7 +15,7 @@
     <nav id="spmenu">
       <ul class="menu">
         <li>
-          <a href="#">
+          <a href="mypage">
             <img src="images/MYPAGE.png" alt="マイページ">
           </a>
         </li>
@@ -73,7 +73,7 @@
   <div class="gr">
     <div>
       <img class="komyuran2" src="images/chairs.jpg" alt="コミュニティ一覧">
-      <a href="comyunity.html"><p><a href="community.html">コミュニティ一覧</a></p></a>
+      <a href="/communities/{{ \Auth::id() }}"><p>コミュニティ一覧</p></a>
     </div>
     <div>
       <img class="topic" src="images/glasses-book.jpg" alt="トピック一覧">

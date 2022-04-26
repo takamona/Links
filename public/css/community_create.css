@@ -157,14 +157,8 @@ background-color:white;
 }
 
 .Confirmation{
-    background-color: grey;
-    width:280px;
-    height:80px;
-    text-align: center;
-    line-height: 80px;
     margin-top:50px;
     margin-left:350px;
-    border:solid 1px;
 }
 
 
@@ -176,4 +170,22 @@ background-color:white;
 .nametext{
     width:550px;
     height:20px;
+}
+
+.image{
+     background-color: white;
+     width:550px;
+     height:200px;
+     border-left:solid 1px;
+     border-right:solid 1px;
+     border-bottom:solid 1px;
+}
+
+.upload{
+    background-color: white;
+    width:550px;
+    height:200px;
+    border-left:solid 1px;
+    border-right:solid 1px;
+    border-bottom:solid 1px;
 }

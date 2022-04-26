@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
     <title>プロフィール登録</title>
-    <link rel="stylesheet" href="{{ asset('/css/myprofile.css')}} ">
+    <link rel="stylesheet" href="{{ asset('/css/myprofile.css')}}">
   </head>
   <body>
     <div class="po">
@@ -87,6 +87,11 @@
           <th>
               {{ $profile->introduction }}
           </th>
+           <tr>
+          <td colspan="2">
+            <input type="submit" value="登録">
+          </td>
+        </tr>
       </table>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="{{ asset('/js/profile.js') }}"></script>
