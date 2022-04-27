@@ -27,7 +27,12 @@ class ParticipationsController extends Controller
      */
     public function create()
     {
-        //
+        // dd('create');
+        
+        //空の申請インスタンス作成
+        $participation=new Participation();
+         //view の呼び出し
+        return view("participations.create",compact('participation'));
     }
 
     /**

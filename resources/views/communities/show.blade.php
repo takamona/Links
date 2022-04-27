@@ -23,7 +23,7 @@
   <div class="comyuicon"> </div>
   <div class="pobutton">
     <div class="sanka">
-      <a href="community_top.html">コミュニティの参加申請のページへ</a>
+      <a href="/participations/create">コミュニティの参加申請のページへ</a>
   </div>
   <div class="gr">
     <div class="yellow">トップ</div>
