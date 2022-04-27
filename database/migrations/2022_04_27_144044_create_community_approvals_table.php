@@ -19,6 +19,10 @@ class CreateCommunityApprovalsTable extends Migration
             $table->string('community_id'); // コミュニティID
             $table->string('community_name'); // コミュニティ名
             $table->timestamps();
+            
+            // 外部キー制約
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('community_id')->references('id')->on('communities')->onDelete('cascade');;
         });
     }
 
