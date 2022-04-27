@@ -67,7 +67,7 @@ class User extends Authenticatable
      */
     public function community_approvals()
     {
-        return $this->hasMany(Community_approval::class);
+        return $this->hasMany(participation::class);
     }
     
 }

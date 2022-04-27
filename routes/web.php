@@ -44,4 +44,7 @@ Route::group(['middleware' => ['auth']], function () {
     
     //　コミュニティ関係
     Route::resource('communities', 'CommunitiesController', ['only' => ['index', 'create', 'store', 'show']]);
+    
+    //　コミュニティ関係
+    Route::resource('participations', 'ParticipationsController', ['only' => ['index', 'create', 'store', 'show']]);
 });

@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <title>マイページ</title>
-  <link rel="stylesheet" href="{{ asset('/css/community_show.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('/css/community_index.css')}}" type="text/css" />
 </head>
 <body>
   <div class="h"> 
@@ -62,7 +62,7 @@
     @foreach($communities as $community)
     <tr>
       <th>{{ $community->id}}</th>
-      <th>{{ $community->name}}</th>
+      <th><a href="/communities/{{ \Auth::id() }}">{{ $community->name}}</a></th>
       <th>{{ $community->user->name}}</th>
       <th>{{ $community->created_at}}</th>
     </tr>

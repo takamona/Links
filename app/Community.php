@@ -15,11 +15,6 @@ class Community extends Model
        protected $fillable = ['user_id', 'name', 'genre', 'participation', 'authority', 'content', 'image',];
 
 
-
-
-
-
-
     /**
      * このコミュニティを所有するユーザー。（Userモデルとの多対1の関係を定義）
      */

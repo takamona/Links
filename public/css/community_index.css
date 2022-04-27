@@ -1,0 +1,167 @@
+.logout{
+  background-color: red;
+  width:180px;
+  line-height:110px;
+  height: 100px;
+  margin-top: 16px;
+  margin-left: 380px;
+}
+
+.logout ul{
+  list-style:none;
+  width: 180px;
+    line-height: 180px;
+    text-align: center;
+    background-color: #ff0000;
+}
+
+
+#img{
+  width:300px;
+}
+
+.r{
+  text-align:center;
+}
+
+
+
+.h{
+  position:fixed;
+  left:20px;
+  top:20px;
+  width:50px;
+  height:50px;
+  background:black;
+  border-radius:50%;
+  z-index:2;
+  transition:1s;
+}
+
+.h span{
+  position:fixed;
+  left:30px;
+  width:30px;
+  height:3px;
+  background:white;
+  transition:1s;
+}
+
+.h span:nth-of-type(1){
+  top:30px;
+}
+
+.h span:nth-of-type(2){
+  top:40px;
+}
+
+.h span:nth-of-type(3){
+  top:50px;
+}
+
+.h2{
+  position:fixed;
+  right:0px;
+  top:0px;
+  width:100vw;
+  height:100vh;
+  clip-path:circle(0px at 100vw 0px);
+  background:black;
+  transition:5s;
+  overflow:hidden;
+}
+
+.open{
+  clip-path:circle(200vw at 100vw 0px);
+  
+}
+
+.open_h{
+  background:red;
+}
+
+#spmenu{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+.ham1{
+  transform:translatey(10px) rotate(135deg); 
+}
+
+.ham2{
+  opacity:0;
+}
+
+.ham3{
+  transform:translatey(-10px) rotate(-135deg);
+}
+
+.waku{
+  height: 250px;
+  background-color: #a9a9a9;
+  border: solid;
+}
+
+
+.flex{
+    display: flex;
+}
+
+
+.c{
+    background-color: orange;
+    border:solid 1px;
+    width: 230px;
+    line-height: 100px;
+    text-align: center;
+    width: calc((670px - 40px) / 2);
+    margin:10px;
+}
+
+.kn{
+    background-color: grey;
+    border:solid 1px;
+    width:230px;
+    line-height: 100px;
+    text-align: center;
+    width: calc((900px - 40px) / 2);
+    margin:10px;
+}
+
+.comyunity{
+  background-color: #ff4500;
+  width:650px;
+  height:100px;
+  margin-left: 10px;
+  text-align: center;
+  line-height:100px;
+}
+
+.create{
+  background-color: yellow;
+  width:300px;
+  margin-left:700px;
+  margin-top: -120px;
+  text-align: center;
+}
+
+table.deta{
+  border-collapse:collapse;
+}
+ 
+table.deta th{
+  border:1px solid #000066;}
+
+
+.deta{
+    margin-top:120px;
+}
+
+.create{
+  margin-left:800px;
+  margin-top: -150px;
+  width:200px;
+}
