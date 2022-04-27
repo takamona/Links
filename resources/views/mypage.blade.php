@@ -73,7 +73,7 @@
   <div class="gr">
     <div>
       <img class="komyuran2" src="images/chairs.jpg" alt="コミュニティ一覧">
-      <a href="/communities/{{ \Auth::id() }}"><p>コミュニティ一覧</p></a>
+      <a href="/communities"><p>コミュニティ一覧</p></a>
     </div>
     <div>
       <img class="topic" src="images/glasses-book.jpg" alt="トピック一覧">

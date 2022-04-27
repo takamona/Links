@@ -14,7 +14,10 @@ class CommunitiesController extends Controller
      */
     public function index()
     {
-        //
+        //空のコミュニティインスタンス作成
+        $communities = Community::all();
+        //view の呼び出し
+        return view("communities.index",compact('communities'));
     }
 
     /**
@@ -84,10 +87,11 @@ class CommunitiesController extends Controller
         
         
         // 入力情報をもとに新しいインスタンス作成
-        \Auth::user()->profile()->create(['name' => $name, 'genre' => $genre, 'participation' => $participation, 'content' => $content, 'image' => $image]);
-        
+        \Auth::user()->communities()->create(['name' => $name, 'genre' => $genre, 'participation' => $participation, 'authority' => $authority, 'content' => $content, 'image' => $image]);
+
         // トップページへリダイレクト
-        return redirect('/mypage')->with('flash_message', 'コミュニティを作成しました');
+        return redirect('/communities')->with('flash_message', 'コミュニティを作成しました');
+        
     }
     /**
      * Display the specified resource.
