@@ -7,18 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Community_approval extends Model
 {
 
-
-
-
-
-
-
-
-
-
-
-
-
+        protected $fillable = [ 'user_id', 'community_id', 'community_name',];
 
     /**
      * この承認(コミュニティ)を所有するコミュニティ。（Communityモデルとの多対1の関係を定義）

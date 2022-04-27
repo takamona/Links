@@ -16,8 +16,8 @@ class CreateCommunityApprovalsTable extends Migration
         Schema::create('community_approvals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->unique();　//ユーザーID
-            $table->string('community_id'); // コミュニティID
-            $table->string('community_name'); // コミュニティ名
+            $table->string('community_id')->unique();// コミュニティID
+            $table->string('community_name')->unique();// コミュニティ名
             $table->timestamps();
             
             // 外部キー制約
