@@ -20,7 +20,7 @@
     <div class="e">コミュニティトップ</div>
     <div class="kn"><input placeholder="コミュニティを検索！"></div>
   </div>
-  <div class="comyuicon"> </div>
+  <div class="comyuicon"><img class="sample" src="{{ asset('/uploads')}}/{{$community->image}}"></div>
   <div class="pobutton">
     <div class="sanka">
       <a href="/participations/create">コミュニティの参加申請のページへ</a>

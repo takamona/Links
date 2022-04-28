@@ -37,109 +37,16 @@
         <tr>
           <th colspan="3" class="orange">コミュニティ参加申請一覧</th>
         </tr>
+        @foreach($participations as $participation)
         <tr>
-          <th colspan="3">申請○○件</th>
+          <th colspan="3">申請{{ $participations->total() }}件</th>
         </tr>
         <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
+          <th class="grey">{{$participation->created_at}}</th>
+          <th>{{$participation->user->name}}</th>
           <th><input type="radio" name="approval" value="承認する">承認する <input type="radio" name="approval" value="承認しない">承認しない</th>
         </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval2" value="承認する">承認する <input type="radio" name="approval2" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval3" value="承認する">承認する <input type="radio" name="approval3" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval4" value="承認する">承認する <input type="radio" name="approval4" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval5" value="承認する">承認する <input type="radio" name="approval5" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval6" value="承認する">承認する <input type="radio" name="approval6" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval7" value="承認する">承認する <input type="radio" name="approval7" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval8" value="承認する">承認する <input type="radio" name="approval8" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval9" value="承認する">承認する <input type="radio" name="approval9" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval10" value="承認する">承認する <input type="radio" name="approval10" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval11" value="承認する">承認する <input type="radio" name="approval11" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval12" value="承認する">承認する <input type="radio" name="approval12" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval13" value="承認する">承認する <input type="radio" name="approval13" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval14" value="承認する">承認する <input type="radio" name="approval14" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval15" value="承認する">承認する <input type="radio" name="approval15" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval16" value="承認する">承認する <input type="radio" name="approval16" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval17" value="承認する">承認する <input type="radio" name="approval17" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval18" value="承認する">承認する <input type="radio" name="approval18" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval19" value="承認する">承認する <input type="radio" name="approval19" value="承認しない">承認しない</th>
-        </tr>
-        <tr>
-          <th class="grey">○○年○○月○○日</th>
-          <th>○○さん</th>
-          <th><input type="radio" name="approval20" value="承認する">承認する <input type="radio" name="approval20" value="承認しない">承認しない</th>
-        </tr>
+        @endforeach
       </table>
     </div>
     <div>

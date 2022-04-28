@@ -57,17 +57,23 @@ class User extends Authenticatable
     {
         return $this->hasMany(Community::class);
     }
-    
-    
-    
-    
      
     /**
      * このユーザーが所有する承認（コミュニティ）一覧（ Communityモデルとの1対多の関係を定義）
      */
-    public function community_approvals()
+    public function participations()
     {
-        return $this->hasMany(participation::class);
+        return $this->hasMany(Participation::class);
     }
+    
+    
+    /**
+     * このユーザーが所有するトピック（ Topicモデルとの1対多の関係を定義）
+     */
+    public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
+    
     
 }

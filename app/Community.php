@@ -23,5 +23,21 @@ class Community extends Model
         return $this->belongsTo(User::class);
     }
     
+    /**このコミュニティが所有するトピック
+     * 
+     */public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
+
+
+
+ /**このコミュニティが所有する参加申請
+     * 
+     */public function participations()
+    {
+        return $this->hasMany(Participation::class);
+    }
+    
 }
 

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Community;
+
+use App\User;
+
 use Illuminate\Http\Request;
 
 class CommunitiesController extends Controller
@@ -16,6 +19,9 @@ class CommunitiesController extends Controller
     {
         //空のコミュニティインスタンス作成
         $communities = Community::all();
+        //モデルを使って、全データを取得
+        $communities = Community::paginate(11);
+        
         //view の呼び出し
         return view("communities.index",compact('communities'));
     }
@@ -101,6 +107,11 @@ class CommunitiesController extends Controller
      */
     public function show(Community $community)
     {
+         // 注目しているコミュニティのユーザーデータ取得
+        $user = $community->user()->get()->first();
+        // 注目しているユーザの投稿一覧取得
+        // $posts = $user->posts()->orderBy('id', 'desc')->paginate(10);
+        
         // dd('community show');
         return view('communities.show', compact('community'));
     }

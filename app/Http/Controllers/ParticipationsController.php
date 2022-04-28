@@ -15,8 +15,10 @@ class ParticipationsController extends Controller
     public function index()
     {
         //空のpaticipationインスタンス作成
-        $participation = Participation::all();
-        //view の呼び出し
+        $participations = Participation::all();
+        //モデルを使って、全データを取得
+        $participations = Participation::paginate(30);
+    
         return view("participations.index", compact('participations'));
     }
 
