@@ -18,16 +18,16 @@
             <ul class="nav">
                 <li>
                      <a href= "/">top</a>
-                    <img class="top" src="../images/top.jpg">
+                    <img class="top" src="{{ asset('../images/top.jpg'}}">
                 </li>
                 <li>
                     <a href= "login">ログイン</a>
-                    <img class="logingazou" src="../images/login.jpg">
+                    <img class="logingazou" src="{{ asset('../images/login.jpg')}}">
                 </li>
             </ul>
         </nav>
         <div class="controler">
-            <img class="conts" src="../images/game.jpg">
+            <img class="conts" src="{{ asset('../images/game.jpg')}}">
         </div>
         <div class="po">
             <p>ゲームが趣味の人と交流出来るコミュニティサイト！！</p>
@@ -53,21 +53,21 @@
             <ul>
                 <li>1.新規アカウント作成</li>
             </ul>
-            <img class="new" src="../images/login.jpg">
+            <img class="new" src="{{ asset('../images/login.jpg')}}">
             <ul class="new2">
                 <li>メールアドレスとパスワードを新規登録画面クリック後に入力して下さい。</li>
             </ul>
             <ul>
                 <li>2.ログイン</li>
             </ul>
-            <img class="login" src="../images/komyu.jpeg">
+            <img class="login" src="{{ asset('../images/komyu.jpeg')}}">
             <ul class="login2">
                 <li>メールアドレスとパスワードを新規登録画面クリック後に入力して下さい。</li>
             </ul>
             <ul class="sarch">
                 <li>3.コミュニティ登録</li>
             </ul>
-            <img class="sarchgazou" src="../images/glasses.jpg">
+            <img class="sarchgazou" src="{{ asset('../images/glasses.jpg')}}">
             <ul class="sarch2">
                 <li>コミュニティ一覧から検索して登録。</li>
             </ul>

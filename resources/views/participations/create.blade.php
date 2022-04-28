@@ -2,7 +2,7 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8">
-  <title>プロフィール登録</title>
+  <title>参加申請</title>
   <link rel="stylesheet" href="{{ asset ('/css/participations_create.css')}}">
   </head>
 <body>
@@ -25,10 +25,10 @@
   <div class="pobutton">
     <from>
     <div class="sanka">
-      <input type="submit" value="参加申請" name="status"   style="background-color:#4169e1;font-size:15px;width:180px;height:60px;" >
+      <input type="submit" value="参加申請" name="status" style="background-color:#4169e1;font-size:15px;width:180px;height:60px;" >
       </div>
     <div class="exit">
-      <input type="submit" value="退会"   name="status"  style="background-color:red;font-size:15px;width:180px;height:60px;" >
+      <input type="submit" value="退会"   name="status" style="background-color:red;font-size:15px;width:180px;height:60px;" >
       </div>
     </from>
     </div>

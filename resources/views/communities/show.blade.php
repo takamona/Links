@@ -9,11 +9,11 @@
   <div class="po">
     <nav>
       <ul class="nav">
-        <li> <a href="mypage.html">マイページ</a> <img class="top" src={{ asset("images/komyu.jpeg")}}> </li>
+        <li> <a href="/mypage">マイページ</a> <img class="top" src={{ asset("images/komyu.jpeg")}}> </li>
       </ul>
     </nav>
     <ul class="logout">
-      <li> <a href="index.html">ログアウト</a> </li>
+      <li> <a href="/logout">ログアウト</a> </li>
     </ul>
   </div>
   <div class="flex">
@@ -29,7 +29,7 @@
     <div class="yellow">トップ</div>
     <div><a href="community_topics.html">トピックス</a></div>
     <div><a href="community_event.html">イベント</a></div>
-    <div><a href="community_approval.html">承認・コミュニティ参加申請・フレンド申請</a></div>
+    <div><a href="/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
   </div>
   <div class="bar"> </div>
   <div class="syosai"> </div>

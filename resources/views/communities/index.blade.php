@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <title>マイページ</title>
-  <link rel="stylesheet" href="{{ asset('/css/community_index.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('/css/community_display.css')}}" type="text/css" />
 </head>
 <body>
   <div class="h"> 
@@ -41,7 +41,7 @@
     <div class="waku">
       <div class="logout">
         <ul>
-          <li><a href="index.html">ログアウト</a></li>
+          <li><a href="/logout">ログアウト</a></li>
         </ul>
       </div>
     </div>
