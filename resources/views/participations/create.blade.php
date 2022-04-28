@@ -22,12 +22,14 @@
   </div>
   <div class="comyuicon"> </div>
   <div class="pobutton">
+    <from>
     <div class="sanka">
-      <input type="submit" value="参加申請" style="background-color:#4169e1;font-size:15px;width:180px;height:60px;" >
+      <input type="submit" value="参加申請" name="status"   style="background-color:#4169e1;font-size:15px;width:180px;height:60px;" >
       </div>
     <div class="exit">
-      <input type="submit" value="退会"  style="background-color:red;font-size:15px;width:180px;height:60px;" >
+      <input type="submit" value="退会"   name="status"  style="background-color:red;font-size:15px;width:180px;height:60px;" >
       </div>
+    </from>
   </div>
   <div class="gr">
     <div class="yellow">トップ</div>
