@@ -20,7 +20,8 @@
     <div class="e">コミュニティトップ</div>
     <div class="kn"><input placeholder="コミュニティを検索！"></div>
   </div>
-  <div class="comyuicon"> </div>
+  <div class="comyuicon">
+  </div>
   <div class="pobutton">
     <from>
     <div class="sanka">
@@ -30,6 +31,7 @@
       <input type="submit" value="退会"   name="status"  style="background-color:red;font-size:15px;width:180px;height:60px;" >
       </div>
     </from>
+    </div>
   </div>
   <div class="gr">
     <div class="yellow">トップ</div>
