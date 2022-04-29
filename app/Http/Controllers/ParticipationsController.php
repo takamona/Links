@@ -75,7 +75,17 @@ class ParticipationsController extends Controller
      */
     public function show(Participation $participation)
     {
-        //
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     /**

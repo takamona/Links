@@ -17,7 +17,7 @@ class CreateParticipationsTable extends Migration
         $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->unique();//ユーザーID
             $table->unsignedBigInteger('community_id')->unique();//コミュニティID
-            $table->Integer('status');//0か１かで表す。
+            $table->Integer('status');//0,1,2で表す。
             $table->timestamps();
             
             // 外部キー制約
