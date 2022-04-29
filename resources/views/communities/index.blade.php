@@ -61,7 +61,7 @@
     </tr>  
     @foreach($communities as $community)
     <tr>
-      <th>{{ $community->id}}</th>
+      <th>{!! link_to_route('communities.show', $community->id , ['id' => $community->user->id ],[]) !!}</th>
       <th>{!! link_to_route('communities.show', $community->name , ['id' => $community->user->id ],[]) !!}</th>
       <th>{{ $community->user->name}}</th>
       <th>{{ $community->created_at}}</th>
