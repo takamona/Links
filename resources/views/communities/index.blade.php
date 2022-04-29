@@ -62,7 +62,7 @@
     @foreach($communities as $community)
     <tr>
       <th>{{ $community->id}}</th>
-      <th><a href="/communities/{{ \Auth::id() }}">{{ $community->name}}</a></th>
+      <th>{!! link_to_route('communities.show', $community->name , ['id' => $community->user->id ],[]) !!}</th>
       <th>{{ $community->user->name}}</th>
       <th>{{ $community->created_at}}</th>
     </tr>
@@ -71,3 +71,4 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
    <script src="{{ asset('/js/mypage.js')}}"></script>
 </body>
+
