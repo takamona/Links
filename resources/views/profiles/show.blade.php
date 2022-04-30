@@ -87,10 +87,6 @@
           <th>
               {{ $profile->introduction }}
           </th>
-           <tr>
-          <td colspan="2">
-            <input type="submit" value="登録">
-          </td>
         </tr>
       </table>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

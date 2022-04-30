@@ -32,11 +32,20 @@ class Community extends Model
 
 
 
- /**このコミュニティが所有する参加申請
-     * 
-     */public function participations()
+    //  /**このコミュニティが所有する参加申請
+    //      * 
+    //      */public function participations()
+    //     {
+    //         return $this->hasMany(Participation::class);
+    //     }
+    
+    
+    /**
+     * このコミュニティに参加している人の一覧（中間テーブルを介して取得）
+     */
+    public function participations()
     {
-        return $this->hasMany(Participation::class);
+        return $this->belongsToMany(User::class, 'participations', 'community_id','user_id')->withTimestamps();
     }
     
 }

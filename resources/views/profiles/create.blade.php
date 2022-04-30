@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
     <title>プロフィール登録</title>
-    <link rel="stylesheet" href="{{ asset('/css/profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/profile.css')}}">
   </head>
   <body>
     <div class="po">
@@ -11,7 +11,7 @@
         <ul class="nav">
           <li>
             <a href="mypage.html">マイページ</a>
-            <img class="top" src="{{ asset('/images/komyu.jpeg') }}" alt="マイページ">
+            <img class="top" src="{{ asset('/images/komyu.jpeg')}}" alt="マイページ">
           </li>
         </ul>
       </nav>
@@ -31,7 +31,7 @@
         <div class="touroku">
           <div class="up1">クリックで写真を登録</div>
           <div id="preview">
-            <img class="syoki" src="{{ asset('/images/smiley.png') }}" alt="プロフィール">
+            <img class="syoki" src="{{ asset('/images/smiley.png')}}" alt="プロフィール">
           </div>
           <div class="upload">
             <!--<form>-->

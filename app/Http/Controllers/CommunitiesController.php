@@ -6,6 +6,8 @@ use App\Community;
 
 use App\User;
 
+use App\Participation;
+
 use Illuminate\Http\Request;
 
 class CommunitiesController extends Controller
@@ -94,7 +96,12 @@ class CommunitiesController extends Controller
         
         // 入力情報をもとに新しいインスタンス作成
         \Auth::user()->communities()->create(['name' => $name, 'genre' => $genre, 'participation' => $participation, 'authority' => $authority, 'content' => $content, 'image' => $image]);
-
+        $community = Community::orderBy('created_at', 'desc')->get()->first();
+        $participation = new Participation();
+        $participation->user_id = \Auth::id();
+        $participation->community_id = $community->id;
+        $participation->status = 1;
+        $participation->save();
         // トップページへリダイレクト
         return redirect('/communities')->with('flash_message', 'コミュニティを作成しました');
         
@@ -108,12 +115,14 @@ class CommunitiesController extends Controller
     public function show(Community $community)
     {
          // 注目しているコミュニティのユーザーデータ取得
-        $user = $community->user()->get()->first();
+        $participations = $community->participations()->where('status',1)->get();
+         
+        // $user = $community->user()->get()->first();
         // 注目しているユーザの投稿一覧取得
         // $posts = $user->posts()->orderBy('id', 'desc')->paginate(10);
         
         // dd('community show');
-        return view('communities.show', compact('community'));
+        return view('communities.show', compact('community','participations'));
     }
 
     /**

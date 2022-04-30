@@ -34,7 +34,12 @@ class ParticipationsController extends Controller
         //空の申請インスタンス作成
         $participation=new Participation();
          //view の呼び出し
-        return view("participations.create",compact('participation'));
+        
+        //
+        $community = $participation->communities()->where('orderBy',id)->get();
+        
+        
+        return view("participations.create",compact('participation','community'));
     }
 
     /**
@@ -62,7 +67,13 @@ class ParticipationsController extends Controller
         
         // 入力情報をもとに新しいインスタンス作成
         \Auth::user()->participations()->create(['status' => $status]);
-
+        
+        
+        
+        
+        
+        
+        
         // トップページへリダイレクト
         return redirect('/participations')->with('flash_message', '参加申請を作りました');
     }
@@ -75,7 +86,6 @@ class ParticipationsController extends Controller
      */
     public function show(Participation $participation)
     {
-        
         
         
         

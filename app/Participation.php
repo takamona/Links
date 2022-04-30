@@ -27,4 +27,15 @@ class Participation extends Model
         return $this->belongsTo(User::class);
     }
     
+    
+    
+    //
+    public function communities()
+    {
+        return $this->belongsToMany(Community::class, 'communities','id')->withTimestamps();
+    }
+    
+    
+    
+    
 }

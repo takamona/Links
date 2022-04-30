@@ -76,4 +76,21 @@ class User extends Authenticatable
     }
     
     
+    
+     /**
+     * このユーザーが参加しているコミュニティ一覧（中間テーブルを介して取得）
+     */
+    public function participation_communities()
+    {
+        return $this->belongsToMany(Community::class, 'participations', 'user_id', 'community_id')->withTimestamps();
+    }
+    
+    
+    // 私がすでにそのコミュニティに参加しているか判定
+    public function is_participate($community_id)
+    {
+        return $this->participation_communities()->where('community_id', $community_id)->exists();
+    }
+    
+    
 }

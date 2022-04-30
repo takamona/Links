@@ -3,17 +3,17 @@
  <head>
   <meta charset="UTF-8">
   <title>参加申請</title>
-  <link rel="stylesheet" href="{{ asset ('/css/participations_create.css')}}">
+  <link rel="stylesheet" href="{{ asset('/css/participations_create.css')}}">
   </head>
 <body>
   <div class="po">
     <nav>
       <ul class="nav">
-        <li> <a href="mypage.html">マイページ</a><img class="top" src=" {{ asset ('images/komyu.jpeg')}}"> </li>
+        <li> <a href="/mypage"">マイページ</a><img class="top" src=" {{ asset('images/komyu.jpeg')}}"> </li>
       </ul>
     </nav>
     <ul class="logout">
-      <li> <a href="index.html">ログアウト</a> </li>
+      <li> <a href="/logout">ログアウト</a> </li>
     </ul>
   </div>
   <div class="flex">
@@ -21,20 +21,20 @@
     <div class="kn"><input placeholder="コミュニティを検索！"></div>
   </div>
   <div class="comyuicon">
+  <img class="sample" src="{{ asset('/uploads')}}/{{$community->image}}">
   </div>
   <div class="pobutton">
-    <form>
     <div class="sanka">
+      <form action="/participations" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">  
-      <input type="hidden" name="status" value="0">
-      <input type="submit" value="参加申請" name="status" style="background-color:#4169e1;font-size:15px;width:180px;height:60px;" >
+      <input type="hidden" name="status" value="1">
+      <input type="submit" value="参加申請" style="background-color:#4169e1;font-size:15px;width:180px;height:60px;" >
       </div>
-    　</form>
-      <form>
+    </form>  
+    <form action="/participations" method="POST" enctype="multipart/form-data">
     <div class="exit">
-      <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <input type="hidden" name="status" value="2">
-      <input type="submit" value="退会"   name="status" style="background-color:red;font-size:15px;width:180px;height:60px;" >
+      <input type="submit" value="退会" style="background-color:red;font-size:15px;width:180px;height:60px;" >
       </div>
       </form>
   <div class="gr">
@@ -54,14 +54,14 @@
     <div class="day"> 開設日 ○○年 ○○月○○日 </div>
   </div>
   <div class="grid">
-    <div class="photoA"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
-    <div class="photoA"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
-    <div class="photoA"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
+    <div class="photoA"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
+    <div class="photoA"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
+    <div class="photoA"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
   </div>
   <div class="grid2">
-    <div class="photoB"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
-    <div class="photoB"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
-    <div class="photoB"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
+    <div class="photoB"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
+    <div class="photoB"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
+    <div class="photoB"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="profile.js"></script>

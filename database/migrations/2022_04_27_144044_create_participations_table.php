@@ -13,16 +13,19 @@ class CreateParticipationsTable extends Migration
      */
     public function up()
     {
-         Schema::create('participations', function (Blueprint $table){ 
+        Schema::create('participations', function (Blueprint $table){ 
         $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->unique();//ユーザーID
-            $table->unsignedBigInteger('community_id')->unique();//コミュニティID
-            $table->Integer('status');//0,1,2で表す。
+            $table->unsignedBigInteger('user_id');//ユーザーID
+            $table->unsignedBigInteger('community_id');//コミュニティID
+            
+          
+            $table->Integer('status')->default(0);//0,1,2で表す。
             $table->timestamps();
             
             // 外部キー制約
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('community_id')->references('id')->on('communities')->onDelete('cascade');
+            $table->unique(['user_id', 'community_id']);
         });
     }
 

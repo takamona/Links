@@ -3,13 +3,13 @@
  <head>
   <meta charset="UTF-8">
   <title>参加申請</title>
-  <link rel="stylesheet" href="{{ asset ('/css/participations_create.css')}}">
+  <link rel="stylesheet" href="{{ asset('/css/participations_create.css')}}">
   </head>
 <body>
   <div class="po">
     <nav>
       <ul class="nav">
-        <li> <a href="mypage.html">マイページ</a><img class="top" src=" {{ asset ('images/komyu.jpeg')}}"> </li>
+        <li> <a href="mypage.html">マイページ</a><img class="top" src="{{ asset('images/komyu.jpeg')}}"> </li>
       </ul>
     </nav>
     <ul class="logout">
@@ -54,14 +54,14 @@
     <div class="day"> 開設日 ○○年 ○○月○○日 </div>
   </div>
   <div class="grid">
-    <div class="photoA"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
-    <div class="photoA"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
-    <div class="photoA"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
+    <div class="photoA"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
+    <div class="photoA"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
+    <div class="photoA"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
   </div>
   <div class="grid2">
-    <div class="photoB"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
-    <div class="photoB"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
-    <div class="photoB"> <img class="syoki" src="{{ asset ('images/smiley.png')}}"> </div>
+    <div class="photoB"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
+    <div class="photoB"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
+    <div class="photoB"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="profile.js"></script>
