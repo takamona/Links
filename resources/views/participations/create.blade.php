@@ -47,7 +47,7 @@
   <div class="syosai"> </div>
   <div class="setumei"> </div>
   <div class="re">
-    <div class="k"> 　管理人 </div>
+    <div class="k"> 　管理人:</div>
     <div class="member"> 　参加メンバー </div>
     <div class="icon"> 　参加者アイコン </div>
     <div class="member_confirmation"><a href="community_member.html">メンバーを見る</a></div>

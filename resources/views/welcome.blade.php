@@ -18,11 +18,11 @@
             <ul class="nav">
                 <li>
                      <a href= "/">top</a>
-                    <img class="top" src="{{ asset('../images/top.jpg'}}">
+                    <img class="top" src="{{ asset ('../images/top.jpg')}}">
                 </li>
                 <li>
                     <a href= "login">ログイン</a>
-                    <img class="logingazou" src="{{ asset('../images/login.jpg')}}">
+                    <img class="logingazou" src="{{ asset ('../images/login.jpg')}}">
                 </li>
             </ul>
         </nav>
