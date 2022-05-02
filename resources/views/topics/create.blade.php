@@ -75,7 +75,8 @@
         <th>トピック
         </th>
         <th>
-          <form>
+        <form action="/topics" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">  
         <input placeholder="タイトル" name="title" class="tc">
         </th>
         </tr>
@@ -83,7 +84,7 @@
         <th>本文
         </th>
         <th>
-        <textarea placeholder="本文" name= "content" class="honbun"></textarea>
+        <textarea placeholder="本文" name="content" class="honbun"></textarea>
         </th>
         <tr>
         <th>写真
@@ -116,7 +117,7 @@
   <div class="over">
     <div>投稿してもよろしいでしょうか？ 
       <br>
-      <input type="button" value="投稿">
+      <input type="submit" value="投稿">
       <input type="button" value="戻る" class="modoru">
     </div>
   </div>

@@ -14,6 +14,8 @@ class TopicsController extends Controller
      */
     public function index()
     {
+        
+        
           return view('topics.index', compact('topic'));
     }
 
@@ -22,17 +24,10 @@ class TopicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         // 空のトピックインスタンス作成
         $topic = new Topic();
-        
-        // クエリパラメータより投稿するコミュニティI_D取得。
-        $id = $request->input('id');
-        // コミュニティインスタンスを取得
-        $community = Community::find($id);
-        //空の申請インスタンスの作成
-        $topic = new Participation();
         // view の呼び出し
         return view('topics.create', compact('topic'));
     }
@@ -60,11 +55,6 @@ class TopicsController extends Controller
                 'mimes:jpeg,jpg,png'
             ]
         ]);
-
-
-
-
-
 
 
 

@@ -11,13 +11,13 @@
         <ul class="nav">
           <li>
             <a href="/mypage">マイページ</a>
-            <img class="top" src="images/komyu.jpeg" alt="マイページ">
+            <img class="top" src="{{asset('images/komyu.jpeg')}}" alt="マイページ">
           </li>
         </ul>
       </nav>
       <ul class="logout">
         <li>
-          <a href="index.html">ログアウト</a>
+          <a href="/logout">ログアウト</a>
         </li>
       </ul>
     </div>
@@ -31,10 +31,6 @@
     <div class="create_topic">
         <a href="topics/create">＋トピックス投稿</a>
       </div>
-    
-    
-    
-    
     <div class="topic">
       <div class="icon"></div>
       <div class="time"></div>

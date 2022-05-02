@@ -37,7 +37,6 @@ class ParticipationsController extends Controller
         $community = Community::find($id);
         //空の申請インスタンスの作成
         $participation = new Participation();
-        
         //viewの呼び出し
         return view("participations.create",compact('participation','community'));
     }

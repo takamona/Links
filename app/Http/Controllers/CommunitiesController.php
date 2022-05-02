@@ -23,7 +23,6 @@ class CommunitiesController extends Controller
         $communities = Community::all();
         //モデルを使って、全データを取得
         $communities = Community::paginate(11);
-        
         //view の呼び出し
         return view("communities.index",compact('communities'));
     }
