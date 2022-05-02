@@ -30,7 +30,7 @@
   @endif
   <div class="gr">
     <div class="yellow">トップ</div>
-    <div><a href="/topics">トピックス</a></div>
+    <div><a href="/topics?id={{ $community->id }}">トピックス</a></div>
     <div><a href="community_event.html">イベント</a></div>
     <div><a href="/participations/index?id{{ \Auth::id() }}">承認・コミュニティ参加申請・フレンド申請</a></div>
   </div>
