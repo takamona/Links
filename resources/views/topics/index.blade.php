@@ -9,7 +9,7 @@
   <div class="po">
     <nav>
       <ul class="nav">
-        <li> <a href="/mypage">マイページ</a> <img class="top" src="{{ asset('/uploads')}}/{{ $topic->image }}" alt="マイページ"> </li>
+        <li> <a href="/mypage">マイページ</a> <img class="top" src="{{ asset('images/komyu.jpeg')}}" alt="マイページ"></li>
       </ul>
     </nav>
     <ul class="logout">
@@ -115,7 +115,3 @@
  <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
   <script src="{{ asset('/js/community_topics.js')}}"></script>
 </body>
-
-
-
-
