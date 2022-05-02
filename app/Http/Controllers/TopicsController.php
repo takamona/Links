@@ -15,6 +15,8 @@ class TopicsController extends Controller
     public function index()
     {
         
+          $topics = Topic::all();
+        
           return view('topics.index', compact('topic'));
     }
 
@@ -26,7 +28,7 @@ class TopicsController extends Controller
     public function create()
     {
         // 空のトピックインスタンス作成
-        $topic = new Topic();
+        $topic=new Topic();
         // view の呼び出し
         return view('topics.create', compact('topic'));
     }
@@ -40,7 +42,6 @@ class TopicsController extends Controller
     public function store(Request $request)
     {
         
-          // dd('profile store');
         // dd($request);
         // validation        
         //for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
@@ -54,8 +55,33 @@ class TopicsController extends Controller
                 'mimes:jpeg,jpg,png'
             ]
         ]);
-
-
+        
+        // 入力情報の取得
+        $title = $request->input('title');
+        $content = $request->input('content');
+        $disdosure_range = $request->input('disdosure_range');
+        $file =  $request->image;
+        
+        // https://qiita.com/ryo-program/items/35bbe8fc3c5da1993366
+        // 画像ファイルのアップロード
+        if($file){
+            // 現在時刻ともともとのファイル名を組み合わせてランダムなファイル名作成
+            $image = time() . $file->getClientOriginalName();
+            // アップロードするフォルダ名取得
+            $target_path = public_path('uploads/');
+            // アップロード処理
+            $file->move($target_path, $image);
+        }else{
+            // 画像ファイルが選択されていなければ空の文字列をセット
+            $image = '';
+        }
+        
+        
+        // 入力情報をもとに新しいインスタンス作成
+        \Auth::user()->topic()->create(['title' => $title, 'content' => $content, 'disdosure_range' => $disdosure_range, 'image' => $image]);
+        
+        // トップページへリダイレクト
+        return redirect('/topics')->with('flash_message', 'トピックを作成しました');
 
     }
     /**
