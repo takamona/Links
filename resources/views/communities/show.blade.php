@@ -24,15 +24,15 @@
   <div class="pobutton">
     @if($community->user_id !== Auth::id() && Auth::user()->is_participate($community->id) === false)
     <div class="sanka">
-      <a href="/participations/create">コミュニティの参加申請のページへ</a>
+      <a href="/participations/create?id={{ $community->id }}">コミュニティの参加申請のページへ</a>
     </div>
   </div>
   @endif
   <div class="gr">
     <div class="yellow">トップ</div>
-    <div><a href="community_topics.html">トピックス</a></div>
+    <div><a href="/topics">トピックス</a></div>
     <div><a href="community_event.html">イベント</a></div>
-    <div><a href="/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
+    <div><a href="/participations/index?id{{ \Auth::id() }}">承認・コミュニティ参加申請・フレンド申請</a></div>
   </div>
   <div class="bar"> </div>
   <div class="syosai"> </div>

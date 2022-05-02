@@ -43,7 +43,7 @@
         <tr>@foreach($participations as $participation)
           <th class="grey">{{$participation->created_at}}</th>
           <th>{{$participation->user->name}}</th>
-          <th><input type="radio" name="approval" value="承認する">承認する <input type="radio" name="approval" value="承認しない">承認しない</th>
+          <th><input type="radio" name="status" value="1">承認する<input type="radio" name="status" value="2">承認しない</th>
         </tr>
         @endforeach
       </table>

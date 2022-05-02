@@ -85,7 +85,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Community::class, 'participations', 'user_id', 'community_id')->withTimestamps();
     }
     
-    
     // 私がすでにそのコミュニティに参加しているか判定
     public function is_participate($community_id)
     {
