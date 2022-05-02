@@ -19,11 +19,11 @@
       <img class="top" src="{{ asset('images/top.jpg')}}">
     </li>
     <li>
-      <a href="#login">ログイン</a>
+      <a href="/login">ログイン</a>
       <img class="komyu" src="{{ asset('images/login.jpg')}}">
     </li>
     <li>
-      <a href="#mypage">マイページ</a>
+      <a href="/mypage">マイページ</a>
       <img class="myp" src="{{ asset('images/komyu.jpeg')}}">
     </li>
   </ul>
