@@ -9,7 +9,7 @@
   <div class="po">
     <nav>
       <ul class="nav">
-        <li> <a href="/mypage">マイページ</a> <img class="top" src="{{('images/komyu.jpeg')}}" alt="マイページ"> </li>
+        <li> <a href="/mypage">マイページ</a> <img class="top" src="{{ asset('/uploads')}}/{{ $topic->image }}" alt="マイページ"> </li>
       </ul>
     </nav>
     <ul class="logout">
@@ -35,7 +35,9 @@
   <div class="bar"> </div>
 <div class="topic">
   <input type="button" value="返信する" class="reply"/>
-  <div class="icon"></div>
+  <div class="icon">
+    <img class="icon_" src="{{ asset('images/komyu.jpeg')}}" alt="マイページ">
+  </div>
   <div class="time"></div>
   <div class="honbun">
     <div class="title"></div>
@@ -113,3 +115,7 @@
  <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
   <script src="{{ asset('/js/community_topics.js')}}"></script>
 </body>
+
+
+
+
