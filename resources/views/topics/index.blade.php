@@ -28,6 +28,13 @@
       </div>
     </div>
     <div class="bar"></div>
+    <div class="create_topic">
+        <a href="topics/create">＋トピックス投稿</a>
+      </div>
+    
+    
+    
+    
     <div class="topic">
       <div class="icon"></div>
       <div class="time"></div>
