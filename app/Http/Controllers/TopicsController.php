@@ -15,7 +15,6 @@ class TopicsController extends Controller
     public function index()
     {
         
-        
           return view('topics.index', compact('topic'));
     }
 
