@@ -36,7 +36,6 @@
 <div class="topic">
   <input type="button" value="返信する" class="reply"/>
   <div class="icon">
-    <img class="icon_" src="{{ asset('images/komyu.jpeg')}}" alt="マイページ">
   </div>
   <div class="time"></div>
   <div class="honbun">
@@ -47,14 +46,23 @@
   <textarea name="text" rows="6" cols="40" class="ttt"></textarea>
   <input type="button" value="返信"  class="replybt"style="background-color:#f0f8ff;font-size:15px;width:60px;height:50px;">
 </div>
+ @foreach($topics as $topic)
 <div class="topic">
   <input type="button" value="返信する" class="reply"/>
-  <div class="icon"></div>
-  <div class="time"></div>
+  <div class="icon">
+    {{ $topic->image}}
+  </div>
+  <div class="time">
+    {{ $topic->created_at}}
+  </div>
   <div class="honbun">
-    <div class="title"></div>
+    {{ $topic->content}}  
+    <div class="title">
+      {{ $topic->title}}
+    </div>
   </div>
 </div>
+@endforeach
 <div class="hidebutton">
 <textarea name="text" rows="6" cols="40" class="ttt"></textarea>
   <input type="button" value="返信"  class="replybt"style="background-color:#f0f8ff;font-size:15px;width:60px;height:50px;">
