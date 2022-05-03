@@ -23,7 +23,7 @@ class ParticipationsController extends Controller
         //そのコミュニティに参加申請・承認・却下しているユーザー一覧
         $participations = $community->participations()->where('status', 0)->get();
         
-        return view("participations.index", compact('participations'));
+        return view("participations.index", compact('participations','community'));
     }
 
     /**
@@ -39,7 +39,7 @@ class ParticipationsController extends Controller
         //空の申請インスタンスの作成
         $participation = new Participation();
         //viewの呼び出し
-        return view("participations.create",compact('participation','community'));
+        return view("participations.create", compact('participation','community'));
     }
 
     /**

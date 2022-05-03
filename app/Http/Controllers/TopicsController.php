@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Topic;
+use APP\Community;
+
 use Illuminate\Http\Request;
 
 class TopicsController extends Controller
@@ -12,12 +14,11 @@ class TopicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        
           $topics = Topic::all();
-        
-          return view('topics.index', compact('topics'));
+          $community = Community::find($id);
+          return view('topics.index', compact('topics','community'));
     }
 
     /**
@@ -128,4 +129,5 @@ class TopicsController extends Controller
     {
         //
     }
+    
 }
