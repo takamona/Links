@@ -24,7 +24,7 @@
   <div class="pobutton">
     @if($community->user_id !== Auth::id() && Auth::user()->is_participate($community->id) === false)
     <div class="sanka">
-      <a href="/participations/create?id={{ $community->id }}">コミュニティの参加申請のページへ</a>
+       <a href="/communities/{{ $community->id }}/participations/create">コミュニティの参加申請のページへ</a>
     </div>
   </div>
   @endif
@@ -32,7 +32,9 @@
     <div class="yellow">トップ</div>
     <div><a href="/topics?id={{ $community->id }}">トピックス</a></div>
     <div><a href="community_event.html">イベント</a></div>
-    <div><a href="/participations/index?id{{ \Auth::id() }}">承認・コミュニティ参加申請・フレンド申請</a></div>
+    @if($community->user_id === Auth::id())
+    <div><a href="/communities/{{ $community->id }}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
+    @endif
   </div>
   <div class="bar"> </div>
   <div class="syosai"> </div>
@@ -42,11 +44,11 @@
     <div class="member"> 　参加メンバー </div>
     <div class="icon"> 　参加者アイコン </div>
     <div class="member_confirmation"><a href="community_member.html">メンバーを見る</a></div>
-    <div class="day"> 開設日 ○○年 ○○月○○日 </div>
+    <div class="day"> 開設日 {{ $community->created_at }} </div>
   </div>
   <div class="grid">
     @foreach($participations as $participation)
-    <div class="photoA"><img class="syoki" src="{{ asset('/uploads/' . $participation->profile->image)}}">
+    <div class="photoA"><img class="syoki" src="{{ asset('/uploads/' . $participation->user->image)}}">
   </div>
     @endforeach
     </div>

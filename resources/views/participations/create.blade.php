@@ -25,7 +25,7 @@
   </div>
   <div class="pobutton">
     <div class="sanka">
-      <form action="/participations" method="POST">
+      <form action="/communities/{{ $community->id }}/participations" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">  
         <input type="hidden" name="community_id" value="{{ $community->id }}">
         <input type="submit" value="参加申請" style="background-color:#4169e1;font-size:15px;width:180px;height:60px;" >

@@ -14,13 +14,15 @@ class ParticipationsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+     
+    public function index($id)
     {
-        //空のpaticipationインスタンス作成
-        $participations = Participation::all();
-        //モデルを使って、全データを取得
-        $participations = Participation::paginate(30);
-    
+         // URLから取得したコミュニティ番号
+        $community = Community::find($id);
+
+        //そのコミュニティに参加申請・承認・却下しているユーザー一覧
+        $participations = $community->participations()->where('status', 0)->get();
+        
         return view("participations.index", compact('participations'));
     }
 
@@ -29,10 +31,9 @@ class ParticipationsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create($id)
     {
-        // クエリパラメータより、参加を希望するコミュニティIDを取得
-        $id = $request->input('id');
+        
         // コミュニティインスタンスを取得
         $community = Community::find($id);
         //空の申請インスタンスの作成
@@ -49,7 +50,6 @@ class ParticipationsController extends Controller
      */
     public function store(Request $request)
     {
-        
         $community_id = $request->input('community_id');
 
         $participation = new Participation();
@@ -61,7 +61,7 @@ class ParticipationsController extends Controller
         $participation->save();
         
         // トップページへリダイレクト
-        return redirect('/participations')->with('flash_message', '参加申請しました');
+         return redirect('/communities/' . $community_id)->with('flash_message', '参加申請しました');
     }
 
     /**
@@ -98,9 +98,17 @@ class ParticipationsController extends Controller
      * @param  \App\Participation  $participation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Participation $participation)
+    public function update(Request $request)
     {
-        //
+        // dd($request);
+        $participation_id = $request->input('id');
+        $participation = Participation::find($participation_id);
+        $status = $request->input('status');
+        $participation->status = $status;
+        $participation->save();
+
+        // トップページへリダイレクト
+        return redirect('/communities/' . $participation->community_id)->with('flash_message', '参加承認・非承認しました');
     }
 
     /**

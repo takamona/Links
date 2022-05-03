@@ -111,10 +111,11 @@ class CommunitiesController extends Controller
      * @param  \App\Community  $community
      * @return \Illuminate\Http\Response
      */
-    public function show(Community $community)
+    public function show($id)
     {
+        $community = Community::find($id);
          // 注目しているコミュニティのユーザーデータ取得
-        $participations = $community->participations()->where('status',1)->get();
+        $participations = $community->participations()->where('status', 1)->get();
          
         // $user = $community->user()->get()->first();
         // 注目しているユーザの投稿一覧取得

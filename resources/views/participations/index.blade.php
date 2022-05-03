@@ -20,7 +20,7 @@
     <div class="e">コミュニティ承認ページ</div>
     <div class="kn"><input placeholder="コミュニティを検索！"></div>
   </div>
-  <div class="comyuicon"> </div>
+  <div class="comyuicon"></div>
   <div class="pobutton">
     <div class="sanka"> 参加する </div>
   </div>
@@ -38,12 +38,19 @@
           <th colspan="3" class="orange">コミュニティ参加申請一覧</th>
         </tr>
         <tr>
-          <th colspan="3">申請{{ $participations->total() }}件</th>
+          <th colspan="3">申請{{ count($participations) }}件</th>
         </tr>
-        <tr>@foreach($participations as $participation)
-          <th class="grey">{{$participation->created_at}}</th>
-          <th>{{$participation->user->name}}</th>
-          <th><input type="radio" name="status" value="1">承認する<input type="radio" name="status" value="2">承認しない</th>
+        @foreach($participations as $participation)
+        <tr>
+          <form action="/communities/{{$participation->community->id }}/participations/{{ $participation->id }}" method="POST">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="id" value="{{ $participation->id }}">
+            <th class="grey">{{ $participation->created_at }}</th>
+            <th>{{ $participation->user->name }}</th>
+            <th><input type="radio" name="status" value="1" checked>承認する<input type="radio" name="status" value="2">承認しない</th>
+            <th><input type="submit" value="決定"></th>
+          </form>
         </tr>
         @endforeach
       </table>

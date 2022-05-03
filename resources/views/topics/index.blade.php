@@ -24,7 +24,7 @@
   <img id="img" src="{{ asset('images/profilesample.png')}}" alt="プロフィール">
 </div>
 <div class="topic_creat">
-  <a href="topics/create">+トピック作成</a>
+  <a href="topics/create?id={{ $community->id }}">+トピック作成</a>
 </div>
 <div class="gr">
     <div><a href="community_top.html">トップ</a></div>
