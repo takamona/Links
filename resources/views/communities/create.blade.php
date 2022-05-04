@@ -104,7 +104,7 @@
                     <div class="upload">
                         <input type="file" name="image" id="input-file">
                         <div id="preview">
-                            <img class="sample" src="{{ asset ('images/sample.jpg')}}" alt="サンプル画像">
+                            <img class="sample" src="{{ asset('images/sample.jpg')}}" alt="サンプル画像">
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                     <input type="submit" value="送信" style="background-color:grey;font-size:15px;width:280px;height:80px;" >
                 </div>
             </form>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
         <script src="{{ asset('/js/community_create.js')}}"></script>
     </body>
 </html>    

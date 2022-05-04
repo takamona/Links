@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Topic;
-use APP\Community;
-
 use Illuminate\Http\Request;
+use App\Community;
 
 class TopicsController extends Controller
 {
@@ -14,9 +14,18 @@ class TopicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
+        //   $topics = Topic::all();
+          
+        //   $id = $request->input('id');
+          
+        //   $community = Community::find($id);
+          
+        //   return view('topics.index', compact('topics','community'));
+        
           $topics = Topic::all();
+          $id = Auth::user()->id;
           $community = Community::find($id);
           return view('topics.index', compact('topics','community'));
     }

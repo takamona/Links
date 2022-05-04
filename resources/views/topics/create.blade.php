@@ -75,7 +75,7 @@
         <th>トピック
         </th>
         <th>
-        <form action="/topics" method="POST">
+        <form action="/topics" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">  
         <input placeholder="タイトル" name="title" class="tc">
         </th>
@@ -91,7 +91,7 @@
         </th>
         <th>
         <div id="upload">
-          <img id="img" src="images/profilesample.png">
+          <img id="img" src="{{ asset('images/profilesample.png')}}" alt="サンプル画像">
           <div class="up1">画像を変更する</div>
           <div style="display:none">
             <input type="file" name="image" id="uploadFile2">

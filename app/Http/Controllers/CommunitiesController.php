@@ -8,6 +8,8 @@ use App\User;
 
 use App\Participation;
 
+use APP\Topic;
+
 use Illuminate\Http\Request;
 
 class CommunitiesController extends Controller

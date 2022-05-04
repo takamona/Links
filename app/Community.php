@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User; //追加
-
+use  App\Topic;//追加
 
 class Community extends Model
 {
