@@ -50,8 +50,6 @@ class ParticipationsController extends Controller
      */
     public function store(Request $request)
     {
-        $community_id = $request->input('community_id');
-
         $participation = new Participation();
         
         $participation->community_id = $community_id;

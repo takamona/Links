@@ -70,7 +70,7 @@ class User extends Authenticatable
     /**
      * このユーザーが所有するトピック（ Topicモデルとの1対多の関係を定義）
      */
-    public function topics()
+    public function topic()
     {
         return $this->hasMany(Topic::class);
     }
