@@ -73,7 +73,7 @@ class TopicsController extends Controller
         ]);
         
         // 入力情報の取得
-        // $community_id = $request->input('community_id');
+        $community_id = $request->input('community_id');
         
         $title = $request->input('title');
         $content = $request->input('content');
@@ -95,7 +95,7 @@ class TopicsController extends Controller
         }
         
         
-        // $community_id = $request->input('community_id');
+        $community_id = $request->input('community_id');
         
         $topic->community_id = $community_id;
         $topic->user_id = \Auth::id();
