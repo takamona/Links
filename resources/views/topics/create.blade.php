@@ -76,7 +76,8 @@
         </th>
         <th>
         <form action="/topics" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">  
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="community_id" value="{{ $community->id }}">
         <input placeholder="タイトル" name="title" class="tc">
         </th>
         </tr>

@@ -35,12 +35,18 @@ class TopicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        
+        $id = $request->input('id');
+        // コミュニティインスタンスを取得
+        $community = Community::find($id);
+
         // 空のトピックインスタンス作成
-        $topics = new Topic();
+        $topic = new Topic();
+        
         // view の呼び出し
-        return view('topics.create', compact('topics'));
+        return view('topics.create', compact('topic','community'));
     }
 
     /**
@@ -67,10 +73,12 @@ class TopicsController extends Controller
         ]);
         
         // 入力情報の取得
+        // $community_id = $request->input('community_id');
+        
         $title = $request->input('title');
         $content = $request->input('content');
         $disdosure_range = $request->input('disdosure_range');
-        $file =  $request->image;
+        $file = $request->image;
         
         // https://qiita.com/ryo-program/items/35bbe8fc3c5da1993366
         // 画像ファイルのアップロード
@@ -86,14 +94,16 @@ class TopicsController extends Controller
             $image = '';
         }
         
-        // $community_id = $topic->community_id;
         
-        // $topic->user_id = \Auth::id();
+        // $community_id = $request->input('community_id');
         
-        // $topic->save();
+        $topic->community_id = $community_id;
+        $topic->user_id = \Auth::id();
+
+        $topic->save();
         
-        // 入力情報をもとに新しいインスタンス作成
-        \Auth::user()->topic()->create(['title' => $title, 'content' => $content, 'disdosure_range' => $disdosure_range, 'image' => $image]);
+        // // 入力情報をもとに新しいインスタンス作成
+        // \Auth::user()->topic()->create(['title' => $title, 'content' => $content, 'disdosure_range' => $disdosure_range, 'image' => $image]);
         
         // トップページへリダイレクト
         return redirect('/topics')->with('flash_message', 'トピックを作成しました');
