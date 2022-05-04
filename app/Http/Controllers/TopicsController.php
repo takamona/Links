@@ -86,7 +86,10 @@ class TopicsController extends Controller
             $image = '';
         }
         
-        $community_id = $request->input('community_id');
+        
+        $id = Auth::user()->id;
+        
+        $community_id = Community::find($id);
 
         $topic = new Topic();
         
