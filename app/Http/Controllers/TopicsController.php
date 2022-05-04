@@ -38,7 +38,7 @@ class TopicsController extends Controller
     public function create()
     {
         // 空のトピックインスタンス作成
-        $topic=new Topic();
+        $topic = new Topic();
         // view の呼び出し
         return view('topics.create', compact('topic'));
     }
@@ -86,9 +86,16 @@ class TopicsController extends Controller
             $image = '';
         }
         
+        $community_id = $request->input('community_id');
+
+        $topic = new Topic();
         
-        // 入力情報をもとに新しいインスタンス作成
-        \Auth::user()->topic()->create(['title' => $title, 'content' => $content, 'disdosure_range' => $disdosure_range, 'image' => $image]);
+        $topic->user_id = \Auth::id();
+        
+        $topic->save();
+        
+        // // 入力情報をもとに新しいインスタンス作成
+        // \Auth::user()->topic()->create(['title' => $title, 'content' => $content, 'disdosure_range' => $disdosure_range, 'image' => $image]);
         
         // トップページへリダイレクト
         return redirect('/topics')->with('flash_message', 'トピックを作成しました');

@@ -7,7 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Profile; // 追記
 use App\Community; // 追記
-
+use App\Topic;//
 
 class User extends Authenticatable
 {
@@ -74,9 +74,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Topic::class);
     }
-    
-    
-    
      /**
      * このユーザーが参加しているコミュニティ一覧（中間テーブルを介して取得）
      */
