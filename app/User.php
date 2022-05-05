@@ -70,10 +70,11 @@ class User extends Authenticatable
     /**
      * このユーザーが所有するトピック（ Topicモデルとの1対多の関係を定義）
      */
-    public function topic()
+    public function topics()
     {
         return $this->hasMany(Topic::class);
     }
+    
      /**
      * このユーザーが参加しているコミュニティ一覧（中間テーブルを介して取得）
      */

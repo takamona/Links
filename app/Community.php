@@ -29,8 +29,6 @@ class Community extends Model
     {
         return $this->hasMany(Topic::class);
     }
-
-    
     
     /**このコミュニティが所有する参加申請
          * 
@@ -46,6 +44,12 @@ class Community extends Model
     public function participation_uses()
     {
         return $this->belongsToMany(User::class, 'participations', 'community_id','user_id')->withTimestamps();
+    }
+    
+    //このコミュニティのトピック一覧
+    public function topic_uses()
+    {
+        return $this->belongsToMany(User::class, 'topics', 'community_id','user_id')->withTimestamps();
     }
     
 }

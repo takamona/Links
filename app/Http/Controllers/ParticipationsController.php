@@ -33,7 +33,6 @@ class ParticipationsController extends Controller
      */
     public function create($id)
     {
-        
         // コミュニティインスタンスを取得
         $community = Community::find($id);
         //空の申請インスタンスの作成
