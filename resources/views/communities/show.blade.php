@@ -22,7 +22,7 @@
   </div>
   <div class="comyuicon"><img class="sample" src="{{ asset('/uploads')}}/{{$community->image}}"></div>
   <div class="pobutton">
-    @if($community->user_id !== Auth::id() && Auth::user()->is_participate($community->id) === false)
+    @if($community->authority!==1=== false)
     <div class="sanka">
        <a href="/communities/{{ $community->id }}/participations/create">コミュニティの参加申請のページへ</a>
     </div>

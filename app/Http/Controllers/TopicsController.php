@@ -23,7 +23,6 @@ class TopicsController extends Controller
         //   $community = Community::find($id);
           
         //   return view('topics.index', compact('topics','community'));
-        
           $topics = Topic::all();
           $id = Auth::user()->id;
           $community = Community::find($id);

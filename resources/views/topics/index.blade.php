@@ -23,9 +23,11 @@
 <div class="profile">
   <img id="img" src="{{ asset('images/profilesample.png')}}" alt="プロフィール">
 </div>
+@if($community->user_id !== Auth::id() && Auth::user()->is_participate($community->id) === false)
 <div class="topic_creat">
   <a href="topics/create?id={{ $community->id }}">+トピック作成</a>
 </div>
+@endif
 <div class="gr">
     <div><a href="community_top.html">トップ</a></div>
     <div class="yellow">トピックス</div>
@@ -33,7 +35,6 @@
     <div class><a href="participations/create">承認・コミュニティ参加申請・フレンド申請</a></div>
   </div>
   <div class="bar"> </div>
-  
 @foreach($topics as $topic)
 <div class="topic">
   <input type="button" value="返信する" class="reply"/>

@@ -48,8 +48,6 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
     
-    
-    
     /**
      * このユーザーが所有するコミュニティ一覧（ Communityモデルとの1対多の関係を定義）
      */
@@ -65,7 +63,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Participation::class);
     }
-    
     
     /**
      * このユーザーが所有するトピック（ Topicモデルとの1対多の関係を定義）

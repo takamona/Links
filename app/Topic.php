@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User; // 追加
 use App\Community; //追加
 
+
 class Topic extends Model
 {
     
