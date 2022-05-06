@@ -15,8 +15,8 @@ class CreateTopicsTable extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->unique();//ユーザーID
-            $table->unsignedBigInteger('community_id')->unique();//コミュニティID
+            $table->unsignedBigInteger('user_id');//ユーザーID
+            $table->unsignedBigInteger('community_id');//コミュニティID
             $table->string('title');//タイトル
             $table->text('content');//内容
             $table->string('image');//画像
