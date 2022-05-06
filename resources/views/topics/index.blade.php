@@ -46,7 +46,7 @@
   <div class="honbun">
     {{ $topic->content}}  
     <div class="title">
-    {{ $topic->title}}
+    {!! link_to_route('topics.show', $topic->title , ['id' => $topic->id ])!!}
     </div>
   </div>
 </div>

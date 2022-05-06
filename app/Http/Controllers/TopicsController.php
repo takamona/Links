@@ -105,9 +105,11 @@ class TopicsController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function show(Topic $topic)
+    public function show($id)
     {
-        //
+        $topic = Topic::find($id);
+        
+        return view('topics.show', compact('topic'));
     }
 
     /**
