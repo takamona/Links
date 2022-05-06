@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+use App\Community;
 use App\Topic;
 use Illuminate\Http\Request;
-use App\Community;
 
 class TopicsController extends Controller
 {
@@ -14,19 +13,14 @@ class TopicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //   $topics = Topic::all();
-          
-        //   $id = $request->input('id');
-          
-        //   $community = Community::find($id);
-          
-        //   return view('topics.index', compact('topics','community'));
-          $topics = Topic::all();
-          $id = Auth::user()->id;
-          $community = Community::find($id);
-          return view('topics.index', compact('topics','community'));
+        
+        $community = Community::find($id);
+ 
+        $topics = $community->topics()->get();
+
+        return view('topics.index', compact('community', 'topics'));
     }
 
     /**
@@ -34,17 +28,13 @@ class TopicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create($id)
     {
-        
-        $id = $request->input('id');
-        // コミュニティインスタンスを取得
         $community = Community::find($id);
-        
+        // 空のトピックインスタンス作成
         $topic = new Topic();
-        
         // view の呼び出し
-        return view('topics.create', compact('topic','community'));
+        return view('topics.create', compact('community', 'topic'));
     }
 
     /**
@@ -63,6 +53,7 @@ class TopicsController extends Controller
             'title' => 'required',
             'content' => 'required',
             'disdosure_range' => 'required',
+            'community_id' => 'required',
             'image' => [
                 'required',
                 'file',
@@ -74,7 +65,8 @@ class TopicsController extends Controller
         $title = $request->input('title');
         $content = $request->input('content');
         $disdosure_range = $request->input('disdosure_range');
-        $file = $request->image;
+        $community_id = $request->input('community_id');
+        $file =  $request->image;
         
         // https://qiita.com/ryo-program/items/35bbe8fc3c5da1993366
         // 画像ファイルのアップロード
@@ -90,11 +82,21 @@ class TopicsController extends Controller
             $image = '';
         }
         
+        
         // 入力情報をもとに新しいインスタンス作成
-        \Auth::user()->topic()->create(['title' => $title, 'content' => $content, 'disdosure_range' => $disdosure_range, 'image' => $image]);
+        // \Auth::user()->topic()->create(['title' => $title, 'content' => $content, 'disdosure_range' => $disdosure_range, 'image' => $image]);
+        $topic = new Topic();
+        $topic->user_id = \Auth::id();
+        $topic->community_id = $community_id;
+        $topic->title = $title;
+        $topic->content = $content;
+        $topic->disdosure_range = $disdosure_range;
+        $topic->image = $image;
+        
+        $topic->save();
         
         // トップページへリダイレクト
-        return redirect('/topics')->with('flash_message', 'トピックを作成しました');
+        return redirect('/communities/' . $community_id . '/topics ')->with('flash_message', 'トピックを作成しました');
 
     }
     /**
@@ -141,5 +143,4 @@ class TopicsController extends Controller
     {
         //
     }
-    
 }

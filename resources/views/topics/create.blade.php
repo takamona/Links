@@ -75,52 +75,53 @@
         <th>トピック
         </th>
         <th>
-        <form action="/topics" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <input placeholder="タイトル" name="title" class="tc">
-        </th>
-        </tr>
-        <tr>
-        <th>本文
-        </th>
-        <th>
-        <textarea placeholder="本文" name="content" class="honbun"></textarea>
-        </th>
-        <tr>
-        <th>写真
-        </th>
-        <th>
-        <div id="upload">
-          <img id="img" src="{{ asset('images/profilesample.png')}}" alt="サンプル画像">
-          <div class="up1">画像を変更する</div>
-          <div style="display:none">
-            <input type="file" name="image" id="uploadFile2">
+        <form action="/communities/{{ $community->id }}/topics" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">  
+              <input type="hidden" name="community_id" value="{{ $community->id }}">
+              <input placeholder="タイトル" name="title" class="tc">
+              </th>
+              </tr>
+              <tr>
+              <th>本文
+              </th>
+              <th>
+              <textarea placeholder="本文" name="content" class="honbun"></textarea>
+              </th>
+              <tr>
+              <th>写真
+              </th>
+              <th>
+              <div id="upload">
+                <img id="img" src="images/profilesample.png">
+                <div class="up1">画像を変更する</div>
+                <div style="display:none">
+                  <input type="file" name="image" id="uploadFile2">
+                </div>
+              </div>
+              </th>
+              </tr>
+              <tr>
+              <th>公開範囲
+              </th>
+              <td>
+              <input type="radio" name="disdosure_range" value="0">全体に公開 
+              <input type="radio" name="disdosure_range" value="1">友人まで 
+              <input type="radio" name="disdosure_range" value="2">お気に入り 
+              </td>
+              </tr>
+              <tr>
+              <td colspan=2 class="r">
+              <input type="button" class="re" value="入力内容を確認する">
+            </table>
           </div>
         </div>
-        </th>
-        </tr>
-        <tr>
-        <th>公開範囲
-        </th>
-        <td>
-        <input type="radio" name="disdosure_range" value="0">全体に公開 
-        <input type="radio" name="disdosure_range" value="1">友人まで 
-        <input type="radio" name="disdosure_range" value="2">お気に入り 
-        </td>
-        </tr>
-        <tr>
-        <td colspan=2 class="r">
-        <input type="button" class="re" value="入力内容を確認する">
-      </table>
-    </div>
-  </div>
-  <div class="over">
-    <div>投稿してもよろしいでしょうか？ 
-      <br>
-      <input type="submit" value="投稿">
-      <input type="button" value="戻る" class="modoru">
-    </div>
-  </div>
+        <div class="over">
+          <div>投稿してもよろしいでしょうか？ 
+            <br>
+            <input type="submit" value="投稿">
+            <input type="button" value="戻る" class="modoru">
+          </div>
+        </div>
       </form>
   <div class="nikkikaku"></div>
   <script src="{{ asset('/js/topic_post.js')}}"></script>

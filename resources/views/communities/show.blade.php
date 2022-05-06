@@ -22,15 +22,15 @@
   </div>
   <div class="comyuicon"><img class="sample" src="{{ asset('/uploads')}}/{{$community->image}}"></div>
   <div class="pobutton">
-    @if($community->authority!==1=== false)
+    @if($community->user_id !== Auth::id() && Auth::user()->is_participate($community->id) === false)
     <div class="sanka">
-       <a href="/communities/{{ $community->id }}/participations/create">コミュニティの参加申請のページへ</a>
+      <a href="/communities/{{ $community->id }}/participations/create">コミュニティの参加申請のページへ</a>
     </div>
   </div>
   @endif
   <div class="gr">
     <div class="yellow">トップ</div>
-    <div><a href="/topics?id={{ $community->id }}">トピックス</a></div>
+    <div><a href="/communities/{{ $community->id }}/topics">トピックス</a></div>
     <div><a href="community_event.html">イベント</a></div>
     @if($community->user_id === Auth::id())
     <div><a href="/communities/{{ $community->id }}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
@@ -48,7 +48,7 @@
   </div>
   <div class="grid">
     @foreach($participations as $participation)
-    <div class="photoA"><img class="syoki" src="{{ asset('/uploads/' . $participation->user->image)}}">
+    <div class="photoA"><img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}">
   </div>
     @endforeach
     </div>

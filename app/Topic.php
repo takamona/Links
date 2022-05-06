@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use App\User; // 追加
 use App\Community; //追加
 
-
 class Topic extends Model
 {
     
@@ -22,10 +21,12 @@ class Topic extends Model
         return $this->belongsTo(User::class);
     }
     
-    //このトピックを所有するコミュニティ。（Communityモデルとの多対１の関係を定義)
+    /**
+     * このトピックを所有するユーザー。（Userモデルとの多対1の関係を定義）
+     */
     public function community()
     {
-       return $this->belongsTo(Community::class);
+        return $this->belongsTo(Community::class);
     }
+    
 }
-
