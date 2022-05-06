@@ -33,7 +33,6 @@
     <div class><a href="participations/create">承認・コミュニティ参加申請・フレンド申請</a></div>
   </div>
   <div class="bar"> </div>
-  
 <p>トピックス {{ count($topics) }}件 </p> 
 @foreach($topics as $topic)
 <div class="topic">
@@ -51,62 +50,62 @@
     </div>
   </div>
 </div>
-@endforeach
 <div class="hidebutton">
   <textarea name="text" rows="6" cols="40" class="ttt"></textarea>
   <input type="button" value="返信"  class="replybt"style="background-color:#f0f8ff;font-size:15px;width:60px;height:50px;">
 </div>
-<div class="topic">
-  <input type="button" value="返信する" class="reply"/>
-  <div class="icon">
-  </div>
-  <div class="time">
-  </div>
-  <div class="honbun">
-    <div class="title">
-    </div>
-  </div>
-</div>
-<div class="hidebutton">
-<textarea name="text" rows="6" cols="40" class="ttt"></textarea>
-  <input type="button" value="返信"  class="replybt"style="background-color:#f0f8ff;font-size:15px;width:60px;height:50px;">
-</div>
-<div class="topic">
-  <input type="button" value="返信する" class="reply"/>
-  <div class="icon"></div>
-  <div class="time"></div>
-  <div class="honbun">
-    <div class="title"></div>
-  </div>
-</div>
-<div class="hidebutton">
-<textarea name="text" rows="6" cols="40" class="ttt"></textarea>
-  <input type="button" value="返信"  class="replybt"style="background-color:#f0f8ff;font-size:15px;width:60px;height:50px;">
-  </div>
-<div class="topic">
-  <input type="button" value="返信する" class="reply"/>
-  <div class="icon"></div>
-  <div class="time"></div>
-  <div class="honbun">
-    <div class="title"></div>
-  </div>
-</div>
-<div class="hidebutton">
-<textarea name="text" rows="6" cols="40" class="ttt"></textarea>
-  <input type="button" value="返信"  class="replybt"style="background-color:#f0f8ff;font-size:15px;width:60px;height:50px;">
-</div>
-<div class="topic">
-  <input type="button" value="返信する" class="reply"/>
-  <div class="icon"></div>
-  <div class="time"></div>
-  <div class="honbun">
-    <div class="title"></div>
-  </div>
-</div>
-<div class="hidebutton">
-<textarea name="text" rows="6" cols="40" class="ttt"></textarea>
-  <input type="button" value="返信"  class="replybt"style="background-color:#f0f8ff;font-size:15px;width:60px;height:50px;">
-</div>
+@endforeach
+<!--<div class="topic">-->
+<!--  <input type="button" value="返信する" class="reply"/>-->
+<!--  <div class="icon">-->
+<!--  </div>-->
+<!--  <div class="time">-->
+<!--  </div>-->
+<!--  <div class="honbun">-->
+<!--    <div class="title">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="hidebutton">-->
+<!--<textarea name="text" rows="6" cols="40" class="ttt"></textarea>-->
+<!--  <input type="button" value="返信"  class="replybt"style="background-color:#f0f8ff;font-size:15px;width:60px;height:50px;">-->
+<!--</div>-->
+<!--<div class="topic">-->
+<!--  <input type="button" value="返信する" class="reply"/>-->
+<!--  <div class="icon"></div>-->
+<!--  <div class="time"></div>-->
+<!--  <div class="honbun">-->
+<!--    <div class="title"></div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="hidebutton">-->
+<!--<textarea name="text" rows="6" cols="40" class="ttt"></textarea>-->
+<!--  <input type="button" value="返信"  class="replybt"style="background-color:#f0f8ff;font-size:15px;width:60px;height:50px;">-->
+<!--  </div>-->
+<!--<div class="topic">-->
+<!--  <input type="button" value="返信する" class="reply"/>-->
+<!--  <div class="icon"></div>-->
+<!--  <div class="time"></div>-->
+<!--  <div class="honbun">-->
+<!--    <div class="title"></div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="hidebutton">-->
+<!--<textarea name="text" rows="6" cols="40" class="ttt"></textarea>-->
+<!--  <input type="button" value="返信"  class="replybt"style="background-color:#f0f8ff;font-size:15px;width:60px;height:50px;">-->
+<!--</div>-->
+<!--<div class="topic">-->
+<!--  <input type="button" value="返信する" class="reply"/>-->
+<!--  <div class="icon"></div>-->
+<!--  <div class="time"></div>-->
+<!--  <div class="honbun">-->
+<!--    <div class="title"></div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="hidebutton">-->
+<!--<textarea name="text" rows="6" cols="40" class="ttt"></textarea>-->
+<!--  <input type="button" value="返信"  class="replybt"style="background-color:#f0f8ff;font-size:15px;width:60px;height:50px;">-->
+<!--</div>-->
 <div class="nextbutton">
 <div>
 <input type="button" value="1" style="background-color:#ffffe0;font-size:15px;width:50px;height:30px;">
