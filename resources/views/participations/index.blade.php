@@ -25,8 +25,8 @@
     <div class="sanka"> 参加する </div>
   </div>
   <div class="gr">
-    <div><a href="community_top.html">トップ</a></div>
-    <div><a href="community_topics.html">トピックス</a></div>
+    <div><a href="/communities/{{ $community->id }}">トップ</a></div>
+    <div><a href="/communities/{{ $community->id }}/topics">トピックス</a></div>
     <div><a href="community_event.html">イベント</a></div>
     <div class="yellow">承認・コミュニティ参加申請・フレンド申請</div>
   </div>

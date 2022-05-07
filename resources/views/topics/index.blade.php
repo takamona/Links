@@ -27,10 +27,12 @@
   <a href="/communities/{{ $community->id }}/topics/create">+トピック作成</a>
 </div>
 <div class="gr">
-    <div><a href="community_top.html">トップ</a></div>
+    <div><a href="/communities/{{ $community->id }}">トップ</a></div>
     <div class="yellow">トピックス</div>
     <div><a href="community_event.html">イベント</a></div>
-    <div class><a href="participations/create">承認・コミュニティ参加申請・フレンド申請</a></div>
+     @if($community->user_id === Auth::id())
+    <div><a href="/communities/{{ $community->id }}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
+    @endif
   </div>
   <div class="bar"> </div>
 <p>トピックス {{ count($topics) }}件 </p> 
@@ -46,7 +48,7 @@
   <div class="honbun">
     {{ $topic->content}}  
     <div class="title">
-    {!! link_to_route('topics.show', $topic->title , ['id' => $topic->id ])!!}
+    <a href="/communities/{{$community->id}}/topics/{{$topic->id}}">{{$topic->title}}</a>
     </div>
   </div>
 </div>

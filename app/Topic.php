@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\User; // 追加
 use App\Community; //追加
+use App\Post; //追加
 
 class Topic extends Model
 {
@@ -27,6 +28,11 @@ class Topic extends Model
     public function community()
     {
         return $this->belongsTo(Community::class);
+    }
+    
+     public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
     
 }

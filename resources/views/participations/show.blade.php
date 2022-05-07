@@ -38,10 +38,12 @@
       </div>
       </form>
   <div class="gr">
-    <div class="yellow">トップ</div>
-    <div><a href="community_topics.html">トピックス</a></div>
+    <div class="/communities/{{ $community->id }}">トップ</div>
+    <div><a href="communities/{{ $community->id }}/topics">トピックス</a></div>
     <div><a href="community_event.html">イベント</a></div>
-    <div><a href="community_approval.html">承認・コミュニティ参加申請・フレンド申請</a></div>
+    @if($community->user_id === Auth::id())
+    <div><a href="/communities/{{ $community->id }}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
+    @endif
   </div>
   <div class="bar"> </div>
   <div class="syosai"> </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Topic;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -35,7 +36,14 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $topic_id=$request->input('topic_id');
+        $content=$request->input('content');
+        $topic=Topic::find($topic_id);
+        $topic->posts()->create(['user_id'=> \Auth::id(), 'content'=>$content]);
+        
+         return redirect('/communities/' . $topic->community_id . '/topics/' . $topic->id)->with('flash_message', 'トピックを作成しました');
+        
     }
 
     /**
@@ -46,7 +54,7 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        
     }
 
     /**

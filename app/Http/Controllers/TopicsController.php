@@ -15,7 +15,7 @@ class TopicsController extends Controller
      */
     public function index($id)
     {
-        
+        // dd($id);
         $community = Community::find($id);
  
         $topics = $community->topics()->get();
@@ -105,11 +105,15 @@ class TopicsController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($community_id, $topic_id)
     {
-        $topic = Topic::find($id);
         
-        return view('topics.show', compact('topic'));
+        // dd($topic_id);
+        // $community = Community::find($id);
+        $topic = Topic::find($topic_id);
+        $posts = $topic->posts()->get();
+        
+        return view('topics.show', compact('topic','posts'));
     }
 
     /**

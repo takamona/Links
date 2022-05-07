@@ -3,21 +3,21 @@
  <head>
   <meta charset="UTF-8">
     <title>プロフィール登録</title>
-    <link rel="stylesheet" href="./css/topic_show.css">
+    <link rel="stylesheet" href="{{asset('css/topic_show.css')}}">
   </head>
   <body>
     <div class="po">
       <nav>
         <ul class="nav">
           <li>
-            <a href="mypage.html">マイページ</a>
-            <img class="top" src="images/komyu.jpeg" alt="マイページ">
+            <a href="/mypage">マイページ</a>
+            <img class="top" src="{{asset('images/komyu.jpeg')}}" alt="マイページ">
           </li>
         </ul>
       </nav>
       <ul class="logout">
         <li>
-          <a href="index.html">ログアウト</a>
+          <a href="/logout">ログアウト</a>
         </li>
       </ul>
     </div>
@@ -30,21 +30,30 @@
     <div class="bar"></div>
      <table class="show">
       <tr><th>ID</th>
-       <th>ユーザーID</th>
+       <th>ユーザー名</th>
        <th>タイトル</th>
        <th>内容</th>
        <th>画像</th>
       </tr>
-      <tr><th>1</th>
-      <th>1</th>
-      <th>おはようございます</th>
-      <th>今日もいい天気</th>
-      <th>画像</th>
+      <tr><th>{{$topic->id}}</th>
+      <th>{{$topic->user->name}}</th>
+      <th>{{$topic->title}}</th>
+      <th>{{$topic->content}}</th>
+      <th><img class="photo" src="{{ asset('/uploads/' . $topic->image)}}"></th>
       </tr>
      </table>
-      <form action="/posts" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">  
-                    <div class="name_empty"><textarea class="nametext" placeholder="記入" name="name"></textarea></div>
+     <h2>投稿一覧</h2>
+     <ul>
+     @foreach($posts as $post)
+     <li>{{$post->content}} {{$post->user->name}} {{$post->created_at}}</li>
+     @endforeach
+     </ul>
+      <form action="/posts" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="topic_id" value="{{$topic->id}}">
+        <div class="name_empty"><textarea class="nametext" placeholder="記入" name="content"></textarea></div>
+        <input type="submit" value="コメント投稿">
+      </form>
     <!--<div class="topic">-->
     <!--  <div class="icon"></div>-->
     <!--  <div class="time"></div>-->
