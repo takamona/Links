@@ -48,7 +48,7 @@
      <li>{{$post->content}} {{$post->user->name}} {{$post->created_at}}</li>
      @endforeach
      </ul>
-  @if($participation->status == 1 )
+  @if($participation->status === 1 )
       <form action="/posts" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="topic_id" value="{{$topic->id}}">

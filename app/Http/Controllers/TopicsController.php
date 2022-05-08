@@ -30,11 +30,17 @@ class TopicsController extends Controller
      */
     public function create($id)
     {
+        // dd($id);
+        
+        
         $community = Community::find($id);
+        
+        // $participation = $community->participations()->where('status', 1)->get();
+        
         // 空のトピックインスタンス作成
         $topic = new Topic();
         // view の呼び出し
-        return view('topics.create', compact('community', 'topic'));
+        return view('topics.create', compact('community', 'topic', 'participation'));
     }
 
     /**
@@ -107,13 +113,15 @@ class TopicsController extends Controller
      */
     public function show($community_id, $topic_id)
     {
-        
         // dd($topic_id);
-        // $community = Community::find($id);
+        $community = Community::find($community_id);
         $topic = Topic::find($topic_id);
         $posts = $topic->posts()->get();
-        
-        return view('topics.show', compact('topic','posts'));
+        $participation = $community->participations()->where('status', 1)->get();
+        // 空のトピックインスタンス作成
+        $topic = new Topic();
+        // view の呼び出し
+        return view('topics.show', compact('topic','posts', 'participation'));
     }
 
     /**

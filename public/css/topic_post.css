@@ -181,3 +181,12 @@ nav li {
 .pencil2{
   width:40px;
 }
+
+.logout {
+  background-color: red;
+  width: 170px;
+  line-height: 160px;
+  height: 160px;
+  margin-top: -60px;
+  margin-left: 600px;
+}
