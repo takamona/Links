@@ -118,8 +118,6 @@ class TopicsController extends Controller
         $topic = Topic::find($topic_id);
         $posts = $topic->posts()->get();
         $participation = $community->participations()->where('status', 1)->get();
-        // 空のトピックインスタンス作成
-        $topic = new Topic();
         // view の呼び出し
         return view('topics.show', compact('topic','posts', 'participation'));
     }
