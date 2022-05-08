@@ -37,13 +37,20 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         // dd($request);
-        $topic_id=$request->input('topic_id');
-        $content=$request->input('content');
-        $topic=Topic::find($topic_id);
-        $topic->posts()->create(['user_id'=> \Auth::id(), 'content'=>$content]);
+        // validation        
+        //for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
+        
+         $this->validate($request, [
+            'topic_id' => 'required',
+            'content' => 'required',
+        ]);
+        
+        $topic_id = $request->input('topic_id');
+        $content = $request->input('content');
+        $topic = Topic::find($topic_id);
+        $topic -> posts()->create(['user_id'=> \Auth::id(), 'content'=>$content]);
         
          return redirect('/communities/' . $topic->community_id . '/topics/' . $topic->id)->with('flash_message', 'トピックを作成しました');
-        
     }
 
     /**
