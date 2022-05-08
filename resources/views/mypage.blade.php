@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <title>マイページ</title>
-  <link rel="stylesheet" href="./css/mypage.css" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('css/mypage.css')}}" type="text/css" />
 </head>
 <body>
   <div class="h">
@@ -16,22 +16,22 @@
       <ul class="menu">
         <li>
           <a href="mypage">
-            <img src="images/MYPAGE.png" alt="マイページ">
+            <img src="{{ asset('images/MYPAGE.png')}}" alt="マイページ">
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="images/COMMUNITY.png" alt="コミュニティ">
+            <img src= "{{ asset('images/COMMUNITY.png')}}" alt="コミュニティ">
           </a>
         </li>
         <li>
           <a href="#">
-            <img src="images/TIMELINE.png" alt="タイムライン">
+            <img src="{{ asset('images/TIMELINE.png')}}" alt="タイムライン">
           </a>
         </li>
         <li>
           <a href="/logout">
-            <img src="images/LOGOUT.png" alt="ログアウト">
+            <img src="{{ asset('images/LOGOUT.png')}}" alt="ログアウト">
           </a>
         </li>
       </ul>
@@ -44,7 +44,7 @@
           <a href="mypage">マイページ</a>
         </li>
       </ul>
-      <img class="myp" src="images/komyu.jpeg" alt="マイページ">
+      <img class="myp" src="{{ asset('images/komyu.jpeg')}}" alt="マイページ">
     </div>
     <div class="logout">
       <ul>
@@ -55,31 +55,31 @@
     </div>
   </div>
   <div class="profile">
-    <img id="img" src="images/profilesample.png" alt="プロフィール">
+    <img id="img" src="{{ asset('images/profilesample.png')}}" alt="プロフィール">
   </div>
   <div>
     <a href="/profiles/{{ \Auth::id() }}">プロフィールを見る</a>
   </div>
   <div class="gr">
    <div>
-      <img class="event" src="images/audience.jpg" alt="イベント">
+      <img class="event" src="{{ asset('images/audience.jpg')}}" alt="イベント">
       <a href="eventdisplay.html"><p>イベント</p></a>
     </div>
     <div>
-      <img class="event2" src="images/audience.jpg" alt="参加予定のイベント">
+      <img class="event2" src="{{ asset('images/audience.jpg')}}" alt="参加予定のイベント">
       <p><a href="join_community_display.html">参加予定のイベント</a></p>
     </div>
   </div>
   <div class="gr">
     <div>
-      <img class="komyuran2" src="images/chairs.jpg" alt="コミュニティ一覧">
+      <img class="komyuran2" src="{{ asset('images/chairs.jpg')}}" alt="コミュニティ一覧">
       <a href="/communities"><p>コミュニティ一覧</p></a>
     </div>
     <div>
-      <img class="topic" src="images/glasses-book.jpg" alt="トピック一覧">
+      <img class="topic" src="{{ asset('images/glasses-book.jpg')}}" alt="トピック一覧">
       <p><a href="topicdisplay.html">トピック一覧</a></p>
     </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="./js/mypage.js"></script>
+<script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{ asset('/js/mypage.js')}}"></script>
 </body> 

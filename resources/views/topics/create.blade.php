@@ -14,14 +14,14 @@
   <link rel="stylesheet" href="{{ asset('https://school.oohara.jp/oohara/fullcalendar.css')}}"/>
   <nav>
   <ul class="nav">
-    <li>
-      <a href="/">TOP</a>
-      <img class="top" src="{{ asset('images/top.jpg')}}">
-    </li>
-    <li>
-      <a href="#login">ログイン</a>
-      <img class="komyu" src="{{ asset('images/login.jpg')}}">
-    </li>
+    <!--<li>-->
+    <!--  <a href="/">TOP</a>-->
+    <!--  <img class="top" src="{{ asset('images/top.jpg')}}">-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--  <a href="/login">ログイン</a>-->
+    <!--  <img class="komyu" src="{{ asset('images/login.jpg')}}">-->
+    <!--</li>-->
     <li>
       <a href="/mypage">マイページ</a>
       <img class="myp" src="{{ asset('images/komyu.jpeg')}}">
@@ -33,7 +33,7 @@
   <div class="osirase">
     <ul>
       <li>
-        <img class="pencil" src="{{ asset('images/pencil.png')}}">○○のトピックス
+        <img class="pencil" src="{{ asset('images/pencil.png')}}">{{ $community->name}}のトピックス
       </li>
     </ul>
   </div>

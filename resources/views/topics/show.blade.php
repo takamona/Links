@@ -48,7 +48,6 @@
      <li>{{$post->content}} {{$post->user->name}} {{$post->created_at}}</li>
      @endforeach
      </ul>
-     
   @if($participation->status == 1 )
       <form action="/posts" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -57,7 +56,6 @@
         <input type="submit" value="コメント投稿">
       </form>
   @endif
-     
     <!--<div class="topic">-->
     <!--  <div class="icon"></div>-->
     <!--  <div class="time"></div>-->
