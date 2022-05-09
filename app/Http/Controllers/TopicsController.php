@@ -117,7 +117,7 @@ class TopicsController extends Controller
         $community = Community::find($community_id);
         $topic = Topic::find($topic_id);
         $posts = $topic->posts()->get();
-        $participation = $community->participations()->where('status', 1)->get();
+        $participation = $community->participations()->where('status', 1)->first();
         // view の呼び出し
         return view('topics.show', compact('topic','posts', 'participation'));
     }
