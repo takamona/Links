@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Community;
 use App\Topic;
+use App\Participation;
 use Illuminate\Http\Request;
 
 class TopicsController extends Controller
@@ -20,7 +21,15 @@ class TopicsController extends Controller
  
         $topics = $community->topics()->get();
 
-        return view('topics.index', compact('community', 'topics'));
+        $participation = $community->participations()->where('user_id', \Auth::id())->where('status', 1)->first();
+        
+        
+        if($participation===null){
+        $participation = new Participation();
+        $participation->status = 3;
+        }
+        
+        return view('topics.index', compact('community', 'topics', 'participation'));
     }
 
     /**
@@ -31,11 +40,9 @@ class TopicsController extends Controller
     public function create($id)
     {
         // dd($id);
-        $participation = $community->participations()->where('user_id', \Auth::id())->where('status', 1)->first();
-        
         $community = Community::find($id);
         
-        // $participation = $community->participations()->where('status', 1)->get();
+        $participation = $community->participations()->where('user_id', \Auth::id())->where('status', 1)->first();
         
         // 空のトピックインスタンス作成
         $topic = new Topic();
@@ -118,6 +125,15 @@ class TopicsController extends Controller
         $topic = Topic::find($topic_id);
         $posts = $topic->posts()->get();
         $participation = $community->participations()->where('user_id', \Auth::id())->where('status', 1)->first();
+        
+        
+        //if分岐
+        // もしまだ申請していなければ
+        if($participation === null){ 
+        $participation = new Participation();
+        $participation->status = 3; // 0, 1, 2 以外の適当な値
+        }
+        
         // view の呼び出し
         return view('topics.show', compact('topic','posts', 'participation'));
     }

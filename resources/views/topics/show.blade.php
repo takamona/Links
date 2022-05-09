@@ -43,9 +43,10 @@
       </tr>
      </table>
      <h2>投稿一覧</h2>
-     <ul>
+     <ul class="post">
      @foreach($posts as $post)
-     <li>{{$post->content}} {{$post->user->name}} {{$post->created_at}}</li>
+     <li><img class="profile" src="{{asset('/uploads/' . $post->user->profile->image)}}"></li>
+     <li class="content">{{$post->content}}</li><li class="name">{{$post->user->name}}さん</li><li class="day"><li class="aaaa">{{$post->created_at}}</li></li>
      @endforeach
      </ul>
   @if($participation->status === 1 )
