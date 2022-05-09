@@ -31,7 +31,7 @@ class TopicsController extends Controller
     public function create($id)
     {
         // dd($id);
-        
+        $participation = $community->participations()->where('user_id', \Auth::id())->where('status', 1)->first();
         
         $community = Community::find($id);
         
@@ -117,7 +117,7 @@ class TopicsController extends Controller
         $community = Community::find($community_id);
         $topic = Topic::find($topic_id);
         $posts = $topic->posts()->get();
-        $participation = $community->participations()->where('status', 1)->first();
+        $participation = $community->participations()->where('user_id', \Auth::id())->where('status', 1)->first();
         // view の呼び出し
         return view('topics.show', compact('topic','posts', 'participation'));
     }

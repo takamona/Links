@@ -23,9 +23,11 @@
 <div class="profile">
   <img id="img" src="{{ asset('images/profilesample.png')}}" alt="プロフィール">
 </div>
+ @if($participation->status === 1 )
 <div class="topic_creat">
   <a href="/communities/{{ $community->id }}/topics/create">+トピック作成</a>
 </div>
+ @endif
 <div class="gr">
     <div><a href="/communities/{{ $community->id }}">トップ</a></div>
     <div class="yellow">トピックス</div>

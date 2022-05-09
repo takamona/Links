@@ -108,7 +108,7 @@
               <td>
               <input type="radio" name="disdosure_range" value="0">全体に公開 
               <input type="radio" name="disdosure_range" value="1">友人まで 
-              <input type="radio" name="disdosure_range" value="2">お気に入り 
+              <input type="radio" name="disdosure_range" value="2">コミュニティ参加者のみ
               </td>
               </tr>
               <tr>
