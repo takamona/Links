@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
+use App\Friend; //追記
 use App\Profile; // 追記
 use App\Community; // 追記
 
@@ -90,6 +92,15 @@ class User extends Authenticatable
     {
         return $this->participation_communities()->where('community_id', $community_id)->exists();
     }
+    
+    
+    
+    public function friends()
+    {
+        
+        return $this->hasMany(Friend::class);
+    }
+    
     
     
 }

@@ -43,7 +43,7 @@
     <div class="k"> 　管理人:{{$community->user->name}}</div>
     <div class="member"> 　参加メンバー </div>
     <div class="icon"> 　参加者アイコン </div>
-    <div class="member_confirmation"><a href="community_member.html">メンバーを見る</a></div>
+    <div class="member_confirmation"><a href= "/friends?id={{$community->id}}">メンバーを見る</a></div>
     <div class="day"> 開設日 {{ $community->created_at }} </div>
   </div>
   <div class="grid">

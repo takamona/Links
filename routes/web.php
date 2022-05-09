@@ -45,9 +45,12 @@ Route::group(['middleware' => ['auth']], function () {
     //　コミュニティ関係
     Route::resource('communities', 'CommunitiesController', ['only' => ['index', 'create', 'store', 'show']]);
     
-    
+    // ポスト関係
     Route::resource('posts', 'PostsController');
     
+    
+    // フレンド申請関係
+    Route::resource('friends', 'FriendsController', ['only' => ['index', 'create', 'store',]]); 
     
     //　コミュニティ申請関係
     Route::group(['prefix' => 'communities/{id}'], function () {
