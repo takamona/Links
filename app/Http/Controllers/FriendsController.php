@@ -17,10 +17,16 @@ class FriendsController extends Controller
     
      public function index()
     {
-       
         
-        // view の呼び出し
-        return view('friends.index', compact('community'));
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     
@@ -28,8 +34,8 @@ class FriendsController extends Controller
      public function create()
     {
         
-        // view の呼び出し
-        return view('friends.create', compact());
+        // // view の呼び出し
+        // return view('friends.create', compact());
     }
 
     /**

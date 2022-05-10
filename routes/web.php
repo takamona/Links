@@ -62,7 +62,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'show']]);
         
         // ユーザー関連
-        Route::resource('users', 'UsersController', ['only' => ['index', 'create', 'store',]]); 
+        Route::resource('users', 'UsersController', ['only' => ['index', 'create', 'store', 'show']]); 
     });
 
     

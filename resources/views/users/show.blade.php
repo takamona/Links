@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
     <title>プロフィール登録</title>
-    <link rel="stylesheet" href="./css/other.css">
+    <link rel="stylesheet" href="{{asset ('css/other.css')}}">
   </head>
   <body>
     <div class="po">
@@ -11,13 +11,13 @@
         <ul class="nav">
           <li>
             <a href="mypage.html">マイページ</a>
-            <img class="top" src="images/komyu.jpeg" alt="マイページ">
+            <img class="top" src="{{asset ('images/komyu.jpeg')}}" alt="マイページ">
           </li>
         </ul>
       </nav>
       <ul class="logout">
         <li>
-          <a href="index.html">ログアウト</a>
+          <a href="/logout">ログアウト</a>
         </li>
       </ul>
     </div>
@@ -29,24 +29,24 @@
     </div>
     <div class="photogr">
       <div class="photoA">
-        <img class="syoki" src="images/smiley.png" alt="フレンド">
+        <img class="syoki" src="{{ asset('images/smiley.png')}}" alt="フレンド">
       </div>
       <div class="photoA">
-        <img class="syoki" src="images/smiley.png" alt="フレンド">
+        <img class="syoki" src="{{asset ('images/smiley.png')}}" alt="フレンド">
       </div>
       <div class="photoA">
-        <img class="syoki" src="images/smiley.png" alt="フレンド">
+        <img class="syoki" src="{{asset ('images/smiley.png')}}" alt="フレンド">
       </div>
     </div>
     <div class="photogr2">
       <div class="photoB">
-        <img class="syoki" src="images/smiley.png" alt="フレンド">
+        <img class="syoki" src="{{asset ('images/smiley.png')}}" alt="フレンド">
       </div>
       <div class="photoB">
-        <img class="syoki" src="images/smiley.png" alt="フレンド">
+        <img class="syoki" src="{{asset ('images/smiley.png')}}" alt="フレンド">
       </div>
       <div class="photoB">
-        <img class="syoki" src="images/smiley.png" alt="フレンド">
+        <img class="syoki" src="{{asset ('images/smiley.png')}}" alt="フレンド">
       </div>
     </div>
     <table class="example">
