@@ -34,7 +34,6 @@
     </div>
     @endforeach
   </div>
-  
   <div class="grid">
     @foreach($participations as $participation)
     <div class="photoB"><img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
