@@ -19,10 +19,11 @@ class UsersController extends Controller
      */
     public function index($id)
     {
-        
       $community = Community::find($id);
       
       $participations = $community->participations()->where('status', 1)->get();
+      
+    //   $participations_last = $participations->orderBy('created_at','desc')->get();
       
       return view('users.index', compact('community', 'participations'));
     }

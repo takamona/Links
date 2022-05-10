@@ -34,17 +34,12 @@
     </div>
     @endforeach
   </div>
-    <div class="photoA"> <img class="syoki" src="images/smiley.png" alt="メンバー"></div>
-    <div class="photoA"> <img class="syoki" src="images/smiley.png" alt="メンバー"></div>
-    <div class="photoA"> <img class="syoki" src="images/smiley.png" alt="メンバー"></div>
-    <div class="photoA"> <img class="syoki" src="images/smiley.png" alt="メンバー"></div>
-  </div>
+  
   <div class="grid">
-    <div class="photoB"><img class="syoki" src="images/smiley.png" alt="メンバー"></div>
-    <div class="photoB"><img class="syoki" src="images/smiley.png" alt="メンバー"></div>
-    <div class="photoB"><img class="syoki" src="images/smiley.png" alt="メンバー"></div>
-    <div class="photoB"><img class="syoki" src="images/smiley.png" alt="メンバー"></div>
-    <div class="photoB"><img class="syoki" src="images/smiley.png" alt="メンバー"></div>
+    @foreach($participations as $participation)
+    <div class="photoB"><img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
+    </div>
+    @endforeach
   </div>
   <div class="grid">
     <div class="photoC"><img class="syoki" src="images/smiley.png" alt="メンバー"></div>
