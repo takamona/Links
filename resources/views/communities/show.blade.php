@@ -43,15 +43,15 @@
     <div class="k"> 　管理人:{{$community->user->name}}</div>
     <div class="member"> 　参加メンバー </div>
     <div class="icon"> 　参加者アイコン </div>
-    <div class="member_confirmation"><a href= "/communities/{{$community->id}}/users">メンバーを見る</a></div>
+    <div class="member_confirmation"><a href= "/communities/{{ $community->id }}/users">メンバーを見る</a></div>
     <div class="day"> 開設日 {{ $community->created_at }} </div>
   </div>
   <div class="grid">
     @foreach($participations as $participation)
     <div class="photoA"><img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}">
-  </div>
-    @endforeach
     </div>
+    @endforeach
+  </div>
   </div>
   <div class="grid2">
     <div class="photoB"> <img class="syoki" src="{{ asset('images/smiley.png')}}"> </div>

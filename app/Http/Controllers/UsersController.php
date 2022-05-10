@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 
+use App\Participation;
+
 use App\Community;
 
 use Illuminate\Http\Request;
@@ -17,9 +19,12 @@ class UsersController extends Controller
      */
     public function index($id)
     {
-       $community = Community::find($id);
-       
-       return view('users.index', compact('community'));
+        
+      $community = Community::find($id);
+      
+      $participations = $community->participations()->where('status', 1)->get();
+      
+      return view('users.index', compact('community', 'participations'));
     }
 
     /**
