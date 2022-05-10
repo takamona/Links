@@ -17,11 +17,7 @@ class FriendsController extends Controller
     
      public function index()
     {
-        $friends = Friend::all();
-        
-        $id = Auth::user()->id;
-        
-        $community = Community::find($id);
+       
         
         // view の呼び出し
         return view('friends.index', compact('community'));

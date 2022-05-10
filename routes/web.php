@@ -49,9 +49,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('posts', 'PostsController');
     
     
-    // フレンド申請関係
+     // フレンド申請関係
     Route::resource('friends', 'FriendsController', ['only' => ['index', 'create', 'store',]]); 
-    
+
     //　コミュニティ申請関係
     Route::group(['prefix' => 'communities/{id}'], function () {
         // 投稿一覧
@@ -61,6 +61,8 @@ Route::group(['middleware' => ['auth']], function () {
         //トピック関係
         Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'show']]);
         
+        // ユーザー関連
+        Route::resource('users', 'UsersController', ['only' => ['index', 'create', 'store',]]); 
     });
 
     

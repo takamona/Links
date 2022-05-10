@@ -160,4 +160,13 @@ class CommunitiesController extends Controller
     {
         //
     }
+    
+     public function member($id)
+    {
+        
+        $community = Community::find($id);
+        
+        // view の呼び出し
+        return view('communities.member', compact('community'));
+    }
 }
