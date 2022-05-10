@@ -29,7 +29,7 @@
     </div>
     <div class="photogr">
       <div class="photoA">
-        <img class="syoki" src="{{ asset('images/smiley.png')}}" alt="フレンド">
+        <img class="syoki" src="{{asset('images/smiley.png')}}" alt="フレンド">
       </div>
       <div class="photoA">
         <img class="syoki" src="{{asset ('images/smiley.png')}}" alt="フレンド">
