@@ -84,7 +84,11 @@
       </tr>
     </table>
     <div class="blue">
-      <div class="sinsei">フレンド申請 </div>
+      <input type="submit" class="sinser" value="フレンド申請" style="background-color:#ffd700;font-size:15px;width:150px;height:60px; margin-left:400px; margin-top:10px;">
+      <form action="/communities/{{ $community->id }}/participations" method="POST">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">  
+      <input type="hidden" name="community_id" value="{{ $community->id }}">
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="profile.js"></script>

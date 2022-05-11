@@ -125,6 +125,7 @@ ul {
   margin-top: -430px;
   margin-left: 400px;
   position: relative;
+  border:solid 1px black;
 }
 
 .sinsei {
