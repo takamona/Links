@@ -52,22 +52,22 @@ class FriendsController extends Controller
         //送る本人のID
         $friend->user_id = \Auth::id();
         //送る相手のID
-        $friend->friend_id = $request->user_id;
+        $friend->friend_id = $request->input('user_id');
         
         $friend->save();
         
         $community_id = $request->input('community_id');
-    
-        $user_id = $request->input->('user_id');
+        
+        $user_id = $request->input('user_id');
         
         $community = Community::find($community_id);
         
         $user = User::find($user_id);
         
+        // communities/{id}/users/{user} 
+        
         // トップページへリダイレクト
         return redirect('/communities/' . $community->id . '/users/' . $user->id)->with('flash_message', 'フレンド申請を送りました。');
-    
-        // communities/{id}/users/{user}
   }
     /**
      * Display the specified resource.

@@ -39,7 +39,7 @@ class PostsController extends Controller
     {
         // dd($request);
         // validation        
-        //for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
+        for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
         
         $this->validate($request, [
             'topic_id' => 'required',
@@ -52,6 +52,12 @@ class PostsController extends Controller
         $topic -> posts()->create(['user_id'=> \Auth::id(), 'content'=>$content]);
         
          return redirect('/communities/' . $topic->community_id . '/topics/' . $topic->id)->with('flash_message', 'トピックを作成しました');
+         
+        //  communities/{id}/topics/{topic} 
+         
+         
+         
+         
     }
 
     /**
