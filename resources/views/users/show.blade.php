@@ -10,7 +10,7 @@
       <nav>
         <ul class="nav">
           <li>
-            <a href="mypage.html">マイページ</a>
+            <a href="/mypage">マイページ</a>
             <img class="top" src="{{asset ('images/komyu.jpeg')}}" alt="マイページ">
           </li>
         </ul>
@@ -57,32 +57,29 @@
       <tr>
       <th>名前
       </th>
-      <th>名前
+      <th>{{$user->name}}
       </th>
       </tr>
       <tr>
       <th>性別
       </th>
-      <th>
-      <input type="radio" name="sex" value="男性">男性 
-      <input type="radio" name="sex" value="女性">女性
+      <th>{{$user->profile->gender}}
       </th>
       </tr>
       <tr>
       <th>住んでいる場所
       </th>
-      <th>
+      <th>{{$user->profile->address}}
       <tr>
       <th>趣味
       </th>
-      <th>
+      <th>{{$user->profile->hobby}}
       </th>
       </tr>
       <tr>
       <th>自己紹介
       </th>
-      <th>
-      <textarea placeholder="自己紹介"></textarea>
+      <th>{{$user->profile->introduction}}
       </th>
       </tr>
     </table>

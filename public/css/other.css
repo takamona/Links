@@ -115,14 +115,14 @@ ul {
   border:solid 3px;
   width: 400px;
   margin-left: 400px;
-  margin-top: -420px;
+  margin-top: -340px;
 }
 
 .blue {
   background-color: #6495ed;
   width: 400px;
   height: 80px;
-  margin-top: -300px;
+  margin-top: -270px;
   margin-left: 400px;
   position: relative;
 }

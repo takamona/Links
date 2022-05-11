@@ -55,11 +55,17 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($community_id, $user_id)
     {
+        $community = Community::find($community_id);
         
+        $user = User::find($user_id);
         
-        return view('users.show', compact('community', 'participations'));
+        // $profile = $user->profile()->first();
+        
+        $participation = $community->participations()->where('status', 1)->first();
+        
+        return view('users.show', compact('community', 'participation', 'user'));
     }
 
     /**
