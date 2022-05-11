@@ -94,7 +94,7 @@
               </th>
               <th>
               <div id="upload">
-                <img id="img" src="images/profilesample.png">
+                <img id="img" src="{{asset('images/profilesample.png')}}">
                 <div class="up1">画像を変更する</div>
                 <div style="display:none">
                   <input type="file" name="image" id="uploadFile2">
@@ -126,5 +126,5 @@
         </div>
       </form>
   <div class="nikkikaku"></div>
-  <script src="{{ asset('/js/topic_post.js')}}"></script>
+  <script src="{{asset('/js/topic_post.js')}}"></script>
 </body>

@@ -30,7 +30,7 @@
   <div class="grey"></div>
   <div class="grid">
     @foreach($participations as $participation)
-    <div class="photoA"><a href="/communities/{{$community->id}}/users/user">
+    <div class="photoA"><a href="/communities/{{$community->id}}/users/{{$participations->user_id}}">
       <img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
       </a>
     </div>
