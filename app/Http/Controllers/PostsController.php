@@ -50,7 +50,7 @@ class PostsController extends Controller
         $topic = Topic::find($topic_id);
         $topic -> posts()->create(['user_id'=> \Auth::id(), 'content'=>$content]);
         
-         return redirect('/communities/' . $topic->community_id . '/topics/' . $topic->id)->with('flash_message', 'トピックを作成しました');
+         return redirect('/communities/' . $communities->id . '/topics/' . $topic->id)->with('flash_message', 'トピックを作成しました');
     }
 
     /**

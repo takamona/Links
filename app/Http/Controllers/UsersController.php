@@ -57,6 +57,7 @@ class UsersController extends Controller
      */
     public function show($community_id, $user_id)
     {
+        // dd($community_id,$user_id);
         $community = Community::find($community_id);
         
         $user = User::find($user_id);
