@@ -39,7 +39,7 @@ class PostsController extends Controller
     {
         // dd($request);
         // validation        
-        for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
+        // for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
         
         $this->validate($request, [
             'topic_id' => 'required',
