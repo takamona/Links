@@ -39,7 +39,7 @@
   <div class="bar"> </div>
 <p>トピックス {{ count($topics) }}件 </p> 
 @foreach($topics as $topic)
-@if($topic->disdosure_range ==  !2)
+@if($topic->disdosure_range === 0 |$topic->disdosure_range === 2 )
 <div class="topic">
   <input type="button" value="返信する" class="reply"/>
   <div class="icon">
