@@ -21,7 +21,7 @@
         </li>
       </ul>
     </div>
-    <div class="plofile"></div>
+    <div class="plofile"><img class="profile_phpto" src="{{asset('/uploads/' . $user->profile->image)}}" alt="プロフィール"></div>
     <div class="friend">
       <ul>
         <li>フレンド一覧</li>
