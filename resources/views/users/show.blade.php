@@ -88,7 +88,7 @@
         <form action="/friends" method="POST">
        <input type="hidden" name="_token" value="{{ csrf_token() }}">  
        <input type="hidden" name="community_id" value="{{ $community->id }}">
-       <input type="hidden" name="community_id" value="{{ $user->id }}">
+       <input type="hidden" name="user_id" value="{{ $user->id }}">
        <input type="submit" class="sinser" value="フレンド申請" style="background-color:#ffd700;font-size:15px;width:150px;height:60px; margin-left:400px; margin-top:10px;">
         </form>
     </div>

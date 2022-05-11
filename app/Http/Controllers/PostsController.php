@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Topic;
+use App\Community;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -40,7 +41,7 @@ class PostsController extends Controller
         // validation        
         //for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
         
-         $this->validate($request, [
+        $this->validate($request, [
             'topic_id' => 'required',
             'content' => 'required',
         ]);
@@ -50,7 +51,7 @@ class PostsController extends Controller
         $topic = Topic::find($topic_id);
         $topic -> posts()->create(['user_id'=> \Auth::id(), 'content'=>$content]);
         
-         return redirect('/communities/' . $communities->id . '/topics/' . $topic->id)->with('flash_message', 'トピックを作成しました');
+         return redirect('/communities/' . $topic->community_id . '/topics/' . $topic->id)->with('flash_message', 'トピックを作成しました');
     }
 
     /**

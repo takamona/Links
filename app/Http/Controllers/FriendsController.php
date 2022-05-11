@@ -45,22 +45,30 @@ class FriendsController extends Controller
      * @return \Illuminate\Http\Response
      */
    public function store(Request $request)
-    {
+  {
         // dd($request);
         
-    $friend = new Friend();
+        $friend = new Friend();
+        //送る本人のID
+        $friend->user_id = \Auth::id();
+        //送る相手のID
+        $friend->friend_id = $request->user_id;
+        
+        $friend->save();
+        
+        $community_id = $request->input('community_id');
     
-    $friend->user_id = \Auth::id();
+        $user_id = $request->input->('user_id');
+        
+        $community = Community::find($community_id);
+        
+        $user = User::find($user_id);
+        
+        // トップページへリダイレクト
+        return redirect('/communities/' . $community->id . '/users/' . $user->id)->with('flash_message', 'フレンド申請を送りました。');
     
-    $user = User::find($id);
-    
-    $friend->friend_id = $user->id;
-    
-    
-    return redirect('/communities/' . $community->id . '/users/' . $participation->user_id)->with('flash_message', 'フレンド申請を送りました。');
-    
-    
-    }
+        // communities/{id}/users/{user}
+  }
     /**
      * Display the specified resource.
      *
