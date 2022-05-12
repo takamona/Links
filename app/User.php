@@ -93,14 +93,9 @@ class User extends Authenticatable
         return $this->participation_communities()->where('community_id', $community_id)->exists();
     }
     
-    
-    
     public function friends()
     {
-        
-        return $this->hasMany(Friend::class);
+         return $this->hasMany(Friend::class);
     }
-    
-    
     
 }

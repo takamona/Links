@@ -32,7 +32,7 @@ class Participation extends Model
     //
     public function communities()
     {
-        // return $this->belongsToMany(Community::class, 'communities','id')->withTimestamps();
+        return $this->belongsToMany(Community::class, 'communities','id')->withTimestamps();
     }
     
 }

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Participation;
+use App\Participation;//追加
 use Illuminate\Http\Request;
-use App\Community;
-use App\Friend;
-
+use App\Community;//追加
+use App\Friend;//追加
 
 class ParticipationsController extends Controller
 {
@@ -18,9 +17,12 @@ class ParticipationsController extends Controller
      
     public function index($id)
     {
+        // $user = \Auth::user();
+        // $friends = $user->friends()->where('status', 0)->get();
+        // dd($friends);
          // URLから取得したコミュニティ番号
         $community = Community::find($id);
-
+        
         //そのコミュニティに参加申請・承認・却下しているユーザー一覧
         $participations = $community->participations()->where('status', 0)->get();
         
@@ -28,7 +30,9 @@ class ParticipationsController extends Controller
         
         $friends = $user->friends()->where('status', 0)->get();
         
-        return view("participations.index", compact('participations','community', 'user'));
+        // dd($friends);
+        
+        return view("participations.index", compact('participations','community', 'user', 'friends'));
     }
 
     /**

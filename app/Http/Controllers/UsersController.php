@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\User;
 
-use App\Participation;
+use App\Participation;//追加
 
-use App\Community;
+use App\Community;//追加
 
 use Illuminate\Http\Request;
 
@@ -23,8 +23,8 @@ class UsersController extends Controller
       
       $participations = $community->participations()->where('status', 1)->get();
       
-    //   $participations_last = $participations->orderBy('created_at','desc')->get();
-      
+      //$participations_last = $participations->orderBy('created_at','desc')->get();
+    
       return view('users.index', compact('community', 'participations'));
     }
 
