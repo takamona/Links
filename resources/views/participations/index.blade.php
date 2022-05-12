@@ -68,7 +68,8 @@
          <form action="/friends" method="POST">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <th class="grey">{{ $friend->created_at }}</th>
-          <th>{{ $friend->user->name }}</th>
+          <th>{{ $friend->user_id}}</th>
+          <th>{{ $friend->user->name}}</th>
           <th><input type="radio" name="status" value="1" checked>承認する<input type="radio" name="status" value="2">承認しない</th>
         </tr>
         <th><input type="submit" value="決定"></th>

@@ -6,6 +6,7 @@ use App\Participation;//追加
 use Illuminate\Http\Request;
 use App\Community;//追加
 use App\Friend;//追加
+use App\User;
 
 class ParticipationsController extends Controller
 {
@@ -28,7 +29,15 @@ class ParticipationsController extends Controller
         
         $user  = \Auth::id();
         
+        // $friends = $user->friends()->where('status', 0)->get();
+        
+        $user = User::find(2);
         $friends = $user->friends()->where('status', 0)->get();
+        
+        // foreach($user->friends as $friend){
+        // $friend->name;
+        // $friend->created_at;
+        // };
         
         // dd($friends);
         
