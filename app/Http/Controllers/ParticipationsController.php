@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Participation;
 use Illuminate\Http\Request;
 use App\Community;
+use App\Friend;
 
 
 class ParticipationsController extends Controller
@@ -23,7 +24,11 @@ class ParticipationsController extends Controller
         //そのコミュニティに参加申請・承認・却下しているユーザー一覧
         $participations = $community->participations()->where('status', 0)->get();
         
-        return view("participations.index", compact('participations','community'));
+        $user  = \Auth::id();
+        
+        $friends = $user->friends()->where('status', 0)->get();
+        
+        return view("participations.index", compact('participations','community', 'user'));
     }
 
     /**
