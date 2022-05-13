@@ -93,6 +93,9 @@ class User extends Authenticatable
         return $this->participation_communities()->where('community_id', $community_id)->exists();
     }
     
+    
+    
+    
     //このユーザーが所有するフレンド申請一覧　（Friendモデルとの1対多の関係を定義）
     public function friends()
     {
