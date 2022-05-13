@@ -29,10 +29,10 @@ class ParticipationsController extends Controller
         
         $user  = \Auth::id();
         
-        // $friends = $user->friends()->where('status', 0)->get();
-        
-        $user = User::find(2);
         $friends = $user->friends()->where('status', 0)->get();
+        
+        // $user = User::find(2);
+        // $friends = $user->friends()->where('status', 0)->get();
         
         // foreach($user->friends as $friend){
         // $friend->name;
