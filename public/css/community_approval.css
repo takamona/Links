@@ -61,12 +61,13 @@ list-style:none;
 
 
 .comyuicon{
-background-color:white;
-width:300px;
-height:250px;
-margin-top:20px;
-border :solid 1px;
+     background-color:white;
+     width:300px;
+     height:250px;
+     margin-top:20px;
+     border :solid 1px;
 }
+
 
 
 .kn{
@@ -93,20 +94,20 @@ border :solid 1px;
 
 
 .gr{
-     display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin-top:80px;
 }
 
 
 .sanka{
-background-color:#00008b;
-width:300px;
-height:60px;
-margin-left:450px;
-margin-top:-110px;
-text-align:center;
-line-height:70px;
+    background-color:#00008b;
+    width:300px;
+    height:60px;
+    margin-left:450px;
+    margin-top:-110px;
+    text-align:center;
+    line-height:70px;
 }
 
 
