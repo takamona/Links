@@ -1,0 +1,181 @@
+.osirase{
+  border:solid 3px;
+  padding-right:700px;
+  width:20%;
+  position:relative;
+  left:10px;
+  text-align:center;
+  margin-top:1%;
+}
+
+
+.osirase ul{
+  list-style: none;
+}
+
+.calender{
+  border:solid 3px;
+}
+
+.calendar{
+  width:90%;
+  height:40vh;
+}
+
+.title ul{
+  list-style:none;
+  border:solid 3px;
+}
+
+.title{
+  width:60%;
+}
+
+#upload{
+  position:relative;
+  width:300px;
+  height:180px;
+  opacity:1;
+  transition:1s;
+}
+#upload:hover{
+  opacity:0.5;
+}
+
+#img{
+  width:300px;
+}
+
+.up1{
+  position:absolute;
+  opacity:0;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+    transition:1s;
+}
+
+.moji{
+    opacity:1;
+}
+.tc{
+  margin-top:100px;
+}
+
+.honbun{
+  width:90%;
+  height:200px;
+}
+
+.r{
+  text-align:center;
+}
+
+.over{
+  position:fixed;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.6);
+  z-index:1000;
+  display:none;
+}
+
+.over > div{
+  position:absolute;
+  width:300px;
+  background:blue;
+  padding:10px;
+  color:white;
+  text-align:center;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border:solid 2px white;
+}
+
+  .nav {
+  display: grid;
+  grid-template-columns:33% 33% 1fr;
+  list-style: none;
+}
+  
+ 
+
+
+nav li {
+  width: 140px;
+  text-align: center;
+  margin:auto;
+  background-color: #333;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 310px;
+}
+
+  
+.top{
+  width:100%;
+}
+
+.komyu{
+  width:100%;
+}
+
+.myp{
+  width:100%;
+}
+
+.pencil{
+  width:10%;
+}
+
+.nikkikaku{
+  position:relative;
+}
+  
+.kaku{
+  margin-top:10px;
+}
+
+.nkaku{
+  width:130px;
+}
+
+.kaku input{
+  width:130px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.bitiran{
+  background-color:gray;
+}
+
+.border{
+  boder:solid 3px;
+  width:80%;
+  height:20px;
+  background-color:yellow;
+  margin-top:11%;
+}
+
+.gmain{
+  display:grid;
+  grid-template-columns:30% 17% 50%;
+}
+
+.pe{
+  position:relative;
+  height:36px;
+  width:120px;
+}
+
+.pe div{
+  position:absolute;
+  right:30px;
+  top:-4px;
+}
+
+.pencil2{
+  width:40px;
+}
