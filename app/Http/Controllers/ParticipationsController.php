@@ -34,11 +34,6 @@ class ParticipationsController extends Controller
         // $user = User::find(2);
         // $friends = $user->friends()->where('status', 0)->get();
         
-        // foreach($user->friends as $friend){
-        // $friend->name;
-        // $friend->created_at;
-        // };
-        
         // dd($friends);
         
         return view("participations.index", compact('participations','community', 'user', 'friends'));

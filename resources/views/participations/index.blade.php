@@ -61,7 +61,7 @@
           <th colspan="3" class="orange">フレンド申請一覧</th>
         </tr>
         <tr>
-          <th colspan="3">申請○○件</th>
+          <th colspan="3">申請{{ count($friends) }}件</th>
         </tr>
         @foreach($friends as $friend)
         <tr>
