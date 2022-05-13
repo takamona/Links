@@ -2,12 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
 use App\User;//追加
-
-
-
+use Illuminate\Database\Eloquent\Model;
 
 class friend extends Model
 {

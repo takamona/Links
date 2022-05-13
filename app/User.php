@@ -102,4 +102,13 @@ class User extends Authenticatable
         return $this->hasMany(Friend::class);
         
     }
+    
+    //このユーザーが所有するイベント一覧
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+        
+    }
+    
+    
 }
