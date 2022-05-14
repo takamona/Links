@@ -89,9 +89,16 @@ ul {
   top: 40px;
   left: 50px;
   background-color: white;
-  width: 150px;
+  width: 150px; 
   height: 100px;
 }
+
+.icon>img{
+  width: 150px !important;
+  height:100px !important;
+}
+
+
 
 .time {
   border: solid 1px;
@@ -119,3 +126,4 @@ ul {
   height: 100px;
   border-bottom: solid 1px;
 }
+
