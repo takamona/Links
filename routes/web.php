@@ -50,7 +50,10 @@ Route::group(['middleware' => ['auth']], function () {
     
      // フレンド申請関係
     Route::resource('friends', 'FriendsController', ['only' => ['index', 'create', 'store', 'update']]); 
-
+　　
+　　//トピックス一覧（返信機能なし、誰でも公開限定）
+    Route::get('getOpenTopics', 'TopicsController@getOpenTopics')->name('open_topics.get');
+    
     //　コミュニティ申請関係
     Route::group(['prefix' => 'communities/{id}'], function () {
         
@@ -64,8 +67,6 @@ Route::group(['middleware' => ['auth']], function () {
         // ユーザー関連
         Route::resource('users', 'UsersController', ['only' => ['index', 'create', 'store', 'show']]); 
         
-        // トピックス一覧（返信機能なし、誰でも公開限定）
-        Route::get('getOpenTopics', 'TopicsController@getOpenTopics')->name('open_topics.get');
     });
 
     
