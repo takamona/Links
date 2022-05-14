@@ -66,7 +66,7 @@ Route::group(['middleware' => ['auth']], function () {
         // ユーザー関連
         Route::resource('users', 'UsersController', ['only' => ['index', 'create', 'store', 'show']]); 
         
-        //トピック関係
+        //イベント関係
         Route::resource('events', 'EventsController', ['only' => ['index', 'create', 'store', 'show','display']]);
         
     });
