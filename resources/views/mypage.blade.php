@@ -77,7 +77,7 @@
     </div>
     <div>
       <img class="topic" src="{{ asset('images/glasses-book.jpg')}}" alt="トピック一覧">
-      <p><a href="topicdisplay.html">トピック一覧</a></p>
+      <p><a href="/getOpenTopics">トピック一覧</a></p>
     </div>
     </div>
 <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>

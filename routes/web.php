@@ -49,9 +49,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('posts', 'PostsController');
     
      // フレンド申請関係
-    Route::resource('friends', 'FriendsController', ['only' => ['index', 'create', 'store', 'update']]); 
-　　
-　　//トピックス一覧（返信機能なし、誰でも公開限定）
+    Route::resource('friends', 'FriendsController', ['only' => ['index', 'create', 'store', 'update']]);
+    
     Route::get('getOpenTopics', 'TopicsController@getOpenTopics')->name('open_topics.get');
     
     //　コミュニティ申請関係

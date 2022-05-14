@@ -2,9 +2,9 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8">
-  <title>プロフィール登録</title>
-  <link rel="stylesheet" href="{{ asset('/css/topic_display.css')}}">
-  </head> 
+  <title>トピック一覧</title>
+  <link rel="stylesheet" href="{{ asset('/css/topic_display.css')}}"  type="text/css" />
+ </head> 
  <body>
     <div class="po">
       <nav>

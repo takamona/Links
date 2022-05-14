@@ -175,9 +175,9 @@ class TopicsController extends Controller
     
     public function  getOpenTopics()
     {
-        
-        
-        return view('topic.display', compact('topic'))
+    
+        //
+        return view('topics.display', compact('topic'));
     }
     
 }
