@@ -28,6 +28,16 @@
       </div>
     </div>
     <div class="bar"></div>
+    トピックス {{ count($topics) }}
+    @foreach($topics as $topic)
+    <div class="topic">
+      <div class="icon"></div>
+      <div class="time">{{ $topic->created_at}}</div>
+      <div class="honbun">
+        <div class="title"></div>
+      </div>
+    </div>
+    @endforeach
     <div class="topic">
       <div class="icon"></div>
       <div class="time"></div>
@@ -56,13 +66,5 @@
         <div class="title"></div>
       </div>
     </div>
-    <div class="topic">
-      <div class="icon"></div>
-      <div class="time"></div>
-      <div class="honbun">
-        <div class="title"></div>
-      </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </body>
 </html>

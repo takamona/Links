@@ -20,7 +20,7 @@ class CreateTopicsTable extends Migration
             $table->string('title');//タイトル
             $table->text('content');//内容
             $table->string('image');//画像
-            $table->Integer('disdosure_range');//公開範囲 0,1,2など 公開1,非公開2
+            $table->Integer('disdosure_range');//公開範囲 0,1,2など コミュニティ内公開1,フレンドのみ公開2
             $table->timestamps();
             
             // 外部キー制約

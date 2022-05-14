@@ -175,9 +175,14 @@ class TopicsController extends Controller
     
     public function  getOpenTopics()
     {
-    
+        
+        $topics = Topic::get();
+        
+        $topics = $topics->where('disdosure_range', 0);
+        
         //
-        return view('topics.display', compact('topic'));
+        
+        return view('topics.display', compact('topics'));
     }
     
 }
