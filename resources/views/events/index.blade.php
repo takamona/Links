@@ -3,17 +3,17 @@
  <head>
   <meta charset="UTF-8">
   <title>プロフィール登録</title>
-  <link rel="stylesheet" href="./css/eventdisplay.css">
+  <link rel="stylesheet" href="{{asset('/css/eventdisplay.css')}}">
   </head>
 <body>
   <div class="po">
     <nav>
       <ul class="nav">
-        <li> <a href="mypage.html">マイページ</a> <img class="top" src="images/komyu.jpeg" alt="マイページ"> </li>
+        <li> <a href="/mypage">マイページ</a> <img class="top" src="{{asset('images/komyu.jpeg')}}" alt="マイページ"> </li>
       </ul>
     </nav>
     <ul class="logout">
-      <li> <a href="index.html">ログアウト</a> </li>
+      <li> <a href="/logout">ログアウト</a> </li>
     </ul>
   </div>
   <div class="flex">
@@ -26,7 +26,5 @@
     <div><a href="eventorganizer.html">主催イベント</a></div>
   </div>
   <div class="bar"> </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="profile.js"></script>
 </body>
 </html>
