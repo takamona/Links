@@ -172,4 +172,12 @@ class TopicsController extends Controller
         //
     }
     
+    
+    public function  getOpenTopics()
+    {
+        
+        
+        return view('topic.display', compact('topic'))
+    }
+    
 }

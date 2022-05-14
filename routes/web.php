@@ -48,12 +48,12 @@ Route::group(['middleware' => ['auth']], function () {
     // ポスト関係
     Route::resource('posts', 'PostsController');
     
-    
      // フレンド申請関係
     Route::resource('friends', 'FriendsController', ['only' => ['index', 'create', 'store', 'update']]); 
 
     //　コミュニティ申請関係
     Route::group(['prefix' => 'communities/{id}'], function () {
+        
         // 投稿一覧
         Route::resource('participations', 'ParticipationsController', ['only' => ['index', 'create', 'store', 'show', 'update']]);
         // Route::post('approval', 'ParticipationsController@participation_approval');
@@ -63,6 +63,9 @@ Route::group(['middleware' => ['auth']], function () {
         
         // ユーザー関連
         Route::resource('users', 'UsersController', ['only' => ['index', 'create', 'store', 'show']]); 
+        
+        // トピックス一覧（返信機能なし、誰でも公開限定）
+        Route::get('getOpenTopics', 'TopicsController@getOpenTopics')->name('open_topics.get');
     });
 
     

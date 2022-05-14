@@ -21,9 +21,9 @@
     <div class="kn"><input placeholder="コミュニティを検索！"></div>
   </div>
   <div class="comyuicon"><img class="comyu_img" src="{{ asset('uploads/' . $community->image)}}"></div>
-  <div class="pobutton">
-    <div class="sanka"> 参加する </div>
-  </div>
+  <!--<div class="pobutton">-->
+  <!--  <div class="sanka"> 参加する </div>-->
+  <!--</div>-->
   <div class="gr">
     <div><a href="/communities/{{ $community->id }}">トップ</a></div>
     <div><a href="/communities/{{ $community->id }}/topics">トピックス</a></div>
