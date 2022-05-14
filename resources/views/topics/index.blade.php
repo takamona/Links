@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>マイページ</title>
   <link rel="stylesheet" href="{{ asset('/css/community_topics.css')}}">
-  </head>
+ </head>
 <body>
   <div class="po">
     <nav>
