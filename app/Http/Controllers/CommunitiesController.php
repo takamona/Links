@@ -8,7 +8,9 @@ use App\User;
 
 use App\Participation;
 
-use APP\Topic;
+use App\Topic;
+
+use App\Event;
 
 use Illuminate\Http\Request;
 
@@ -118,13 +120,15 @@ class CommunitiesController extends Controller
         $community = Community::find($id);
          // 注目しているコミュニティのユーザーデータ取得
         $participations = $community->participations()->where('status', 1)->get();
-         
+        
+        $events = $community->events()->get();
+        
         // $user = $community->user()->get()->first();
         // 注目しているユーザの投稿一覧取得
         // $posts = $user->posts()->orderBy('id', 'desc')->paginate(10);
         
         // dd('community show');
-        return view('communities.show', compact('community','participations'));
+        return view('communities.show', compact('community','participations','events'));
     }
 
     /**

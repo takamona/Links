@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\User; //追加
 use App\Topic; // 追加
-
+use App\Event;
 
 class Community extends Model
 {
@@ -32,8 +32,10 @@ class Community extends Model
         return $this->hasMany(Topic::class);
     }
 
-
-
+     public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
     /**このコミュニティが所有する参加申請
          * 
      */

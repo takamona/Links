@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Friend; //追記
 use App\Profile; // 追記
 use App\Community; // 追記
-
+use App\Event;     //追記
 
 class User extends Authenticatable
 {
