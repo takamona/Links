@@ -86,4 +86,17 @@ class EventsController extends Controller
     {
         //
     }
+    
+    public function  getOpenEvents()
+    {
+        
+        $events = Event::get();
+        
+        
+        //
+        
+        return view('events.eventdisplay', compact('events'));
+    }
+    
+    
 }

@@ -63,7 +63,7 @@
   <div class="gr">
    <div>
       <img class="event" src="{{ asset('images/audience.jpg')}}" alt="イベント">
-      <a href="/communities/{{ \Auth::id() }}/events"><p>イベント</p></a>
+      <a href="/getOpenEvents"><p>イベント</p></a>
     </div>
     <div>
       <img class="event2" src="{{ asset('images/audience.jpg')}}" alt="参加予定のイベント">

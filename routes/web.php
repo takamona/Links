@@ -53,6 +53,8 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('getOpenTopics', 'TopicsController@getOpenTopics')->name('open_topics.get');
     
+    Route::get('getOpenEvents', 'EventsController@getOpenEvents')->name('open_events.get');
+    
     //　コミュニティ申請関係
     Route::group(['prefix' => 'communities/{id}'], function () {
         
