@@ -55,23 +55,26 @@
       </div>
     </div>
     <div></div>
+    <div class="rr">
     <div class="title">
+      </div>
       <div class="bitiran">
         <table border="3">
           <tr>
-          <th colspan=2>イベント一覧
+          <th colspan=2>イベント投稿
           </th>
           <th>
-        </div>
         <tr>
         <th colspan=2>
         <input type="checkbox" name="check">全てチェックする 
+        </th>
+        </tr>
         <tr>
         <th colspan=2>
-        <input type="checkbox" name="check">タイトル　
+        <input type="checkbox" name="check">タイトル
         <div>編集する</div>
         <tr>
-        <th>日記
+        <th>イベント
         </th>
         <th>
         <input placeholder="タイトル" class="tc">
@@ -83,32 +86,17 @@
         <th>
         <textarea placeholder="本文" class="honbun"></textarea>
         </th>
-        <tr>
-        <th>写真
-        </th>
-        <th>
-        <div id="upload">
-          <img id="img" src="{{ asset('images/profilesample.png')}}">
-          <div class="up1">画像を変更する</div>
-          <div style="display:none">
-            <input type="file" id="uploadFile2">
-          </div>
-        </div>
-        </th>
-        </tr>
-        <tr>
-        <th>公開範囲
-        </th>
-        <td>
-        <input type="radio" name="koukai">全体に公開 
-        <input type="radio" name="koukai">友人まで 
-        <input type="radio" name="koukai">お気に入り 
-        </td>
-        </tr>
+         <div id="upload">
+         </div>
+        <form action="/communities/{{ $community->id }}/events/create" method="POST">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="community_id" value="{{ $community->id }}">
         <tr>
         <td colspan=2 class="r">
         <input type="button" class="re" value="入力内容を確認する">
+    
       </table>
+      </div>
     </div>
   </div>
   <div class="over">
@@ -118,6 +106,7 @@
       <input type="button" value="戻る" class="modoru">
     </div>
   </div>
+       </form>
   <div class="nikkikaku"></div>
   <script src="{{ asset('/js/event_post.js')}}"></script>
 </body>

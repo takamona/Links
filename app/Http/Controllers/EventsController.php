@@ -33,6 +33,8 @@ class EventsController extends Controller
         
         $community = Community::find($id);
         
+        $event = new Event();
+        
         return view("events.create", compact('community'));
     }
 
