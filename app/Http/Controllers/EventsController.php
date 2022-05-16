@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Event;
+use App\Community;
 use Illuminate\Http\Request;
 
 class EventsController extends Controller
@@ -14,9 +16,9 @@ class EventsController extends Controller
      */
     public function index()
     {
+        $events = Event::get();
         
-        
-         return view("events.index", compact('participations','community', 'user', 'friends'));
+        return view("events.index", compact('participations','community', 'events'));
     }
 
     /**
@@ -91,9 +93,6 @@ class EventsController extends Controller
     {
         
         $events = Event::get();
-        
-        
-        //
         
         return view('events.eventdisplay', compact('events'));
     }

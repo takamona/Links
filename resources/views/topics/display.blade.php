@@ -33,7 +33,7 @@
   <div class="honbun">
     {{ $topic->content}}  
     <div class="title">
-    {{$topic->title}}
+    {{ $topic->title }}
     </div>
   </div>
 </div>

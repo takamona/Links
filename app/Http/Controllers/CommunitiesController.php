@@ -121,14 +121,12 @@ class CommunitiesController extends Controller
          // 注目しているコミュニティのユーザーデータ取得
         $participations = $community->participations()->where('status', 1)->get();
         
-        $events = $community->events()->get();
-        
         // $user = $community->user()->get()->first();
         // 注目しているユーザの投稿一覧取得
         // $posts = $user->posts()->orderBy('id', 'desc')->paginate(10);
         
         // dd('community show');
-        return view('communities.show', compact('community','participations','events'));
+        return view('communities.show', compact('community','participations'));
     }
 
     /**

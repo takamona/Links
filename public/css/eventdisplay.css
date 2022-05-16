@@ -86,3 +86,27 @@ list-style:none;
     background-color:yellow;
     width:50%;
 }
+
+table.deta{
+  border-collapse:collapse;
+}
+ 
+table.deta th{
+  border:1px solid #000066;}
+
+
+.deta{
+    margin-top:30px;
+}
+
+table.deta{
+  border-collapse:collapse;
+}
+ 
+table.deta th{
+  border:1px solid #000066;}
+
+
+.deta{
+    margin-top:30px;
+}

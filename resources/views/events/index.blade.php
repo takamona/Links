@@ -9,11 +9,11 @@
    <div class="po">
     <nav>
       <ul class="nav">
-        <li> <a href="mypage">マイページ</a> <img class="top" src="images/komyu.jpeg" alt="マイページ"> </li>
+        <li> <a href="/mypage">マイページ</a> <img class="top" src="{{asset('images/komyu.jpeg')}}" alt="マイページ"> </li>
       </ul>
     </nav>
     <ul class="logout">
-      <li> <a href="index.html">ログアウト</a> </li>
+      <li> <a href="/logout">ログアウト</a> </li>
     </ul>
   </div>
   <div class="flex">

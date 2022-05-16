@@ -31,7 +31,10 @@ class Community extends Model
     {
         return $this->hasMany(Topic::class);
     }
-
+    
+   /**  
+    *このコミュニティが所有するイベント一覧（Eventモデルとの1対多の関係を定義）
+    */
      public function events()
     {
         return $this->hasMany(Event::class);
