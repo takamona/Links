@@ -74,27 +74,26 @@
         <input type="checkbox" name="check">タイトル
         <div>編集する</div>
         <tr>
-        <th>イベント
+        <th>タイトル
         </th>
         <th>
-        <input placeholder="タイトル" class="tc">
+          <form action="/communities/{{ $community->id }}/events" method="POST">
+           <input type="hidden" name="_token" value="{{ csrf_token() }}">
+           <input type="hidden" name="community_id" value="{{ $community->id }}">
+        <input placeholder="タイトル" name="title" class="tc">
         </th>
         </tr>
         <tr>
         <th>本文
         </th>
         <th>
-        <textarea placeholder="本文" class="honbun"></textarea>
+           <textarea placeholder="本文" name="content" class="honbun"></textarea>
         </th>
          <div id="upload">
          </div>
-        <form action="/communities/{{ $community->id }}/events/create" method="POST">
-          <input type="hidden" name="_token" value="{{ csrf_token() }}">
-          <input type="hidden" name="community_id" value="{{ $community->id }}">
         <tr>
         <td colspan=2 class="r">
         <input type="button" class="re" value="入力内容を確認する">
-    
       </table>
       </div>
     </div>
@@ -102,7 +101,7 @@
   <div class="over">
     <div>投稿してもよろしいでしょうか？ 
       <br>
-      <input type="button" value="投稿">
+      <input type="submit" value="投稿">
       <input type="button" value="戻る" class="modoru">
     </div>
   </div>

@@ -46,9 +46,31 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        // validation        
+        //for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
+        $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required',
+            'community_id' => 'required',
+        ]);
+    
+       // 入力情報の取得
+        $title = $request->input('title');
+        $content = $request->input('content');
+        $community_id = $request->input('community_id');
+    
+        $event = new Event();
+        $event->user_id = \Auth::id();
+        $event->community_id = $community_id;
+        $event->title = $title;
+        $event->content = $content;
+        $event->save();
+        
+        
+        // トップページへリダイレクト
+        return redirect('/communities/' . $community_id . '/events ')->with('flash_message', 'イベントを作成しました');
     }
-
     /**
      * Display the specified resource.
      *
