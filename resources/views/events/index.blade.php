@@ -24,11 +24,16 @@
   <div class="pobutton">
     <div class="sanka">参加する</div>
   </div>
+  <div class="position_create">
+  <div class="event_creat">
+    <a href="/communities/{{$community->id}}/events/create">+新規作成</a>
+  </div>
+  </div>
   <div class="gr">
-    <div><a href="community_top.html">トップ</a></div>
-    <div><a href="community_topics.html">トピックス</a></div>
+    <div><a href="/communities/{{$community->id}}">トップ</a></div>
+    <div><a href="/communities/{{$community->id}}/topics">トピックス</a></div>
     <div class="yellow">イベント</div>
-    <div><a href="community_approval.html">承認・コミュニティ参加申請・フレンド申請</a></div>
+    <div><a href="/communities/{{$community->id}}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
   </div>
   <div class="bar"></div>
   <div class="eventdisplay">

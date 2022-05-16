@@ -14,9 +14,11 @@ class EventsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
         $events = Event::get();
+        //URLからコミュニティインスタンスを抜き出す。
+        $community = Community::find($id);
         
         return view("events.index", compact('participations','community', 'events'));
     }
@@ -26,9 +28,12 @@ class EventsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        
+        $community = Community::find($id);
+        
+        return view("events.create", compact('community'));
     }
 
     /**

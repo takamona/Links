@@ -27,7 +27,7 @@
   <div class="gr">
     <div><a href="/communities/{{ $community->id }}">トップ</a></div>
     <div><a href="/communities/{{ $community->id }}/topics">トピックス</a></div>
-    <div><a href="community_event.html">イベント</a></div>
+    <div><a href="/communities/{{ $community->id }}/events">イベント</a></div>
     <div class="yellow">承認・コミュニティ参加申請・フレンド申請</div>
   </div>
   <div class="bar"> </div>

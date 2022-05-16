@@ -26,6 +26,7 @@
     <div><a href="eventorganizer.html">主催イベント</a></div>
   </div>
   <div class="bar"> </div>
+  イベント{{ count($events) }}件
   <table class="deta">
     <tr><th>イベントID</th><th>コミュニティ名<th>ユーザー名</th><th>タイトル</th><th>内容</th><th>作成日</th></tr>
     @foreach($events as $event)

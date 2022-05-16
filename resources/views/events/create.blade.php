@@ -2,29 +2,29 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8">
-  <title>イベント編集削除</title>
-  <link rel="stylesheet" href="{{ asset('/css/event_post.css')}}"type="text/css" />
-  <link rel="stylesheet" href="https://school.oohara.jp/oohara/fullcalendar.css" type="text/css" />
+  <title>イベント投稿</title>
 </head>
 <body>
   <!-- fullcalendar-3.10.0 -->
   <!-- 必要jsの読み込み -->
-  <script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/moment.min.js'></script>
-  <script src='https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/jquery.min.js'></script>
-  <script src="https://school.oohara.jp/oohara/fullcalendar.js"></script>
+  <script src="{{ asset('https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/moment.min.js')}}"></script>
+  <script src="{{ asset('https://fullcalendar.io/releases/fullcalendar/3.9.0/lib/jquery.min.js')}}"></script>
+  <script src="{{ asset('https://school.oohara.jp/oohara/fullcalendar.js')}}"></script>
+  <link rel="stylesheet" href="{{ asset('/css/event_post.css')}}"/>
+  <link rel="stylesheet" href="{{ asset('https://school.oohara.jp/oohara/fullcalendar.css')}}"/>
   <nav>
   <ul class="nav">
     <li>
       <a href="#top">TOP</a>
-      <img class="top" src="images/top.jpg">
+      <img class="top" src="{{ asset('images/top.jpg')}}">
     </li>
     <li>
-      <a href="#login">ログイン</a>
-      <img class="komyu" src="images/login.jpg">
+      <a href="/login">ログイン</a>
+      <img class="komyu" src="{{ asset('images/login.jpg')}}">
     </li>
     <li>
-      <a href="#mypage">マイページ</a>
-      <img class="myp" src="images/komyu.jpeg">
+      <a href="/mypage">マイページ</a>
+      <img class="myp" src="{{ asset('images/komyu.jpeg')}}">
     </li>
   </ul>
   </nav>
@@ -32,7 +32,7 @@
   <div class="osirase">
     <ul>
       <li>
-        <img class="pencil" src="images/pencil.png">○○のイベント
+        <img class="pencil" src="{{ asset('images/pencil.png')}}">{{$community->name}}のイベント
       </li>
     </ul>
   </div>
@@ -44,7 +44,7 @@
         <div class="pe">
           <input type="button" value="イベント投稿" class="modoru">
           <div>
-            <img class="pencil2" src="images/pencil.png">
+            <img class="pencil2" src="{{ asset('images/pencil.png')}}">
           </div>
         </div>
         </th>
@@ -88,7 +88,7 @@
         </th>
         <th>
         <div id="upload">
-          <img id="img" src="images/profilesample.png">
+          <img id="img" src="{{ asset('images/profilesample.png')}}">
           <div class="up1">画像を変更する</div>
           <div style="display:none">
             <input type="file" id="uploadFile2">

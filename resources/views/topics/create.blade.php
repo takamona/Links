@@ -2,7 +2,7 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8">
-  <title>日記編集削除</title>
+  <title>トピック投稿</title>
 </head>
 <body>
   <!-- fullcalendar-3.10.0 -->

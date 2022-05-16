@@ -41,7 +41,7 @@ nav li {
 }
 
 ul{
-list-style:none;
+   list-style:none;
 }
 
 
@@ -59,11 +59,11 @@ list-style:none;
 
 
 .comyuicon{
-background-color:white;
-width:300px;
-height:250px;
-margin-top:20px;
-border :solid 1px;
+   background-color:white;
+   width:300px;
+   height:250px;
+   margin-top:20px;
+   border :solid 1px;
 }
 
 
@@ -91,20 +91,20 @@ border :solid 1px;
 
 
 .gr{
-     display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin-top:80px;
 }
 
 
 .sanka{
-background-color:#00008b;
-width:300px;
-height:60px;
-margin-left:450px;
-margin-top:-110px;
-text-align:center;
-line-height:70px;
+   background-color:#00008b;
+   width:300px;
+   height:60px;
+   margin-left:450px;
+   margin-top:-110px;
+   text-align:center;
+   line-height:70px;
 }
 
 
@@ -151,17 +151,17 @@ line-height:70px;
 }
 
 .eventdisplay{
-position:relative;
+    position:relative;
 }
 
 .honbun{
     position:absolute;
     top:200px;
     right:200px;
- background-color: white;
- height:300px;
- width:350px;
- border:solid 1px;
+    background-color: white;
+    height:300px;
+    width:350px;
+    border:solid 1px;
 }
 
 .eventplace2{
@@ -193,17 +193,17 @@ position:relative;
 }
 
 .eventdisplay2{
-position:relative;
+    position:relative;
 }
 
 .honbun2{
     position:absolute;
     top:700px;
     right:200px;
- background-color: white;
- height:300px;
- width:350px;
- border:solid 1px;
+    background-color: white;
+    height:300px;
+    width:350px;
+    border:solid 1px;
 }
 
 .eventplace3{
@@ -235,17 +235,17 @@ position:relative;
 }
 
 .eventdisplay3{
-position:relative;
+    position:relative;
 }
 
 .honbun3{
     position:absolute;
     top:1200px;
     right:200px;
- background-color: white;
- height:300px;
- width:350px;
- border:solid 1px;
+    background-color: white;
+    height:300px;
+    width:350px;
+    border:solid 1px;
 }
 
 .eventplace4{
@@ -277,17 +277,17 @@ position:relative;
 }
 
 .eventdisplay4{
-position:relative;
+    position:relative;
 }
 
 .honbun4{
     position:absolute;
     top:1700px;
     right:200px;
- background-color: white;
- height:300px;
- width:350px;
- border:solid 1px;
+    background-color: white;
+    height:300px;
+    width:350px;
+    border:solid 1px;
 }
 
 .eventplace5{
@@ -319,20 +319,34 @@ position:relative;
 }
 
 .eventdisplay5{
-position:relative;
+    position:relative;
 }
 
 .honbun5{
     position:absolute;
     top:2200px;
     right:200px;
- background-color: white;
- height:300px;
- width:350px;
- border:solid 1px;
+    background-color: white;
+    height:300px;
+    width:350px;
+    border:solid 1px;
+}
+
+.position_create{
+    position: relative;
 }
 
 
+.event_creat{
+    position: absolute;
+    background-color:yellow;
+    width:150px;
+    border:solid 1px;
+    top:-150px;
+    left:500px;
+    /*margin-left:500px;*/
+    /*margin-top:-120px;*/
+}
 
 
 
