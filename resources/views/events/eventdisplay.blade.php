@@ -29,7 +29,7 @@
   <table class="deta">
     <tr><th>イベントID</th><th>コミュニティ名<th>ユーザー名</th><th>タイトル</th><th>内容</th><th>作成日</th></tr>
     @foreach($events as $event)
-    <tr><th>{{$event->id}}</th><th>{{$event->community_id}}</th><th>{{$event->user->name}}</th><th>{{$event->title}}</th><th>{{$event->content}}</th><th>{{$event->created_at}}</th></tr>
+    <tr><th>{{$event->id}}</th><th>{{$event->community->name}}</th><th>{{$event->user->name}}</th><th>{{$event->title}}</th><th>{{$event->content}}</th><th>{{$event->created_at}}</th></tr>
     @endforeach
   </table>
 </body>

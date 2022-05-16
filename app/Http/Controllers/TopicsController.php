@@ -182,7 +182,7 @@ class TopicsController extends Controller
         
         //
         
-        return view('topics.display', compact('topics' 'community'));
+        return view('topics.display', compact('topics'));
     }
     
 }
