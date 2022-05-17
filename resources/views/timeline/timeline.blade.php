@@ -54,18 +54,30 @@
 <div class="profile">
   <img id="img" src="{{asset('images/profilesample.png')}}" alt="プロフィール">
 </div>
+<p>トピックス {{ count($topics) }}件 </p> 
+@foreach($topics as $topic)
 <div class="topic">
-  <div class="icon"></div>
-  <div class="time"></div>
+  <div class="icon">
+  <img class="icon_image" src="{{ asset('/uploads')}}/{{ $topic->image }}"alt="アイコン">
+  </div>
+  <div class="time">
+{{ $topic->created_at }}
+  </div>
   <div class="honbun">
-    <div class="title"></div>
+{{ $topic->content }}
+    <div class="title">
+{{ $topic->title }}
+    </div>
   </div>
 </div>
+@endforeach
 <div class="event">イベント一覧 
   <div class="list">
     <ul>
-      <li>イベント</li>
+@foreach($events as $event)
+      <li>{{$event->title}}</li
     </ul>
+@endforeach
     <div class="sagasu">イベントを探す </div>
   </div>
 </div>
