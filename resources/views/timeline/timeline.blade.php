@@ -75,10 +75,10 @@
   <div class="list">
     <ul>
 @foreach($events as $event)
-      <li>{{$event->title}}</li
-    </ul>
+      <li>{{$event->title}}</li>
 @endforeach
-    <div class="sagasu">イベントを探す </div>
+    </ul>
+    <div class="sagasu">イベントを探す</div>
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

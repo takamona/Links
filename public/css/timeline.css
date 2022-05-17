@@ -185,6 +185,7 @@
 .list {
   border: solid 1px;
   height: 100px;
+  /*margin-top:20px;*/
 }
 
 .sagasu {
@@ -192,4 +193,10 @@
   height: 43px;
   width: 297px;
   text-align: center;
+}
+
+
+.icon>img{
+  width: 250px !important;
+  height:150px !important;
 }
