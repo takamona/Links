@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Community;
+use App\Participation;
 use Illuminate\Http\Request;
 
 class EventsController extends Controller
@@ -20,7 +21,15 @@ class EventsController extends Controller
         //URLからコミュニティインスタンスを抜き出す。
         $community = Community::find($id);
         
-        return view("events.index", compact('participations','community', 'events'));
+        $participation = $community->participations()->where('user_id', \Auth::id())->where('status', 1)->first();
+        
+        
+        if($participation===null){
+         $participation = new Participation();
+         $participation->status = 3;
+         }
+          
+        return view("events.index", compact('participation','community', 'events'));
     }
 
     /**

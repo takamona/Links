@@ -24,11 +24,14 @@
   <div class="pobutton">
     <!--<div class="sanka">参加する</div>-->
   </div>
+  
+@if($participation->status === 1 )
   <div class="position_create">
   <div class="event_creat">
     <a href="/communities/{{$community->id}}/events/create">+新規作成</a>
   </div>
   </div>
+@endif
   <div class="gr">
     <div><a href="/communities/{{$community->id}}">トップ</a></div>
     <div><a href="/communities/{{$community->id}}/topics">トピックス</a></div>
