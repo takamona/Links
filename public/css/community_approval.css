@@ -61,11 +61,11 @@ list-style:none;
 
 
 .comyuicon{
-     background-color:white;
-     width:300px;
-     height:250px;
-     margin-top:20px;
-     border :solid 1px;
+    background-color:white;
+    width:303px;
+    height:255px;
+    margin-top:30px;
+    border :solid 1px;
 }
 
 
@@ -149,4 +149,12 @@ background-color: orange;
 .grey{
   background-color: grey;  
     
+}
+
+
+.sample{
+    width:300px !important;
+    height:250px !important;
+    margin-left:1px;
+    margin-top:2px;
 }
