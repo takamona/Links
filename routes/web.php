@@ -51,9 +51,12 @@ Route::group(['middleware' => ['auth']], function () {
      // フレンド申請関係
     Route::resource('friends', 'FriendsController', ['only' => ['index', 'create', 'store', 'update']]);
     
+     //トピック一覧全て表示
     Route::get('getOpenTopics', 'TopicsController@getOpenTopics')->name('open_topics.get');
-    
+     //イベント一覧全て表示
     Route::get('getOpenEvents', 'EventsController@getOpenEvents')->name('open_events.get');
+    //タイムライン機能
+    Route::get('getOpenTopics_Events', 'TimelineController@getOpenTopics_Events')->name('open_topics_events.get');
     
     //　コミュニティ申請関係
     Route::group(['prefix' => 'communities/{id}'], function () {

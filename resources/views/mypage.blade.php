@@ -25,7 +25,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="/getOpenTopics_Events">
             <img src="{{ asset('images/TIMELINE.png')}}" alt="タイムライン">
           </a>
         </li>
