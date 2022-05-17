@@ -177,11 +177,16 @@
 }
 
 .event {
+  position:absolute;
   background-color: grey;
   width: 300px;
   height: 23px;
   border: solid 1px;
-  margin-top:-800px;
+  top:0px;
+}
+
+.position{
+  position:relative;
 }
 
 .list {
@@ -191,6 +196,8 @@
 }
 
 .sagasu {
+  position:absolute;
+  top:105px;
   background-color: #ffa500;
   height: 40px;
   width: 297px;

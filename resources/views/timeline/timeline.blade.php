@@ -54,7 +54,20 @@
 <div class="profile">
   <img id="img" src="{{asset('images/profilesample.png')}}" alt="プロフィール">
 </div>
-<p>トピックス {{ count($topics) }}件 </p> 
+<p>トピックス {{ count($topics) }}件 </p>
+<p>イベント　{{ count($events) }}件 </p>
+<div class="position">
+ <div class="event">イベント一覧 
+  <div class="list">
+    <ul>
+@foreach($events as $event)
+      <li>{{$event->title}}</li>
+@endforeach
+    </ul>
+    <div class="sagasu">イベントを探す</div>
+  </div>
+ </div>
+</div>
 @foreach($topics as $topic)
 <div class="topic">
   <div class="icon">
@@ -71,16 +84,6 @@
   </div>
 </div>
 @endforeach
-<div class="event">イベント一覧 
-  <div class="list">
-    <ul>
-@foreach($events as $event)
-      <li>{{$event->title}}</li>
-@endforeach
-    </ul>
-    <div class="sagasu">イベントを探す</div>
-  </div>
-</div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="{{asset('./js/timeline.js')}}"></script>
 </body>
