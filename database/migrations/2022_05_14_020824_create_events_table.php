@@ -15,7 +15,7 @@ class CreateEventsTable extends Migration
     {
            Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->unique();
+            $table->unsignedBigInteger('user_id');//ユーザーID
             $table->unsignedBigInteger('community_id');//コミュニティID
             $table->string('title');//タイトル
             $table->text('content'); // 内容
