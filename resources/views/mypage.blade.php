@@ -15,15 +15,17 @@
     <nav id="spmenu">
       <ul class="menu">
         <li>
-          <a href="mypage">
+          <a href="/mypage">
             <img src="{{ asset('images/MYPAGE.png')}}" alt="マイページ">
           </a>
         </li>
         <li>
-          <a href="#">
+          　@if($participation->status === 1)
+          <a href="/communities/{{ \Auth::id() }}">
             <img src= "{{ asset('images/COMMUNITY.png')}}" alt="コミュニティ">
           </a>
         </li>
+            @endif
         <li>
           <a href="/getOpenTopics_Events">
             <img src="{{ asset('images/TIMELINE.png')}}" alt="タイムライン">

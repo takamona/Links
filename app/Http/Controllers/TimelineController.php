@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Community;
+use App\Participation;
 use App\Topic;
 use App\Event;
 use Illuminate\Http\Request;
@@ -18,7 +19,17 @@ class TimelineController extends Controller
         
         $events = Event::get();
         
-        return view('timeline.timeline', compact('topics','events'));
+        $community = Community::first();
+        
+        $participation = $community->participations()->where('user_id', \Auth::id())->where('status', 1)->first();
+        
+        
+         if($participation===null){
+         $participation = new Participation();
+         $participation->status = 3;
+         }
+        
+        return view('timeline.timeline', compact('topics','events','participation'));
     }
     
 }

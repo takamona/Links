@@ -45,7 +45,8 @@
 }
 
 #img{
-  width:300px;
+  width:300px!important;
+  height:180px!important;
 }
 
 .up1{
@@ -190,3 +191,8 @@ nav li {
   margin-top: -60px;
   margin-left: 600px;
 }
+
+li{
+  list-style:none;
+}
+

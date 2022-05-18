@@ -20,12 +20,14 @@
       </a>
     </li>
     <li>
-      <a href="community.html">
+　　　@if($participation->status === 1)
+      <a href="/communities/{{ \Auth::id() }}">
         <img src="{{ asset('images/COMMUNITY.png')}}" alt="コミュニティ">
       </a>
     </li>
+    　@endif
     <li>
-      <a href="/timeline">
+      <a href="/getOpenTopics_Events">
         <img src="{{ asset('images/TIMELINE.png')}}" alt="タイムライン">
       </a>
     </li>
