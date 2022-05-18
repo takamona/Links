@@ -32,7 +32,7 @@ Route::group(['middleware' => ['guest']], function () {
 Route::group(['middleware' => ['auth']], function () {
     
     //ログイン後のリダイレクト先
-    Route::get('mypage', function () {
+    Route::get('mypage','MypageesController@index',function () {
             return view('mypage');
     });
     

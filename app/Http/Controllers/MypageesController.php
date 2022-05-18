@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\User;
 
+use App\Community;
+
+use App\Participation;
+
 use App\Profile;
 
 use Auth;
@@ -18,7 +22,7 @@ class MypageesController extends Controller
     {
         $user = \Auth::user();
         
-        $profile = $user->profile()->first;
+        $profile = $user->profile()->first();
         
         $community = Community::first();
         
@@ -33,6 +37,5 @@ class MypageesController extends Controller
         // viewの呼び出し
         return view('mypage', compact('profile','user', 'participation'));
     }
-
 
 }
