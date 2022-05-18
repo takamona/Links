@@ -40,7 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
     // プロフィール関係
-    Route::resource('profiles', 'ProfilesController', ['only' => ['index', 'create', 'store', 'show']]);
+    Route::resource('profiles', 'ProfilesController', ['only' => ['index', 'create', 'store', 'show', 'edit','update']]);
     
     //　コミュニティ関係
     Route::resource('communities', 'CommunitiesController', ['only' => ['index', 'create', 'store', 'show']]);

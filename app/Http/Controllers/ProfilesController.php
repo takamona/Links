@@ -108,7 +108,13 @@ class ProfilesController extends Controller
      */
     public function edit(Profile $profile)
     {
-        //
+          // ログインしている自分のプロフィールの場合
+        if($profile->user_id === \Auth::id()){
+            // view の呼び出し
+            return view('profiles.edit', compact('profile'));
+        }else{
+            return redirect('/mypage');
+        }
     }
 
     /**
@@ -120,7 +126,59 @@ class ProfilesController extends Controller
      */
     public function update(Request $request, Profile $profile)
     {
-        //
+        
+         // ログインしている自分のプロフィールの場合
+        if($profile->user_id === \Auth::id()){
+            // validation
+            //for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
+            $this->validate($request, [
+                'gender' => 'required',
+                'address' => 'required',
+                'hobby' => 'required',
+                'introduction' => 'required',
+                'image' => [
+                    'file',
+                    'mimes:jpeg,jpg,png'
+                ]
+            ]);
+            
+            // 入力情報の取得
+            $gender = $request->input('gender');
+            $address = $request->input('address');
+            $hobby = $request->input('hobby');
+            $introduction = $request->input('introduction');
+            $file =  $request->image;
+            
+            
+             // 画像ファイルのアップロード
+            // https://qiita.com/ryo-program/items/35bbe8fc3c5da1993366
+            if($file){
+                // 現在時刻ともともとのファイル名を組み合わせてランダムなファイル名作成
+                $image = time() . $file->getClientOriginalName();
+                // アップロードするフォルダ名取得
+                $target_path = public_path('uploads/');
+                // アップロード処理
+                $file->move($target_path, $image);
+            }else{
+                // 画像を選択していなければ、画像ファイルは元の名前のまま
+                $image = $profile->image;
+            }
+        
+            //入力情報をもとにインスタンスのプロパティ変更
+            $profile->gender = $gender;
+            $profile->address = $address;
+            $profile->hobby = $hobby;
+            $profile->introduction = $introduction;
+            $profile->image = $image;
+            
+            // データベース更新
+            $profile->save();
+    
+            // トップページへリダイレクト
+            return redirect('/mypage')->with('flash_message', 'プロフィールを変更しました。');
+        }else{
+            return redirect('/mypage');
+        }
     }
 
     /**

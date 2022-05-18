@@ -55,6 +55,7 @@
     <!--    <img class="syoki" src="{{ asset('/images/smiley.png') }}" alt="フレンド">-->
     <!--  </div>-->
     </div>
+    <a href="/profiles/{{$profile->id}}/edit"><p>プロフィールの編集ページへ</p></a>
       <table class="example">
         <tr>
           <th colspan="2">プロフィール
