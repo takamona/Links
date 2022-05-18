@@ -190,12 +190,8 @@
   transform: translatey(-10px) rotate(-135deg);
 }
 
-.position{
-  position:relative;
-  
-}
 
 .username{
   position:absolute;
-  top:-20px;
+  top:210px;
 }
