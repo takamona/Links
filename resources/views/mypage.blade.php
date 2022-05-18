@@ -57,7 +57,7 @@
     </div>
   </div>
   <div class="profile">
-    <img id="img" src="{{ asset('images/profilesample.png')}}" alt="プロフィール">
+    <img id="img" src="{{ asset('/uploads')}}/{{ $profile->image }}" alt="プロフィール">
   </div>
   <div>
     <a href="/profiles/{{ \Auth::id() }}">プロフィールを見る</a>
