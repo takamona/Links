@@ -56,11 +56,14 @@
       </ul>
     </div>
   </div>
+  <div class="position">
   <div class="profile">
     <img id="img" src="{{ asset('/uploads')}}/{{ $profile->image }}" alt="プロフィール">
   </div>
+  <p class="username"> {{$user->name}}さん </p>
   <div>
     <a href="/profiles/{{ \Auth::id() }}">プロフィールを見る</a>
+  </div>
   </div>
   <div class="gr">
    <div>
