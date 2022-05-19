@@ -22,12 +22,13 @@
       </ul>
     </div>
     <div class="flex">
-      <div class="e">トピックを探す</div>
+      <div class="e">トピック詳細・投稿ページ</div>
       <div class="kn">
         <input placeholder="検索">
       </div>
     </div>
     <div class="bar"></div>
+    <p><a href="/communities/{{$community->id}}/topics/{{$topic->id}}/edit">編集</a></p>
      <table class="show">
       <tr><th>ID</th>
        <th>ユーザー名</th>

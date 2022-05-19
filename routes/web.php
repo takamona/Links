@@ -66,7 +66,7 @@ Route::group(['middleware' => ['auth']], function () {
         // Route::post('approval', 'ParticipationsController@participation_approval');
 
         //トピック関係
-        Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'show','display']]);
+        Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'show','edit','update','display']]);
         
         // ユーザー関連
         Route::resource('users', 'UsersController', ['only' => ['index', 'create', 'store', 'show']]); 

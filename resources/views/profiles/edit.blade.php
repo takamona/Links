@@ -10,7 +10,7 @@
       <nav>
         <ul class="nav">
           <li>
-            <a href="mypage.html">マイページ</a>
+            <a href="/mypage">マイページ</a>
             <img class="top" src="{{ asset('/images/komyu.jpeg')}}" alt="マイページ">
           </li>
         </ul>

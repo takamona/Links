@@ -135,7 +135,7 @@ class TopicsController extends Controller
         }
         
         // view の呼び出し
-        return view('topics.show', compact('topic','posts', 'participation'));
+        return view('topics.show', compact('topic','posts', 'participation','community'));
     }
 
     /**
@@ -146,7 +146,17 @@ class TopicsController extends Controller
      */
     public function edit(Topic $topic)
     {
-        //
+        $topic = Topic::find($id);
+        
+        $community = Community::find($id);
+        
+          // ログインしている自分のトピックの場合
+        if($topic->user_id === \Auth::id()){
+            // view の呼び出し
+            return view('topics.edit', compact('topic','community'));
+        }else{
+            return redirect('/mypage');
+        }
     }
 
     /**
@@ -158,7 +168,55 @@ class TopicsController extends Controller
      */
     public function update(Request $request, Topic $topic)
     {
-        //
+         // ログインしている自分のトピックの場合
+        if($topic->user_id === \Auth::id()){
+            // validation
+            //for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
+            $this->validate($request, [
+                'title' => 'required',
+                'content' => 'required',
+                'disdosure_range' => 'required',
+                'image' => [
+                    'file',
+                    'mimes:jpeg,jpg,png'
+                ]
+            ]);
+            
+             // 入力情報の取得
+            $title = $request->input('title');
+            $content = $request->input('content');
+            $disdosure_range = $request->input('disdosure_range');
+            $file =  $request->image;
+            
+            // 画像ファイルのアップロード
+            // https://qiita.com/ryo-program/items/35bbe8fc3c5da1993366
+            if($file){
+                // 現在時刻ともともとのファイル名を組み合わせてランダムなファイル名作成
+                $image = time() . $file->getClientOriginalName();
+                // アップロードするフォルダ名取得
+                $target_path = public_path('uploads/');
+                // アップロード処理
+                $file->move($target_path, $image);
+            }else{
+                // 画像を選択していなければ、画像ファイルは元の名前のまま
+                $image = $profile->image;
+            }
+            
+            //入力情報をもとにインスタンスのプロパティ変更
+            $topic->title = $title;
+            $topic->content = $cintent;
+            $topic->disdosure_range = $disdosure_range;
+            $profile->image = $image;
+            
+            // データベース更新
+            $topic->save();
+    
+            // トップページへリダイレクト
+            return redirect('/communities/' . $community_id . '/topics ')->with('flash_message', 'トピックを変更しました。');
+        }else{
+            return redirect('/communities/' . $community_id . '/topics ');
+        }
+            
     }
 
     /**
