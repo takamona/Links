@@ -144,12 +144,10 @@ class TopicsController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Topic $topic)
+    public function edit(Request $request)
     {
-        $topic = Topic::find($id);
         
-        $community = Community::find($id);
-        
+        $topic = Topic::find($request->id);
           // ログインしている自分のトピックの場合
         if($topic->user_id === \Auth::id()){
             // view の呼び出し

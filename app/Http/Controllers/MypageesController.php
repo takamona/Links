@@ -26,6 +26,10 @@ class MypageesController extends Controller
         
         $community = Community::first();
         
+        if($community===null){
+        $community = new Community();
+        $community->name = 'sample';
+        }
         
         $participation = $community->participations()->where('user_id', \Auth::id())->where('status', 1)->first();
         
