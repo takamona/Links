@@ -81,6 +81,7 @@
               <input type="hidden" name="_method" value="PUT">
               <input type="hidden" name="_token" value="{{ csrf_token() }}">  
               <input type="hidden" name="community_id" value="{{ $community->id }}">
+              <input type="hidden" name="topic_id" value="{{ $topic->id }}">
               <input placeholder="タイトル" name="title" class="tc">
               </th>
               </tr>

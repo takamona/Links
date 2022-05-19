@@ -148,6 +148,8 @@ class TopicsController extends Controller
     {
         
         $topic = Topic::find($request->id);
+        
+        $community = Community::find($request->id);
           // ログインしている自分のトピックの場合
         if($topic->user_id === \Auth::id()){
             // view の呼び出し
@@ -170,22 +172,26 @@ class TopicsController extends Controller
         if($topic->user_id === \Auth::id()){
             // validation
             //for image ref) https://qiita.com/maejima_f/items/7691aa9385970ba7e3ed
-            $this->validate($request, [
-                'title' => 'required',
-                'content' => 'required',
-                'disdosure_range' => 'required',
-                'image' => [
-                    'file',
-                    'mimes:jpeg,jpg,png'
-                ]
-            ]);
+             $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required',
+            'disdosure_range' => 'required',
+            'community_id' => 'required',
+            'image' => [
+                'required',
+                'file',
+                'mimes:jpeg,jpg,png'
+            ]
+        ]);
             
              // 入力情報の取得
-            $title = $request->input('title');
-            $content = $request->input('content');
-            $disdosure_range = $request->input('disdosure_range');
-            $file =  $request->image;
-            
+             $title = $request->input('title');
+             $content = $request->input('content');
+             $disdosure_range = $request->input('disdosure_range');
+             $community_id = $request->input('community_id');
+             $file =  $request->image;
+             
+             
             // 画像ファイルのアップロード
             // https://qiita.com/ryo-program/items/35bbe8fc3c5da1993366
             if($file){
