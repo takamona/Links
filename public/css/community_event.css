@@ -85,7 +85,7 @@ ul{
 .bar{
     background-color:grey;
     padding-bottom:20px;
-    width:1200px;
+    width:1500px;
     margin-top:10px;
 }
 
@@ -357,6 +357,14 @@ ul{
     margin-top:2px;
 }
 
+.btn{
+position:absolute;
+top:830px;
+left:0px;
+}
 
+.table{
+margin-top:70px;
+}
 
 

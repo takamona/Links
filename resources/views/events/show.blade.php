@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>プロフィール登録</title>
   <link rel="stylesheet" href="{{asset('/css/community_event.css')}}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   </head>
 <body>
    <div class="po">
@@ -38,33 +39,29 @@
     <div><a href="/communities/{{$community->id}}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
   </div>
   <div class="bar"></div>
-  
-  <table>
+  <table class="table table-bordered table-striped">
   <tr>
-  <th>題名</th>
-  <th>作成日</th>
-  <th>内容</th>
+  <th style="width: 50px">題名</th>
+  <th style="width: 5opx">作成者</th>
+  <th style="width: 50px">作成日</th>
+  <th style="width: 50px">内容</th>
   </tr>
   <tr>
-  <th>{{ $event->title }}</th>
-  <th>{{ $event->created_at }}</th>
-  <th>{{ $event->content }}</th>
+  <th style="width: 50px">{{ $event->title }}</th>
+  <th style="width: 50px">{{ $event->user->name }}</th>
+  <th style="width: 50px">{{ $event->created_at }}</th>
+  <th style="width: 50px">{{ $event->content }}</th>
   </tr>
   </table>
-  
-   @if(!Auth::user()->is_favorite($event->id))
-   {!! Form::open(['route' => ['events.favorite', 'id' => $event->id ]]) !!}
-   {!! Form::submit('いいね', ['class' => 'btn btn-primary btn-block']) !!}
-   {!! Form::close() !!}
-  @else
-   {!! Form::open(['route' => ['events.unfavorite', 'id' => $event->id ], 'method' => 'DELETE']) !!}
-   {!! Form::submit('いいね解除', ['class' => 'btn btn-danger btn-block']) !!}
-   {!! Form::close() !!}
-   @endif
- 
+     @if(!Auth::user()->is_favorite($event->id))
+      {!! Form::open(['route' => ['events.favorite', 'id' => $event->id ]]) !!}
+      {!! Form::submit('いいね', ['class' => 'btn btn-primary btn-sm']) !!}
+      {!! Form::close() !!}
+     @else
+     {!! Form::open(['route' => ['events.unfavorite', 'id' => $event->id ], 'method' => 'DELETE']) !!}
+     {!! Form::submit('いいね解除', ['class' => 'btn btn-danger btn-sm']) !!}
+     {!! Form::close() !!}
+     @endif
+<!--エラー回避のためにLaravelCollective使用-->
 </body>
 </html>
-
-
-
-
