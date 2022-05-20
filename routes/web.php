@@ -58,6 +58,7 @@ Route::group(['middleware' => ['auth']], function () {
     //タイムライン機能
     Route::get('getOpenTopics_Events', 'TimelineController@getOpenTopics_Events')->name('open_topics_events.get');
     
+    Route::get('favorites/{id}', 'UsersController@favorites')->name('users.favorites');
     
      // いいね系
     Route::post('favorite/{id}', 'FavoritesController@store')->name('events.favorite');

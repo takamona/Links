@@ -102,4 +102,20 @@ class UsersController extends Controller
     {
         //
     }
+    
+    
+    
+    
+    // 注目しているユーザーが、いいねしたイベント一覧
+    public function favorites($id){
+    $user = User::find($id);
+    $events = $user->favorites()->get();
+    
+    return view('users.favorites', compact('user', 'events'));
+    }
+    
+    
+    
+    
+    
 }
