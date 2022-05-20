@@ -28,4 +28,13 @@ class Event extends Model
         return $this->belongsTo(Community::class);
     }
     
+    
+    /**
+     * このイベントにいいねをしたユーザー一覧（中間テーブルを介して）
+     */
+    public function favorite_users()
+    {
+        return $this->belongsToMany(User::class, 'favorites', 'event_id', 'user_id')->withTimestamps();
+    }
+    
 }

@@ -41,12 +41,17 @@
   <div class="bar"></div>
   @foreach($events as $event)
   <div class="eventdisplay">
-  <div class="eventplace">{{ $event->title }}</div>
+  <div class="eventplace"><a href="/communities/{{$community->id}}/events/{{$event->id}}">{{ $event->title }}</a></div>
   <div class="eventdate">{{ $event->created_at }}</div>
   <div class="detail">イベント詳細</div>
   <div class="honbun">{{ $event->content }}</div>
   </div>
   @endforeach
+  
+  
+  
+  
+  
   <!--<div class="eventdisplay2">-->
   <!--<div class="eventplace2"></div>-->
   <!--<div class="eventdate2"></div>-->

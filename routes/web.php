@@ -58,15 +58,20 @@ Route::group(['middleware' => ['auth']], function () {
     //タイムライン機能
     Route::get('getOpenTopics_Events', 'TimelineController@getOpenTopics_Events')->name('open_topics_events.get');
     
-    //　コミュニティ申請関係
+    
+     // いいね系
+    Route::post('favorite/{id}', 'FavoritesController@store')->name('events.favorite');
+    Route::delete('unfavorite/{id}', 'FavoritesController@destroy')->name('events.unfavorite');
+    
+    //　コミュニティ関係
     Route::group(['prefix' => 'communities/{id}'], function () {
         
-        // 投稿一覧
+        // 参加者一覧
         Route::resource('participations', 'ParticipationsController', ['only' => ['index', 'create', 'store', 'show', 'update']]);
         // Route::post('approval', 'ParticipationsController@participation_approval');
 
         //トピック関係
-        Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'show','edit','update','display']]);
+        Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'show','edit','update','display','destroy']]);
         
         // ユーザー関連
         Route::resource('users', 'UsersController', ['only' => ['index', 'create', 'store', 'show']]); 
@@ -78,4 +83,3 @@ Route::group(['middleware' => ['auth']], function () {
 
     
 });
-

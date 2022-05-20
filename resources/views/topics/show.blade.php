@@ -28,7 +28,13 @@
       </div>
     </div>
     <div class="bar"></div>
+    @if($topic->user->id === Auth::id())
     <p><a href="/communities/{{$community->id}}/topics/{{$topic->id}}/edit">編集</a></p>
+     <form method="POST" action="/communities/{{$community->id}}/topics/{{$topic->id}}">
+      <input name="_method" type="hidden" value="DELETE"><input name="_token" type="hidden" value="{{ csrf_token() }}">
+      <input type="submit" value="削除">
+     </form>
+    @endif
      <table class="show">
       <tr><th>ID</th>
        <th>ユーザー名</th>

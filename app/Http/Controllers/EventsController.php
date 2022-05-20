@@ -86,11 +86,15 @@ class EventsController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show($event_id,$community_id)
     {
+        $event = Event::find($event_id);
         
+        $community =Community::find($community_id);
         
-        return view("events.show", compact('participations','community', 'user', 'friends'));
+        $participation = $community->participations()->where('user_id', \Auth::id())->where('status', 1)->first();
+        
+        return view("events.show", compact('participation','community', 'user', 'friends','event'));
     }
 
     /**

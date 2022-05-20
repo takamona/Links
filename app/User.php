@@ -111,4 +111,52 @@ class User extends Authenticatable
     }
     
     
+     /**
+     * このユーザーがいいねをしたイベント一覧（中間テーブルを介して取得）
+     */
+    public function favorites()
+    {
+        return $this->belongsToMany(Event::class, 'favorites', 'user_id', 'event_id')->withTimestamps();
+    }
+    
+    // いいね追加
+    public function favorite($event_id)
+    {
+        // 既にいいねしているかの確認
+        $exist = $this->is_favorite($event_id);
+    
+        if ($exist) {
+            // 既にいいねしていれば何もしない
+            return false;
+        } else {
+            // いいねしていないのであればいいねする
+            $this->favorites()->attach($event_id);
+            return true;
+        }
+    }
+    
+    // いいね解除
+    public function unfavorite($event_id)
+    {
+        // 既にいいねしているかの確認
+        $exist = $this->is_favorite($event_id);
+    
+        if ($exist) {
+            // 既にいいねしていればいいねを解除
+            $this->favorites()->detach($event_id);
+            return true;
+        } else {
+            // いいねしていない場合
+            return false;
+        }
+    }
+    
+    // 注目するイベントがすでにいいねされているか判定
+    public function is_favorite($event_id)
+    {
+        return $this->favorites()->where('event_id', $event_id)->exists();
+    }
+    
+    
+    
 }

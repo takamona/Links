@@ -231,7 +231,16 @@ class TopicsController extends Controller
      */
     public function destroy(Topic $topic)
     {
-        //
+        // 注目している投稿がログインしているユーザーのものならば
+        if($topic->user->id === \Auth::id()){
+            // データベースから削除
+            $topic->delete();
+            // リダイレクト
+            return redirect('/mypage')->with('flash_message', 'トピックid: ' . $topic->id . 'の投稿を削除しました。');
+        }else{
+            return redirect('/mypage');
+        }
+        
     }
     
     
