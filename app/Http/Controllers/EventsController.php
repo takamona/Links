@@ -94,7 +94,7 @@ class EventsController extends Controller
         
         $participation = $community->participations()->where('user_id', \Auth::id())->where('status', 1)->first();
         
-        return view("events.show", compact('participation','community', 'user', 'friends','event'));
+        return view("events.show", compact('participation','community','event'));
     }
 
     /**

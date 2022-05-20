@@ -72,7 +72,7 @@
     </div>
     <div>
       <img class="event2" src="{{ asset('images/audience.jpg')}}" alt="参加予定のイベント">
-      <p><a href="/favorites/{{ \Auth::id() }}">参加予定のイベント</a></p>
+      <p><a href="/favorites/{{ \Auth::id() }}">いいねしたイベント</a></p>
     </div>
   </div>
   <div class="gr">
