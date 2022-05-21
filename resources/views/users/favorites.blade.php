@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <title>プロフィール登録</title>
-  <link rel="stylesheet" href="{{asset('/css/community_event.css')}}">
+  <link rel="stylesheet" href="{{asset('/css/event_favorite.css')}}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   </head>
 <body>
@@ -19,8 +19,13 @@
   </div>
   <div class="flex">
     <div class="e">いいねしたイベント一覧</div>
+    <div class="kn"><input placeholder="検索"></div>
   </div>
-  <div class="comyuicon"></div>
+   <div class="gr">
+    <div><a href="/getOpenEvents">イベント一覧</a></div>
+     <div class="yellow">いいねしたイベント</div>
+     <div><a href="/events/{{ \Auth::id() }}">主催イベント</a></div>
+    </div>
   <div class="pobutton">
   
   <div class="bar"></div>
