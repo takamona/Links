@@ -115,6 +115,7 @@ class UsersController extends Controller
     }
     
     
+    
     // 注目しているユーザーが投稿したイベント一覧
     public function events($id){
     $user = User::find($id);
