@@ -21,9 +21,9 @@
     <div class="kn"><input placeholder="検索"></div>
   </div>
   <div class="gr">
-    <div class="yellow">イベント一覧</div>
+    <div><a href="/getOpenEvents">イベント一覧</a></div>
     <div><a href="/favorites/{{ \Auth::id() }}">いいねしたイベント</a></div>
-    <div><a href="/events/{{ \Auth::id() }}">主催イベント</a></div>
+    <div class="yellow">主催イベント</div>
   </div>
   <div class="bar"> </div>
   イベント{{ count($events) }}件

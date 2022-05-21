@@ -55,6 +55,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('getOpenTopics', 'TopicsController@getOpenTopics')->name('open_topics.get');
      //イベント一覧全て表示
     Route::get('getOpenEvents', 'EventsController@getOpenEvents')->name('open_events.get');
+    
+    //主催イベント一覧表示
+    Route::get('events/{id}', 'UsersController@events')->name('users.events');
+    
     //タイムライン機能
     Route::get('getOpenTopics_Events', 'TimelineController@getOpenTopics_Events')->name('open_topics_events.get');
     

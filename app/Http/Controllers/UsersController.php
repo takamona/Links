@@ -106,7 +106,7 @@ class UsersController extends Controller
     
     
     
-    // 注目しているユーザーが、いいねしたイベント一覧
+    // 注目しているユーザーがいいねしたイベント一覧
     public function favorites($id){
     $user = User::find($id);
     $events = $user->favorites()->get();
@@ -115,7 +115,13 @@ class UsersController extends Controller
     }
     
     
+    // 注目しているユーザーが投稿したイベント一覧
+    public function events($id){
+    $user = User::find($id);
+    $events = $user->events()->get();
     
+    return view('users.events', compact('user', 'events'));
+    }
     
     
 }
