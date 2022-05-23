@@ -2,7 +2,7 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8">
-  <title>プロフィール登録</title>
+  <title>{{ $community->name }}のコミュニティ</title>
   <link rel="stylesheet" href="{{ asset('/css/community_show.css')}}">
   </head>
 <body>
@@ -35,9 +35,10 @@
     <div><a href="/communities/{{ $community->id }}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
   </div>
   <div class="bar"> </div>
-  <div class="syosai"> </div>
-  <div class="setumei"> </div>
+  <div class="syosai"> <p>コミュニティ詳細</p></div>
+  <div class="setumei">{{ $community->content }}</div>
   <div class="re">
+    <div class="name">コミュニティ名:{{ $community->name }}</div>
     <div class="k"> 　管理人:{{$community->user->name}}</div>
     <div class="member"> 　参加メンバー </div>
     <div class="icon"> 　参加者アイコン </div>

@@ -100,8 +100,8 @@ ul{
 
 .sanka{
     position:absolute;
-    top:-180px;
-    right:200px;
+    top:-120px;
+    right:700px;
 }
 
 .exit{
@@ -145,14 +145,21 @@ ul{
  position:relative;
 }
 
+.name{
+    position:absolute;
+    top:-480px;
+    left:15px;
+}
+
+
 .k{
     position:absolute;
-    top:-500px;
+    top:-420px;
 }
 
 .member{
     position:absolute;
-    top:-420px;
+    top:-360px;
 }
 
 .icon{
@@ -231,4 +238,10 @@ display:grid;
     height:250px !important;
     margin-left:1px;
     margin-top:2px;
+}
+
+
+.syosai>p{
+    line-height:70px;
+    margin-left:180px;
 }

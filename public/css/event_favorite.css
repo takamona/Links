@@ -44,7 +44,7 @@ nav li {
 }
 
 ul{
-list-style:none;
+　　list-style:none;
 }
 
 
@@ -82,7 +82,7 @@ list-style:none;
 }
 
 .gr{
-     display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -93,11 +93,11 @@ list-style:none;
 }
 
 table.deta{
-  border-collapse:collapse;
+  　border-collapse:collapse;
 }
  
 table.deta th{
-  border:1px solid #000066;}
+  　border:1px solid #000066;}
 
 
 .deta{
@@ -105,11 +105,11 @@ table.deta th{
 }
 
 table.deta{
-  border-collapse:collapse;
+  　border-collapse:collapse;
 }
  
 table.deta th{
-  border:1px solid #000066;}
+  　border:1px solid #000066;}
 
 
 .deta{
@@ -118,8 +118,6 @@ table.deta th{
 
 
 
-.table{
-    margin-top:30px;
-    
-    
-}
+/*.table{*/
+/*    margin-top:30px;*/
+/*}*/

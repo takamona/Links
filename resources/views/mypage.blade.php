@@ -2,7 +2,7 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8">
-  <title>マイページ</title>
+  <title>{{$user->name}}さんのマイページ</title>
   <link rel="stylesheet" href="{{ asset('css/mypage.css')}}" type="text/css" />
 </head>
 <body>

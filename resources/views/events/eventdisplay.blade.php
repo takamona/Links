@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>プロフィール登録</title>
   <link rel="stylesheet" href="{{asset('/css/eventdisplay.css')}}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   </head>
 <body>
   <div class="po">
@@ -27,8 +28,8 @@
   </div>
   <div class="bar"> </div>
   イベント{{ count($events) }}件
-  <table class="deta">
-    <tr><th>イベントID</th><th>コミュニティ名<th>ユーザー名</th><th>タイトル</th><th>内容</th><th>作成日</th></tr>
+  <table class="table table-bordered table-striped">
+    <tr><th style="width: 50px">イベントID</th><th style="width: 50px">コミュニティ名</th><th style="width: 50px">ユーザー名</th><th style="width: 50px">タイトル</th><th style="width: 50px">内容</th><th style="width: 50px">作成日</th></tr>
     @foreach($events as $event)
     <tr><th>{{$event->id}}</th><th>{{$event->community->name}}</th><th>{{$event->user->name}}</th><th>{{$event->title}}</th><th>{{$event->content}}</th><th>{{$event->created_at}}</th></tr>
     @endforeach

@@ -2,6 +2,7 @@
     list-style: none;
     position: absolute;
     top: 10px;
+    left:20px;
 }
 
 nav li {
@@ -37,10 +38,13 @@ nav li {
     height: 250px;
     background-color: #a9a9a9;
     border: solid;
+    margin-top:30px;
+    margin-left:5px;
+    width:80%;
 }
 
 ul{
-list-style:none;
+　　list-style:none;
 }
 
 
@@ -60,7 +64,8 @@ list-style:none;
     background-color: grey;
     border:solid 1px;
     width:230px;
-    line-height: 100px;
+    line-height: 20px;
+    padding-top:40px;
     text-align: center;
     width: calc((900px - 40px) / 2);
     margin:10px;
@@ -73,11 +78,11 @@ list-style:none;
 .bar{
     background-color:grey;
     padding-bottom:20px;
-    width:900px;
+    width:1600px;
 }
 
 .gr{
-     display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -88,11 +93,11 @@ list-style:none;
 }
 
 table.deta{
-  border-collapse:collapse;
+  　border-collapse:collapse;
 }
  
 table.deta th{
-  border:1px solid #000066;}
+  　border:1px solid #000066;}
 
 
 .deta{
@@ -100,11 +105,11 @@ table.deta th{
 }
 
 table.deta{
-  border-collapse:collapse;
+  　border-collapse:collapse;
 }
  
 table.deta th{
-  border:1px solid #000066;}
+  　border:1px solid #000066;}
 
 
 .deta{

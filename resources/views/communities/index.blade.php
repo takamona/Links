@@ -2,7 +2,7 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8">
-  <title>新規コミュニティ作成</title>
+  <title>コミュニティ一覧</title>
   <link rel="stylesheet" href="{{ asset('/css/community_display.css')}}" type="text/css" />
 </head>
 <body>

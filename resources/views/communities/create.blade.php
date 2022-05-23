@@ -1,7 +1,7 @@
 
  <head>
         <meta charset="UTF-8">
-        <title>マイページ</title>
+        <title>コミュニティ新規作成</title>
         <link rel="stylesheet" href="{{ asset('/css/community_create.css')}}" type="text/css" />
     </head>
     <body>

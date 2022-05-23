@@ -29,6 +29,7 @@
   <div class="pobutton">
   
   <div class="bar"></div>
+  いいねしたイベント{{ count($events) }}件
   <table class="table table-bordered table-striped">
   <tr>
   <th style="width: 50px">題名</th>
