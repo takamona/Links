@@ -2,7 +2,7 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8">
-  <title>プロフィール登録</title>
+  <title>イベント一覧</title>
   <link rel="stylesheet" href="{{asset('/css/community_event.css')}}">
   </head>
 <body>

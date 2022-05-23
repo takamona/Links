@@ -2,7 +2,7 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8">
-  <title>プロフィール登録</title>
+  <title>イベント一覧</title>
   <link rel="stylesheet" href="{{asset('/css/eventdisplay.css')}}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   </head>
