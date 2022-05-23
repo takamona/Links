@@ -30,10 +30,9 @@
     <div class="bar"></div>
     @if($topic->user->id === Auth::id())
     <p><a href="/communities/{{$community->id}}/topics/{{$topic->id}}/edit">編集</a></p>
-     <form method="POST" action="/communities/{{$community->id}}/topics/{{$topic->id}}">
-      <input name="_method" type="hidden" value="DELETE"><input name="_token" type="hidden" value="{{ csrf_token() }}">
-      <input type="submit" value="削除">
-     </form>
+     {!! Form::open(['route' => ['topics.destroy', 'id' => $community->id ,'topic' => $topic->id ],'method'=>'DELETE']) !!}
+      {!! Form::submit('削除', ['class' => 'btn btn-primary btn-block']) !!}
+      {!! Form::close() !!}
     @endif
      <table class="show">
       <tr><th>ID</th>
@@ -71,6 +70,5 @@
     <!--    <div class="title"></div>-->
     <!--  </div>-->
     <!--</div>-->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </body>
 </html>

@@ -229,7 +229,7 @@ class TopicsController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Topic $topic)
+    public function destroy($community_id, Topic $topic)
     {
         // 注目している投稿がログインしているユーザーのものならば
         if($topic->user->id === \Auth::id()){
