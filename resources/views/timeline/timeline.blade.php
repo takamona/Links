@@ -2,7 +2,7 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8">
-  <title>タイムライン</title>
+  <title>{{$user->name}}さんのタイムライン</title>
 </head>
 <body>
 <link rel="stylesheet" href="{{asset('/css/timeline.css')}}" type="text/css" />
@@ -53,8 +53,10 @@
     </ul>
   </div>
 </div>
+{{$user->name}}さんのプロフィール画像
 <div class="profile">
-  <img id="img" src="{{asset('images/profilesample.png')}}" alt="プロフィール">
+  <img id="img" src="{{ asset('/uploads')}}/{{ $profile->image }}" alt="プロフィール">
+  <!--<img id="img" src="{{asset('images/profilesample.png')}}" alt="プロフィール">-->
 </div>
 <p>トピックス {{ count($topics) }}件 </p>
 <p>イベント　{{ count($events) }}件 </p>

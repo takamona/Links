@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>コミュニティ一覧</title>
   <link rel="stylesheet" href="{{ asset('/css/community_display.css')}}" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 </head>
 <body>
   <div class="h"> 
@@ -39,6 +40,9 @@
   </div>
   <div class="nav">
     <div class="waku">
+     <ul class="mypage">
+      <li> <a href="/mypage">マイページ</a> <img class="top" src={{ asset("images/komyu.jpeg")}}> </li>
+     </ul>
       <div class="logout">
         <ul>
           <li><a href="/logout">ログアウト</a></li>
@@ -52,7 +56,7 @@
   </div>
   <div class="comyunity"> コミュニティ一覧 </div>
    <div class="create"><a href="/communities/create ">新規コミュニティ作成</a></div>
-  <table class="deta">
+  <table class="table table-bordered table-striped">
     <tr>
       <th>コミュニティID</th>
       <th>コミュニティ名</th>
