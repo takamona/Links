@@ -2,7 +2,7 @@
 <html lang="ja">
  <head>
   <meta charset="UTF-8">
-  <title>マイページ</title>
+  <title>トピック一覧</title>
   <link rel="stylesheet" href="{{ asset('/css/community_topics.css')}}">
  </head>
 <body>
@@ -20,8 +20,8 @@
     <div class="e">トピックスを探す</div>
     <div class="kn"><input placeholder="トピックスを検索！"></div>
   </div>
-<div class="profile">
-  <img id="img" src="{{ asset('images/profilesample.png')}}" alt="プロフィール">
+<div class="community">
+  <img id="img" src="{{ asset('/uploads')}}/{{$community->image}}" alt="プロフィール">
 </div>
 @if($participation->status === 1 )
 <div class="topic_creat">

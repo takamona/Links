@@ -22,7 +22,7 @@
         <li>
           　@if($participation->status === 1)
           <a href="/communities/{{ \Auth::id() }}">
-            <img src= "{{ asset('images/COMMUNITY.png')}}" alt="コミュニティ">
+            <img  class="community" src= "{{ asset('images/COMMUNITY.png')}}" alt="コミュニティ">
           </a>
         </li>
             @endif

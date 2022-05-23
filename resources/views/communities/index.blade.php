@@ -55,7 +55,7 @@
     <div class="kn"><input placeholder="検索"></div>
   </div>
   <div class="comyunity"> コミュニティ一覧 </div>
-   <div class="create"><a href="/communities/create ">新規コミュニティ作成</a></div>
+   <div class="create"><a href="/communities/create ">+新規コミュニティ作成</a></div>
   <table class="table table-bordered table-striped">
     <tr>
       <th>コミュニティID</th>

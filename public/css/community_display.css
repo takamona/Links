@@ -158,45 +158,45 @@
 }
 
 .comyunity{
-  background-color: #ff4500;
-  width:650px;
-  height:100px;
-  margin-left: 10px;
-  text-align: center;
-  line-height:100px;
+    background-color: #ff4500;
+    width:765px;
+    height:100px;
+    margin-left: 10px;
+    text-align: center;
+    line-height:100px;
 }
 
 .create{
-  background-color: yellow;
-  width:300px;
-  margin-left:700px;
-  margin-top: -120px;
-  text-align: center;
+     background-color: yellow;
+     width:300px;
+     margin-left:700px;
+     margin-top: -120px;
+     text-align: center;
 }
 
 table.deta{
-  border-collapse:collapse;
+     border-collapse:collapse;
 }
  
 table.deta th{
-  border:1px solid #000066;}
+     border:1px solid #000066;}
 
 
 .deta{
-  margin-top:140px;
+     margin-top:140px;
 }
 
 .create{
-  margin-left:800px;
-  margin-top: -150px;
-  width:200px;
+     margin-left:800px;
+     margin-top: -150px;
+     width:200px;
 }
 
 
 .table{
-  margin-top:140px;
+     margin-top:140px;
 }
 
 ul{
-  list-style:none;
+     list-style:none;
 }
