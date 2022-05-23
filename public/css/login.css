@@ -2,14 +2,13 @@
 
 /*ログインページ*/
 .loginbotan {
-  background-color: #191970;
+  background-color: #40e0d0;
   text-align: center;
   height: 280px;
 }
 .A {
   text-align: center;
 }
-
 
 
 .name {
@@ -52,7 +51,7 @@
 
 .sinki {
   text-align: center;
-  background-color: #191970;
+  background-color: #00bfff;
   height: 420px;
   visibility: hidden;
   margin-top: 100px;
@@ -64,4 +63,8 @@
 
 .loginbutton {
   margin-top: 30px;
+}
+
+h1{
+  color:#000000;
 }
