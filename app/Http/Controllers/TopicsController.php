@@ -166,7 +166,7 @@ class TopicsController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Topic $topic)
+    public function update(Request $request, $community_id, Topic $topic)
     {
          // ログインしている自分のトピックの場合
         if($topic->user_id === \Auth::id()){
@@ -203,14 +203,14 @@ class TopicsController extends Controller
                 $file->move($target_path, $image);
             }else{
                 // 画像を選択していなければ、画像ファイルは元の名前のまま
-                $image = $profile->image;
+                $image = $topic->image;
             }
             
             //入力情報をもとにインスタンスのプロパティ変更
             $topic->title = $title;
-            $topic->content = $cintent;
+            $topic->content = $content;
             $topic->disdosure_range = $disdosure_range;
-            $profile->image = $image;
+            $topic->image = $image;
             
             // データベース更新
             $topic->save();
