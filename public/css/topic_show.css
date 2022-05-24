@@ -2,7 +2,8 @@
 .nav {
   list-style: none;
   position: absolute;
-  top: 10px;
+  top: 20px;
+  left:30px;
 }
 
 nav li {
@@ -18,7 +19,7 @@ nav li {
   list-style: none;
   position: absolute;
   left: 400px;
-  top: 10px;
+  top: 20px;
 }
 
 .logout li {
@@ -38,6 +39,8 @@ nav li {
   height: 250px;
   background-color: #a9a9a9;
   border: solid;
+  margin-left:3px;
+  margin-top:25px;
 }
 
 ul {
@@ -48,20 +51,21 @@ ul {
   background-color: orange;
   border: solid 1px;
   width: 230px;
-  line-height: 100px;
+  line-height: 80px;
   text-align: center;
   width: calc((70% - 40px) / 2);
-  margin: 10px;
+  margin-top:50px;
+  margin-left:25px;
 }
 
 .kn {
   background-color: grey;
   border: solid 1px;
-  width: 230px;
-  line-height: 100px;
+  padding-top:30px;
   text-align: center;
-  width: calc((100% - 40px) / 2);
-  margin: 10px;
+  width: calc((100% - 65px) / 2);
+  margin-top:50px;
+  margin-left:70px;
 }
 
 .flex {
@@ -71,7 +75,9 @@ ul {
 .bar {
   background-color: grey;
   padding-bottom: 20px;
-  width: 900px;
+  margin-left:23px;
+  margin-top:30px;
+  width: 1310px;
 }
 
 .topic {
@@ -122,7 +128,7 @@ ul {
 
 table.show{
   border-collapse:collapse;
-  margin-top:40px;
+  margin-top:-50px;
   margin-left:20px;
 }
  
@@ -154,24 +160,51 @@ h2{
 }
 
 
+.name_empty{
+  margin-left:25px;
+  margin-top:20px;
+}
+
+
 .day{
   margin-left:270px;
   margin-top:120px;
 }
 
 
-.aaaa{
-  border-bottom:solid 1px;
-  margin-left:-35px;
-  
+.border_{
+  border:solid 1px;
+  margin-left:-40px;
+  background-color:#e0ffff;
 }
-
 
 
 .post{
-  background-color:#fffacd;
-  width:900px;
+  /*background-color:#fffacd;*/
+  /*width:1320px;*/
+  /*margin-left:20px;*/
+  /*border-bottom:1px;*/
+  margin-bottom:0px;
 }
 
 
-  
+.btn{
+  margin-left:1350px;
+}
+
+p{
+  margin-left:1350px;
+}
+
+
+.button_submit{
+  margin-left:30px;
+  margin-top:15px;
+}
+
+.border2{
+  border:solid 1px;
+  background-color:#fffacd;
+  width:1320px;
+  margin-left:20px;
+}
