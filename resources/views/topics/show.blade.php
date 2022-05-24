@@ -67,7 +67,9 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="topic_id" value="{{$topic->id}}">
         <div class="name_empty"><textarea class="nametext" placeholder="記入" name="content"></textarea></div>
-        <input type="submit" class="button_submit" value="コメント投稿">
+        <div class="button_submit">
+        <input type="submit" class="btn btn-primary btn-lg" value="コメント投稿">
+        </div>
       </form>
   @endif
     <!--<div class="topic">-->
