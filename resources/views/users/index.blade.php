@@ -40,6 +40,7 @@
   <div class="grid">
     @foreach($participations as $participation)
     @continue($participation->id<6)
+    @continue($participation->id>10)
     <div class="photoB"><a href="/communities/{{$community->id}}/users/{{$participation->user_id}}">
       <img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
       </a>
@@ -48,7 +49,8 @@
   </div>
   <div class="grid">
     @foreach($participations as $participation)
-    @continue($participation->id<10)
+    @continue($participation->id<11)
+    @continue($participation->id>15)
     <div class="photoC"><a href="/communities/{{$community->id}}/users/{{$participation->user_id}}">
       <img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
       </a>
@@ -57,20 +59,23 @@
   </div>
   <div class="grid">
     @foreach($participations as $participation)
-    @continue($participation->id<14)
+    @continue($participation->id<16)
+     @continue($participation->id>20)
     <div class="photoD"><a href="/communities/{{$community->id}}/users/{{$participation->user_id}}">
       <img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
       </a>
     </div>
     @endforeach
   </div>
-  <!--<div class="grid">-->
-  <!--  <div class="photoE"><img class="syoki" src="images/smiley.png" alt="メンバー"></div>-->
-  <!--  <div class="photoE"><img class="syoki" src="images/smiley.png" alt="メンバー"></div>-->
-  <!--  <div class="photoE"><img class="syoki" src="images/smiley.png" alt="メンバー"></div>-->
-  <!--  <div class="photoE"><img class="syoki" src="images/smiley.png" alt="メンバー"></div>-->
-  <!--  <div class="photoE"><img class="syoki" src="images/smiley.png" alt="メンバー"></div>-->
-  <!--</div>-->
+   <div class="grid">
+    @foreach($participations as $participation)
+    @continue($participation->id<21)
+    <div class="photoE"><a href="/communities/{{$community->id}}/users/{{$participation->user_id}}">
+      <img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
+      </a>
+    </div>
+    @endforeach
+  </div>
   <div class="white2"></div>
   <div class="grey2"> </div>
 </body>
