@@ -60,23 +60,23 @@
     <div>
       <table class="sinsei">
         <tr>
-          <th colspan="3" class="orange">フレンド申請一覧</th>
+          <th colspan="5" class="orange">フレンド申請一覧</th>
         </tr>
         <tr>
-          <th colspan="3">申請{{ count($friends) }}件</th>
+          <th colspan="5">申請{{ count($friends) }}件</th>
         </tr>
         @foreach($friends as $friend)
         <tr>
-         <form action="/friends/{{ $friend->id}} " method="POST">
-          <input type="hidden" name="_method" value="PUT">
+         <form action="/friends/{{ $friend->id }}" method="POST">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="_method" value="PUT">
+          <th>{{ $friend->id }}</th>
           <th class="grey">{{ $friend->created_at }}</th>
-          <th>{{ $friend->user_id}}</th>
-          <th>{{ $friend->user->name}}</th>
+          <th>{{ $friend->user->name }}</th>
           <th><input type="radio" name="status" value="1" checked>承認する<input type="radio" name="status" value="2">承認しない</th>
+          <th><input type="submit" value="決定"></th>
+         </form>
         </tr>
-        <th><input type="submit" value="決定"></th>
-       </form>
        @endforeach
       </table>
     </div>

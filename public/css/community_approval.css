@@ -43,7 +43,7 @@ nav li {
 }
 
 ul{
-list-style:none;
+    list-style:none;
 }
 
 
@@ -124,7 +124,6 @@ list-style:none;
 
 }
 
-
 .gr2{
     display: flex;
     gap:80px;
@@ -132,22 +131,22 @@ list-style:none;
 }
 
 .gr2>div{
- width:500px;
+    width:500px;
 }
 
 table.sinsei{
-  border-collapse:collapse;
+    border-collapse:collapse;
 }
  
 table.sinsei th{
-  border:1px solid #000066;}
+    border:1px solid #000066;}
 
 .orange{
-background-color: orange;
+    background-color: orange;
 }
 
 .grey{
-  background-color: grey;  
+    background-color: grey;  
     
 }
 
