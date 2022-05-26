@@ -39,6 +39,7 @@
     <div><a href="/communities/{{$community->id}}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
   </div>
   <div class="bar"></div>
+  <p>イベント {{ count($events) }}件 </p> 
   @foreach($events as $event)
   <div class="eventdisplay">
   <div class="eventplace"><a href="/communities/{{$community->id}}/events/{{$event->id}}">{{ $event->title }}</a></div>

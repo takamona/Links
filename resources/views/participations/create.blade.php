@@ -22,7 +22,8 @@
   </div>
   <div class="comyuicon">
   <img class="sample" src="{{ asset('/uploads')}}/{{$community->image}}">
-  </div>
+  </div> 
+   <div><a href="/communities/{{$community->id}}">トップページへ戻る</a></div>
   <div class="pobutton">
     <div class="sanka">
       <form action="/communities/{{ $community->id }}/participations" method="POST">
@@ -38,5 +39,6 @@
     <!--  </div>-->
     <!--</form>-->
   <div class="gr">
-    <div class="yellow">トップ</div>
-    <div><a href="community_topics.html">トピックス</a></div>
+    <div class="yellow">参加申請</div>
+    <div><a href="/communities/{{$community->id}}/topics">トピックス</a></div>
+    <div><a href="/communities/{{$community->id}}/events">イベント</a></div>

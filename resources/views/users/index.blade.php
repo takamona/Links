@@ -17,11 +17,11 @@
     </ul>
   </div>
   <div class="gr">
-    <div><a href="/communities">トップ</a></div>
+    <div><a href="/communities/{{ $community->id }}">トップ</a></div>
     <div><a href="/communities/{{ $community->id }}/topics">トピックス</a></div>
-    <div>イベント</div>
+    <div><a href="/communities/{{ $community->id }}/events">イベント</a></div>
     @if($community->user_id === Auth::id())
-    <div class="yellow"><a href="/communities/{{$community->id}}/participations/create">承認・コミュニティ参加申請・フレンド申請</a></div>
+    <div class="yellow"><a href="/communities/{{$community->id}}/participations/">承認・コミュニティ参加申請・フレンド申請</a></div>
     @endif
   </div>
   <div class="bar"> </div>
