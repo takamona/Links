@@ -32,9 +32,7 @@
     <div><a href="/communities/{{ $community->id }}">トップ</a></div>
     <div class="yellow">トピックス</div>
     <div><a href="/communities/{{$community->id}}/events">イベント</a></div>
-     @if($community->user_id === Auth::id())
     <div><a href="/communities/{{ $community->id }}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
-    @endif
   </div>
   <div class="bar"> </div>
 <p>トピックス {{ count($topics) }}件 </p> 

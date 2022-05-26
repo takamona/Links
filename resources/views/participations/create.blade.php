@@ -42,3 +42,4 @@
     <div class="yellow">参加申請</div>
     <div><a href="/communities/{{$community->id}}/topics">トピックス</a></div>
     <div><a href="/communities/{{$community->id}}/events">イベント</a></div>
+    <div><a href="/communities/{{ $community->id }}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
