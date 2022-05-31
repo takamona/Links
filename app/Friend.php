@@ -20,4 +20,13 @@ class friend extends Model
         return $this->belongsTo(User::class);
     }
     
+    
+    //  /**
+    //  * この申請を所有するユーザー一覧（中間テーブルを介して）
+    //  */
+    // public function friends_users()
+    // {
+    //     return $this->belongsToMany(User::class, 'friends', 'user_id', 'friend_id')->withTimestamps();
+    // }
+    
 }

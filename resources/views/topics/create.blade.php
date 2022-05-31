@@ -67,12 +67,12 @@
           <th>
         </div>
         <tr>
-        <th colspan=2>
+        <!--<th colspan=2>-->
         <!--<input type="checkbox" name="check">全てチェックする -->
         <tr>
-        <th colspan=2>
-        <input type="checkbox" name="check">タイトル　
-        <div>編集する</div>
+        <!--<th colspan=2>-->
+        <!--<input type="checkbox" name="check">タイトル　-->
+        <!--<div>編集する</div>-->
         <tr>
         <th>トピック
         </th>

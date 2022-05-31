@@ -100,7 +100,6 @@ class User extends Authenticatable
     public function friends()
     {
         return $this->hasMany(Friend::class);
-        
     }
     
     //このユーザーが所有するイベント一覧
@@ -157,6 +156,14 @@ class User extends Authenticatable
         return $this->favorites()->where('event_id', $event_id)->exists();
     }
     
+    
+    
+    // 注目するユーザーがすでにフレンド申請送られているか判定
+    public function is_friend($user_id)
+    {
+    
+        return $this->friends()->where('user_id', $user_id)->exists();
+    }
     
     
 }
