@@ -1,24 +1,24 @@
-
+<!DOCTYPE html>
  <head>
-        <meta charset="UTF-8">
-        <title>コミュニティ新規作成</title>
-        <link rel="stylesheet" href="{{ asset('/css/community_create.css')}}" type="text/css" />
-    </head>
+  <meta charset="UTF-8">
+   <title>コミュニティ新規作成</title>
+    <link rel="stylesheet" href="{{ asset('/css/community_create.css')}}" type="text/css" />
+ </head>
     <body>
-        <div class="po">
-            <nav>
-                <ul class="nav">
-                    <li><a href="/mypage">マイページ</a><img class="top" src="{{ asset ('images/komyu.jpeg')}}" alt="マイページ"> </li>
-                </ul>
-            </nav>
-            <ul class="logout">
-                <li><a href="/logout">ログアウト</a></li>
-            </ul>
-        </div>
-        <div class="community">コミュニティ作成</div>
-            <form action="/communities" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">  
-                <div class="content">コミュニティ内容</div>
+     <div class="po">
+      <nav>
+       <ul class="nav">
+        <li><a href="/mypage">マイページ</a><img class="top" src="{{ asset ('images/komyu.jpeg')}}" alt="マイページ"> </li>
+       </ul>
+      </nav>
+       <ul class="logout">
+        <li><a href="/logout">ログアウト</a></li>
+       </ul>
+      </div>
+         <div class="community">コミュニティ作成</div>
+          <form action="/communities" method="POST" enctype="multipart/form-data">
+           <input type="hidden" name="_token" value="{{ csrf_token() }}">  
+            <div class="content">コミュニティ内容</div>
                 <div class="flex">
                     <div class="name">コミュニティ名</div>
                     <div class="name_empty"><textarea class="nametext" placeholder="コミュニティ名を記入して下さい" name="name"></textarea></div>
