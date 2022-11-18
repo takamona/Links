@@ -65,7 +65,7 @@ class ProfilesController extends Controller
         
         // https://qiita.com/ryo-program/items/35bbe8fc3c5da1993366
         // 画像ファイルのアップロード
-        if($file){
+        // if($file){
             // // 現在時刻ともともとのファイル名を組み合わせてランダムなファイル名作成
             // $image = time() . $file->getClientOriginalName();
             // // アップロードするフォルダ名取得
@@ -76,10 +76,10 @@ class ProfilesController extends Controller
             $path = Storage::disk('s3')->putFile('/uploads', $file, 'public');
             // パスから、最後の「ファイル名.拡張子」の部分だけ取得
             $image = basename($path);
-        }else{
-            // 画像ファイルが選択されていなければ空の文字列をセット
-            $image = '';
-        }
+        // }else{
+        //     // 画像ファイルが選択されていなければ空の文字列をセット
+        //     $image = '';
+        // }
         
         // 入力情報をもとに新しいインスタンス作成
         \Auth::user()->profile()->create(['gender' => $gender, 'address' => $address, 'hobby' => $hobby, 'introduction' => $introduction, 'image' => $image]);
