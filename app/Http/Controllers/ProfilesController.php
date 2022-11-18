@@ -72,6 +72,11 @@ class ProfilesController extends Controller
             $target_path = public_path('uploads/');
             // アップロード処理
             $file->move($target_path, $image);
+            // S3用
+            $path = Storage::disk('s3')->putFile('/uploads', $file, 'public');
+            // パスから、最後の「ファイル名.拡張子」の部分だけ取得
+            $image = basename($path);
+            
         }else{
             // 画像ファイルが選択されていなければ空の文字列をセット
             $image = '';
@@ -159,6 +164,10 @@ class ProfilesController extends Controller
                 $target_path = public_path('uploads/');
                 // アップロード処理
                 $file->move($target_path, $image);
+                // S3用
+                $path = Storage::disk('s3')->putFile('/uploads', $file, 'public');
+                // パスから、最後の「ファイル名.拡張子」の部分だけ取得
+                $image = basename($path);
             }else{
                 // 画像を選択していなければ、画像ファイルは元の名前のまま
                 $image = $profile->image;
