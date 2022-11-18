@@ -54,10 +54,6 @@ class PostsController extends Controller
          return redirect('/communities/' . $topic->community_id . '/topics/' . $topic->id)->with('flash_message', 'トピックを作成しました');
          
         //  communities/{id}/topics/{topic} 
-         
-         
-         
-         
     }
 
     /**
