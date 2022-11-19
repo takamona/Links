@@ -22,7 +22,7 @@
       </ul>
     </div>
     <div class="image">
-      <img class="sample" src="{{ asset('/uploads')}}/{{ $profile->image }}">
+      <img class="sample" src="{{ Storage::disk('s3')->url('uploads/' . $profile->image) }}"alt="プロフィール">
     </div>
     <div class="friend">
       <ul>
