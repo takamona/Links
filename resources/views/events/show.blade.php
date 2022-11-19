@@ -20,7 +20,7 @@
   <div class="flex">
     <div class="e">イベント情報</div>
   </div>
-  <div class="comyuicon"><img class= "sample" src="{{ asset('/uploads')}}/{{$community->image}}"></div>
+  <div class="comyuicon"><img class= "sample" src="{{ Storage::disk('s3')->url('uploads/' . $community->image) }}"alt="コミュニティアイコン"></div>
   <div class="pobutton">
     <!--<div class="sanka">参加する</div>-->
   </div>

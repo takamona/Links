@@ -55,7 +55,7 @@
 </div>
 {{$user->name}}さんのプロフィール画像
 <div class="profile">
-  <img id="img" src="{{ asset('/uploads')}}/{{ $profile->image }}" alt="プロフィール">
+  <img id="img" src="{{ Storage::disk('s3')->url('uploads/' . $profile->image) }}"alt="プロフィール">
   <!--<img id="img" src="{{asset('images/profilesample.png')}}" alt="プロフィール">-->
 </div>
 <p>トピックス {{ count($topics) }}件 </p>

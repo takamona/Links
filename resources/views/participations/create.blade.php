@@ -9,7 +9,7 @@
   <div class="po">
     <nav>
       <ul class="nav">
-        <li> <a href="/mypage"">マイページ</a><img class="top" src=" {{ asset('images/komyu.jpeg')}}"> </li>
+        <li> <a href="/mypage">マイページ</a><img class="top" src=" {{ asset('images/komyu.jpeg')}}"> </li>
       </ul>
     </nav>
     <ul class="logout">
@@ -21,7 +21,7 @@
     <div class="kn"><input placeholder="コミュニティを検索！"></div>
   </div>
   <div class="comyuicon">
-  <img class="sample" src="{{ asset('/uploads')}}/{{$community->image}}">
+  <img class="sample" src="{{ Storage::disk('s3')->url('uploads/' . $community->image) }}"alt="コミュニティアイコン">
   </div> 
    <div><a href="/communities/{{$community->id}}">トップページへ戻る</a></div>
   <div class="pobutton">
