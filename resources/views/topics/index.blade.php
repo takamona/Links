@@ -41,7 +41,7 @@
 <div class="topic">
   <input type="button" value="返信する" class="reply"/>
   <div class="icon">
-    <img class="icon_image" src="{{ asset('/uploads')}}/{{ $topic->image }}"alt="アイコン">
+    <img class="icon_image" src="{{ Storage::disk('s3')->url('uploads/' . $topic->image) }}"alt="トピック画像">
   </div>
   <div class="time">
     {{ $topic->created_at}}
