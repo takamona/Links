@@ -102,7 +102,7 @@ ul {
 }
 
 .example {
-  width: 400px;
+  width: 400px; 
   margin-left: 400px;
   margin-top: -190px;
 }
@@ -139,6 +139,6 @@ table.other th{
 }
 
 .sample{
-  height: 200px;
-  width:230px;
+  height:200px !important;
+  width:230px !important;
 }
