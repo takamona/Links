@@ -156,12 +156,16 @@ class ProfilesController extends Controller
              // 画像ファイルのアップロード
             // https://qiita.com/ryo-program/items/35bbe8fc3c5da1993366
             if($file){
-                // 現在時刻ともともとのファイル名を組み合わせてランダムなファイル名作成
-                $image = time() . $file->getClientOriginalName();
-                // アップロードするフォルダ名取得
-                $target_path = public_path('uploads/');
-                // アップロード処理
-                $file->move($target_path, $image);
+                // // 現在時刻ともともとのファイル名を組み合わせてランダムなファイル名作成
+                // $image = time() . $file->getClientOriginalName();
+                // // アップロードするフォルダ名取得
+                // $target_path = public_path('uploads/');
+                // // アップロード処理
+                // $file->move($target_path, $image);
+                // S3用
+                $path = Storage::disk('s3')->putFile('/uploads', $file, 'public');
+                // パスから、最後の「ファイル名.拡張子」の部分だけ取得
+                $image = basename($path);
             }else{
                 // 画像を選択していなければ、画像ファイルは元の名前のまま
                 $image = $profile->image;
