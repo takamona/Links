@@ -14,6 +14,8 @@ use App\Event;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
 class CommunitiesController extends Controller
 {
     /**
