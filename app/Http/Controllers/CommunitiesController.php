@@ -85,12 +85,12 @@ class CommunitiesController extends Controller
         // https://qiita.com/ryo-program/items/35bbe8fc3c5da1993366
         // 画像ファイルのアップロード
         if($file){
-            // 現在時刻ともともとのファイル名を組み合わせてランダムなファイル名作成
-            $image = time() . $file->getClientOriginalName();
-            // アップロードするフォルダ名取得
-            $target_path = public_path('uploads/');
-            // アップロード処理
-            $file->move($target_path, $image);
+            // // 現在時刻ともともとのファイル名を組み合わせてランダムなファイル名作成
+            // $image = time() . $file->getClientOriginalName();
+            // // アップロードするフォルダ名取得
+            // $target_path = public_path('uploads/');
+            // // アップロード処理
+            // $file->move($target_path, $image);
             // S3用
             $path = Storage::disk('s3')->putFile('/uploads', $file, 'public');
             // パスから、最後の「ファイル名.拡張子」の部分だけ取得
