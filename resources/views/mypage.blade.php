@@ -58,7 +58,7 @@
   </div>
   
   <div class="profile">
-    <img id="img" src="{{ asset('/uploads')}}/{{ $profile->image }}" alt="プロフィール">
+    <img id="img" src="{{ asset Storage::disk('s3')->url('/uploads')}}/{{ $profile->image }}" alt="プロフィール">
   </div>
   <p class="username"> {{$user->name}}さん </p>
   <div>
