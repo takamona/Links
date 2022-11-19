@@ -38,12 +38,6 @@
   margin-top: 40px !important;
 }
 
-
-.sample{
-  width: 30% !important;
-}
-
-
 .r {
   text-align: center;
 }
@@ -204,4 +198,9 @@
 
 .community{
   margin-left:-20px;
+}
+
+.sample{
+  height:200px !important;
+  width:230px !important;
 }
