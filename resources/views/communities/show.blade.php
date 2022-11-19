@@ -47,7 +47,7 @@
   </div>
   <div class="grid">
     @foreach($participations as $participation)
-    <div class="photoA"><img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}">
+    <div class="photoA"><img class="syoki" src="{{ Storage::disk('s3')->url('uploads/' . $participation->user->profile->image) }}"alt="メンバー">
     </div>
     @endforeach
   </div>
