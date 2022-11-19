@@ -50,7 +50,7 @@
       <th>{{$topic->user->name}}</th>
       <th>{{$topic->title}}</th>
       <th>{{$topic->content}}</th>
-      <th><img class="photo" src="{{ asset('/uploads/' . $topic->image)}}"></th>
+      <th><img class="photo" src="{{ Storage::disk('s3')->url('uploads/' . $topic->image) }}"alt="トピック画像"></th>
       </tr>
      </table>
      <h2>投稿一覧</h2>

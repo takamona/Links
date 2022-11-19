@@ -30,7 +30,7 @@
     @foreach($participations as $participation)
     @continue($participation->id>5)
     <div class="photoA"><a href="/communities/{{$community->id}}/users/{{$participation->user_id}}">
-      <img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
+      <img class="syoki" src="{{ Storage::disk('s3')->url('uploads/' . $participation->user->profile->image) }}"alt="メンバー">
       </a>
     </div>
     @endforeach
@@ -40,7 +40,7 @@
     @continue($participation->id<6)
     @continue($participation->id>10)
     <div class="photoB"><a href="/communities/{{$community->id}}/users/{{$participation->user_id}}">
-      <img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
+      <img class="syoki" src="{{ Storage::disk('s3')->url('uploads/' . $participation->user->profile->image) }}"alt="メンバー">
       </a>
     </div>
     @endforeach
@@ -50,7 +50,7 @@
     @continue($participation->id<11)
     @continue($participation->id>15)
     <div class="photoC"><a href="/communities/{{$community->id}}/users/{{$participation->user_id}}">
-      <img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
+      <img class="syoki" src="{{ Storage::disk('s3')->url('uploads/' . $participation->user->profile->image) }}"alt="メンバー">
       </a>
     </div>
     @endforeach
@@ -60,7 +60,7 @@
     @continue($participation->id<16)
      @continue($participation->id>20)
     <div class="photoD"><a href="/communities/{{$community->id}}/users/{{$participation->user_id}}">
-      <img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
+      <img class="syoki" src="{{ Storage::disk('s3')->url('uploads/' . $participation->user->profile->image) }}"alt="メンバー">
       </a>
     </div>
     @endforeach
@@ -69,7 +69,7 @@
     @foreach($participations as $participation)
     @continue($participation->id<21)
     <div class="photoE"><a href="/communities/{{$community->id}}/users/{{$participation->user_id}}">
-      <img class="syoki" src="{{ asset('/uploads/' . $participation->user->profile->image)}}" alt="メンバー">
+      <img class="syoki" src="{{ Storage::disk('s3')->url('uploads/' . $participation->user->profile->image) }}"alt="メンバー">
       </a>
     </div>
     @endforeach

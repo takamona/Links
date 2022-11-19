@@ -21,7 +21,7 @@
     <div class="kn"><input placeholder="トピックスを検索！"></div>
   </div>
 <div class="community">
-  <img id="img" src="{{ asset('/uploads')}}/{{$community->image}}" alt="プロフィール">
+  <img id="img" src="{{ Storage::disk('s3')->url('uploads/' . $community->image) }}"alt="コミュニティ画像">
 </div>
 @if($participation->status === 1 )
 <div class="topic_creat">
