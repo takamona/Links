@@ -190,13 +190,6 @@
   transform: translatey(-10px) rotate(-135deg);
 }
 
-
-
-.sample{
-  height:200px !important;
-  width:230px !important;
-}
-
 .username{
   position:absolute;
   top:210px;
@@ -206,10 +199,10 @@
   margin-left:-20px;
 }
 
-/*.sample{*/
-/*  height:200px !important;*/
-/*  width:230px !important;*/
-/*}*/
+.sample{
+  height:200px !important;
+  width:230px !important;
+}
 
 /*.profile{*/
 /*  height:200px !important;*/

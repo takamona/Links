@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <title>{{$user->name}}さんのマイページ</title>
-  <link rel="stylesheet" href="{{ asset('css/mypage.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('css/mypage.css')}}">
 </head>
 <body>
   <div class="h">
