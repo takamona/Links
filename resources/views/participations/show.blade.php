@@ -38,7 +38,7 @@
       </div>
       </form>
   <div class="gr">
-    <div class="/communities/{{ $community->id }}">トップ</div>
+    <div class><a href="/communities/{{ $community->id }}">トップ</div>
     <div><a href="communities/{{ $community->id }}/topics">トピックス</a></div>
     <div><a href="community_event.html">イベント</a></div>
     @if($community->user_id === Auth::id())

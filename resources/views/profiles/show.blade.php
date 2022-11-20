@@ -31,7 +31,7 @@
     </div>
     <div class="photogr">
     @foreach($friends as $friend)
-    <div class="photoA"><img class="syoki" src="{{ asset('/uploads/' .App\User::find($friend->friend_id)->profile->image)}}">
+    <div class="photoA"><img class="syoki" src="{{ Storage::disk('s3')->url('uploads/' . $friend->friend_id) }}"alt="フレンドアイコン">
     </div>
     @endforeach
     <!--  <div class="photoA">-->
