@@ -193,7 +193,7 @@
 
 .username{
   position:absolute;
-  top:210px;
+  top:240px;
 }
 
 .community{
@@ -205,7 +205,7 @@
   width:230px !important;
 }
 
-.profile{
-  height:200px !important;
-  width:230px !important;
-}
+/*.profile{*/
+/*  height:200px !important;*/
+/*  width:230px !important;*/
+/*}*/
