@@ -138,7 +138,15 @@ table.other th{
   margin-top:70px;
 }
 
+/*.sample{*/
+/*  height:200px !important;*/
+/*  width:230px !important;*/
+/*}*/
+
+
 .sample{
-  height:200px !important;
-  width:230px !important;
+  height: 180px;
+  width:220px;
+  margin-top:10px;
+  margin-left:3px;
 }
