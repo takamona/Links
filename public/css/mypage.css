@@ -193,17 +193,24 @@
 
 .username{
   position:absolute;
-  top:240px;
+  top:280px;
 }
 
 .community{
   margin-left:-20px;
 }
 
+/*.sample{*/
+/*  height:200px !important;*/
+/*  width:230px !important;*/
+/*}*/
+
+
 .sample{
-  height:200px !important;
-  width:230px !important;
+  height:100px !important;
+  width:100px !important;
 }
+
 
 /*.profile{*/
 /*  height:200px !important;*/
