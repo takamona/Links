@@ -110,20 +110,44 @@ ul {
   left: 50px;
 }
 
+/*.honbun {*/
+/*  border: solid 1px;*/
+/*  position: absolute;*/
+/*  background-color: white;*/
+/*  height: 350px;*/
+/*  width: 300px;*/
+/*  top: 30px;*/
+/*  left: 350px;*/
+/*}*/
+
+/*.title {*/
+/*  background-color: #d3d3d3;*/
+/*  width: 300px;*/
+/*  height: 100px;*/
+/*  border-bottom: solid 1px;*/
+/*}*/
+
 .honbun {
   border: solid 1px;
   position: absolute;
   background-color: white;
-  height: 350px;
+  height: 100px;
   width: 300px;
   top: 30px;
   left: 350px;
+  margin-top:200px;
+  text-align:  center;
+  line-height:60px;
+  padding-top:45px;
 }
 
 .title {
   background-color: #d3d3d3;
   width: 300px;
   height: 100px;
-  border-bottom: solid 1px;
+  border-bottom: solid 0px;
+  margin-top:-295px;
+  text-align:  center;
+  line-height:100px;
 }
 
