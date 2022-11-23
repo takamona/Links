@@ -148,7 +148,7 @@ class TopicsController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit(Request $request, $community_id, Topic $topic)
     {
         
         $topic = Topic::find($request->id);
