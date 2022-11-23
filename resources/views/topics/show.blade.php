@@ -4,7 +4,7 @@
   <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>プロフィール登録</title>
+    <title>トピック投稿・詳細ページ</title>
     <link rel="stylesheet" href="{{asset('css/topic_show.css')}}">
     
   <!-- Bootstrap CSS -->
@@ -57,7 +57,7 @@
      <div class="border2">
      <ul class="post">
      @foreach($posts as $post)
-     <li><img class="profile" src="{{asset('/uploads/' . $post->user->profile->image)}}"></li>
+     <li><img class="profile" src="{{ Storage::disk('s3')->url('uploads/' . $post->user->profile->image) }}"alt="アイコン"></li>
      <li class="content">{{$post->content}}</li><li class="name">{{$post->user->name}}さんのコメント</li><li class="day"><li class="border_">{{$post->created_at}}</li></li>
      @endforeach
      </ul>
