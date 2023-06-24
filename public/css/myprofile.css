@@ -109,7 +109,9 @@ ul {
   margin-top: -310px;
   height: 260px;
   margin:30px;
-  margin-top: -310px;
+  /*ローカル*/
+  /*margin-top: -310px;*/
+   margin-top: -410px; 
   margin-left: 360px;
 }
 
