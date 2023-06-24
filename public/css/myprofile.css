@@ -109,9 +109,10 @@ ul {
   margin-top: -310px;
   height: 260px;
   margin:30px;
-  /*ローカル*/
-  /*margin-top: -310px;*/
-   margin-top: -360px; 
+
+  margin-top: -310px;
+  /*/旧ソース*/
+   /*margin-top: -360px; */
   margin-left: 360px;
 }
 
