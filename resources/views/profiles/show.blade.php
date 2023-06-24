@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
     <title>マイプロフィール</title>
     <link rel="stylesheet" href="{{ asset('/css/myprofile.css')}}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   </head>
   <body>
     <div class="po">
@@ -22,7 +24,7 @@
       </ul>
     </div>
     <div class="image">
-      <img class="sample" src="{{ Storage::disk('s3')->url('uploads/' . $profile->image) }}"alt="プロフィール">
+     <img class="sample" src="{{ Storage::disk('s3')->url('uploads/' . $profile->image) }}"alt="プロフィール">
     </div>
     <div class="friend">
       <ul>
@@ -58,11 +60,11 @@
     <a href="/profiles/{{$profile->id}}/edit"><p>プロフィールの編集ページへ</p></a>
       <table class="example">
         <tr>
-          <th colspan="2">プロフィール
+          <th class="table-secondary" id="<?php echo ($profile->hobby >100 ) ? "tablesize_long" : "tablesize" ;?>"  colspan="2"><div class="position_p"><div>・</div>プロフィール</div>
           </th>
         </tr>
         <tr>
-          <th>名前
+          <th >名前
           </th>
           <th>
               {{ \Auth::user()->name }}

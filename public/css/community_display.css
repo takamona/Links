@@ -1,8 +1,4 @@
-
 /* indexページ*/
-
-
-
 .mypage{
   margin-top:30px;
   margin-left:120px;
@@ -35,7 +31,7 @@
     list-style:none;
     width: 160px;
     line-height: 190px;
-    margin-left:20px;
+    margin-left:10px;
     background-color: #ff0000;
 }
 
@@ -123,11 +119,14 @@
 }
 
 .waku{
+    position: relative;
+    display: block;
     height: 250px;
-    width:800px;
-    margin-left:10px;
     background-color: #a9a9a9;
     border: solid;
+    margin-top:10px;
+    margin-left:5px;
+    width:80%;
 }
 
 

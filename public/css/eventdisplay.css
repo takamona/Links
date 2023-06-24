@@ -1,7 +1,7 @@
 .nav {
     list-style: none;
     position: absolute;
-    top: 10px;
+    top: 30px;
     left:20px;
 }
 
@@ -18,7 +18,7 @@ nav li {
     list-style: none;
     position: absolute;
     left: 400px;
-    top: 10px;
+    top: 30px;
 }
 
 .logout li {
@@ -44,10 +44,8 @@ nav li {
 }
 
 ul{
-　　list-style:none;
+  list-style:none;
 }
-
-
 
 .e{
     background-color: orange;
@@ -93,11 +91,11 @@ ul{
 }
 
 table.deta{
-  　border-collapse:collapse;
+   border-collapse:collapse;
 }
  
 table.deta th{
-  　border:1px solid #000066;}
+   border:1px solid #000066;}
 
 
 .deta{
@@ -105,11 +103,11 @@ table.deta th{
 }
 
 table.deta{
-  　border-collapse:collapse;
+   border-collapse:collapse;
 }
  
 table.deta th{
-  　border:1px solid #000066;}
+   border:1px solid #000066;}
 
 
 .deta{

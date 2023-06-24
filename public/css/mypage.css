@@ -204,6 +204,11 @@
   width:230px !important;
 }
 
+body {
+  background-color: white;
+}
+
+
 /*.profile{*/
 /*  height:200px !important;*/
 /*  width:230px !important;*/

@@ -134,6 +134,10 @@ table.show{
   width:1320px;
 }
 
+.photogr>div {
+  position: relative;
+  margin-bottom: 50px;
+}
 
 .photo{
   margin-right:-225px;
