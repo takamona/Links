@@ -2,13 +2,22 @@
 
 /*マイページ*/
 .logout {
-  background-color: red;
+  /* background-color: red;
   width: 170px;
   line-height: 160px;
   height: 190px;
   margin-top: 16px;
-  margin-left: 100px;
+  margin-left: 100px; */
 }
+
+#logphoto{
+  border-radius: 50%;
+  width:80px;
+  height:80px;
+  margin-left: 140vh;
+}
+
+
 
 .mypage ul {
   list-style: none;
@@ -60,9 +69,58 @@
 
 .gr {
     margin-top: 100px;
+    margin-left: 500px;
     display: flex;
     width: 700px;
     height: 250px;
+    z-index: 2;
+}
+
+.margin{
+  margin-top: -700px;
+}
+
+.profile_margin{
+  position: relative;
+  margin-top:240px;
+  margin-left: 60px;
+}
+
+.profile_window{
+ /* background-color:#d3d3d3; */
+  background-color: #fffafa;
+ width: 300px;
+ height: 300px;
+ margin-top: 10px;
+ margin-left: 15px;
+ border: solid 1px;
+  background : #f1f1f1 ;
+  border : solid 1px #b3b3b3 ;
+}
+
+.profile_window_parent{
+  /* background-color: #a9a9a9; */
+   /* background-color:#d3d3d3; */
+  /* background-color: #fffafa; */
+  margin-left: 30px;
+  margin-top: 20px;
+  width: 330px;
+  height: 600px;
+  /* border: solid 1px; */
+  font-size : 150% ;
+  /* background : #f1f1f1 ; */
+  background :#dcdcdc;
+  padding : 0.1em 0.5em ;
+  border : solid 1px #b3b3b3 ;
+  /* border-top : solid 1px #e0e0e0 ; */
+  /* border-bottom : solid 1px #717171 ;
+  border-top : solid 1px #717171 ; */
+  box-shadow : 0 2px 6px rgba(100, 100, 100, 0.3) ;
+}
+
+.profile{
+  margin-left:30px;
+  margin-top: -30px;
 }
 
 .gr img {
@@ -137,28 +195,38 @@
   height: 3px;
   background: white;
   transition: 1s;
+  /* レイアウト崩れたら消す */
+  z-index: 9999;
 }
 
 .h span:nth-of-type(1) {
   top: 30px;
+  /* レイアウト崩れたら消す */
+  z-index: 9999;
 }
 
 .h span:nth-of-type(2) {
   top: 40px;
+  /* レイアウト崩れたら消す */
+  z-index: 9999;
 }
 
 .h span:nth-of-type(3) {
   top: 50px;
+  /* レイアウト崩れたら消す */
+  z-index: 9999;
 }
 
 .h2 {
   position: fixed;
+  /* レイアウト崩れたら消す */
+  z-index: 9;
   right: 0px;
   top: 0px;
   width: 100vw;
   height: 100vh;
   clip-path: circle(0px at 100vw 0px);
-  background: black;
+  background: black !important;
   transition: 5s;
   overflow: hidden;
 }
@@ -169,6 +237,8 @@
 
 .open_h {
   background: red;
+  /* レイアウト崩れたら消す */
+  z-index: 9999;
 }
 
 #spmenu {
@@ -176,23 +246,37 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* レイアウト崩れたら消す */
+  z-index: 9999;
 }
 
 .ham1 {
   transform: translatey(10px) rotate(135deg);
+  /* レイアウト崩れたら消す */
+  z-index: 9999;
 }
 
 .ham2 {
   opacity: 0;
+  /* レイアウト崩れたら消す */
+  z-index: 9999;
 }
 
 .ham3 {
   transform: translatey(-10px) rotate(-135deg);
+  /* レイアウト崩れたら消す */
+  z-index: 9999;
 }
 
 .username{
   position:absolute;
-  top:150px;
+  top:370px;
+  left:140px;
+}
+
+.profile{
+  position: absolute;
+  top:210px;
 }
 
 .community{
@@ -205,9 +289,87 @@
 }
 
 body {
-  background-color: white;
+  /* background-color:#d3d3d3; */
+  background-color:white;
 }
 
+.spana{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  /* margin-left: 180px;
+  margin-top: -120px; */
+  top:-30px;
+  left: 30px;
+}
+
+.spana_a{
+  position: absolute;
+  font-size:1px;
+  width:200px;
+  left: 130px;
+  top:30px;
+  margin-left: 0px;
+  /* margin-left: 0px; */
+  /* margin-top: 300px; */
+  /* top:-400px; */
+}
+
+.profile_window_2{
+  /* background-color:#d3d3d3; */
+  background-color: #fffafa;
+ width: 300px;
+ height: 250px;
+ margin-top: 10px;
+ margin-left: 15px;
+ border: solid 1px;
+  background :#f1f1f1 ;
+  border : solid 1px #b3b3b3 ;
+}
+
+.click_menu{
+  position: absolute;
+  /* background-color:#fffafa; */
+  width: 200px;
+  /* 今後将来的な幅は下の高さ適用 */
+  /* height: 250px; */
+  height: 60px;
+  border:solid 1px;
+  border: solid 1px #b3b3b3 ;
+  background: white;
+  /* border-left: #b3b3b3; */
+  /* border-top: #b3b3b3; */
+  margin-left: 1040px;
+  margin-top: -640px;
+  box-shadow : 0 2px 6px rgba(100, 100, 100, 0.5);
+  visibility: hidden;
+}
+
+.click_logout{
+  margin-left: 20px;;
+  
+}
+
+.click_profile{
+   margin-left: 20px;
+}
+
+a{
+  text-decoration:none;
+  color:black;
+}
+
+.username_click{
+  margin-top: -700px;
+  margin-left: 1190px;
+  font-size : 150%;
+  font-size: 15px;
+}
+
+.margin_window{
+  margin-top: 50px;
+  visibility: hidden;
+}
 
 /*.profile{*/
 /*  height:200px !important;*/

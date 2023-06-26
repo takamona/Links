@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
     <title>{{$user->name}}のプロフィール</title>
     <link rel="stylesheet" href="{{asset ('css/other.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   </head>
   <body>
     <div class="po">
@@ -21,12 +22,13 @@
         </li>
       </ul>
     </div>
-    <div class="plofile"><img class="profile_photo" src="{{ Storage::disk('s3')->url('uploads/' . $user->profile->image) }}"alt="プロフィール"></div>
+    <div class="plofile"><img class="profile_photo" src="{{ asset('uploads/' . $user->profile->image) }}"alt="プロフィール"></div>
     <div class="friend">
       <ul>
-        <li>フレンド一覧</li>
+        <li class="friend_text">フレンド一覧</li>
       </ul>
     </div>
+    <div id="parent_photo">
     <div class="photogr">
       <div class="photoA">
         <img class="syoki" src="{{asset('images/smiley.png')}}" alt="フレンド">
@@ -49,6 +51,7 @@
         <img class="syoki" src="{{asset ('images/smiley.png')}}" alt="フレンド">
       </div>
     </div>
+</div>
     <table class="example">
       <tr>
       <th colspan="2">プロフィール
