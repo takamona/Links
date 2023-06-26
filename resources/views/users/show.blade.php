@@ -22,7 +22,7 @@
         </li>
       </ul>
     </div>
-    <div class="plofile"><img class="profile_photo" src="{{ asset('uploads/' . $user->profile->image) }}"alt="プロフィール"></div>
+    <div class="plofile"><img class="profile_photo" src="{{ Storage::disk('s3')->url('uploads/' . $user->profile->image) }}"alt="プロフィール"></div>
     <div class="friend">
       <ul>
         <li class="friend_text">フレンド一覧</li>
