@@ -74,8 +74,9 @@
   <p>工事中</p>
 </div>
 
-<div class="margin_window">a</div>
+<!-- <div class="margin_window">a</div> -->
 </div>
+  <div class="gr_position">
   <div class="margin">
   <div class="gr">
    <div>
@@ -98,12 +99,14 @@
     </div>
     </div>
   </div>
+</div>
   <div class="position_click">
  <div class="click_menu">
  <div class="click_profile"><a href="/profiles/{{ \Auth::id() }}">プロフィールを表示</a></div>
  <div class="click_logout"><a href="/logout">ログアウト</a></div>
 </div>
 </div>
+<div class="user_position">
 <p class="username_click"> {{$user->name}}さん </p>
 <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
   <script src="{{ asset('/js/mypage.js')}}"></script>
