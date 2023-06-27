@@ -68,7 +68,6 @@
     <a class="spana_a" href="/profiles/{{ \Auth::id() }}">プロフィールを見る
     <img class="spana" src="{{ asset('images/spana.png')}}" alt="編集">
     </a>
-    <a href="/profiles/{{ \Auth::id() }}">プロフィールを見る</a>
   </div>
 </div>
 <div class="profile_window_2">
