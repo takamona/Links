@@ -375,3 +375,32 @@ a{
 /*  height:200px !important;*/
 /*  width:230px !important;*/
 /*}*/
+
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 480px) {
+  .profile {
+    width: 150px !important;
+    height: 180px !important;
+  }
+  .margin_window {
+    margin-top: 10px;
+  }
+  .click_menu {
+    width: 100px;
+    height: 60px;
+    margin-left: 50px;
+    margin-top: -60px;
+  }
+  .click_logout {
+    margin-left: 5px;
+  }
+  .click_profile {
+    margin-left: 5px;
+  }
+  .username_click {
+    margin-top: -200px;
+    margin-left: 390px;
+    font-size: 12px;
+  }
+}
