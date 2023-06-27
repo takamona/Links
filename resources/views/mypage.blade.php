@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <title>{{$user->name}}さんのマイページ</title>
-  <link rel="stylesheet" href="{{ asset('css/mypage.css')}}" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('css/mypage.css')}}" type="text/css">
 </head>
 <body>
   <div class="h">
@@ -40,25 +40,14 @@
     </nav>
   </div>
   <div class="nav">
-    <!-- <div class="mypage">
-      <ul>
-       <li>
-          <a href="mypage">マイページ</a>
-        </li>
-      </ul>
-      <img class="myp" src="{{ asset('images/komyu.jpeg')}}" alt="マイページ">
-    </div> -->
     <div class="logout">
       <ul>
          <li>
-          <!-- <a href="/logout">ログアウト</a> -->
-          <img id="logphoto" src="{{ Storage::disk('s3')->url('uploads/' . $profile->image) }}"alt="ログアウト">
+          <img id="logphoto" src="{{ Storage::disk('s3')->url('uploads/' . $profile->image) }}" alt ="ログアウト">
   </div>
         </li>
-      </ul>
+    </ul>
     </div>
-  </div>
-  
 <div class="profile_window_parent">  
 <div class="profile_window">
   <div class="profile">
@@ -78,7 +67,6 @@
 </div>
 
 <div class="margin_window">a</div>
-</div>
   <div class="margin">
   <div class="gr">
    <div>
@@ -111,5 +99,4 @@
 <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
   <script src="{{ asset('/js/mypage.js')}}"></script>
   <script src="{{ asset('/js/menu.js')}}"></script>
-
 </body> 
