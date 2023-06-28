@@ -51,6 +51,7 @@
 
 .profile {
   width: 30% !important;
+  margin-top: -30px;
 }
 
 #img {
@@ -75,10 +76,12 @@
 }
 
 .event2 {
-  width: 85%;
+  width:85%;
 }
 
 .gr {
+  position: relative;
+  top: -710px;
     margin-top: 100px;
     margin-left: 500px;
     display: flex;
@@ -89,20 +92,20 @@
 
 .margin{
   /* margin-top: -700px; */
-  position: absolute; 
-  top:10px;
-  padding-bottom:30px;
+  /* position: absolute; 
+  top:10px; */
+  /* padding-bottom:30px; */
 }
 
 .gr_position{
-  position:relative;
+  /* position:relative; */
 }
 
-.profile_margin{
+/* .profile_margin{
   position: relative;
   margin-top:240px;
   margin-left: 60px;
-}
+} */
 
 
 .relative{
@@ -110,8 +113,9 @@
 }
 
 .profile_window_parent{
-  position: absolute;
-  bottom: -80px;
+  /* position: absolute;
+  bottom: -80px; */
+  margin-top: 93px;
 }
 
 .profile_window{
@@ -148,7 +152,7 @@
 }
 
 .profile{
-  margin-top: -160px;
+  /* margin-top: -160px; */
   margin-left:30px;
 }
 
@@ -299,13 +303,13 @@
 
 .username{
   position:absolute;
-  top: 245px;
-  left:95px;
+  top: 465px;
+  left:135px;
 }
 
 .profile{
   position: absolute;
-  top:210px;
+  top:290px;
 }
 
 .community{
@@ -336,11 +340,11 @@ body {
   position: absolute;
   font-size:1px;
   width:200px;
-  left: 130px;
-  top:50px;
-  margin-left: 0px;
-  /* margin-left: 0px; */
+  left: 160px;
+  top:520px;
+  margin-left: 100px;
   /* margin-top: 300px; */
+  /* z-index: 7; */
   /* top:-400px; */
 }
 
@@ -357,19 +361,24 @@ border : solid 1px #b3b3b3 ;
 }
 
 .click_menu{
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
+  z-index: 12;
   /* background-color:#fffafa; */
   width: 200px;
+  right: 200px;
+  top:120px;
   /* 今後将来的な幅は下の高さ適用 */
   /* height: 250px; */
   height: 60px;
   border:solid 1px;
   border: solid 1px #b3b3b3 ;
   background: white;
+
   /* border-left: #b3b3b3; */
   /* border-top: #b3b3b3; */
-  margin-left: 1040px;
-  margin-top: -640px;
+  /* margin-left: 1040px;
+  margin-top: -640px; */
   box-shadow : 0 2px 6px rgba(100, 100, 100, 0.5);
   visibility: hidden;
 }
@@ -408,27 +417,29 @@ a{
   transform: translate(-50%, -50%);
 }
 
-.margin_window{
-  margin-top: 50px;
+/* .margin_window{
+  position:relative;
+  top:-15px;
   visibility: hidden;
-}
+} */
 
 /*.profile{*/
 /*  height:200px !important;*/
 /*  width:230px !important;*/
 /*}*/
-
+/* 
 footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 50px;
   background-color: #f1f1f1;
-}
+} */
 
 body {
-  padding-bottom: 50px; /* フッターの高さに合わせて調整 */
+  height: 120vh;
 }
+
 
 
 
@@ -458,4 +469,6 @@ body {
     margin-left: 390px;
     font-size: 12px;
   }
+
+
 }

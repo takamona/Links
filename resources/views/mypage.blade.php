@@ -57,21 +57,19 @@
       </ul>
     </div>
   </div>
-
-<div calss="relative">  
-<div class="profile_window_parent">  
+<div calss="relative">
+<div class="profile_window_parent"> 
 <div class="profile_window">
   <div class="profile">
   <img class="sample" src="{{ Storage::disk('s3')->url('uploads/' . $profile->image) }}" alt="プロフィール">
   </div>
-  <p class="username"> {{$user->name}}さん </p>
-  <div class="profile_margin">
+  <p class="username"> {{$user->name}}さん</p>
+  <!-- <div class="profile_margin"> -->
     <a class="spana_a" href="/profiles/{{ \Auth::id() }}">プロフィールを見る
     <img class="spana" src="{{ asset('images/spana.png')}}" alt="編集">
     </a>
-  </div>
+  <!-- </div> -->
 </div>
-
 <div class="profile_window_2">
   <p>工事中</p>
 </div>
@@ -79,8 +77,8 @@
 </div>
 <!-- <div class="margin_window">a</div> -->
 </div>
-  <div class="gr_position">
-  <div class="margin">
+  <!-- <div class="gr_position"> -->
+  <!-- <div class="margin"> -->
   <div class="gr">
    <div>
       <img class="event" src="{{ asset('images/audience.jpg')}}" alt="イベント">
@@ -101,8 +99,8 @@
       <a href="/getOpenTopics"><p>トピック一覧</p></a>
     </div>
     </div>
-  </div>
-</div>
+  <!-- </div> -->
+<!-- </div> -->
   <div class="position_click">
  <div class="click_menu">
  <div class="click_profile"><a href="/profiles/{{ \Auth::id() }}">プロフィールを表示</a></div>
@@ -110,9 +108,8 @@
 </div>
 </div>
 <div class="user_position">
-<p class="username_click"> {{$user->name}}さん </p>
+<p class="username_click">{{$user->name}}さん</p>
 <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
   <script src="{{ asset('/js/mypage.js')}}"></script>
   <script src="{{ asset('/js/menu.js')}}"></script>
-
-</body> 
+</body>
