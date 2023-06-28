@@ -89,8 +89,9 @@
 
 .margin{
   /* margin-top: -700px; */
-  position: absolute;
-  bottom:0px;
+  position: absolute; 
+  top:10px;
+  padding-bottom:30px;
 }
 
 .gr_position{
@@ -103,11 +104,21 @@
   margin-left: 60px;
 }
 
+
+.relative{
+  position: relative;
+}
+
+.profile_window_parent{
+  position: absolute;
+  bottom: -80px;
+}
+
 .profile_window{
  /* background-color:#d3d3d3; */
   background-color: #fffafa;
  width: 300px;
- height: 300px;
+ height: 320px;
  margin-top: 10px;
  margin-left: 15px;
  border: solid 1px;
@@ -119,10 +130,11 @@
   /* background-color: #a9a9a9; */
    /* background-color:#d3d3d3; */
   /* background-color: #fffafa; */
+  /* position: relative; */
   margin-left: 30px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   width: 330px;
-  height: 600px;
+  height: 610px;
   /* border: solid 1px; */
   font-size : 150% ;
   /* background : #f1f1f1 ; */
@@ -136,8 +148,8 @@
 }
 
 .profile{
+  margin-top: -160px;
   margin-left:30px;
-  margin-top: -30px;
 }
 
 .gr img {
@@ -287,8 +299,8 @@
 
 .username{
   position:absolute;
-  top:370px;
-  left:140px;
+  top: 245px;
+  left:95px;
 }
 
 .profile{
@@ -325,7 +337,7 @@ body {
   font-size:1px;
   width:200px;
   left: 130px;
-  top:30px;
+  top:50px;
   margin-left: 0px;
   /* margin-left: 0px; */
   /* margin-top: 300px; */
@@ -396,10 +408,10 @@ a{
   transform: translate(-50%, -50%);
 }
 
-/* .margin_window{
+.margin_window{
   margin-top: 50px;
   visibility: hidden;
-} */
+}
 
 /*.profile{*/
 /*  height:200px !important;*/

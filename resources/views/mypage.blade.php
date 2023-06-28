@@ -57,7 +57,8 @@
       </ul>
     </div>
   </div>
-  
+
+<div calss="relative">  
 <div class="profile_window_parent">  
 <div class="profile_window">
   <div class="profile">
@@ -70,10 +71,12 @@
     </a>
   </div>
 </div>
+
 <div class="profile_window_2">
   <p>工事中</p>
 </div>
-
+</div>
+</div>
 <!-- <div class="margin_window">a</div> -->
 </div>
   <div class="gr_position">
