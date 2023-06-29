@@ -77,7 +77,7 @@
 </div>
 <!-- <div class="margin_window">a</div> -->
 </div>
-  <!-- <div class="gr_position"> -->
+  <div class="gr_position">
   <!-- <div class="margin"> -->
   <div class="gr">
    <div>
@@ -89,17 +89,17 @@
       <a href="/favorites/{{ \Auth::id() }}"><p>いいねしたイベント</p></a>
     </div>
   </div>
-  <div class="gr">
-    <div>
+  <div class="gr2">
+    <div class="grborder">
       <img class="komyuran2" src="{{ asset('images/chairs.jpg')}}" alt="コミュニティ一覧">
       <a href="/communities"><p>コミュニティ一覧</p></a>
     </div>
-    <div>
+    <div class="grborder2">
       <img class="topic" src="{{ asset('images/glasses-book.jpg')}}" alt="トピック一覧">
       <a href="/getOpenTopics"><p>トピック一覧</p></a>
     </div>
     </div>
-  <!-- </div> -->
+  </div>
 <!-- </div> -->
   <div class="position_click">
  <div class="click_menu">
