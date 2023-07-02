@@ -125,5 +125,4 @@
 <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
   <script src="{{ asset('/js/mypage.js')}}"></script>
   <script src="{{ asset('/js/menu.js')}}"></script>
-  <script src="{{ asset('/js/remove.js')}}"></script>
 </body>
