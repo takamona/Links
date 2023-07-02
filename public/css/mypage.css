@@ -572,19 +572,19 @@ footer {
  display: block;
  display: grid;
  grid-template-columns: 33% 33% 1fr;
- width: 480px;
+ width: 520px;
  height: 210px;
  background-color: aquamarine;
 }
 
 .nav>div{
   margin-top: 160px;
-  margin-left: -30px;
+  /* margin-left: -30px; */
   padding-left:40px;
   /* border: solid 1px; */
   background-color: aqua;
   height: 160px;
-  width: 310px;
+  width: 340px;
   line-height: 70px;
 }
 
@@ -618,7 +618,7 @@ footer {
     margin-left: 500px; */
     /* display: flex; */
     height: 00px;
-    width: 0px;
+    width: 600px;
     z-index: 2;
 }
 
@@ -639,8 +639,9 @@ footer {
     /* margin-top: 100px; */
     /* margin-left: 500px; */ 
     /* display: flex; */
+
     height: 00px;
-    width: 00px;
+    width: 600px;
     z-index: 2;
 }
 
@@ -652,12 +653,12 @@ footer {
 
 .grborder{
   position: absolute;
-  top:120px;
+  top:170px;
 }
 
 .grborder2{
   position: absolute;
-  top:120px;
+  top:170px;
 }
 
 .gr>div{
