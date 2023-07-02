@@ -531,6 +531,8 @@ footer {
     position: absolute;
     top:165px;
     left:-25px;
+    max-width: 100%;
+    margin: 0 auto;
     /* margin-left: -25px;
     margin-top: -95px; */
     z-index: 9999;
@@ -539,23 +541,31 @@ footer {
   }
   .margin_window {
     margin-top: 10px;
+    max-width: 100%;
+    margin: 0 auto;
   }
   .click_menu {
     width: 100px;
     height: 60px;
     margin-left: 50px;
     margin-top: 60px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: none;
   }
   .click_logout {
     margin-left: 5px;
+    display: none;
   }
   .click_profile {
     margin-left: 5px;
+    display: none;
   }
   .username_click {
     margin-top: -200px;
     margin-left: 390px;
     font-size: 12px;
+    display: none;
   }
 
   .h {
@@ -568,6 +578,8 @@ footer {
      width: 0px;
      height: 0px;
      margin-left: -10px;
+     max-width: 100%;
+     margin: 0 auto;
      z-index: 9999;
      background-color: #fffafa;
   }
@@ -592,6 +604,7 @@ footer {
   height: 160px;
   width: 340px;
   max-width: 100%;
+  margin: 0 auto;
   line-height: 70px;
 }
 
@@ -606,6 +619,8 @@ footer {
     height: 115px;
     top:50px;
     z-index: 9999;
+    max-width: 100%;
+    margin: 0 auto;
     background-color: #fffafa;
     /* background-color : #f1f1f1; */
   }
@@ -687,6 +702,8 @@ footer {
 .gr img{
   width: 130px;
   height: 130px;
+  max-width: 100%;
+  margin: 0 auto;
   /* position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -778,6 +795,7 @@ footer {
   width:440px;
   max-width: 100%;
   height: 600px;
+  max-height: auto;
   /* margin-top: 600px; */
   /* background-color: rgb(244, 135, 26); */
   /* background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);    背景色指定 */
