@@ -639,7 +639,6 @@ footer {
     /* margin-top: 100px; */
     /* margin-left: 500px; */ 
     /* display: flex; */
-
     height: 00px;
     width: 600px;
     z-index: 2;
@@ -748,5 +747,10 @@ footer {
 .spana_a{
   display: none;
 }
+
+.wrap_original{
+  overflow: hidden;
+}
+
 
 }
