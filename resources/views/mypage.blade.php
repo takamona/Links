@@ -40,7 +40,7 @@
       </ul>
     </nav>
   </div>
-  <div class="nav">
+
     <!-- <div class="mypage">
       <ul>
        <li>
@@ -48,6 +48,11 @@
         </li>
       </ul>
       <img class="myp" src="{{ asset('images/komyu.jpeg')}}" alt="マイページ">
+    </div> -->
+    <!-- <div class="nav">
+     <div>プロフィール</div>
+     <div>タイムライン</div>
+     <div>ログアウト</div>
     </div> -->
     <div class="logout">
       <ul>
@@ -57,13 +62,15 @@
         </li>
       </ul>
     </div>
-  </div>
 
-<div class="profile_window_parent"> 
-<div class="profile_window">
+
+<div class="profile_window_position">
+<div class="profile_window_parent">
+  <div class="profile_window">
   <div class="profile">
   <img class="sample" src="{{ Storage::disk('s3')->url('uploads/' . $profile->image) }}" alt="プロフィール">
   </div>
+</div>
   <p class="username"> {{$user->name}}さん</p>
   <!-- <div class="profile_margin"> -->
     <a class="spana_a" href="/profiles/{{ \Auth::id() }}">プロフィールを見る
@@ -71,13 +78,18 @@
     </a>
   <!-- </div> -->
 </div>
+</div>
+<div class="pro_2_position">
 <div class="profile_window_2">
   <p>工事中</p>
 </div>
 </div>
 <!-- <div class="margin_window">a</div> -->
-
-
+<div class="nav">
+     <div><a href="/profiles/{{ \Auth::id() }}">プロフィール</a></div>
+     <div><a href="/getOpenTopics_Events">タイムライン</a></div>
+     <div><a href="/logout">ログアウト</a></div>
+</div>
   <div class="gr_position">
   <!-- <div class="margin"> -->
   <div class="gr">
@@ -113,4 +125,5 @@
 <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
   <script src="{{ asset('/js/mypage.js')}}"></script>
   <script src="{{ asset('/js/menu.js')}}"></script>
+  <script src="{{ asset('/js/remove.js')}}"></script>
 </body>
