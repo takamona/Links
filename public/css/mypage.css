@@ -572,7 +572,7 @@ footer {
  display: block;
  display: grid;
  grid-template-columns: 33% 33% 1fr;
- width: 680px;
+ width: 480px;
  height: 210px;
  background-color: aquamarine;
 }
@@ -583,8 +583,8 @@ footer {
   padding-left:40px;
   /* border: solid 1px; */
   background-color: aqua;
-  height: 120px;
-  width: 480px;
+  height: 160px;
+  width: 310px;
   line-height: 70px;
 }
 
@@ -608,6 +608,18 @@ footer {
   display: block;
   /* left: 0px;
   top:280px; */
+
+
+
+  position: absolute;
+  top: 223px;
+  left: 508px;
+    /* margin-top: 350px;
+    margin-left: 500px; */
+    /* display: flex; */
+    height: 00px;
+    width: 0px;
+    z-index: 2;
 }
 
 .event_{
@@ -618,7 +630,18 @@ footer {
 
 .gr2{
   display: block;
-
+  /* display: grid;
+  grid-template-columns: 33% 33% 1fr;
+  margin-top: 30px; */
+  position: absolute;
+  top: 573px;
+  left: 508px;
+    /* margin-top: 100px; */
+    /* margin-left: 500px; */ 
+    /* display: flex; */
+    height: 00px;
+    width: 00px;
+    z-index: 2;
 }
 
 .event_join{
@@ -629,21 +652,23 @@ footer {
 
 .grborder{
   position: absolute;
-  top:180px;
+  top:120px;
 }
 
 .grborder2{
   position: absolute;
-  top:180px;
+  top:120px;
 }
 
 .gr>div{
     position: relative;
     width: 480px;
     height: 130px;
-    border: solid 1px black;
+    /* border: solid 1px black; */
+    border: solid 1px burlywood;
     padding: 2%;
-    background-color: gray;
+    /* background-color: gray; */
+    background-color: green;
 }
 
 .gr img{
@@ -682,9 +707,11 @@ footer {
   position: relative;
   width: 480px;
   height: 130px;
-  border: solid 1px black;
+  /* border: solid 1px black; */
+  border: solid 1px rgb(70, 121, 131);
   padding: 2%;
-  background-color: gray;
+  /* background-color: grey; */
+  background-color: rgb(69, 79, 142);
 }
 
 .gr2 img{
@@ -720,6 +747,5 @@ footer {
 .spana_a{
   display: none;
 }
-
 
 }
