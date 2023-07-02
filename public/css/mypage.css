@@ -572,7 +572,7 @@ footer {
  display: block;
  display: grid;
  grid-template-columns: 33% 33% 1fr;
- width: 580px;
+ width: 680px;
  height: 210px;
  background-color: aquamarine;
 }
@@ -604,15 +604,42 @@ footer {
   }
 
 .gr{
-  position: absolute;
-  left: 30px;
-  top:280px;
+  /* position: absolute; */
+  display: block;
+  /* left: 0px;
+  top:280px; */
 }
 
+.event_{
+ position: absolute;
+ right: 510px;
+ top:77px;
+}
+
+.gr2{
+  display: block;
+
+}
+
+.event_join{
+ position: absolute;
+ right: 510px;
+ top: 77px;
+}
+
+.grborder{
+  position: absolute;
+  top:180px;
+}
+
+.grborder2{
+  position: absolute;
+  top:180px;
+}
 
 .gr>div{
     position: relative;
-    width: 130px;
+    width: 480px;
     height: 130px;
     border: solid 1px black;
     padding: 2%;
@@ -647,13 +674,13 @@ footer {
 
 .gr2{
   position:absolute;
-  left:30px;
+  left:0px;
   top: 440px;
 }
 
 .gr2>div{
   position: relative;
-  width: 130px;
+  width: 480px;
   height: 130px;
   border: solid 1px black;
   padding: 2%;

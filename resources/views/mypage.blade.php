@@ -21,17 +21,19 @@
           </a>
         </li>
         <li>
-          @if($participation->status === 1)
+          @if($participation->status === 1 && $participation->status === ! null)
           <a href="/communities/{{ \Auth::id() }}">
             <img  class="community" src= "{{ asset('images/COMMUNITY.png')}}" alt="コミュニティ">
           </a>
         </li>
             @endif
         <li>
+        @if($participation->status === 1 && $participation->status === ! null)
           <a href="/getOpenTopics_Events">
             <img src="{{ asset('images/TIMELINE.png')}}" alt="タイムライン">
           </a>
         </li>
+        @endif
         <li>
           <a href="/logout">
             <img src="{{ asset('images/LOGOUT.png')}}" alt="ログアウト">
@@ -87,17 +89,19 @@
 <!-- <div class="margin_window">a</div> -->
 <div class="nav">
      <div><a href="/profiles/{{ \Auth::id() }}">プロフィール</a></div>
+     @if($participation->status ===1  && $participation->status === ! null)
      <div><a href="/getOpenTopics_Events">タイムライン</a></div>
+     @endif
      <div><a href="/logout">ログアウト</a></div>
 </div>
   <div class="gr_position">
   <!-- <div class="margin"> -->
   <div class="gr">
-   <div>
+   <div class="event_">
       <img class="event" src="{{ asset('images/audience.jpg')}}" alt="イベント">
       <a href="/getOpenEvents"><p>イベント</p></a>
     </div>
-    <div>
+    <div class="event_join">
       <img class="event2" src="{{ asset('images/audience.jpg')}}" alt="参加予定のイベント">
       <a href="/favorites/{{ \Auth::id() }}"><p>いいねしたイベント</p></a>
     </div>
