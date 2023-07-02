@@ -577,6 +577,8 @@ footer {
  display: grid;
  grid-template-columns: 33% 33% 1fr;
  width: 520px;
+ max-width: 100%;
+ margin: 0 auto;
  height: 210px;
  background-color: aquamarine;
 }
@@ -587,10 +589,9 @@ footer {
   padding-left:40px;
   /* border: solid 1px; */
   background-color: aqua;
+  height: 160px;
+  width: 340px;
   max-width: 100%;
-  height: auto;
-  /* height: 160px;
-  width: 340px; */
   line-height: 70px;
 }
 
@@ -625,6 +626,8 @@ footer {
     /* display: flex; */
     height: 00px;
     width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
     z-index: 2;
 }
 
@@ -647,6 +650,8 @@ footer {
     /* display: flex; */
     height: 00px;
     width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
     z-index: 2;
 }
 
@@ -669,9 +674,9 @@ footer {
 .gr>div{
     position: relative;
     width: 480px;
-    /* height: 130px; */
     max-width: 100%;
-  height: auto;
+    margin: 0 auto;
+    height: 130px;
     /* border: solid 1px black; */
     border: solid 1px burlywood;
     padding: 2%;
@@ -715,7 +720,7 @@ footer {
   position: relative;
   width: 480px;
   max-width: 100%;
-  height: auto;
+  margin: 0 auto;
   height: 130px;
   /* border: solid 1px black; */
   border: solid 1px rgb(70, 121, 131);
@@ -772,7 +777,7 @@ footer {
   color: aqua;
   width:440px;
   max-width: 100%;
-  height: auto;
+  height: 600px;
   /* margin-top: 600px; */
   /* background-color: rgb(244, 135, 26); */
   /* background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);    背景色指定 */
