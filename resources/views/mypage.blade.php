@@ -127,6 +127,18 @@
 <div class="user_position">
 <p class="username_click">{{$user->name}}さん</p>
 <div class="news">news</div>
+<div class="container ">
+        @foreach($news as $data)
+        <div class="card-body pt-0 pb-2">
+            <h3 class="h5 card-title">
+                <a href="{{$data['url']}}">{{$data['name']}}</a>
+            </h3>
+            <div class="card-text">
+                <img src="{{$data['thumbnail']}}">
+            </div>
+        </div>
+        @endforeach
+    </div>
 <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
 <script src="{{ asset('/js/mypage.js')}}"></script>
 <script src="{{ asset('/js/menu.js')}}"></script>
