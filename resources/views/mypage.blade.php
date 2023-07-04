@@ -133,7 +133,7 @@
         @foreach($news as $data)
         <div class="card-body pt-0 pb-2">
             <h3 class="h5 card-title">
-                <a href="{{$data['url']}}" style="fontsize:30px">{{$data['name']}}</a>
+                <font size="30"><a href="{{$data['url']}}">{{$data['name']}}</a></font>
             </h3>
             <div class="card-text">
                 <img src="{{$data['thumbnail']}}" style="width: 200px;">
