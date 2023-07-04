@@ -136,7 +136,7 @@
                 <a href="{{$data['url']}}">{{$data['name']}}</a>
             </h3>
             <div class="card-text">
-                <img src="{{$data['thumbnail']}}">
+                <img src="{{$data['thumbnail']}}" style="width: 200px;">
             </div>
         </div>
         @endforeach
