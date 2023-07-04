@@ -555,19 +555,6 @@ footer {
   height:300px !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* レスポンシブ対応 */
 @media screen and (max-width: 480px) {
   .sample {
@@ -812,6 +799,10 @@ footer {
   /* background-color:lightpink; */
   background-color: rgba(245, 205, 158, .5);
   /* z-index: 99999; */
+}
+
+.container-sm>img{
+  width:300px;
 }
 
 }
