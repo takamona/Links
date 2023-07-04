@@ -528,14 +528,14 @@ footer {
 
 .news{
   position: absolute;
-  top:690px;
+  top:720px;
   /* padding-top: 100px; */
   left: 0px;
   display: block;
   font-size: 18px;
   border:solid whitesmoke 2px;
   color: aqua;
-  width:1060px;
+  width:1300px;
   height: 600px;
   max-width: 100%;
   height: auto;
