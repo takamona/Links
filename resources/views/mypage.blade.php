@@ -127,7 +127,7 @@
 <div class="user_position">
 <p class="username_click">{{$user->name}}さん</p>
 <div class="news">news
-<div class="container ">
+<div class="container-sm">
         @foreach($news as $data)
         <div class="card-body pt-0 pb-2">
             <h3 class="h5 card-title">
