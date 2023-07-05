@@ -626,14 +626,50 @@ footer {
   /*  max-width: 100%;*/
   /*  line-height: 70px;*/
   
-  margin-top: 160px;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /*margin-top: 160px;*/
     /* margin-left: 0px; */
     /* padding-left: 10px; */
     /* border: solid 1px; */
+  /*  background-color: aqua;*/
+  /*  height: auto;*/
+  /*  width: 270px;*/
+    /* max-width: 100%; */
+  /*  line-height: 70px;*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    margin-top: 160px;
+    /* margin-left: -30px; */
+    padding-right: 100px;
+    padding: auto;
+    /* border: solid 1px; */
     background-color: aqua;
     height: auto;
-    width: 270px;
-    /* max-width: 100%; */
+    width: 480px;
+    max-width: 100%;
+    /* width: auto; */
     line-height: 70px;
 }
 
