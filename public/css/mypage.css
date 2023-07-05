@@ -810,7 +810,11 @@ footer {
 
 .card-body.pb-2.pt-0{
   border:solid 1px;
-  border-color: black;
+  /*border-color: black;*/
+  width:500px;
+  max-width:100%;
+  border-color: #09586445;
+}
   
 }
 
