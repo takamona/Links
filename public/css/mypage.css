@@ -807,4 +807,10 @@ footer {
   width:300px;
 }
 
+
+.card-body pt-0 pb-2{
+  border :solid 2px;
+}
+
+
 }
