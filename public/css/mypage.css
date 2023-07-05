@@ -808,9 +808,17 @@ footer {
 }
 
 
-.card-body pt-0 pb-2{
-  border :solid 2px;
+.card-body.pb-2.pt-0{
+  border:solid 1px;
+  border-color: black;
+  
 }
 
+
+.h5 card-title{
+  width: 500px;
+  font-size: 10px;
+  height: auto;
+}
 
 }
