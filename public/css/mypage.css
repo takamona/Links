@@ -617,14 +617,14 @@ footer {
 
 .nav>div{
   margin-top: 160px;
-  /* margin-left: -30px; */
-  padding-left:150px;
-  /* border: solid 1px; */
-  background-color: aqua;
-  height: auto;
-  width: 600px;
-  max-width: 100%;
-  line-height: 70px;
+    /* margin-left: -30px; */
+    padding-left: 125px;
+    /* border: solid 1px; */
+    background-color: aqua;
+    height: auto;
+    width: 280px;
+    max-width: 100%;
+    line-height: 70px;
 }
 
 .profile_nav{
