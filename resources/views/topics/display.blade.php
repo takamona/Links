@@ -23,7 +23,11 @@
 <div class="bar"> </div>
 <p>トピックス {{ count($topics) }}件 </p> 
 @foreach($topics as $topic)
+<div class="topic_po">
 <div class="topic">
+<div class="title">
+    {{ $topic->title }}
+</div>
   <div class="icon">
     <img class="icon_image" src="{{ Storage::disk('s3')->url('uploads/' . $topic->image) }}"alt="トピック画像">
   </div>
@@ -31,11 +35,18 @@
     {{ $topic->created_at}}
   </div>
   <div class="honbun">
-    {{ $topic->content}}  
-    <div class="title">
-    {{ $topic->title }}
-    </div>
+    <div class="content">
+    {{ $topic->content}}
+    </div>  
+    
   </div>
+  <div class="name">
+  {{ $topic->user->name }}
+  </div>
+  <div class="profile">
+    <img class="profile_image"src="{{ Storage::disk('s3')->url('uploads/' . $topic->user->profile->image) }}" alt="プロフィール">
+  </div>
+</div>
 </div>
 @endforeach
   </body>

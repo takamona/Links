@@ -3,6 +3,7 @@
   list-style: none;
   position: absolute;
   top: 10px;
+  z-index: 9999;
 }
 
 nav li {
@@ -12,6 +13,7 @@ nav li {
   height: 50px;
   line-height: 50px;
   margin-right: 310px;
+  z-index: 9999;
 }
 
 .logout {
@@ -36,8 +38,10 @@ nav li {
   position: relative;
   display: block;
   height: 250px;
+  width: 80%;
   background-color: #a9a9a9;
   border: solid;
+  z-index: 9999;
 }
 
 ul {
@@ -52,16 +56,18 @@ ul {
   text-align: center;
   width: calc((70% - 40px) / 2);
   margin: 10px;
+  z-index: 9999;
 }
 
 .kn {
   background-color: grey;
   border: solid 1px;
-  width: 230px;
+  width: 100%;
   line-height: 100px;
   text-align: center;
-  width: calc((100% - 40px) / 2);
+  width: calc((92% - 40px) / 2);
   margin: 10px;
+  z-index: 9999;
 }
 
 .flex {
@@ -71,43 +77,56 @@ ul {
 .bar {
   background-color: grey;
   padding-bottom: 20px;
-  width: 900px;
+  width: 80.5%;
+  z-index: 9999;
+}
+
+.topic_po{
+  position: relative;
+  width:100%;
+  height: 100%;
 }
 
 .topic {
-  border: solid 1px;
+  position: absolute;
+  top: 80px;
+  border: solid 2px;
   position: relative;
   background-color: #fffacd;
-  width: 700px;
-  height: 400px;
-  margin: 40px;
+  /* background-color: #d3d3d3; */
+  width: 80%;
+  height: 100%;
+  margin: 0px;
+  z-index: 9999;
 }
 
 .icon {
-  border: solid 1px;
+  /* border: solid 1px; */
   position: absolute;
-  top: 40px;
-  left: 50px;
-  background-color: white;
-  width: 250px; 
-  height: 140px;
+  top: 180px;
+  left: 255px;
+  /* background-color:blueviolet; */
+  width: 40%; 
+  height: 50%;
+  z-index: 9999;
 }
 
 .icon>img{
-  width: 250px !important;
-  height:140px !important;
+  width: 100% !important;
+  height:100% !important;
 }
 
 
 
 .time {
-  border: solid 1px;
+  /* border: solid 1px; */
   position: absolute;
-  background-color: #ffa500;
-  height: 150px;
-  width: 250px;
-  top: 225px;
-  left: 50px;
+  /* background-color: #ffa500; */
+  height: 10%;
+  width: 20%;
+  top: 110px;
+  left:250px;
+  z-index: 9999;
 }
 
 /*.honbun {*/
@@ -128,26 +147,74 @@ ul {
 /*}*/
 
 .honbun {
-  border: solid 1px;
+  /* border: solid 1px; */
   position: absolute;
   background-color: white;
-  height: 100px;
-  width: 300px;
-  top: 30px;
-  left: 350px;
-  margin-top:200px;
-  text-align:  center;
+  /* height: 100px; */
+  height: 80%;
+  /* width: 300px;
+   */
+  width: 100%;
+  top: 33px;
+  left: 0px;
+  /* margin-top:200px; */
+  text-align: center;
   line-height:60px;
-  padding-top:45px;
+  /* padding-top:45px; */
 }
 
 .title {
+  position: absolute;
+  top:-74px;
+  left: -2px;
   background-color: #d3d3d3;
-  width: 300px;
-  height: 100px;
-  border-bottom: solid 0px;
-  margin-top:-295px;
+  width: 100.05%;
+  height: 35%;
+  border-left:  solid 2px;
+  border-top: solid 2px;
+  border-right: solid 2px;
+  /* border-bottom: solid 0px; */
   text-align:  center;
-  line-height:100px;
+  line-height:65px;
 }
 
+body{
+  height: 100%;
+  width: 100%;
+}
+
+html{
+  width: 100%;
+  height: 100%;
+}
+
+.profile{
+ width: 100%;
+ height: 100%;
+}
+
+.profile_image{
+  position: absolute;
+  top:80px;
+  left: 20px;;
+  border-radius: 50%;
+  width: 15%;
+  height: 20%;
+}
+
+.name{
+  position: absolute;
+  /* width: 30%;
+  height: 30%; */
+  font-size: 20px;
+  top: 80px;
+  left: 250px;
+}
+
+.content{
+  position: absolute;
+  top: 100px;
+  left: 250px;
+  font-size: 20px;
+  z-index: 9999;
+}

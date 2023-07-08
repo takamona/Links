@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User; // 追加
 use App\Community; //追加
 use App\Post; //追加
+use App\Profile; //追加
 
 class Topic extends Model
 {
@@ -31,5 +32,12 @@ class Topic extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    public function profile()
+    {
+        //Profileモデルのデータを引っ張ってくる
+        return $this->belongsTo(Profile::class);
+    }
+
     
 }

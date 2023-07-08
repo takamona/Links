@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User; // 追加
+Use APP\Topic; //追加
 
 
 class Profile extends Model
@@ -24,4 +25,8 @@ class Profile extends Model
         return $this->belongsTo(User::class);
     }
     
+    public function topic()
+    {
+        return $this->belongsTo(Topic::class);
+    }
 }
