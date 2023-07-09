@@ -17,6 +17,8 @@ class TopicsController extends Controller
     public function index($id)
     {
         // dd($id);
+        $user = Auth::User();
+
         $community = Community::find($id);
  
         $topics = $community->topics()->get();
@@ -29,7 +31,7 @@ class TopicsController extends Controller
         $participation->status = 3;
         }
         
-        return view('topics.index', compact('community', 'topics', 'participation'));
+        return view('topics.index', compact('user', 'community', 'topics', 'participation'));
     }
 
     /**
@@ -254,14 +256,13 @@ class TopicsController extends Controller
     
     public function  getOpenTopics()
     {
-        
+        $user = Auth::user();
+
         $topics = Topic::get();
         
         $topics = $topics->where('disdosure_range', 0);
         
-        //
-        
-        return view('topics.display', compact('topics'));
+        return view('topics.display', compact('user', 'topics'));
     }
     
 }

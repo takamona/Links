@@ -1,12 +1,29 @@
 @charset "utf-8";
-.nav {
+
+#logphoto{
+  /* border-radius: 50%;
+  width:80px;
+  height:80px;
+  margin-left:140vh; */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  top: 9%;
+  right: 16%;
+  z-index: 8;
+  /* margin-top: 50px; */
+  transform: translate(-50%, -50%);
+}
+
+#nav {
   list-style: none;
   position: absolute;
   top: 10px;
   z-index: 9999;
 }
 
-nav li {
+#nav li {
   width: 140px;
   text-align: center;
   background-color: #333;
@@ -16,25 +33,25 @@ nav li {
   z-index: 9999;
 }
 
-.logout {
+#logout {
   list-style: none;
   position: absolute;
   left: 400px;
   top: 10px;
 }
 
-.logout li {
+#logout li {
   width: 180px;
   line-height: 180px;
   text-align: center;
   background-color: #ff0000;
 }
 
-.top {
+#top {
   width: 100%;
 }
 
-.po {
+#po {
   position: relative;
   display: block;
   height: 250px;
@@ -48,7 +65,7 @@ ul {
   list-style: none;
 }
 
-.e {
+#e {
   background-color: orange;
   border: solid 1px;
   width: 230px;
@@ -56,10 +73,12 @@ ul {
   text-align: center;
   width: calc((70% - 40px) / 2);
   margin: 10px;
+  margin-top: 150px;
   z-index: 9999;
 }
 
-.kn {
+#kn {
+  z-index: 10;
   background-color: grey;
   border: solid 1px;
   width: 100%;
@@ -67,43 +86,47 @@ ul {
   text-align: center;
   width: calc((92% - 40px) / 2);
   margin: 10px;
-  z-index: 9999;
+  margin-top: 150px;
+  /* z-index: 9999; */
 }
 
-.flex {
+#flex {
   display: flex;
 }
 
-.bar {
+#bar {
+  margin-top: 40px;
   background-color: grey;
   padding-bottom: 20px;
   width: 80.5%;
   z-index: 9999;
 }
 
-.topic_po{
+#topic_po{
   position: relative;
   width:100%;
   height: 100%;
 }
 
-.topic {
+#topic {
   position: absolute;
-  top: 80px;
   border: solid 2px;
   position: relative;
+  top: 60%;
+  left: 55%;
+  transform: translate(-50%, -50%);
   background-color: #fffacd;
   /* background-color: #d3d3d3; */
-  width: 80%;
+  width: 50%;
   height: 100%;
   margin: 0px;
   z-index: 9999;
 }
 
-.icon {
+#icon {
   /* border: solid 1px; */
   position: absolute;
-  top: 180px;
+  top: 160px;
   left: 255px;
   /* background-color:blueviolet; */
   width: 40%; 
@@ -111,21 +134,19 @@ ul {
   z-index: 9999;
 }
 
-.icon>img{
+#icon>img{
   width: 100% !important;
   height:100% !important;
 }
 
-
-
-.time {
+#time {
   /* border: solid 1px; */
   position: absolute;
   /* background-color: #ffa500; */
   height: 10%;
-  width: 20%;
-  top: 110px;
-  left:250px;
+  width: 40%;
+  top: 30px;
+  right:-100px;
   z-index: 9999;
 }
 
@@ -146,7 +167,7 @@ ul {
 /*  border-bottom: solid 1px;*/
 /*}*/
 
-.honbun {
+#honbun {
   /* border: solid 1px; */
   position: absolute;
   background-color: white;
@@ -163,7 +184,7 @@ ul {
   /* padding-top:45px; */
 }
 
-.title {
+#title {
   position: absolute;
   top:-74px;
   left: -2px;
@@ -175,7 +196,7 @@ ul {
   border-right: solid 2px;
   /* border-bottom: solid 0px; */
   text-align:  center;
-  line-height:65px;
+  line-height:100px;
 }
 
 body{
@@ -185,36 +206,179 @@ body{
 
 html{
   width: 100%;
-  height: 100%;
+  height: 500px;
+  /* height: auto; */
 }
 
-.profile{
+#profile{
  width: 100%;
  height: 100%;
 }
 
-.profile_image{
+#profile_image{
   position: absolute;
-  top:80px;
+  top:20px;
   left: 20px;;
   border-radius: 50%;
-  width: 15%;
+  width: 45%;
   height: 20%;
 }
 
-.name{
+#name{
   position: absolute;
   /* width: 30%;
   height: 30%; */
   font-size: 20px;
-  top: 80px;
-  left: 250px;
+  top: 40px;
+  left: 180px;
 }
 
-.content{
+#content{
   position: absolute;
-  top: 100px;
-  left: 250px;
+  top: 60px;
+  left: 260px;
   font-size: 20px;
   z-index: 9999;
 }
+
+.profile_window_position{
+  position: relative;
+}
+
+.profile_window{
+ /* background-color:#d3d3d3; */
+ position: relative;
+  background-color: #fffafa;
+ width: 300px;
+ height: 320px;
+ margin-top: 20px;
+ margin-left: 15px;
+ border: solid 1px;
+  background : #f1f1f1 ;
+  border : solid 1px #b3b3b3 ;
+}
+
+.profile_window_parent{
+  /* background-color: #a9a9a9; */
+   /* background-color:#d3d3d3; */
+  /* background-color: #fffafa; */
+  /* position: relative; */
+  position: absolute;
+  top: 100px;
+  /* margin-top: 93px; */
+  margin-left: 30px;
+  /* margin-top: 20px; */
+  width: 330px;
+  height: 370px;
+  /* border: solid 1px; */
+  font-size : 150% ;
+  /* background : #f1f1f1 ; */
+  background :#dcdcdc;
+  padding : 0.1em 0.5em ;
+  border : solid 1px #b3b3b3 ;
+  /* border-top : solid 1px #e0e0e0 ; */
+  /* border-bottom : solid 1px #717171 ;
+  border-top : solid 1px #717171 ; */
+  box-shadow : 0 2px 6px rgba(100, 100, 100, 0.3) ;
+}
+
+.profile{
+  /* margin-top: -160px; */
+  width: 30% !important;
+  position: absolute;
+  top:20px;
+  margin-left:30px;
+  /* position: absolute;
+  top:290px; */
+}
+
+.click_menu{
+  /* position: absolute; */
+  position: fixed;
+  z-index: 9999;
+  /* background-color:#fffafa; */
+  width: 15%;
+  right: 200px;
+  top:120px;
+  /* 今後将来的な幅は下の高さ適用 */
+  /* height: 250px; */
+  height: 10%;
+  border:solid 1px;
+  border: solid 1px #b3b3b3 ;
+  background: white;
+
+  /* border-left: #b3b3b3; */
+  /* border-top: #b3b3b3; */
+  /* margin-left: 1040px;
+  margin-top: -640px; */
+  box-shadow : 0 2px 6px rgba(100, 100, 100, 0.5);
+  visibility: hidden;
+}
+
+.click_mypage{
+  margin-left: 20px;
+}
+
+.click_logout{
+  margin-left: 20px;
+}
+
+.click_profile{
+   margin-left: 20px;
+}
+
+a{
+  text-decoration:none;
+  color:black;
+}
+
+.user_position{
+  position: relative;
+}
+
+.username_click{
+  /* margin-top: -700px;
+  margin-left: 1190px; */
+  font-size : 150%;
+  font-size: 15px;
+  /* position: absolute;
+  right: 300px;
+  bottom:600px; */
+  position: fixed;
+  top: 7%;
+  right: 10%;
+  z-index: 8;
+  /* margin-top: 50px; */
+  transform: translate(-50%, -50%);
+}
+
+.spana{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  /* margin-left: 180px;
+  margin-top: -120px; */
+  top:-30px;
+  left:50px;
+}
+
+.spana_a{
+  position: absolute;
+  font-size:10px;
+  width:200px;
+  left: 160px;
+  top:310px;
+  margin-left: 50px;
+  /* margin-top: 300px; */
+  /* z-index: 7; */
+  /* top:-400px; */
+}
+
+
+.sample{
+  height:200px !important;
+  width:230px !important;
+}
+
+
+/* レスポンシブ対応 */
