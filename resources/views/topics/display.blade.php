@@ -66,7 +66,7 @@
      </form>
     </div>
 
-    <!-- <div id="search-results"></div> -->
+     <div id="search-results"></div> 
 
 <div class="bar" id="bar"> </div>
 <p>トピックス {{ count($topics) }}件 </p> 
