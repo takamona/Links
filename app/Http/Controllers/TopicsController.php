@@ -255,15 +255,27 @@ class TopicsController extends Controller
     }
     
     
-    public function  getOpenTopics()
+    public function  getOpenTopics(Request $request)
     {
-        $user = Auth::user();
+        // $user = Auth::user();
 
-        $topics = Topic::get();
+        // $topics = Topic::get();
         
-        $topics = $topics->where('disdosure_range', 0);
+        // $topics = $topics->where('disdosure_range', 0);
         
-        return view('topics.display', compact('user', 'topics'));
+        // return view('topics.display', compact('user', 'topics'));
+        
+        $user = Auth::user();
+        $keyword = $request->input('keyword');
+        $topics = Topic::where('disdosure_range', 0)
+                    ->where(function ($query) use ($keyword) {
+                        $query->where('title', 'like', '%' . $keyword . '%')
+                              ->orWhere('content', 'like', '%' . $keyword . '%');
+                    })->orderBy('created_at', 'desc')
+                    ->get();
+    return view('topics.display', compact('user', 'topics'));
+        
+        
     }
     
 }

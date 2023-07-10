@@ -57,10 +57,17 @@
 <!-- </div>
 </div> -->
 
+    
     <div class="flex" id="flex">
      <div class="e" id="e">トピックスを探す</div>
+     <form id="search-form">
      <div class="kn" id="kn"><input placeholder="検索"></div>
+     <button id="search-button">検索</button>
+     </form>
     </div>
+
+    <!-- <div id="search-results"></div> -->
+
 <div class="bar" id="bar"> </div>
 <p>トピックス {{ count($topics) }}件 </p> 
 @foreach($topics as $topic)
@@ -90,5 +97,49 @@
 </div>
 @endforeach
 <script src="{{ asset('/js/menu.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#search-button').click(function(event) {
+      event.preventDefault();
+
+      const keyword = $('#kn input').val();
+      performSearch(keyword);
+    });
+
+    function performSearch(keyword) {
+      $.ajax({
+        url: '/getOpenTopics_Events',
+        method: 'GET',
+        data: { keyword: keyword },
+        success: function(data) {
+          $('#search-results').html(data);
+        },
+        error: function(xhr, status, error) {
+          console.error(error);
+        }
+      });
+    }
+  });
+
+
+
+
+  function performSearch(keyword) {
+  $.ajax({
+    url: '/getOpenTopics_Events',
+    method: 'GET',
+    data: { keyword: keyword },
+    cache: false, // キャッシュ無効化
+    success: function(data) {
+      $('#search-results').html(data);
+    },
+    error: function(xhr, status, error) {
+      console.error(error);
+    }
+  });
+}
+</script>
+
   </body>
 </html>
