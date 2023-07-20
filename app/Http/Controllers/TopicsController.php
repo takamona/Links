@@ -261,6 +261,9 @@ class TopicsController extends Controller
         $user = Auth::user();
     $keyword = $request->input('search_name');
 
+    $topics = []; // 一旦空の配列を定義
+
+
     if ($keyword) {
         // キーワードが提供されている場合、検索を実行
         $topics = Topic::where('disdosure_range', 0)
