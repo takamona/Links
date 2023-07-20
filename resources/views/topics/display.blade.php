@@ -96,7 +96,7 @@
     タイトル：{{ $topic->title }}
 </div>
   <div class="icon" id="icon">
-    <img class="icon_image" id="icon_image" src="{{ Storage::disk('s3')->url('uploads/' . $topic->image) }}" alt="トピック画像">
+   
   </div>
   <div class="time" id="time">
     {{ $topic->created_at}}
@@ -110,7 +110,7 @@
   {{ $topic->user->name }}さん
   </div>
   <div class="profile" id="profile">
-    <img class="profile_image" id="profile_image" src="{{ Storage::disk('s3')->url('uploads/' . $topic->user->profile->image) }}" alt="プロフィール">
+    
   </div>
 </div>
 </div>
