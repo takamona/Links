@@ -179,10 +179,10 @@ function performSearch() {
         <div class="table_position">
         <table class="topic-table">
         <tr class="topic-list">
-            <td class="col-xs-2"><div><img src="{{ asset('uploads/${topicImage}') }}" style="width:50px;"></div></td>
-            <td class="col-xs-4"><div>${topicTitle}</div></td>
-            <td class="col-xs-6"><div>${topicContent}</div></td>
-            <td class="col-xs-8"><div><a class="btn btn-info" href="/communities/${communityId}/topics/${topicId}">詳細</a></div></td>
+            <!--<td class="col-xs-2"><div><img src="{{ asset('uploads/${topicImage}') }}" style="width:50px;"></div></td>-->
+            <!--<td class="col-xs-4"><div>${topicTitle}</div></td>-->
+            <!--<td class="col-xs-6"><div>${topicContent}</div></td>-->
+            <!--<td class="col-xs-8"><div><a class="btn btn-info" href="/communities/${communityId}/topics/${topicId}">詳細</a></div></td>-->
         </tr>
         </table>
         </div>
