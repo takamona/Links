@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Community;
 use App\Topic;
 use App\Participation;
+use App\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -257,25 +258,82 @@ class TopicsController extends Controller
     
     public function  getOpenTopics(Request $request)
     {
-        // $user = Auth::user();
-
-        // $topics = Topic::get();
-        
-        // $topics = $topics->where('disdosure_range', 0);
-        
-        // return view('topics.display', compact('user', 'topics'));
-        
         $user = Auth::user();
-        $keyword = $request->input('keyword');
+    $keyword = $request->input('search_name');
+
+    if ($keyword) {
+        // キーワードが提供されている場合、検索を実行
         $topics = Topic::where('disdosure_range', 0)
-                    ->where(function ($query) use ($keyword) {
-                        $query->where('title', 'like', '%' . $keyword . '%')
-                              ->orWhere('content', 'like', '%' . $keyword . '%');
-                    })->orderBy('created_at', 'desc')
-                    ->get();
-    return view('topics.display', compact('user', 'topics'));
+            ->where(function ($query) use ($keyword) {
+                $query->where('title', 'like', '%' . $keyword . '%')
+                    ->orWhere('content', 'like', '%' . $keyword . '%');
+            })
+            ->orderBy('created_at', 'desc')
+            ->get();
+    } else {
+        // キーワードが提供されなかった場合、全てのトピックを取得
+        $topics = Topic::where('disdosure_range', 0)
+            ->orderBy('created_at', 'desc')
+            ->get();
+    }
+
+    return response()->view('topics.display', compact('user', 'topics', 'keyword'))->header('Cache-Control', 'no-store');
+    }
+    
+    
+    
+    public function getTopicsBySearch($keyword)
+    {
+     //暫定
+    $topics = Topic::where('disdosure_range', 0)
+        ->where(function ($query) use ($keyword) {
+            $query->where('title', 'like', '%' . $keyword . '%')
+                ->orWhere('content', 'like', '%' . $keyword . '%');
+        })
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+    return response()->json($topics);
+    }
+
+
+    public function getTopicsBySearch_result($keyword)
+    {
+        $user = Auth::user();
+        $topics = Topic::where('disdosure_range', 0)
+            ->where(function ($query) use ($keyword) {
+                $query->where('title', 'like', '%' . $keyword . '%')
+                    ->orWhere('content', 'like', '%' . $keyword . '%');
+            })
+            ->with('user.profile')
+            ->orderBy('created_at', 'desc')
+            ->get();
         
-        
+        $formattedTopics = [];
+    
+        foreach ($topics as $topic) {
+            if ($topic->user && $topic->user->profile) {
+                $formattedTopic = [
+                    'id' => $topic->id,
+                    'title' => $topic->title,
+                    'content' => $topic->content,
+                    'image' => $topic->image,
+                    'created_at' => date('Y-m-d H:i:s', strtotime($topic->created_at)),
+                    'topic' => [
+                        'user' => [
+                            'name' => $topic->user->name,
+                            'profile' => [
+                                'image' => $topic->user->profile->image
+                            ]
+                        ]
+                    ]
+                ];
+                
+                $formattedTopics[] = $formattedTopic;
+            }
+        }
+    
+        return response()->json($formattedTopics);
     }
     
 }

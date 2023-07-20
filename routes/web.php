@@ -69,6 +69,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('favorite/{id}', 'FavoritesController@store')->name('events.favorite');
     Route::delete('unfavorite/{id}', 'FavoritesController@destroy')->name('events.unfavorite');
     
+    Route::get('getTopicsBySearch/{keyword}', 'TopicsController@getTopicsBySearch')->name('topics.search');
+    Route::get('getTopicsBySearch_result/{keyword}', 'TopicsController@getTopicsBySearch_result')->name('topics.search_result');
+    
+    
     //　コミュニティ関係
     Route::group(['prefix' => 'communities/{id}'], function () {
         
