@@ -179,7 +179,7 @@ function performSearch() {
         <div class="table_position">
         <table class="topic-table">
         <tr class="topic-list">
-            <td class="col-xs-2"><div class="topic_imagesearch"><img src="{{ asset('uploads/${topicImage}') }}" style="width:50px;"></div></td>
+            <td class="col-xs-2"><div class="topic_imagesearch"><img src="{{ Storage::disk('s3')->('uploads/${topicImage}') }}" style="width:50px;"></div></td>
             <td class="col-xs-4"><div class="topic_titlesearch">${topicTitle}</div></td>
             <td class="col-xs-6"><div class="topic_contentsearch">${topicContent}</div></td>
             <td class="col-xs-8"><div class="button_search"><a class="btn btn-info" href="/communities/${communityId}/topics/${topicId}">詳細</a></div></td>
