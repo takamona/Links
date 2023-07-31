@@ -23,13 +23,23 @@ class CommunitiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //空のコミュニティインスタンス作成
-        $communities = Community::all();
-        //モデルを使って、全データを取得
-        $communities = Community::paginate(11);
-        //view の呼び出し
+        // 全コミュニティデータを取得
+        $communitiesQuery = Community::query();
+
+        $keyword = $request->input('seach_community');
+
+        if ($keyword) {
+            $communitiesQuery->where(function ($query) use ($keyword) {
+                $query->where("name", "like", "%" . $keyword . "%")
+                      ->orWhere("genre", "like", "%" . $keyword . "%");
+            });
+        }
+
+        $communitiesQuery->orderBy('created_at', 'desc');
+        $communities = $communitiesQuery->paginate(11);
+
         return view("communities.index", compact('communities'));
     }
 
