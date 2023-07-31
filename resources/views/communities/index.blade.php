@@ -52,7 +52,11 @@
   </div>
   <div class="flex">
     <div class="c">コミュニティを探す！</div>
-    <div class="kn"><input placeholder="検索"></div>
+    <form  method="get">
+     <div class="kn"><input type="search" placeholder="検索" name="seach_community">
+                      
+     </div>
+    </form>
   </div>
   <div class="comyunity"> コミュニティ一覧 </div>
    <div class="create"><a href="/communities/create ">+新規コミュニティ作成</a></div>
