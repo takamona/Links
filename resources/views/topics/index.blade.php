@@ -20,9 +20,14 @@
     <div class="e">トピックスを探す</div>
     <div class="kn"><input placeholder="トピックスを検索！"></div>
   </div>
+  
+  <div class="background">
 <div class="community">
   <img id="img" src="{{ Storage::disk('s3')->url('uploads/' . $community->image) }}"alt="コミュニティ画像">
 </div>
+
+</div>
+
 @if($participation->status === 1 )
 <div class="topic_creat">
   <a href="/communities/{{ $community->id }}/topics/create">+トピック作成</a>
