@@ -177,6 +177,7 @@ list-style:none;
     padding-bottom:20px;
     width:1200px;
     margin-top:10px;
+    background: linear-gradient(to right, #d6c6af 40%, rgb(226, 221, 221) 40%, rgb(226, 221, 221) 100%);
 }
 
 .gr{
