@@ -85,10 +85,17 @@ ul{
 }
 
 .bar{
-    background-color:grey;
+    /* background-color:grey; */
     padding-bottom:20px;
-    width:900px;
+    width:1100px;
     margin-top:10px;
+
+
+    /* background: linear-gradient(to right, #d6c6af 50%, rgb(226, 221, 221) 50%); */
+
+    background: linear-gradient(to right, gray 15%, rgb(226, 221, 221) 15%, rgb(226, 221, 221) 100%);
+
+    background: linear-gradient(to right, #d6c6af 15%, rgb(226, 221, 221) 15%, rgb(226, 221, 221) 100%);
 }
 
 .gr{
@@ -244,4 +251,23 @@ display:grid;
 .syosai>p{
     line-height:70px;
     margin-left:180px;
+}
+
+
+.background{
+    position: relative;
+    background-color: aqua;
+    padding-top: 1%;
+    padding-bottom: 3%;
+    height: 100%;
+    width: 70%;
+  }
+
+  .community_name{
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    font-weight: bold;
+    font-size: 20px;
+    color: aliceblue;
 }

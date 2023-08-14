@@ -179,7 +179,6 @@ list-style:none;
     margin-top:10px;
 }
 
-
 .gr{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -264,4 +263,14 @@ list-style:none;
     width:303px;
     height:250px;
     margin-top:2px;
+}
+
+
+.background{
+  position: relative;
+  background-color: aqua;
+  padding-top: 1%;
+  padding-bottom: 3%;
+  height: 100%;
+  width: 70%;
 }

@@ -21,6 +21,9 @@
     <div class="kn"><input placeholder="コミュニティを検索！"></div>
   </div>
   <div class="comyuicon"><img class="sample" src="{{ Storage::disk('s3')->url('uploads/' . $community->image) }}"alt="コミュニティ画像"></div>
+  
+  <div class="community_name">{{ $community->name }}
+  </div>
   <div class="pobutton">
     @if($community->user_id !== Auth::id() && Auth::user()->is_participate($community->id) === false)
     <div class="sanka">
