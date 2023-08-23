@@ -163,4 +163,19 @@ class EventsController extends Controller
     }
     
     
+    
+     public function getEventsBySearch($keyword)
+    {
+     //暫定
+    $events = Event::query()
+        ->where(function ($query) use ($keyword) {
+            $query->where('title', 'like', '%' . $keyword . '%')
+                ->orWhere('content', 'like', '%' . $keyword . '%');
+        })
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+    return response()->json($events);
+    }
+    
 }
