@@ -159,7 +159,7 @@ class EventsController extends Controller
         $user = Auth::User();
         $events = Event::get();
         
-        return view('events.eventdisplay', compact('events'));
+        return view('events.eventdisplay', compact('events', 'user'));
     }
     
     
