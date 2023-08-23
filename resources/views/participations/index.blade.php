@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="{{ asset('./css/community_approval.css')}}">
   </head>
 <body>
-  <div class="po">
+  <!-- <div class="po">
     <nav>
       <ul class="nav">
         <li> <a href="/mypage">マイページ</a> <img class="top" src="{{ asset('images/komyu.jpeg')}}" alt="マイページ"> </li>
@@ -15,15 +15,23 @@
     <ul class="logout">
       <li> <a href="/logout">ログアウト</a> </li>
     </ul>
-  </div>
-  <div class="flex">
+  </div> -->
+  <!-- <div class="flex">
     <div class="e">コミュニティ承認ページ</div>
     <div class="kn"><input placeholder="コミュニティを検索！"></div>
+  </div> -->
+
+
+  <a href="/communities"><p id="back"><img class="back_img"  src="{{ asset('images/back.png')}}">戻る</p></a>
+  <div class="container2">
+
+  <div class="background">
+  <div class="community"><img class= "sample" src="{{ Storage::disk('s3')->url('uploads/' . $community->image) }}"alt="コミュニティ画像">
+</div>('uploads/' . $community->image) }}"alt="コミュニティ画像"></div>
   </div>
-  <div class="comyuicon"><img class="sample" src="{{ Storage::disk('s3')->url('uploads/' . $community->image) }}"alt="コミュニティアイコン"></div>
-  <!--<div class="pobutton">-->
-  <!--  <div class="sanka"> 参加する </div>-->
-  <!--</div>-->
+  <div class="pobutton">
+  <div class="sanka"> 参加する </div>
+  </div>
   <div class="gr">
     <div><a href="/communities/{{ $community->id }}">トップ</a></div>
     <div><a href="/communities/{{ $community->id }}/topics">トピックス</a></div>
@@ -80,6 +88,7 @@
        @endforeach
       </table>
     </div>
+  </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="profile.js"></script>

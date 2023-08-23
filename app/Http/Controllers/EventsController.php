@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Event;
 use App\Community;
 use App\Participation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventsController extends Controller
 {
@@ -62,21 +62,38 @@ class EventsController extends Controller
             'title' => 'required',
             'content' => 'required',
             'community_id' => 'required',
+            'image' => [
+                'file',
+                'mimes:jpeg,jpg,png'
+            ]
         ]);
     
        // 入力情報の取得
         $title = $request->input('title');
         $content = $request->input('content');
         $community_id = $request->input('community_id');
+        $file = $request->image;
     
         $event = new Event();
         $event->user_id = \Auth::id();
         $event->community_id = $community_id;
         $event->title = $title;
         $event->content = $content;
-        $event->save();
-        
-        
+        // https://qiita.com/ryo-program/items/35bbe8fc3c5da1993366
+        // 画像ファイルのアップロード
+        if($file){
+            // S3用
+            $path = Storage::disk('s3')->putFile('/uploads', $file, 'public');
+            // パスから、最後の「ファイル名.拡張子」の部分だけ取得
+            $image = basename($path);
+        }else{
+            // 画像ファイルが選択されていなければ空の文字列をセット
+            $image = '';
+        }
+
+         $event->save();
+         
+         
         // トップページへリダイレクト
         return redirect('/communities/' . $community_id . '/events ')->with('flash_message', 'イベントを作成しました');
     }

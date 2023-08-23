@@ -71,6 +71,7 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('getTopicsBySearch/{keyword}', 'TopicsController@getTopicsBySearch')->name('topics.search');
     Route::get('getTopicsBySearch_result/{keyword}', 'TopicsController@getTopicsBySearch_result')->name('topics.search_result');
+    Route::get('getEventsBySearch/{keyword}', 'EventsController@getEventsBySearch')->name('events.search');
     
     
     //　コミュニティ関係

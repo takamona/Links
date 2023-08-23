@@ -87,7 +87,7 @@ ul{
 .bar{
     /* background-color:grey; */
     padding-bottom:20px;
-    width:1100px;
+    width:900px;
     margin-top:10px;
 
 
@@ -99,9 +99,11 @@ ul{
 }
 
 .gr{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    margin-top:60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-top:120px;
+  /* pc */
+  width: 1100px;
 }
 
 
@@ -122,12 +124,13 @@ ul{
     position:relative;
 }
 
-
-
 .yellow{
-    background-color:yellow;
-    width:50%;
-
+    /* background-color:yellow; */
+    color: burlywood;
+    /* width:50%; */
+    /* pc */
+    width: 100px;
+    font-weight: bold;
 }
 
 .syosai{
@@ -154,6 +157,8 @@ ul{
 
 .name{
     position:absolute;
+    /* pc */
+    width: 200px;
     top:-480px;
     left:15px;
 }
@@ -161,11 +166,14 @@ ul{
 
 .k{
     position:absolute;
+    /* pc */
     top:-420px;
 }
 
 .member{
     position:absolute;
+    /* pc */
+    width: 230px;
     top:-360px;
 }
 
@@ -182,14 +190,17 @@ ul{
 }
 
 
-
-
 .day{
     position:absolute;
     top:-140px;
     left:20px;
+
+    width: 230px;
 }
 
+.k{
+  width: 230px;
+}
 
 
 .grid{
@@ -255,13 +266,24 @@ display:grid;
 
 
 .background{
-    position: relative;
-    background-color: aqua;
-    padding-top: 1%;
-    padding-bottom: 3%;
-    height: 100%;
-    width: 70%;
-  }
+  position: relative;
+  /* background-color: aqua; */
+  /* スマホ */
+  /* padding-top: 1%; */
+  padding: 10px;
+  /* スマホ */
+  /* padding-bottom: 3%*/
+  padding-bottom: 30px;
+  /* スマホ */
+  /* height: 100%; */
+  height: 300px;
+  /* スマホ */
+  /* width: 70%; */
+  width:800px;
+  background-image:url('/images/cloud.jpg');
+  background-size: cover;
+  background-position: center; 
+}
 
   .community_name{
     position: absolute;
@@ -271,3 +293,141 @@ display:grid;
     font-size: 20px;
     color: aliceblue;
 }
+
+
+.mypage{
+   position: fixed;
+   top:26%;
+   left: 8%;
+   z-index: 9999;
+  }
+
+
+
+    .mypage img{
+     width: 15%;
+    }
+   
+   .mypage_link{
+     /* position: fixed; */
+     /* background-color: antiquewhite; */
+     margin-left: 20px;
+     font-weight: bold;
+     font-size: 20px;
+   }
+   
+   .communities_link{
+     margin-left: 20px;
+     font-weight: bold;
+     font-size: 20px;
+   }
+   
+   .community_black{
+     position: fixed;
+     top:46%;
+     left: 7.8%;
+     z-index: 9999;
+   }
+   
+   .community_black img{
+     width: 11%;
+   }
+   
+   .event_{
+     position: fixed;
+     top:56%;
+     left: 7.8%;
+     z-index: 9999;
+   }
+   
+   .event_ img{
+     width: 13%;
+   }
+   
+   .event_link{
+     margin-left: 20px;
+     font-weight: bold;
+     font-size: 20px;
+   }
+   
+   .tweet{
+     position: fixed;
+     top:36%;
+     left: 7.8%;
+     z-index: 9999;
+   }
+   
+   .tweet img{
+     width: 13%;
+   }
+   
+   
+   .topic_link{
+     margin-left: 20px;
+     font-weight: bold;
+     font-size: 20px;
+   }
+
+
+   /* body{
+    margin-left: 300px;
+   } */
+
+
+   .container{
+    margin-left: 320px;
+   }
+
+   
+   .container2{
+    margin-left: 320px;
+   }
+
+   /* .container3{
+    margin-left: 300px;
+   } */
+   .back_img{
+    width: 30%;
+    vertical-align: middle;
+    margin-right: 5px;
+   }
+
+   #back:hover {
+    background-color: #0056b3;
+}
+
+    #back {
+    /* width:5%; */
+    /* pc */
+    width: 100px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+    }
+
+
+
+
+
+
+
+    #back a {
+    text-decoration: none;  
+    }
+
+  a {
+    color: black; /* リンクのデフォルトの色（青色） */
+    text-decoration: none; /* 下線を消す */
+    }
+      
+      /* アクティブ状態のスタイルを無効化 */
+a:active {
+    color: inherit; /* 親要素の色を継承 */
+    }

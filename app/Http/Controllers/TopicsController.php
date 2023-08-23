@@ -300,43 +300,43 @@ class TopicsController extends Controller
     }
 
 
-    public function getTopicsBySearch_result($keyword)
-    {
-        $user = Auth::user();
-        $topics = Topic::where('disdosure_range', 0)
-            ->where(function ($query) use ($keyword) {
-                $query->where('title', 'like', '%' . $keyword . '%')
-                    ->orWhere('content', 'like', '%' . $keyword . '%');
-            })
-            ->with('user.profile')
-            ->orderBy('created_at', 'desc')
-            ->get();
+    // public function getTopicsBySearch_result($keyword)
+    // {
+    //     $user = Auth::user();
+    //     $topics = Topic::where('disdosure_range', 0)
+    //         ->where(function ($query) use ($keyword) {
+    //             $query->where('title', 'like', '%' . $keyword . '%')
+    //                 ->orWhere('content', 'like', '%' . $keyword . '%');
+    //         })
+    //         ->with('user.profile')
+    //         ->orderBy('created_at', 'desc')
+    //         ->get();
         
-        $formattedTopics = [];
+    //     $formattedTopics = [];
     
-        foreach ($topics as $topic) {
-            if ($topic->user && $topic->user->profile) {
-                $formattedTopic = [
-                    'id' => $topic->id,
-                    'title' => $topic->title,
-                    'content' => $topic->content,
-                    'image' => $topic->image,
-                    'created_at' => date('Y-m-d H:i:s', strtotime($topic->created_at)),
-                    'topic' => [
-                        'user' => [
-                            'name' => $topic->user->name,
-                            'profile' => [
-                                'image' => $topic->user->profile->image
-                            ]
-                        ]
-                    ]
-                ];
+    //     foreach ($topics as $topic) {
+    //         if ($topic->user && $topic->user->profile) {
+    //             $formattedTopic = [
+    //                 'id' => $topic->id,
+    //                 'title' => $topic->title,
+    //                 'content' => $topic->content,
+    //                 'image' => $topic->image,
+    //                 'created_at' => date('Y-m-d H:i:s', strtotime($topic->created_at)),
+    //                 'topic' => [
+    //                     'user' => [
+    //                         'name' => $topic->user->name,
+    //                         'profile' => [
+    //                             'image' => $topic->user->profile->image
+    //                         ]
+    //                     ]
+    //                 ]
+    //             ];
                 
-                $formattedTopics[] = $formattedTopic;
-            }
-        }
+    //             $formattedTopics[] = $formattedTopic;
+    //         }
+    //     }
     
-        return response()->json($formattedTopics);
-    }
+    //     return response()->json($formattedTopics);
+    // }
     
 }

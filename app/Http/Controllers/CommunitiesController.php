@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
+use Illuminate\Pagination\LengthAwarePaginator;
+
 use App\Community;
 
 use App\User;
@@ -14,7 +18,11 @@ use App\Event;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Storage;
+
+use Psy\Command\WhereamiCommand;
 
 class CommunitiesController extends Controller
 {
@@ -40,7 +48,22 @@ class CommunitiesController extends Controller
         $communitiesQuery->orderBy('created_at', 'desc');
         $communities = $communitiesQuery->paginate(11);
 
-        return view("communities.index", compact('communities'));
+       return view("communities.index", compact('communities', 'user'));
+    }
+
+
+    public function getCommunitiesBySearch($keyword)
+    {
+     //暫定
+    $communities = Community::query()
+        ->where(function ($query) use ($keyword) {
+            $query->where('name', 'like', '%' . $keyword . '%')
+                ->orWhere('genre', 'like', '%' . $keyword . '%');
+        })
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+    return response()->json($communities);
     }
 
     /**

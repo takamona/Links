@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="{{ asset('/css/community_topics.css')}}">
  </head>
 <body>
-  <div class="po">
+  <!-- <div class="po">
     <nav>
       <ul class="nav">
         <li> <a href="/mypage">マイページ</a> <img class="top" src="{{ asset('images/komyu.jpeg')}}" alt="マイページ"></li>
@@ -19,15 +19,18 @@
    <div class="flex">
     <div class="e">トピックスを探す</div>
     <div class="kn"><input placeholder="トピックスを検索！"></div>
-  </div>
-  
+  </div> -->
+
+
+
+  <a href="/communities"><p id="back"><img class="back_img"  src="{{ asset('images/back.png')}}">戻る</p></a>
+
+  <div class="container2">
   <div class="background">
 <div class="community">
   <img id="img" src="{{ Storage::disk('s3')->url('uploads/' . $community->image) }}"alt="コミュニティ画像">
 </div>
-
 </div>
-
 @if($participation->status === 1 )
 <div class="topic_creat">
   <a href="/communities/{{ $community->id }}/topics/create">+トピック作成</a>
@@ -38,9 +41,9 @@
     <div class="yellow">トピックス</div>
     <div><a href="/communities/{{$community->id}}/events">イベント</a></div>
     <div><a href="/communities/{{ $community->id }}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
-  </div>
+</div>
   <div class="bar"> </div>
-<p>トピックス {{ count($topics) }}件 </p> 
+<p class="count_topics">トピックス {{ count($topics) }}件 </p> 
 @foreach($topics as $topic)
 @if($topic->disdosure_range === 0 |$topic->disdosure_range === 2 )
 <div class="topic">
@@ -132,6 +135,11 @@
 <input type="button" value="5" style="background-color:#ffffe0;font-size:15px;width:50px;height:30px;">
 </div>
 </div>
+
+
+
+
+  </div>
  <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
   <script src="{{ asset('/js/community_topics.js')}}"></script>
 </body>

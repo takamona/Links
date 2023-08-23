@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="{{asset('/css/community_event.css')}}">
   </head>
 <body>
-   <div class="po">
+   <!-- <div class="po">
     <nav>
       <ul class="nav">
         <li> <a href="/mypage">マイページ</a> <img class="top" src="{{asset('images/komyu.jpeg')}}" alt="マイページ"> </li>
@@ -19,10 +19,20 @@
   <div class="flex">
     <div class="e">イベントを探す！</div>
     <div class="kn"><input placeholder="イベントを検索！"></div>
+  </div> -->
+  
+
+
+  <a href="/communities"><p id="back"><img class="back_img"  src="{{ asset('images/back.png')}}">戻る</p></a>
+
+
+  <div class="container2">
+
+  <div class="background">
+  <div class="community"><img class= "sample" src="{{ Storage::disk('s3')->url('uploads/' . $community->image) }}"alt="コミュニティ画像"></div>
   </div>
-  <div class="comyuicon"><img class= "sample" src="{{ Storage::disk('s3')->url('uploads/' . $community->image) }}"alt="コミュニティアイコン"></div>
   <div class="pobutton">
-    <!--<div class="sanka">参加する</div>-->
+    <div class="sanka">参加する</div>
   </div>
   
 @if($participation->status === 1 )
@@ -39,7 +49,7 @@
     <div><a href="/communities/{{$community->id}}/participations">承認・コミュニティ参加申請・フレンド申請</a></div>
   </div>
   <div class="bar"></div>
-  <p>イベント {{ count($events) }}件 </p> 
+  <p class="event_topics">イベント {{ count($events) }}件 </p> 
   @foreach($events as $event)
   <div class="eventdisplay">
   <div class="eventplace"><a href="/communities/{{$community->id}}/events/{{$event->id}}">{{ $event->title }}</a></div>
@@ -48,11 +58,6 @@
   <div class="honbun">{{ $event->content }}</div>
   </div>
   @endforeach
-  
-  
-  
-  
-  
   <!--<div class="eventdisplay2">-->
   <!--<div class="eventplace2"></div>-->
   <!--<div class="eventdate2"></div>-->
@@ -77,6 +82,7 @@
   <!--<div class="detail5"></div>-->
   <!--<div class="honbun5"></div>-->
   <!--</div>-->
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </body>
 </html>
