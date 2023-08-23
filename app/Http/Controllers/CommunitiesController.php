@@ -33,6 +33,9 @@ class CommunitiesController extends Controller
      */
     public function index(Request $request)
     {
+        
+        $user = Auth::User();
+        
         // 全コミュニティデータを取得
         $communitiesQuery = Community::query();
 

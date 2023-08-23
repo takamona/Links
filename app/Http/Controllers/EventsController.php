@@ -156,7 +156,7 @@ class EventsController extends Controller
     
     public function  getOpenEvents()
     {
-        
+        $user = Auth::User();
         $events = Event::get();
         
         return view('events.eventdisplay', compact('events'));
