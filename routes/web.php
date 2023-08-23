@@ -70,7 +70,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('unfavorite/{id}', 'FavoritesController@destroy')->name('events.unfavorite');
     
     Route::get('getTopicsBySearch/{keyword}', 'TopicsController@getTopicsBySearch')->name('topics.search');
-    Route::get('getTopicsBySearch_result/{keyword}', 'TopicsController@getTopicsBySearch_result')->name('topics.search_result');
+    Route::get('getCommunitiesBySearch/{keyword}', 'CommunitiesController@getCommunitiesBySearch')->name('communities.search');
     Route::get('getEventsBySearch/{keyword}', 'EventsController@getEventsBySearch')->name('events.search');
     
     
