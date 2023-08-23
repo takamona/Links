@@ -208,7 +208,7 @@
 </div>
   <div class="icon" id="icon">
   @if($community->image)
-    <img class="icon_image" id="icon_image" src="{{ asset('uploads/' . $community->image) }}" alt="コミュニティ画像">
+    <img class="icon_image" id="icon_image" src="{{ Storage::disk('s3')->url('uploads/' . $community->image) }}" alt="コミュニティ画像">
   @endif
   </div>
   <div class="time" id="time">
