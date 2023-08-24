@@ -124,6 +124,7 @@ ul {
   left: 40%;
   width: 100%;
   height: 20%;
+  z-index: 9999;
   /* font-weight: bold; */
   /* margin-bottom: 5px; */
   /* background-color: #cac7c7; */
@@ -937,11 +938,10 @@ align-items: center;
 
 .title{
   position: absolute;
-  top: 8%;
+  top: 5%;
   left: 40%;
-  width: 100%;
+  width: 30%;
   height: 20%;
-  z-index: 9999;
 }
 
 #content{
