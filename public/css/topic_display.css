@@ -911,10 +911,16 @@ align-items: center;
   }
 
   .topic_re{
+    /*position: relative;*/
+    /*width: 100%;*/
+    /*width: 100%;*/
+    /*margin-left: -29.5%;*/
+    
+    
     position: relative;
     width: 100%;
-    width: 100%;
-    margin-left: -29.5%;
+    width: 96%;
+    margin-left: -27.5%;
   }
 
 .count_topic{
