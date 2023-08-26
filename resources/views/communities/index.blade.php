@@ -188,11 +188,10 @@
 <!-- <div class="bar" id="bar"> </div> -->
 <p class="count_topic">コミュニティ {{ count($communities) }}件</p>
 
-<p class="mypage"><img src="{{ asset('images/home.png')}}" alt="マイページ"><a href="mypage" class="mypage_link">マイページ</a></p>
-<p class="tweet"><img src="{{ asset('images/tweet.png')}}" alt="トピック"><a href="getOpenTopics" class="topic_link">トピック</a></p>
-<p class="community_black"><img src="{{ asset('images/community_black.png')}}" alt="コミュニティ"><a href="/communities" class="communities_link">コミュニティ</a></p>
-<p class="event_"><img src="{{ asset('images/event.png')}}" alt="イベント"><a href="/getOpenEvents" class="event_link">イベント</a></p>
-
+<a href="mypage" class="mypage_link"><p class="mypage"><img src="{{ asset('images/home.png')}}" alt="マイページ"><span>マイページ</span></p></a>
+  <a href="getOpenTopics" class="topic_link"><p class="tweet"><img src="{{ asset('images/tweet.png')}}" alt="トピック"><span>トピック</span></p></a>
+  <a href="/communities" class="communities_link"><p class="community_black"><img src="{{ asset('images/community_black.png')}}" alt="コミュニティ"><span>コミュニティ</span></p></a>
+  <a href="/getOpenEvents" class="event_link"><p class="event_"><img src="{{ asset('images/event.png')}}" alt="イベント"><span>イベント</span></p></a>
 
 
 

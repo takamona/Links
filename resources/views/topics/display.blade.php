@@ -105,10 +105,10 @@
   <!-- <div class="bar" id="bar"> </div> -->
   <p class="count_topic">トピックス {{ count($topics) }}件</p>
 
-  <a href="mypage" class="mypage_link"><p class="mypage"><img src="{{ asset('images/home.png')}}" alt="マイページ">マイページ</p></a>
-  <a href="getOpenTopics" class="topic_link"><p class="tweet"><img src="{{ asset('images/tweet.png')}}" alt="トピック">トピック</p></a>
-  <a href="/communities" class="communities_link"><p class="community_black"><img src="{{ asset('images/community_black.png')}}" alt="コミュニティ">コミュニティ</p></a>
-  <a href="/getOpenEvents" class="event_link"><p class="event_"><img src="{{ asset('images/event.png')}}" alt="イベント">イベント</p></a>
+  <a href="mypage" class="mypage_link"><p class="mypage"><img src="{{ asset('images/home.png')}}" alt="マイページ"><span>マイページ</span></p></a>
+  <a href="getOpenTopics" class="topic_link"><p class="tweet"><img src="{{ asset('images/tweet.png')}}" alt="トピック"><span>トピック</span></p></a>
+  <a href="/communities" class="communities_link"><p class="community_black"><img src="{{ asset('images/community_black.png')}}" alt="コミュニティ"><span>コミュニティ</span></p></a>
+  <a href="/getOpenEvents" class="event_link"><p class="event_"><img src="{{ asset('images/event.png')}}" alt="イベント"><span>イベント</span></p></a>
 
 
   @if ($keyword)
