@@ -34,7 +34,7 @@
     <ul>
       <li>
         <!-- <a href="/logout">ログアウト</a> -->
-        <img id="logphoto" src="{{ asset('uploads/' . $user->profile->image) }}" alt="ログアウト">
+        <img id="logphoto" src="{{ Storage::disk('s3')->url('uploads/' . $user->profile->image) }}" alt="ログアウト">
       </li>
     </ul>
   </div>
