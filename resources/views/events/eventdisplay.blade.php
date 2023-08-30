@@ -158,7 +158,7 @@
 @foreach($events as $event)
 <div class="topic_po" id="topic_po">
 <div class="topic" id="topic">
-<div class="bktitle">
+<div class="bktitle" id="bktitle">
 <div class="title" id="title">
    {{ $event->title }}
 </div>

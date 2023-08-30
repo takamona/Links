@@ -200,7 +200,7 @@
 <div class="topic_po" id="topic_po">
 <div class="topic" id="topic">
 
-<div class="bktitle">
+<div class="bktitle" id="bktitle">
 <div class="title" id="title">
     タイトル：{!! link_to_route('communities.show', $community->name , ['id' => $community->id ],[]) !!}
 </div>
@@ -231,7 +231,7 @@
 @endforeach
 
 <style>
-.community_black a{
+.community_black{
     color:black;
   }
 </style>
