@@ -23,19 +23,18 @@
   font-weight: bold;
   top: 0;
   left: 30%;
-
   /* スマホ */
   /* width: 50%; */
   width: 720px;
-
   /* height: 28%; */
   height: 38%;
+  height: 200px;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px); /* ぼかし効果 */
   /* background-color: rgba(224, 219, 219, 0.386); */
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index:9999; /* ヘッダーを最前面に表示 */
+  z-index:99999999999; /* ヘッダーを最前面に表示 */
 }
 
 /* #logout li {
@@ -81,7 +80,7 @@ ul {
 /*}*/
 
 
-.topic_po {
+#topic_po {
   position: relative;
   /* スマホ */
   /* width: 50%; */
@@ -97,6 +96,39 @@ ul {
   /* background-color: #f9f9f9; */
 }
 
+
+
+#topic_po_50 {
+  position: relative;
+  /* スマホ */
+  /* width: 50%; */
+  width: 720px;
+  height: 500px;
+  height: 850px;
+  margin: 20px;
+  /* border: 2px solid #ccc; */
+  border: 2px solid #010911;
+  margin-left: 30%;
+  /* background-color: #f9f9f9; */
+}
+
+
+#topic_po_100 {
+  position: relative;
+  /* スマホ */
+  /* width: 50%; */
+  width: 720px;
+  height: 500px;
+
+
+  height: 1000px;
+  margin: 20px;
+  /* border: 2px solid #ccc; */
+  border: 2px solid #010911;
+  margin-left: 30%;
+  /* background-color: #f9f9f9; */
+}
+
 .topic {
   /* display: flex; */
   align-items: center;
@@ -104,7 +136,30 @@ ul {
   height: 80%;
 }
 
-#icon_image {
+
+#icon_image{
+  position: absolute;
+  width: 650px;
+  width: 80%;
+  /* height: 200px ; */
+  height: 40%;
+  height: 80%;
+
+  height: 400px;
+  /* object-fit: cover; */
+  /* border-radius: 50%; */
+  /* margin-top: 30%;
+  margin-left: 20%; */
+  top: 300px;
+  left: 130px;
+  border-radius: 10%;
+  background-size: cover;
+  background-position: center center;
+  object-fit: cover; /* または contain */
+}
+
+
+#icon_img_50 {
   position: absolute;
   width: 40%;
   width: 80%;
@@ -117,13 +172,66 @@ ul {
   /* border-radius: 50%; */
   /* margin-top: 30%;
   margin-left: 20%; */
-  top: 280px;
-  left: 8% ;
+  top: 300px;
+  left: 130px;
   border-radius: 10%;
   background-size: cover;
   background-position: center center;
   object-fit: cover; /* または contain */
 }
+
+.margin_img{
+  position: absolute;
+  top:10px;
+  top:-30px;
+  /* background-color: #adc43b; */
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+#margin_img_50{
+  position: absolute;
+  top:20px;
+  /* background-color: #adc43b; */
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+#margin_img_100{
+  position: absolute;
+  top:120px;
+  /* background-color: #adc43b; */
+  width: 100%;
+  height: 100%;
+  z-index: 99999999;
+}
+
+#profile{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:20px;
+  margin-left:30px;
+ }
+ 
+ #profile_50{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top:20px;
+   margin-left:30px;
+  }
+ 
+  #profile_100{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top:20px;
+   margin-left:30px;
+ }
+  
 
 .title {
   position: absolute;
@@ -138,12 +246,17 @@ ul {
   /* background-color: #cac7c7; */
 }
 
-.bktitle{
+#bktitle{
   background-color: #cac7c7;
   width: 200%;
   height: 120px
 }
 
+#bktitle_50{
+  background-color: #cac7c7;
+  width: 200%;
+  height: 120px
+}
 
 #time {
   position: absolute;
@@ -180,8 +293,6 @@ ul {
   width: 15%;
   height: 20%;
   height: 100px;
-
-
   border-radius: 50%;
   object-fit: cover;
   border-radius: 50%;
@@ -201,11 +312,6 @@ html{
   /* height: auto; */
 }
 
-#profile{
- width: 100%;
- height: 100%;
-}
-
 #name{
   position: absolute;
   /* width: 30%;
@@ -219,6 +325,16 @@ html{
 }
 
 #content{
+  position: absolute;
+  top: 170px;
+  top:200px;
+  left: 220px;
+  left: 135px;
+  font-size: 20px;
+  z-index: 9999;
+}
+
+#content_50{
   position: absolute;
   top: 170px;
   top:200px;
@@ -267,16 +383,6 @@ html{
   /* border-bottom : solid 1px #717171 ;
   border-top : solid 1px #717171 ; */
   box-shadow : 0 2px 6px rgba(100, 100, 100, 0.3) ;
-}
-
-.profile{
-  /* margin-top: -160px; */
-  width: 30% ;
-  position: absolute;
-  top:20px;
-  margin-left:30px;
-  /* position: absolute;
-  top:290px; */
 }
 
 .click_menu{
@@ -378,7 +484,7 @@ a{
   width: 450px;
   top:-100px;
   right: 300px;
-  z-index: 9999;
+  z-index: 9999999999999;
 }
 
 .search_po{
@@ -643,35 +749,31 @@ height: 100%;
   width: 100%;
 }
 
-/* レスポンシブデザイン用のメディアクエリ */
-@media screen and (max-width: 768px) {
-  /* .topic {
-    flex-direction: column;
-    align-items: flex-start;
-  } */
 
-/* .header p{
-  margin-left: 100px;
-  width: 200px;
-} */
 
-.logout{
-/* display: none; */
-}
 
+/* @media screen and (max-width: 768px) {
   #icon_image{
     width: 55% ;
     height:50% ;
     border-radius: 10%;
     margin-top: -40px;
-    object-fit: cover; /* または contain */
+    object-fit: cover;
+  }
+
+  #icon_img_50{
+    width: 55% ;
+    height:50% ;
+    border-radius: 10%;
+    margin-top: -40px;
+    object-fit: cover;
   }
 
 
   #profile_image img{
     margin-left: 0;
     margin-top: 10px;
-    object-fit: cover; /* または contain */
+    object-fit: cover;
   }
 
   .mypage{
@@ -702,18 +804,7 @@ height: 100%;
     z-index: 9999;
   }
 
-  /* .mypage{
-    position: fixed;
-    width: 10px;
-    top:30%;
-    left: 8%;
-    z-index: 9999;
-  } */
-
-.topic_po{
-  /* position:absolute; */
-  /* top: 100px; */
-  /* right: 0; */
+#topic_po{
   width: 100%;
   height:800px;
 }
@@ -722,8 +813,6 @@ height: 100%;
 position: absolute;
 top: 20% ;
 left: 13% ;
-/* width: 50px ;
-height: 50px ; */
 width: 10%;
 height: 10%;
 object-fit: cover;
@@ -738,7 +827,9 @@ align-items: center;
   margin-top: -20px;
 }
 
-}
+} */
+
+
 
 /* レスポンシブデザイン用のメディアクエリ */
 @media screen and (max-width: 480px) {
@@ -837,27 +928,32 @@ align-items: center;
     }
   
   #icon_image{
-    /* width:55%;
-    height:50%; */
     position: absolute;
-    top:240px;
+    top:360px;
     width: 90%;
     height: 550px;
     height: 350px;
     border-radius: 10%;
-    /* margin-top: 70px; */
     left: 30px;
-    object-fit: cover; /* または contain */
+    object-fit: cover;
   }
 
-  /* .profile{
-    position:absolute;
-    width: 100px; 
-    height: 800px;
-    left: -10px;
-    top: -100px; 
-    z-index: 999999;
-  } */
+  #icon_image{
+    /* position: absolute;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 30%;
+    margin-left: 20%;
+    top: 100px;
+    left: 130px;
+    border-radius: 10%;
+    background-size: cover;
+    background-position: center center;
+    object-fit: cover; または contain */
+  }
+
 
   #profile_image{
     position: absolute;
@@ -874,13 +970,11 @@ align-items: center;
     align-items: center;
     }
 
-    
-
   .header{
     position: fixed;
-    width: 110%;
-    height: 160px;
-    /* margin-left: -140px; */
+    width: 100%;
+    height: 100px;
+    margin-left: -145px;
     background-color: rgba(255, 255, 255, 0.9);
     /* margin-left: -30px; */
     backdrop-filter: blur(10px); /* ぼかし効果 */
@@ -892,36 +986,63 @@ align-items: center;
     margin-left: 300px;
   }
 
-  .topic_po{
-    /* position:absolute;
-    top: -100px;
-    left: -130px; */
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+  
 
 
 
-    width: 100%;
-    height:800px;
-    height: 600px;
-    /* margin-left: 20px; */
-  }
 
-  .topic_re{
-    /*position: relative;*/
-    /*width: 100%;*/
-    /*width: 100%;*/
-    /*margin-left: -29.5%;*/
-    
-    
+  #topic_po {
     position: relative;
-    width: 100%;
-    width: 96%;
-    margin-left: -27.5%;
+    /* スマホ */
+    /* width: 50%; */
+    height: 500px;
+    height: 800px;
+    margin: 20px;
+    /* border: 2px solid #ccc; */
+    border: 2px solid #010911;
+    margin-left: 30%;
+    /* background-color: #f9f9f9; */
   }
+
+  #topic_po_100 {
+    position: relative;
+    height: 1000px;
+    margin: 20px;
+    border: 2px solid #010911;
+    margin-left: 30%;
+  }
+
+  #topic_po_50 {
+    position: relative;
+    /* スマホ */
+    /* width: 50%; */
+    height: 500px;
+    height: 800px;
+    margin: 20px;
+    /* border: 2px solid #ccc; */
+    border: 2px solid #010911;
+    margin-left: 30%;
+    /* background-color: #f9f9f9; */
+  }
+
+  #margin_img_50{
+    position: absolute;
+    top:20px;
+    /* background-color: #adc43b; */
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+  
+  #margin_img_100{
+    position: absolute;
+    top:120px;
+    /* background-color: #adc43b; */
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+
 
 .count_topic{
   display: none;
@@ -930,7 +1051,7 @@ align-items: center;
   .topic_imagesearch{
     position: absolute;
     left: 28%;
-    top:20%;
+    top: 20%;
     /* top:30%; */
     position: fixed;
     z-index: 9999999;
@@ -940,7 +1061,7 @@ align-items: center;
   
   .topic_titlesearch{
     position: absolute;
-    left: 42%;
+    left:42%;
     top:20%;
     /* top:30%; */
     position: fixed;
@@ -1011,19 +1132,23 @@ align-items: center;
   z-index: 999999;
 }
 
-
 #name{
   position: absolute;
   /* width: 30%;
   height: 30%; */
   font-size: 15px;
-  width: 140px;
+  width:140px;
   top: 115px;
   left: 60px;
 }
 
-.bktitle{
+#bktitle{
   /* background-color: #cac7c7; */
+  width: 100%;
+  height: 15%;
+}
+
+#bktitle_50{
   width: 100%;
   height: 15%;
 }
@@ -1047,16 +1172,73 @@ align-items: center;
 
 #content{
   position: absolute;
-  top: 170px;
+  top: 250px;
   left: 100px;
   font-size: 20px;
   z-index: 9999;
 }
 
+#content_50{
+  position: absolute;
+  top: 230px;
+  left: 50px;
+  font-size: 16px;
+  z-index: 9999;
+  width: 320px;
+}
 
-#profile{
+
+/* #profile{
   width: 90%;
   height: 100%;
  }
+
+ #profile_100{
+  width: 90%;
+  height: 100%;
+ }
+
+ #profile_50{
+  width: 90%;
+  height: 100%;
+ } */
+
+
+ #profile{
+  width: 100%;
+  height: 130%;
+  position: absolute;
+  top:20px;
+  margin-left:30px;
+ }
+ 
+ #profile_50{
+   width: 100%;
+   height: 130%;
+   position: absolute;
+   top:0px;
+   margin-left:30px;
+  }
+ 
+  #profile_100{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top:30px;
+   margin-left:30px;
+ }
+
+ #icon_img_50{
+  position: absolute;
+  top:340px;
+  width: 90%;
+  height: 400px;
+  border-radius: 10%;
+   /* margin-top: 70px; */
+  left: 30px;
+  object-fit: cover; /* または contain */
+  z-index: 9999;
+}
+
 
 }

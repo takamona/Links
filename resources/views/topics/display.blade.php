@@ -34,7 +34,7 @@
     <ul>
       <li>
         <!-- <a href="/logout">ログアウト</a> -->
-        <img id="logphoto" src="{{ Storage::disk('s3')->url('uploads/' . $user->profile->image) }}" alt="ログアウト">
+        <img id="logphoto" src="{{ asset('uploads/' . $user->profile->image) }}" alt="ログアウト">
       </li>
     </ul>
   </div>
@@ -117,11 +117,25 @@
 
   @foreach($topics as $topic)
   <div class="topic_re">
-    <div class="topic_po" id="topic_po">
+    <!-- <div class="topic_po" id="topic_po"> -->
+    <div class="topic_po" id="<?php
+    if (mb_strlen($topic->content) > 100) {
+        echo "topic_po_100";
+    } elseif (mb_strlen($topic->content) > 50) {
+        echo "topic_po_50";
+    } else {
+        echo "topic_po";
+    }
+?>">
       <div class="topic" id="topic">
 
-        <div class="bktitle">
-
+        <div class="bktitle" id="<?php 
+        if (mb_strlen($topic->content) >= 50){
+          echo "bktitle_50";
+        }else{
+          echo "bktitle";
+        }     
+        ?>">
           <div class="title" id="title">
             タイトル：{{ $topic->title }}
           </div>
@@ -129,25 +143,57 @@
         </div>
 
         <div class="icon" id="icon">
+        <div class="margin_img" id="<?php
+    if (mb_strlen($topic->content) > 100) {
+        echo "margin_img_100";
+    } elseif (mb_strlen($topic->content) > 50) {
+        echo "margin_img_50";
+    } else {
+        echo "no";
+    }
+?>">
           @if($topic->image)
-          <div class="icon_image" id="icon_image" style="background-image: url('{{ Storage::disk('s3')->url('uploads/' . $topic->image) }}');">
+          <div class="icon_image" id="<?php
+            if (mb_strlen($topic->content) > 50) {
+              echo "icon_img_50";
+            } else {
+              echo "icon_image";
+            }
+            ?>" style="background-image: url('{{ Storage::disk('s3')->url('uploads/' . $topic->image) }}');">
           </div>
           <!-- <img class="icon_image" id="icon_image" src="{{ asset('uploads/' . $topic->image) }}"  alt="トピック画像"> -->
           @endif
+          </div>
         </div>
         <div class="time" id="<?php echo $topic->image ? 'time' : 'no_image_time'; ?>">
           {{ $topic->created_at}}
         </div>
         <div class="honbun" id="honbun">
-          <div class="content" id="content">
+          <div class="content" id="<?php if (mb_strlen($topic->content)>50 ){
+            echo "content_50";
+          } else{
+            echo "content";
+          }      
+          ?>">
             {{ $topic->content}}
           </div>
         </div>
         <div class="name" id="name">
           {{ $topic->user->name }}さん
         </div>
-        <div class="profile" id="profile">
+        <!-- <div class="profile" id="profile"> -->
+        <div class="profile" id="<?php
+    if (mb_strlen($topic->content) > 100) {
+        echo "profile_100";
+    } elseif (mb_strlen($topic->content) > 50) {
+        echo "profile_50";
+    } else {
+        echo "profile";
+    }
+?>">
           <img class="profile_image" id="profile_image" src="{{ Storage::disk('s3')->url('uploads/' . $topic->user->profile->image) }}" alt="プロフィール">
+
+
         </div>
       </div>
     </div>
@@ -164,7 +210,7 @@
       /* pc */
       width: 450px;
       margin-left: 40%;
-      z-index: 9999;
+      z-index: 9999999999999999999999;
       font-weight: bold;
     }
   </style>
@@ -235,7 +281,7 @@
         <table class="topic-table">
         <div class="border_s"></div>
         <tr class="topic-list">
-            <td class="col-xs-2"><div class="topic_imagesearch"><img src="{{ Storage::disk('s3')->url('uploads') }}/${topicImage}" style="width:50px;"></div></td>
+            <td class="col-xs-2"><div class="topic_imagesearch"><img src="{{ asset('uploads/${topicImage}') }}" style="width:50px;"></div></td>
             <td class="col-xs-4"><div class="topic_titlesearch">${topicTitle}</div></td>
             <td class="col-xs-6"><div class="topic_contentsearch">${topicContent}</div></td>
             <td class="col-xs-8"><div class="button_search"><a class="btn btn-info" href="/communities/${communityId}/topics/${topicId}">詳細</a></div></td>
@@ -256,6 +302,29 @@
       });
     }
   </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  // $(document).ready(function() {
+  //   var topicContent = $("#content");
+  //   var marginImg = $(".margin_img")[0];
+  //   if (topicContent.text().length > 50) {
+  //      var topicPo = $("#topic_po");
+  //     topicPo.css("height", "1000px");
+  //     marginImg.css({"position":"absolute","top":"100px"});
+  //   }
+  // });
+
+  // $(document).ready(function() {
+  //   var topicContent = $("#content");
+  //   var topicPo = $("#topic_po"); // .topic_po のセレクタを使う
+  //   var marginImg = $("margin_img_50");
+
+  //   if (topicContent.text().length > 100) {
+  //     topicPo.css("height", "850px");
+  //     marginImg.css({"position": "absolute", "top": "100px"});
+  //   }
+  // });
+</script>
 </body>
 
 </html>
