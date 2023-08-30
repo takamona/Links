@@ -91,7 +91,8 @@
   <meta http-equiv="Cache-Control" content="no-cache">
   <title>コミュニティ一覧</title>
   <!-- <link rel="stylesheet" href="{{ asset('/css/topic_display.css')}}"  type="text/css" /> -->
-  <link rel="stylesheet" href="{{ asset('/css/topic_display_community.css')}}?v={{ filemtime(('css/topic_display_community.css')) }}" type="text/css" />
+  <!--<link rel="stylesheet" href="{{ asset('/css/topic_display_community.css')}}?v={{ filemtime(('css/topic_display_community.css')) }}" type="text/css" />-->
+  <link rel="stylesheet" href="{{ asset('/css/topic_display.css')}}?v={{ filemtime(('css/topic_display.css')) }}" type="text/css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
  </head> 
  <body>
