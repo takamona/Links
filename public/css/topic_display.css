@@ -887,6 +887,35 @@ align-items: center;
       width: 50%;
     }
 
+
+    .topic_link span{
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 15px;
+      color: black;
+    }
+
+    .mypage_link span{
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 15px;
+      color: black;
+    }
+
+    .communities_link span{
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 15px;
+      color: black;
+    }
+
+    .event_link span{
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 15px;
+      color: black;
+    }
+
     .topic_link{
       color: transparent;
     }
@@ -896,10 +925,8 @@ align-items: center;
       position: absolute;
       position: fixed;
       top: 95%;
-      top: 85%;
-      top: 95%;
       left: 60%;
-      width: 65%;
+      left: 55%;
       width: 50%;
     }
   
@@ -1145,17 +1172,27 @@ align-items: center;
 #bktitle{
   /* background-color: #cac7c7; */
   width: 100%;
-  height: 15%;
+  height: 12%;
 }
 
 #bktitle_50{
   width: 100%;
-  height: 15%;
+  height: 10%;
 }
 
-.title{
+#title{
   position: absolute;
   top: 5%;
+  left: 30%;
+  width: 50%;
+
+  /* width: 30%;
+  height: 20%; */
+}
+
+#title_50{
+  position: absolute;
+  top: 4%;
   left: 30%;
   width: 50%;
 
@@ -1224,7 +1261,7 @@ align-items: center;
    width: 100%;
    height: 100%;
    position: absolute;
-   top:30px;
+   top:20px;
    margin-left:30px;
  }
 
@@ -1239,6 +1276,7 @@ align-items: center;
   object-fit: cover; /* または contain */
   z-index: 9999;
 }
+
 
 
 }

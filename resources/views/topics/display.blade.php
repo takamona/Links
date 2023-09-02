@@ -136,7 +136,14 @@
           echo "bktitle";
         }     
         ?>">
-          <div class="title" id="title">
+
+          <div class="title" id="<?php 
+          if (mb_strlen($topic->content) >= 50){
+            echo "title_50";
+          }else{
+            echo "title";
+          }
+          ?>">
             タイトル：{{ $topic->title }}
           </div>
 
@@ -159,9 +166,10 @@
             } else {
               echo "icon_image";
             }
-            ?>" style="background-image: url('{{ Storage::disk('s3')->url('uploads/' . $topic->image) }}');">
+            ?>" style="background-image: url('{{ asset('uploads/' . $topic->image) }}');">
           </div>
-          <!-- <img class="icon_image" id="icon_image" src="{{ asset('uploads/' . $topic->image) }}"  alt="トピック画像"> -->
+          <!-- <img class="icon_image" id="icon_image" src="{{ Storage::disk('s3')->url('uploads/' . $topic->image) }}"  alt="トピック画像"> -->
+    
           @endif
           </div>
         </div>
@@ -192,8 +200,6 @@
     }
 ?>">
           <img class="profile_image" id="profile_image" src="{{ Storage::disk('s3')->url('uploads/' . $topic->user->profile->image) }}" alt="プロフィール">
-
-
         </div>
       </div>
     </div>
