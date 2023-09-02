@@ -166,7 +166,7 @@
             } else {
               echo "icon_image";
             }
-            ?>" style="background-image: url('{{ asset('uploads/' . $topic->image) }}');">
+            ?>" style="background-image: url('{{ Storage::disk('s3')->url('uploads/' . $topic->image) }}');">
           </div>
           <!-- <img class="icon_image" id="icon_image" src="{{ Storage::disk('s3')->url('uploads/' . $topic->image) }}"  alt="トピック画像"> -->
     
