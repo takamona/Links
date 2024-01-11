@@ -69,4 +69,43 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+    
+    
+        // 1. ユーザーの仮登録処理
+    public function register(Request $request)
+    {
+        // バリデーションなどの処理
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'verification_token' => Str::uuid(), // ユニークなトークンを生成
+        ]);
+    
+        // 仮登録メールを送信
+        $user->notify(new UserRegisteredNotification($user));
+    
+        // ユーザーには仮登録中の状態を表示するページへリダイレクトなど
+    
+        return redirect()->route('verification.pending');
+    }
+
+
+    // 2. ユーザーの本登録処理
+    public function verify($token)
+    {
+        $user = User::where('verification_token', $token)->firstOrFail();
+    
+        $user->update([
+            'verified' => true,
+            'verification_token' => null, // トークンをクリア
+        ]);
+    
+        // 本登録が成功したらログイン
+        Auth::login($user);
+    
+        return redirect()->route('home');
+    }
+    
+    
 }
