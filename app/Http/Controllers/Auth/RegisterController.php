@@ -91,7 +91,7 @@ class RegisterController extends Controller
         
         // ユーザーには仮登録中の状態を表示するページへリダイレクトなど
         // return redirect()->route('verification.pending');
-        return view('commons.error_messages'); // 仮登録中の状態を表示するビューを返す
+        return view('auth.verification.pending'); // 仮登録中の状態を表示するビューを返す
     }
 
 
