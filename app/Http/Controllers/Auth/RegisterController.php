@@ -108,7 +108,7 @@ class RegisterController extends Controller
         // 本登録が成功したらログイン
         Auth::login($user);
     
-        return redirect()->route('verification.pending');
+        return redirect()->route('home');
     }
     
     
