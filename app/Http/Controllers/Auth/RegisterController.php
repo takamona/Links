@@ -91,9 +91,8 @@ class RegisterController extends Controller
     
         // ユーザーには仮登録中の状態を表示するページへリダイレクトなど
     
-        return redirect()->route('verification.pending');
+        return redirect()->route('verification/pending');
     }
-
 
     // 2. ユーザーの本登録処理
     public function verify($token)
