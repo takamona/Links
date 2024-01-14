@@ -72,7 +72,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('getTopicsBySearch/{keyword}', 'TopicsController@getTopicsBySearch')->name('topics.search');
     Route::get('getCommunitiesBySearch/{keyword}', 'CommunitiesController@getCommunitiesBySearch')->name('communities.search');
     Route::get('getEventsBySearch/{keyword}', 'EventsController@getEventsBySearch')->name('events.search');
-    Route::get('verification/pending', 'Auth\VerificationController@pending')->name('veryfication.pending');
+    Route::get('pending', 'Auth\VerificationController@pending')->name('verification.pending');
     
     //　コミュニティ関係
     Route::group(['prefix' => 'communities/{id}'], function () {
