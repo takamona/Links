@@ -29,8 +29,8 @@ class TimelineController extends Controller
         $profile = $user->profile()->first();
         
          if($participation===null){
-         $participation = new Participation();
-         $participation->status = 3;
+            $participation = new Participation();
+            $participation->status = 3;
          }
         
         return view('timeline.timeline', compact('topics','events','participation','profile','user'));
