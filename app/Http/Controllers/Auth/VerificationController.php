@@ -41,14 +41,14 @@ class VerificationController extends Controller
     
     
     
-     /**
-     * Show the email verification pending view.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function pending()
-    {
-        return view('auth.verification.pending'); // 仮登録中の状態を表示するビューを返す
-    }
+    //  /**
+    //  * Show the email verification pending view.
+    //  *
+    //  * @return \Illuminate\View\View
+    //  */
+    // public function pending()
+    // {
+    //     return view('auth.verification.pending'); // 仮登録中の状態を表示するビューを返す
+    // }
     
 }
