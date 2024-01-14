@@ -39,4 +39,16 @@ class VerificationController extends Controller
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
     
+    
+    
+     /**
+     * Show the email verification pending view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function pending()
+    {
+        return view('auth.verification.pending'); // 仮登録中の状態を表示するビューを返す
+    }
+    
 }
