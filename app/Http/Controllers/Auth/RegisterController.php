@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\TemporaryUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -80,7 +81,7 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         // バリデーションなどの処理
-        $temporaryUser =  User::create([
+        $temporaryUser =  TemporaryUser::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
@@ -88,7 +89,7 @@ class RegisterController extends Controller
         ]);
     
         // 仮登録メールを送信
-        $user->notify(new UserRegisteredNotification($user));
+        $temporaryUser->notify(new UserRegisteredNotification($user));
         
         // ユーザーには仮登録中の状態を表示するページへリダイレクトなど
         // return redirect()->route('verification.pending');
@@ -99,7 +100,7 @@ class RegisterController extends Controller
     // 2. ユーザーの本登録処理
     public function verify($token)
     {
-        $temporaryUser = TemporaryUsers::where('verification_token', $token)->firstOrFail();
+        $temporaryUser = TemporaryUser::where('verification_token', $token)->firstOrFail();
         // $user = User::where('verification_token', $token)->firstOrFail();
     
         $user = User::create([
