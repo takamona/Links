@@ -79,7 +79,7 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         // バリデーションなどの処理
-        $user = User::create([
+        $temporaryUser =  TemporaryUser::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
@@ -98,18 +98,27 @@ class RegisterController extends Controller
     // 2. ユーザーの本登録処理
     public function verify($token)
     {
-        $user = User::where('verification_token', $token)->firstOrFail();
+        $temporaryUser = TemporaryUser::where('verification_token', $token)->firstOrFail();
+        // $user = User::where('verification_token', $token)->firstOrFail();
     
-        $user->update([
-            'verified' => true,
-            'verification_token' => null, // トークンをクリア
+        $user = User::create([
+            'name' => $temporaryUser->name,
+            'email' => $temporaryUser->email,
+            'password' => $temporaryUser->password,
         ]);
+    
+        // $user->update([
+        //     'verified' => true,
+        //     'verification_token' => null, // トークンをクリア
+        // ]);
     
         // 本登録が成功したらログイン
         Auth::login($user);
+        
+        // 本登録が成功したら、仮登録用のレコードを削除
+        $temporaryUser->delete();
     
         return redirect()->route('home');
     }
-    
     
 }
