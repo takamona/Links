@@ -60,6 +60,7 @@ class RegisterController extends Controller
     }
 
     /**
+     * 
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
@@ -79,7 +80,7 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         // バリデーションなどの処理
-        $temporaryUser =  TemporaryUser::create([
+        $temporaryUser =  TemporaryUsers::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
@@ -98,7 +99,7 @@ class RegisterController extends Controller
     // 2. ユーザーの本登録処理
     public function verify($token)
     {
-        $temporaryUser = TemporaryUser::where('verification_token', $token)->firstOrFail();
+        $temporaryUser = TemporaryUsers::where('verification_token', $token)->firstOrFail();
         // $user = User::where('verification_token', $token)->firstOrFail();
     
         $user = User::create([
