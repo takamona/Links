@@ -80,7 +80,7 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         // バリデーションなどの処理
-        $temporaryUser =  TemporaryUsers::create([
+        $temporaryUser =  User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
