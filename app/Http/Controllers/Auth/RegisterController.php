@@ -89,7 +89,7 @@ class RegisterController extends Controller
         ]);
     
         // 仮登録メールを送信
-        $temporaryUser->notify(new UserRegisteredNotification($user));
+        $temporaryUser->notify(new UserRegisteredNotification($temporaryUser));
         
         // ユーザーには仮登録中の状態を表示するページへリダイレクトなど
         // return redirect()->route('verification.pending');
