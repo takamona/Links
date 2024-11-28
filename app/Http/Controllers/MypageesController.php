@@ -28,7 +28,7 @@ class MypageesController extends Controller
     {
         
         try {
-            $url = config('newsapi.news_api_url') . "top-headlines?country=jp&category=business&apiKey=" . config('newsapi.news_api_key');
+            $url = config('newsapi.news_api_url') . "top-headlines?country=us&category=business&apiKey=" . config('newsapi.news_api_key');
             $method = "GET";
             $count = 15;
 
