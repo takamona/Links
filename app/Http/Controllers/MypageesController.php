@@ -37,11 +37,15 @@ class MypageesController extends Controller
 
             $results = $response->getBody();
             $articles = json_decode($results, true);
+            
+            // データが正しいか確認
+            if (!isset($articles['articles']) || empty($articles['articles'])) {
+                // 記事が空の場合、デバッグ用のメッセージをログまたは画面に出力
+                dd("No articles found. Response: ", $articles);
+            }
 
             $news = [];
-            if ($e->hasResponse()) {
-    dd((string)$e->getResponse()->getBody());
-}
+            
 
             for ($id = 0; $id < $count; $id++) {
                 array_push($news, [
