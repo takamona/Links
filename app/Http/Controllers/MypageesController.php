@@ -39,6 +39,9 @@ class MypageesController extends Controller
             $articles = json_decode($results, true);
 
             $news = [];
+            if ($e->hasResponse()) {
+    dd((string)$e->getResponse()->getBody());
+}
 
             for ($id = 0; $id < $count; $id++) {
                 array_push($news, [
