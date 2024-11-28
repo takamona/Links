@@ -77,50 +77,50 @@ class RegisterController extends Controller
     }
     
     
-        // 1. ユーザーの仮登録処理
-    public function register(Request $request)
-    {
-        // バリデーションなどの処理
-        $temporaryUser =  TemporaryUser::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-            'verification_token' => Str::uuid(), // ユニークなトークンを生成
-        ]);
+    //     // 1. ユーザーの仮登録処理
+    // public function register(Request $request)
+    // {
+    //     // バリデーションなどの処理
+    //     $temporaryUser =  TemporaryUser::create([
+    //         'name' => $request->name,
+    //         'email' => $request->email,
+    //         'password' => bcrypt($request->password),
+    //         'verification_token' => Str::uuid(), // ユニークなトークンを生成
+    //     ]);
     
-        // 仮登録メールを送信
-        $temporaryUser->notify(new UserRegisteredNotification($temporaryUser));
+    //     // 仮登録メールを送信
+    //     $temporaryUser->notify(new UserRegisteredNotification($temporaryUser));
         
-        // ユーザーには仮登録中の状態を表示するページへリダイレクトなど
-        // return redirect()->route('verification.pending');
-        return view('registers.pending'); // 仮登録中の状態を表示するビューを返す
-    }
+    //     // ユーザーには仮登録中の状態を表示するページへリダイレクトなど
+    //     // return redirect()->route('verification.pending');
+    //     return view('registers.pending'); // 仮登録中の状態を表示するビューを返す
+    // }
 
 
-    // 2. ユーザーの本登録処理
-    public function verify($token)
-    {
-        $temporaryUser = TemporaryUser::where('verification_token', $token)->firstOrFail();
-        // $user = User::where('verification_token', $token)->firstOrFail();
+    // // 2. ユーザーの本登録処理
+    // public function verify($token)
+    // {
+    //     $temporaryUser = TemporaryUser::where('verification_token', $token)->firstOrFail();
+    //     // $user = User::where('verification_token', $token)->firstOrFail();
     
-        $user = User::create([
-            'name' => $temporaryUser->name,
-            'email' => $temporaryUser->email,
-            'password' => $temporaryUser->password,
-        ]);
+    //     $user = User::create([
+    //         'name' => $temporaryUser->name,
+    //         'email' => $temporaryUser->email,
+    //         'password' => $temporaryUser->password,
+    //     ]);
     
-        // $user->update([
-        //     'verified' => true,
-        //     'verification_token' => null, // トークンをクリア
-        // ]);
+    //     // $user->update([
+    //     //     'verified' => true,
+    //     //     'verification_token' => null, // トークンをクリア
+    //     // ]);
     
-        // 本登録が成功したらログイン
-        Auth::login($user);
+    //     // 本登録が成功したらログイン
+    //     Auth::login($user);
         
-        // 本登録が成功したら、仮登録用のレコードを削除
-        $temporaryUser->delete();
+    //     // 本登録が成功したら、仮登録用のレコードを削除
+    //     $temporaryUser->delete();
     
-        return redirect()->route('home');
-    }
+    //     return redirect()->route('home');
+    // }
     
 }
