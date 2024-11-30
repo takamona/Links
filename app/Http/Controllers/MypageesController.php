@@ -14,8 +14,6 @@ use Auth;
 
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\Auth;
-
 use GuzzleHttp\Client;
 
 use GuzzleHttp\Exception\RequestException;
