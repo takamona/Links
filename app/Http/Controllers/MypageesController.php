@@ -137,7 +137,8 @@ class MypageesController extends Controller
                 $crawler = $goutteClient->request('GET', $finalUrl);
                 
                 $statusCode = $goutteClient->getResponse()->getStatusCode();
-    　　　　　　　　dd($statusCode); // ステータスコードが200以外なら問題あり
+                
+                var_dump($statusCode);
 
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
