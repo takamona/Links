@@ -234,10 +234,11 @@ class MypageesController extends Controller
                 // ここでfinalUrlを使用して、実際のURLから再度スクレイピング
                 $crawler = new \Goutte\Client();  // Goutteクライアントを作成
                 $crawler->request('GET', $finalUrl);  // 最終URLでリクエスト
+                
+                $crawler = $guzzleClient->request('GET', $finalUrl);
 
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
-                    var_dump("test");
                     $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
                 } else {
                     // og:image がない場合、<img> タグから最初の画像を取得
