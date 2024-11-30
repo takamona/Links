@@ -60,13 +60,13 @@ class MypageesController extends Controller
             foreach ($items as $item) {
             $link = (string)$item->link;
             $thumbnail = null;
-           
 
                 // サムネイル画像を取得（ニュースリンクのメタタグをスクレイピング）
                 $crawler = $goutteClient->request('GET', $link);
                 $thumbnail = $crawler->filter('meta[property="og:image"]')->count() > 0
                     ? $crawler->filter('meta[property="og:image"]')->attr('content')
                     : null; // og:imageがない場合はnull
+                 var_dump($thumbnail);
 
                 $news[] = [
                 'name' => (string)$item->title,
