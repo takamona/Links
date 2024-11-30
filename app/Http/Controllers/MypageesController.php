@@ -69,9 +69,9 @@ class MypageesController extends Controller
                     : null; // og:imageがない場合はnull
 
                 $news[] = [
-                    'name' => (string)$items[$id]->title,       // ニュースのタイトル
-                    'url' => (string)$items[$id]->link,         // ニュースのURL
-                    'thumbnail' => $thumbnail,                  // サムネイル
+                'name' => (string)$item->title,
+                'url' => $link,
+                'thumbnail' => $thumbnail ?? '/path/to/default-thumbnail.jpg', // サムネイルがない場合のデフォルト画像
                 ];
             }
             
