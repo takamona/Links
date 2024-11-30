@@ -132,7 +132,6 @@ class MypageesController extends Controller
                 // 記事リンクをリダイレクト先を含めて取得
                 $response = $client->request('GET', $link, ['allow_redirects' => true]);
                 $finalUrl = $response->getHeader('Location')[0] ?? $link;
-                var_dump($finalUrl);
 
                 // 記事ページをスクレイピング
                 $crawler = $goutteClient->request('GET', $finalUrl);
@@ -140,6 +139,7 @@ class MypageesController extends Controller
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
                     $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
+                    var_dump($thumbnail);
                 } else {
                     // og:image がない場合、<img> タグから最初の画像を取得
                     $images = $crawler->filter('img')->each(function ($node) {
