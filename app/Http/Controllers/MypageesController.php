@@ -131,8 +131,8 @@ class MypageesController extends Controller
             try {
                 // 記事リンクをリダイレクト先を含めて取得
                 $response = $client->request('GET', $link, ['allow_redirects' => true]);
-                var_dump($response);
                 $finalUrl = $response->getHeader('Location')[0] ?? $link;
+                var_dump($finalUrl);
 
                 // 記事ページをスクレイピング
                 $crawler = $goutteClient->request('GET', $finalUrl);
