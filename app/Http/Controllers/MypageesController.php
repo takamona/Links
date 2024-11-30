@@ -28,15 +28,32 @@ class MypageesController extends Controller
     {
         
         try {
-            $url = config('newsapi.news_api_url') . "top-headlines?country=us&category=business&apiKey=" . config('newsapi.news_api_key');
+            // $url = config('newsapi.news_api_url') . "top-headlines?country=us&category=business&apiKey=" . config('newsapi.news_api_key');
+            $url = "https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja";
             $method = "GET";
             $count = 15;
 
             $client = new Client();
             $response = $client->request($method, $url);
+            
+            // レスポンスのステータスコードを確認
+            if ($response->getStatusCode() !== 200) {
+                // ステータスコードが200以外の場合のエラーハンドリング
+                dd("Failed to fetch news. Status Code: " . $response->getStatusCode());
+            }
+            
+            $rssContent = $response->getBody()->getContents();
+            
+            $rss = simplexml_load_string($rssContent);
 
-            $results = $response->getBody();
-            $articles = json_decode($results, true);
+            if (!$rss || !isset($rss->channel->item)) {
+                // RSSデータが正しくない場合のエラーハンドリング
+                dd("No articles found in RSS feed.");
+            }
+
+            // $results = $response->getBody()->getContents();
+            $rssContent = $response->getBody()->getContents();
+            // $articles = json_decode($results, true);
             
             // データが正しいか確認
             if (!isset($articles['articles']) || empty($articles['articles'])) {
