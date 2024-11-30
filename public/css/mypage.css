@@ -887,11 +887,6 @@ footer {
 /*  height: auto;*/
 /*}*/
 
-
-
-
-
-
 .news {
   position: absolute;
   top: 350px;
@@ -927,4 +922,3 @@ hr {
   border: solid 1px #ddd; /* ニュース項目間の区切り線 */
   margin: 15px 0; /* 上下に余白を追加 */
 }
-
