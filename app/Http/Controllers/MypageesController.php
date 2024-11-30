@@ -20,6 +20,8 @@ use GuzzleHttp\Exception\RequestException;
 
 use GuzzleHttp\Psr7;
 
+use Goutte\Client as GoutteClient;
+
 class MypageesController extends Controller
 {
     
@@ -50,30 +52,26 @@ class MypageesController extends Controller
                 // RSSデータが正しくない場合のエラーハンドリング
                 dd("No articles found in RSS feed.");
             }
-
-            // $results = $response->getBody()->getContents();
-            $rssContent = $response->getBody()->getContents();
-            // $articles = json_decode($results, true);
             
-            // データが正しいか確認
-            // if (!isset($articles['articles']) || empty($articles['articles'])) {
-            //     // 記事が空の場合、デバッグ用のメッセージをログまたは画面に出力
-            //     dd("No articles found. Response: ", $articles);
-            // }
+            
+            $rssContent = $response->getBody()->getContents();
 
             $news = [];
             $items = $rss->channel->item;
             
-
-            // for ($id = 0; $id < $count; $id++) {
-            //     array_push($news, [
-            //         'name' => $articles['articles'][$id]['title'],
-            //         'url' => $articles['articles'][$id]['url'],
-            //         'thumbnail' => $articles['articles'][$id]['urlToImage'],
-            //     ]);
-            // }
+            $goutteClient = new GoutteClient();
+            
+            
             
             for ($id = 0; $id < min($count, count($items)); $id++) {
+                $link = (string)$items[$id]->link;
+                
+                // サムネイル画像を取得（ニュースリンクのメタタグをスクレイピング）
+                $crawler = $goutteClient->request('GET', $link);
+                $thumbnail = $crawler->filter('meta[property="og:image"]')->count() > 0
+                    ? $crawler->filter('meta[property="og:image"]')->attr('content')
+                    : null; // og:imageがない場合はnull
+                
                 $news[] = [
                     'name' => (string)$items[$id]->title,       // ニュースのタイトル
                     'url' => (string)$items[$id]->link,         // ニュースのURL
