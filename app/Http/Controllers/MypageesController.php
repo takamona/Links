@@ -223,14 +223,13 @@ class MypageesController extends Controller
                 $finalUrl = $response->getHeaderLine('Location') ?? $link;
 
                 // リダイレクトURLのクエリパラメータから実際のURLを取得
-                $parsedUrl = parse_url($finalUrl);
-                parse_str($parsedUrl['query'] ?? '', $queryParams);
-                var_dump($parsedUrl);
+                // $parsedUrl = parse_url($finalUrl);
+                // parse_str($parsedUrl['query'] ?? '', $queryParams);
 
-                if (isset($queryParams['url'])) {
-                    // リダイレクト先が含んでいる実際のURLを取得
-                    $finalUrl = $queryParams['url'];
-                }
+                // if (isset($queryParams['url'])) {
+                //     // リダイレクト先が含んでいる実際のURLを取得
+                //     $finalUrl = $queryParams['url'];
+                // }
 
                 // ここでfinalUrlを使用して、実際のURLから再度スクレイピング
                 $crawler = new \Goutte\Client();  // Goutteクライアントを作成
