@@ -75,7 +75,7 @@ class MypageesController extends Controller
                 $news[] = [
                     'name' => (string)$items[$id]->title,       // ニュースのタイトル
                     'url' => (string)$items[$id]->link,         // ニュースのURL
-                    'thumbnail' => null,                        // RSSではサムネイル情報はないためnull
+                    'thumbnail' => $thumbnail,                  // サムネイル
                 ];
             }
             
