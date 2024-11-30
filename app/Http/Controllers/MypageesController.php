@@ -105,7 +105,7 @@ class MypageesController extends Controller
     try {
         // Google News RSS Feed URL
         $url = "https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja";
-        $client = new Client();
+        $client = new Client();  // Guzzleのクライアント
         $response = $client->request('GET', $url);
 
         // レスポンスのステータスコードを確認
@@ -122,16 +122,20 @@ class MypageesController extends Controller
 
         $news = [];
         $items = $rss->channel->item;
-        $goutteClient = new GoutteClient();
+
+        // Guzzleクライアントを使用して、User-Agentを設定
+        $guzzleClient = new Client([
+            'headers' => [
+                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36'
+            ],
+            'allow_redirects' => true, // リダイレクトの追跡
+        ]);
 
         foreach ($items as $item) {
             $link = (string)$item->link; // ニュース記事のリンク
             $thumbnail = '/path/to/default-thumbnail.jpg'; // デフォルトのサムネイル画像
 
             try {
-                // リダイレクトを追跡するGuzzleクライアントを作成
-                $guzzleClient = new Client(['allow_redirects' => true]);
-
                 // 記事リンクをリダイレクト先を含めて取得
                 $response = $guzzleClient->request('GET', $link);
                 $finalUrl = $response->getHeaderLine('Location') ?? $link;
@@ -145,8 +149,9 @@ class MypageesController extends Controller
                     $finalUrl = $queryParams['url'];
                 }
 
-                // User-Agentを変更してリクエスト
-                $goutteClient->setHeader('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36');
+                // 記事ページをスクレイピング
+                $crawler = new \Goutte\Client(); // Goutteクライアントを使用して記事を取得
+                $crawler->setClient($guzzleClient); // GuzzleクライアントをGoutteに設定
 
                 // 記事ページをスクレイピング
                 $crawler = $goutteClient->request('GET', $finalUrl);
@@ -193,4 +198,5 @@ class MypageesController extends Controller
     // View の呼び出し
     return view('mypage', compact('profile', 'user', 'participation', 'news'));
 }
+
 }
