@@ -56,10 +56,10 @@ class MypageesController extends Controller
             // $articles = json_decode($results, true);
             
             // データが正しいか確認
-            if (!isset($articles['articles']) || empty($articles['articles'])) {
-                // 記事が空の場合、デバッグ用のメッセージをログまたは画面に出力
-                dd("No articles found. Response: ", $articles);
-            }
+            // if (!isset($articles['articles']) || empty($articles['articles'])) {
+            //     // 記事が空の場合、デバッグ用のメッセージをログまたは画面に出力
+            //     dd("No articles found. Response: ", $articles);
+            // }
 
             $news = [];
             
