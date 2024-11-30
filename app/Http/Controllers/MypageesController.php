@@ -63,10 +63,13 @@ class MypageesController extends Controller
 
                 // サムネイル画像を取得（ニュースリンクのメタタグをスクレイピング）
                 $crawler = $goutteClient->request('GET', $link);
-                $thumbnail = $crawler->filter('meta[property="og:image"]')->count() > 0
-                    ? $crawler->filter('meta[property="og:image"]')->attr('content')
-                    : null; // og:imageがない場合はnull
-                 var_dump($thumbnail);
+                // $thumbnail = $crawler->filter('meta[property="og:image"]')->count() > 0
+                //     ? $crawler->filter('meta[property="og:image"]')->attr('content')
+                //     : null; // og:imageがない場合はnull
+                    
+                    
+                var_dump($crawler->filter('meta[property="og:image"]')->count()); // 0または1
+var_dump($crawler->filter('meta[property="og:image"]')->attr('content')); // og:imageがある場合、URLを確認
 
                 $news[] = [
                 'name' => (string)$item->title,
