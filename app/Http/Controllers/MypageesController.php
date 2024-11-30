@@ -62,15 +62,25 @@ class MypageesController extends Controller
             // }
 
             $news = [];
+            $items = $rss->channel->item;
             
 
-            for ($id = 0; $id < $count; $id++) {
-                array_push($news, [
-                    'name' => $articles['articles'][$id]['title'],
-                    'url' => $articles['articles'][$id]['url'],
-                    'thumbnail' => $articles['articles'][$id]['urlToImage'],
-                ]);
+            // for ($id = 0; $id < $count; $id++) {
+            //     array_push($news, [
+            //         'name' => $articles['articles'][$id]['title'],
+            //         'url' => $articles['articles'][$id]['url'],
+            //         'thumbnail' => $articles['articles'][$id]['urlToImage'],
+            //     ]);
+            // }
+            
+            for ($id = 0; $id < min($count, count($items)); $id++) {
+                $news[] = [
+                    'name' => (string)$items[$id]->title,       // ニュースのタイトル
+                    'url' => (string)$items[$id]->link,         // ニュースのURL
+                    'thumbnail' => null,                        // RSSではサムネイル情報はないためnull
+                ];
             }
+            
         } catch (RequestException $e) {
             echo Psr7\Message::toString($e->getRequest());
             if ($e->hasResponse()) {
