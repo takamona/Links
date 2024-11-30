@@ -152,6 +152,7 @@ class MypageesController extends Controller
                 // Goutteを使って最終URLからサムネイル画像を取得
                 $crawler = new \Goutte\Client();  // Goutteクライアントを作成
                 $crawler->request('GET', $finalUrl);  // 最終URLでリクエスト
+                var_dump($crawler);
 
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
