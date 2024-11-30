@@ -225,7 +225,6 @@ class MypageesController extends Controller
 
         foreach ($items as $item) {
             $link = (string)$item->link; // ニュース記事のリンク
-            var_dump($links);
             $thumbnail = '/path/to/default-thumbnail.jpg'; // デフォルトのサムネイル画像
 
             try {
