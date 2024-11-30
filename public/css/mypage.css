@@ -843,48 +843,88 @@ footer {
   overflow: hidden;
 }
 
-.news{
-  position: absolute;
-  top:180px;
+/*.news{*/
+/*  position: absolute;*/
+/*  top:180px;*/
   /* padding-top: 100px; */
-  left: 0px;
-  display: block;
-  font-size: 18px;
-  border:solid whitesmoke 2px;
-  color: aqua;
-  width:800px;
-  height: 700vh;
-  max-width: 100%;
+/*  left: 0px;*/
+/*  display: block;*/
+/*  font-size: 18px;*/
+/*  border:solid whitesmoke 2px;*/
+/*  color: aqua;*/
+/*  width:800px;*/
+/*  height: 700vh;*/
+/*  max-width: 100%;*/
   /*height: auto;*/
   /* padding-top: 300px; 
   margin-top: 600px; */
   /* background-color: rgb(244, 135, 26); */
   /* background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);    背景色指定 */
   /* background-color:lightpink; */
-  background-color: rgba(245, 205, 158, .5);
+/*  background-color: rgba(245, 205, 158, .5);*/
   /* z-index: 99999; */
-}
+/*}*/
 
-.container-sm img{
-  width:300px;
-}
+/*.container-sm img{*/
+/*  width:300px;*/
+/*}*/
 
 
-.card-body.pb-2.pt-0{
-  border:solid 1px;
+/*.card-body.pb-2.pt-0{*/
+/*  border:solid 1px;*/
   /*border-color: black;*/
-  width:500px;
-  max-width:100%;
-  border-color: #09586445;
-}
+/*  width:500px;*/
+/*  max-width:100%;*/
+/*  border-color: #09586445;*/
+/*}*/
   
-}
+/*}*/
 
 
-.h5 card-title{
-  width: 500px;
-  font-size: 10px;
-  height: auto;
+/*.h5 card-title{*/
+/*  width: 500px;*/
+/*  font-size: 10px;*/
+/*  height: auto;*/
+/*}*/
+
+
+
+
+
+
+.news {
+  position: absolute;
+  top: 180px;
+  left: 0px;
+  display: block;
+  font-size: 18px;
+  color: aqua;
+  width: 800px;
+  max-width: 100%;
+  background-color: rgba(245, 205, 158, .5);
 }
 
+.container-sm img {
+  width: 300px;
 }
+
+.card-body.pt-0.pb-2 {
+  border: solid 1px #09586445;
+  padding: 10px;
+  margin-bottom: 10px; /* 各項目間にスペースを追加 */
+}
+
+.card-body.pt-0.pb-2 .card-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.news-item {
+  padding: 10px;
+}
+
+hr {
+  border: solid 1px #ddd; /* ニュース項目間の区切り線 */
+  margin: 15px 0; /* 上下に余白を追加 */
+}
+
