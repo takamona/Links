@@ -222,17 +222,11 @@ class MypageesController extends Controller
                 $response = $guzzleClient->request('GET', $link);
                 $finalUrl = $response->getHeaderLine('Location') ?? $link;
 
-                // リダイレクトURLのクエリパラメータから実際のURLを取得
-                // $parsedUrl = parse_url($finalUrl);
-                // parse_str($parsedUrl['query'] ?? '', $queryParams);
-
-                // if (isset($queryParams['url'])) {
-                //     // リダイレクト先が含んでいる実際のURLを取得
-                //     $finalUrl = $queryParams['url'];
-                // }
 
                 $goutteClient = new GoutteClient();
                 $crawler = $goutteClient->request('GET', $finalUrl);
+                $html = $crawler->html();
+                var_dump($html);
 
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
