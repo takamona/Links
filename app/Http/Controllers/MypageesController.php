@@ -101,93 +101,12 @@ class MypageesController extends Controller
     // }
     
     
-//     public function index()
-// {
-//     try {
-//         // Google News RSS Feed URL
-//         $url = "https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja";
-//         $client = new Client();
-//         $response = $client->request('GET', $url);
-
-//         // レスポンスのステータスコードを確認
-//         if ($response->getStatusCode() !== 200) {
-//             throw new \Exception("Failed to fetch news. Status Code: " . $response->getStatusCode());
-//         }
-
-//         $rssContent = $response->getBody()->getContents();
-//         $rss = simplexml_load_string($rssContent);
-
-//         if (!$rss || !isset($rss->channel->item)) {
-//             throw new \Exception("No articles found in RSS feed.");
-//         }
-
-//         $news = [];
-//         $items = $rss->channel->item;
-//         $goutteClient = new GoutteClient();
-
-//         foreach ($items as $item) {
-//             $link = (string)$item->link; // ニュース記事のリンク
-//             $thumbnail = '/path/to/default-thumbnail.jpg'; // デフォルトのサムネイル画像
-
-//             try {
-//                 // 記事リンクをリダイレクト先を含めて取得
-//                 $response = $client->request('GET', $link, ['allow_redirects' => true]);
-//                 $finalUrl = $response->getHeader('Location')[0] ?? $link;
-
-//                 // 記事ページをスクレイピング
-//                 $crawler = $goutteClient->request('GET', $finalUrl);
-
-//                 // og:image を優先して取得
-//                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
-//                     $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
-//                 } else {
-//                     // og:image がない場合、<img> タグから最初の画像を取得
-//                     $images = $crawler->filter('img')->each(function ($node) {
-//                         return $node->attr('src');
-//                     });
-//                     if (!empty($images)) {
-//                         $thumbnail = $images[0];
-//                     }
-//                 }
-//             } catch (\Exception $e) {
-//                 \Log::error("Error fetching thumbnail for URL: $link. Error: " . $e->getMessage());
-//             }
-
-//             // ニュース情報を配列に格納
-//             $news[] = [
-//                 'name' => (string)$item->title,
-//                 'url' => $link,
-//                 'thumbnail' => $thumbnail,
-//             ];
-//         }
-//     } catch (\Exception $e) {
-//         \Log::error("Error fetching news: " . $e->getMessage());
-//         $news = []; // エラー発生時は空のニュースリストを返す
-//     }
-
-//     // ユーザー情報
-//     $user = \Auth::user();
-//     $profile = $user->profile()->first();
-
-//     // コミュニティ情報
-//     $community = Community::first() ?? new Community(['name' => 'sample']);
-//     $participation = $community->participations()
-//         ->where('user_id', \Auth::id())
-//         ->where('status', 1)
-//         ->first() ?? new Participation(['status' => 3]);
-
-//     // View の呼び出し
-//     return view('mypage', compact('profile', 'user', 'participation', 'news'));
-// }
-
-    
-    
     public function index()
 {
     try {
         // Google News RSS Feed URL
         $url = "https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja";
-        $client = new Client();  // Guzzleのクライアント
+        $client = new Client();
         $response = $client->request('GET', $url);
 
         // レスポンスのステータスコードを確認
@@ -204,14 +123,7 @@ class MypageesController extends Controller
 
         $news = [];
         $items = $rss->channel->item;
-
-        // Guzzleクライアントを使用して、User-Agentを設定
-        $guzzleClient = new Client([
-            'headers' => [
-                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36'
-            ],
-            'allow_redirects' => true, // リダイレクトの追跡
-        ]);
+        $goutteClient = new GoutteClient();
 
         foreach ($items as $item) {
             $link = (string)$item->link; // ニュース記事のリンク
@@ -219,18 +131,16 @@ class MypageesController extends Controller
 
             try {
                 // 記事リンクをリダイレクト先を含めて取得
-                $response = $guzzleClient->request('GET', $link);
-                $finalUrl = $response->getHeaderLine('Location') ?? $link;
+                $response = $client->request('GET', $link, ['allow_redirects' => true]);
+                $finalUrl = $response->getHeader('Location')[0] ?? $link;
 
-
-                $goutteClient = new GoutteClient();
+                // 記事ページをスクレイピング
                 $crawler = $goutteClient->request('GET', $finalUrl);
                 $html = $crawler->html();
                 var_dump($html);
 
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
-        
                     $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
                 } else {
                     // og:image がない場合、<img> タグから最初の画像を取得
@@ -271,16 +181,6 @@ class MypageesController extends Controller
     // View の呼び出し
     return view('mypage', compact('profile', 'user', 'participation', 'news'));
 }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 
 }
