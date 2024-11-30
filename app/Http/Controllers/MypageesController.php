@@ -204,9 +204,10 @@ class MypageesController extends Controller
 
         $news = [];
         $items = $rss->channel->item;
+        
 
-        // Guzzleクライアントを使用して、User-Agentを設定
-        $guzzleClient = new Client([
+        // User-Agentを設定
+        $goutteClient = new GoutteClient([
             'headers' => [
                 'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36'
             ],
@@ -232,13 +233,14 @@ class MypageesController extends Controller
                 // }
 
                 // ここでfinalUrlを使用して、実際のURLから再度スクレイピング
-                $crawler = new \Goutte\Client();  // Goutteクライアントを作成
-                $crawler->request('GET', $finalUrl);  // 最終URLでリクエスト
+                // $crawler = new \Goutte\Client();  // Goutteクライアントを作成
+                // $crawler->request('GET', $finalUrl);  // 最終URLでリクエスト
                 
-                $crawler = $guzzleClient->request('GET', $finalUrl);
+                $crawler = $goutteClient->request('GET', $finalUrl);
 
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
+        
                     $thumbnail = $crawler->filter('meta[property="og:image"]')->attr('content');
                 } else {
                     // og:image がない場合、<img> タグから最初の画像を取得
