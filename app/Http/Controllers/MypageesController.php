@@ -133,9 +133,10 @@ class MypageesController extends Controller
                 $response = $client->request('GET', $link, ['allow_redirects' => true]);
                 $finalUrl = $response->getHeader('Location')[0] ?? $link;
 
+                $goutteClient->setHeader('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36');
+                
                 // 記事ページをスクレイピング
                 $crawler = $goutteClient->request('GET', $finalUrl);
-                var_dump($crawler->html());
 
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
