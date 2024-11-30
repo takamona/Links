@@ -129,11 +129,24 @@ class MypageesController extends Controller
             $thumbnail = '/path/to/default-thumbnail.jpg'; // デフォルトのサムネイル画像
 
             try {
+                // リダイレクトを追跡するGuzzleクライアントを作成
+                $guzzleClient = new Client(['allow_redirects' => true]);
+
                 // 記事リンクをリダイレクト先を含めて取得
-                $response = $client->request('GET', $link, ['allow_redirects' => true]);
-                $finalUrl = $response->getHeader('Location')[0] ?? $link;
-                
-                var_dump($finalUrl);
+                $response = $guzzleClient->request('GET', $link);
+                $finalUrl = $response->getHeaderLine('Location') ?? $link;
+
+                // リダイレクトURLのクエリパラメータから実際のURLを取得
+                $parsedUrl = parse_url($finalUrl);
+                parse_str($parsedUrl['query'] ?? '', $queryParams);
+
+                if (isset($queryParams['url'])) {
+                    // リダイレクト先が含んでいる実際のURLを取得
+                    $finalUrl = $queryParams['url'];
+                }
+
+                // User-Agentを変更してリクエスト
+                $goutteClient->setHeader('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36');
 
                 // 記事ページをスクレイピング
                 $crawler = $goutteClient->request('GET', $finalUrl);
