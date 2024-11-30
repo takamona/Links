@@ -215,7 +215,6 @@ class MypageesController extends Controller
 
         foreach ($items as $item) {
             $link = (string)$item->link; // ニュース記事のリンク
-            var_dump($link);
             $thumbnail = '/path/to/default-thumbnail.jpg'; // デフォルトのサムネイル画像
 
             try {
@@ -226,6 +225,7 @@ class MypageesController extends Controller
                 // リダイレクトURLのクエリパラメータから実際のURLを取得
                 $parsedUrl = parse_url($finalUrl);
                 parse_str($parsedUrl['query'] ?? '', $queryParams);
+                var_dump($parsedUrl);
 
                 if (isset($queryParams['url'])) {
                     // リダイレクト先が含んでいる実際のURLを取得
