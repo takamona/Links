@@ -131,11 +131,11 @@ class MypageesController extends Controller
             try {
                 // 記事リンクをリダイレクト先を含めて取得
                 $response = $client->request('GET', $link, ['allow_redirects' => true]);
+                var_dump($response);
                 $finalUrl = $response->getHeader('Location')[0] ?? $link;
 
                 // 記事ページをスクレイピング
                 $crawler = $goutteClient->request('GET', $finalUrl);
-                var_dump($crawler);
 
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
