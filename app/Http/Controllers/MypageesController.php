@@ -100,7 +100,7 @@ class MypageesController extends Controller
     //     return view('mypage', compact('profile', 'user', 'participation', 'news'));
     // }
     
-    public function index()
+  public function index()
 {
     try {
         // Google News RSS Feed URL
@@ -149,12 +149,9 @@ class MypageesController extends Controller
                     $finalUrl = $queryParams['url'];
                 }
 
-                // 記事ページをスクレイピング
-                $crawler = new \Goutte\Client(); // Goutteクライアントを使用して記事を取得
-                $crawler->setClient($guzzleClient); // GuzzleクライアントをGoutteに設定
-
-                // 記事ページをスクレイピング
-                $crawler = $goutteClient->request('GET', $finalUrl);
+                // Goutteを使って最終URLからサムネイル画像を取得
+                $crawler = new \Goutte\Client();  // Goutteクライアントを作成
+                $crawler->request('GET', $finalUrl);  // 最終URLでリクエスト
 
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
