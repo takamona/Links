@@ -182,16 +182,6 @@ class MypageesController extends Controller
 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     public function index()
 {
     try {
@@ -241,12 +231,9 @@ class MypageesController extends Controller
                     $finalUrl = $queryParams['url'];
                 }
 
-                // 記事ページをスクレイピング
-                $crawler = new \Goutte\Client(); // Goutteクライアントを使用して記事を取得
-                $crawler->setClient($guzzleClient); // GuzzleクライアントをGoutteに設定
-
-                // 記事ページをスクレイピング
-                $crawler = $goutteClient->request('GET', $finalUrl);
+                // ここでfinalUrlを使用して、実際のURLから再度スクレイピング
+                $crawler = new \Goutte\Client();  // Goutteクライアントを作成
+                $crawler->request('GET', $finalUrl);  // 最終URLでリクエスト
 
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
@@ -290,5 +277,16 @@ class MypageesController extends Controller
     // View の呼び出し
     return view('mypage', compact('profile', 'user', 'participation', 'news'));
 }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
