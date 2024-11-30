@@ -211,6 +211,7 @@ public function index()
             $news[] = [
                 'name' => (string)$item->title,
                 'url' => $link,
+                'thumbnail' => $thumbnail ?? '/path/to/default-thumbnail.jpg', // サムネイルがない場合のデフォルト画像
             ];
         }
     } catch (\Exception $e) {
