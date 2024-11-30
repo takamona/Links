@@ -135,10 +135,7 @@ class MypageesController extends Controller
 
                 // 記事ページをスクレイピング
                 $crawler = $goutteClient->request('GET', $finalUrl);
-                
-                $statusCode = $goutteClient->getResponse()->getStatusCode();
-                
-                var_dump($statusCode);
+                var_dump($crawler->html());
 
                 // og:image を優先して取得
                 if ($crawler->filter('meta[property="og:image"]')->count() > 0) {
