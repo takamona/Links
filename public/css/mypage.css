@@ -894,14 +894,14 @@ footer {
 
 .news {
   position: absolute;
-  top: 180px;
+  top: 350px;
   left: 0px;
   display: block;
   font-size: 18px;
   color: aqua;
   width: 800px;
   max-width: 100%;
-  background-color: rgba(245, 205, 158, .5);
+  /*background-color: rgba(245, 205, 158, .5);*/
 }
 
 .container-sm img {
