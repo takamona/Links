@@ -540,10 +540,9 @@ footer {
   left: 0px;
   display: block;
   font-size: 30px;
-  border:solid whitesmoke 2px;
   color: aqua;
   width:1200px;
-  height: 640vh;
+  /*height: 640vh;*/
   max-width: 100%;
   /*height: auto;*/
   /* padding-top: 300px; 
