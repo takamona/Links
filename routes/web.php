@@ -37,6 +37,9 @@ Route::group(['middleware' => ['auth']], function () {
             return view('mypage');
     });
     
+    //プロフィール変更
+    Route::post('updateAjax', 'MypageesController@updateAjax')->name('profile_edit');
+    
     // ログアウト
     Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 

@@ -234,5 +234,61 @@ public function index()
     return view('mypage', compact('profile', 'user', 'participation', 'news'));
 }
     
+    
+public function updateAjax(Request $request)
+    {
+        $user = Auth::user();
+        //プロフィール情報を取得するなければ作成
+        $profile = $user->profile()->first() ?? new \App\Models\Profile();
 
+        // バリデーション
+        $request->validate([
+            'name' => 'required|string|max:10',
+            'hobby' => 'nullable|string|max:20',
+            'address' => 'nullable|string|max:10',
+            'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+
+        $imageUpdated = false;
+        // 画像アップロード処理
+        if ($request->hasFile('profile_image')) {
+            $path = $request->file('profile_image')->store('uploads', 'public');
+
+            // 古い画像を削除
+            if ($profile->image) {
+                Storage::disk('public')->delete($profile->image);
+            }
+
+            $profile->image = $path;
+            $imageUpdated = true;
+        }
+
+        //usersテーブルの名前を更新
+        $user->name = $request->name;
+        $user->save();
+
+        // プロフィール更新
+        $profile->hobby = $request->hobby;
+        $profile->introduction = $request->introduction;
+        $profile->address = $request->address;
+        $profile->user_id = $user->id;
+        $profile->save();
+
+        // return response()->json([
+        //     'message' => 'プロフィールを更新しました',
+        //     'profile' => $profile
+        // ]);
+
+        return response()->json([
+            'message' => 'プロフィールを更新しました',
+            'user' => $user,
+            'image_updated' => $imageUpdated,
+            'profile' => [
+                //`null` を正しく返す処理、imageUpdatedがtrueであれば画像をセットそうでなければnullにする。
+                'image' => $imageUpdated ? asset('storage/' . $profile->image) : null, 
+                'hobby' => $profile->hobby,
+                'address' => $profile->address
+            ]
+        ]);
+    }    
 }
