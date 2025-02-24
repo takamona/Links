@@ -62,7 +62,7 @@
     <ul>
       <li>
         <!-- <a href="/logout">ログアウト</a> -->
-        <img id="logphoto" src="{{ asset('uploads/' . $profile->image) }}" alt="ログアウト">
+        <img id="logphoto" src="{{ Storage::disk('s3')->url('uploads/' . $profile->image) }}" alt="ログアウト">
       </li>
     </ul>
   </div>
@@ -70,7 +70,7 @@
     <div class="profile_window_parent">
       <div class="profile_window">
         <div class="profile">
-          <img class="sample" src="{{ asset('uploads/' . $profile->image) }}" alt="プロフィール">
+          <img class="sample" src="{{ Storage::disk('s3')->url('uploads/' . $profile->image) }}" alt="プロフィール">
         </div>
       </div>
       <p class="username"> {{$user->name}}さん</p>
@@ -183,19 +183,6 @@
   <div class="user_position">
     <p class="username_click">{{$user->name}}さん</p>
     <div class="news">
-<div class="container-sm news">
-    @foreach($news as $data)
-    <div class="card-body pt-0 pb-2 news-item">
-        <h3 class="h5 card-title">
-            <a href="{{$data['url']}}">{{$data['name']}}</a>
-        </h3>
-        <div class="card-text">
-            {{-- <img src="{{$data['thumbnail']}}" style="width: 200px;"> --}}
-        </div>
-    </div>
-    <hr> <!-- 各ニュースを区切る線 -->
-    @endforeach
-</div>
 </div>
     <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js')}}"></script>
     <script src="{{ asset('/js/mypage.js')}}"></script>
