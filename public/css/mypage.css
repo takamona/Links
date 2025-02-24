@@ -551,7 +551,7 @@ footer {
   /* background-color: rgb(244, 135, 26); */
   /* background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);    背景色指定 */
   /* background-color:lightpink; */
-  background-color: rgba(245, 205, 158, .5);
+  /*background-color: rgba(245, 205, 158, .5);*/
   /* z-index: 99999; */
 }
 
