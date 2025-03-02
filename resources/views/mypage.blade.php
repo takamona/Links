@@ -129,7 +129,7 @@
   <!-- </div> -->
   <div class="position_click">
     <div class="click_menu">
-      <div class="click_profile"><a href="/profiles/{{ \Auth::id() }}">プロフィールを表示</a></div>
+      <div class="click_profile"><a href="{{ route('profiles.show', ['profile' => $profile->id]) }}">プロフィールを表示</a></div>
       <div class="click_logout"><a href="/logout">ログアウト</a></div>
     </div>
   </div>
